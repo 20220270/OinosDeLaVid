@@ -1,0 +1,69 @@
+/*estilo para el boton de login*/
+* {
+    background-color: #FCFCFC;
+}
+
+#barra{
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+#btnIngresar {
+
+    background-color: #6D0E0E;
+}
+.btn:hover{
+    background-color: #871313;
+}
+
+/*estilo para la barra de arriba*/
+.red-bar {
+    background-color: #6D0E0E;
+    height: 20px;
+    width: 100%;
+}
+
+/*estilo para la linea que separa la imagen del texto de bienvenida*/
+#linea1 {
+    height: 1rem;
+}
+
+/*estilo para los textos con link*/
+a {
+    color: rgb(134, 70, 70);
+    font-weight: bold;
+    font-size: 110%;
+}
+
+a:hover {
+    color: rgb(153, 42, 42);
+    /* Cambia el color a rojo al pasar el ratón sobre el enlace */
+}
+
+a:active {
+    color: rgb(153, 42, 42);
+    /* Cambia el color a rojo cuando se hace clic en el enlace */
+}
+
+#textoB {
+    padding: 0%;
+    text-align: center;
+    margin-left: 34%;
+    width: 25rem;
+}
+
+#textoG {
+    background-color: #FCFCFC;
+}
+
+#imgG {
+    background-color: #FCFCFC;
+}
+
+#btnGoogle {
+    background-color: #fcfbfb;
+    color: #000000;
+}
+#imgGoogle{
+    height: 2rem;
+}
