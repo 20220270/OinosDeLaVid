@@ -11,9 +11,28 @@
 #btnIngresar {
 
     background-color: #6D0E0E;
+    border-radius: 10px;
 }
 .btn:hover{
     background-color: #871313;
+}
+
+input.form-control:hover {
+    box-shadow: 0 0 5px #871313;
+    outline: none;
+}
+/* Este codigo agrega una sombra roja al hacer hover o focus sobre los inputs */
+input.form-control:hover,
+input.form-control:focus {
+    box-shadow: 0 0 5px #871313;
+    outline: none; 
+}
+
+#btnGoogle {
+    background-color: #fcfbfb;
+    color: #000000;
+    border-radius: 10px;
+    width: 300px;
 }
 
 /*estilo para la barra de arriba*/
@@ -48,7 +67,7 @@ a:active {
 #textoB {
     padding: 0%;
     text-align: center;
-    margin-left: 34%;
+   
     width: 25rem;
 }
 
@@ -60,11 +79,15 @@ a:active {
     background-color: #FCFCFC;
 }
 
-#btnGoogle {
-    background-color: #fcfbfb;
-    color: #000000;
-    
-}
 #imgGoogle{
     height: 2rem;
+}
+
+#textoAlias{
+    border-radius: 5px;
+    
+}
+
+#textoContra{
+    border-radius: 5px;
 }
