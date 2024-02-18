@@ -11,15 +11,17 @@
 </head>
 
 <body>
-    
 
+    <!-- Imagen con el logotipo de la tienda-->
     <div class="imagenLogo col">
-        <img src="../../resources/Imagenes/logo.png" alt="logo de la empresa" 
-        width="100 px" height="100 px" class="d-inline-block" id="imagenLgo">
+        <img src="../../resources/Imagenes/logo.png" alt="logo de la empresa" width="100 px" height="100 px"
+            class="d-inline-block" id="imagenLgo">
+
 
     </div>
+    <!-- Barra color rojo con el texto "Registrar nuevo administrador"-->
     <div class="col1 mt-2">
-        <div class="class" id="texto">
+        <div class="class">
             <h3>
                 Registrar nuevo administrador
             </h3>
@@ -28,72 +30,96 @@
     </div>
     <br>
     <br>
+
+    <!-- Labels identificadores e inputs para ingresar la información de los administradores, 
+        separados por espacios -->
     <div class="container text-center" id="contenedorPrincipal">
         <div class="row">
             <div class="col">
-                <div class="mb-2" id="texto1">
+                <div class="mb-2">
+                    <!--Label e input para agregar el nombre del administrador-->
                     <label class="form-label">Nombre del administrador:</label>
+                    <br>
+                    <br>
                     <input type="text" class="form-control" id="exampleFormControlInput1"
                         placeholder="Ingrese el nombre del administrador">
                 </div>
-                <hr>
+                <br>
                 <br>
                 <br>
                 <br>
                 <div class="mb-3">
-                    <label class="form-label">Alias del administrador:</label>
+                    <!--Label e input para agregar el alias del administrador-->
+                    <label class="form-label1">Alias del administrador:</label>
+                    <br>
+                    <br>
                     <input type="text" class="form-control" id="exampleFormControlInput1"
                         placeholder="Ingrese el alias del administrador">
                 </div>
-                <hr>
+                <br>
             </div>
 
 
             <div class="col">
-                <div class="mb-2" id="texto1">
+                <div class="mb-2">
+                    <!--Label e input para agregar el apellido del administrador-->
                     <label class="form-label">Apellido del administrador:</label>
+                    <br>
+                    <br>
                     <input type="text" class="form-control" id="exampleFormControlInput1"
                         placeholder="Ingrese el apellido del administrador">
                 </div>
-                <hr>
                 <br>
                 <br>
                 <br>
-                <div class="mb-3" id="texto1">
-                    <label class="form-label">Clave del administrador:</label>
+                <br>
+                <div class="mb-3">
+                    <!--Label e input para agregar la clave del administrador-->
+                    <label class="form-label1">Clave del administrador:</label>
+                    <br>
+                    <br>
                     <input type="password" class="form-control" id="exampleFormControlInput1"
                         placeholder="Ingrese la clave del administrador">
                 </div>
-                <hr>
                 <br>
                 <br>
                 <br>
-                
+                <br>
             </div>
 
 
             <div class="col">
-                <div class="mb-2" id="texto1">
+                <div class="mb-2">
+                    <!--Label e input para agregar el correo del administrador-->
                     <label class="form-label">Correo del administrador:</label>
+                    <br>
+                    <br>
                     <input type="text" class="form-control" id="exampleFormControlInput1"
                         placeholder="Ingrese el correo del administrador">
                 </div>
-                <hr>
                 <br>
                 <br>
                 <br>
-                <div class="mb-3" id="texto1">
-                    <label class="form-label">Confirmar clave:</label>
+                <br>
+                <div class="mb-3">
+                    <!--Label e input para confirmar la clave del administrador-->
+                    <label class="form-label2">Confirmar clave:</label>
+                    <br>
+                    <br>
                     <input type="password" class="form-control" id="exampleFormControlInput1">
                 </div>
-                <hr>
+                <br>
             </div>
+            <!--Fin de los labels e inputs-->
         </div>
+
+
+        <!--Botón para registrar la información-->
         <div class="col">
             <button type="button" class="btn btn-dark">Registrar</button>
         </div>
+
+
     </div>
-
 </body>
-
 </html>
