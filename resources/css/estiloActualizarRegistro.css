@@ -1,0 +1,46 @@
+.imagenLogo {
+    margin-left: 1%;
+}
+
+/*Modificamos la imagen para que aparezca a la izquierda*/
+
+.col1 {
+    background-color: #871313;
+    color: aliceblue;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 2%;
+}
+
+/*Modificamos la columna roja para que el texto aparezca en color blanco, al centro y tenga un buen espacio*/
+
+#exampleFormControlInput1 {
+    border: none;
+    border-bottom: 1px solid #000000;
+    border-radius: 0;
+    padding: 1%;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/*Modificamos los inputs para que solamente tenga visible la linea de abajo*/
+
+/*Modificamos los labels para que aparezcan a la izquierda y alineados con los inputs*/
+.form-label {
+    margin-right: 215px;
+}
+
+.form-label1 {
+    margin-right: 240px;
+}
+
+.form-label2 {
+    margin-right: 290px;
+}
+
+/*Modificamos el botón de registrar para que tenga un buen tamaño y bordes redondeados*/
+button {
+    width: 200px;
+    border-radius: 5px;
+    height: 50px;
+}
