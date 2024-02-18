@@ -14,7 +14,7 @@
 
 /*Modificamos la columna roja para que el texto aparezca en color blanco, al centro y tenga un buen espacio*/
 
-#exampleFormControlInput1 {
+#labelsinputsA {
     border: none;
     border-bottom: 1px solid #000000;
     border-radius: 0;
