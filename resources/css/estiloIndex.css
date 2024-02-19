@@ -1,33 +1,49 @@
-/*estilo para el boton de login*/
 * {
     background-color: #FCFCFC;
 }
 
-#barra{
+/*estilo para la barra de arriba*/
+#barra {
     height: 40px;
     margin-bottom: 5px;
 }
 
+/*estilo para el botón de login*/
 #btnIngresar {
 
     background-color: #6D0E0E;
     border-radius: 10px;
 }
-.btn:hover{
+
+/*estilo para el hover del botón, para que al pasar el cursos cambie ligeramente de color*/
+.btn:hover {
     background-color: #871313;
 }
 
+/*estilo para los inputs*/
 input.form-control:hover {
     box-shadow: 0 0 5px #871313;
     outline: none;
 }
+
 /* Este codigo agrega una sombra roja al hacer hover o focus sobre los inputs */
 input.form-control:hover,
 input.form-control:focus {
     box-shadow: 0 0 5px #871313;
-    outline: none; 
+    outline: none;
 }
 
+
+/*estilos para los inputs de alias y contraseña*/
+#textoAlias {
+    border-radius: 5px;
+}
+
+#textoContra {
+    border-radius: 5px;
+}
+
+/*estilo para el botón de continuar con Google*/
 #btnGoogle {
     background-color: #fcfbfb;
     color: #000000;
@@ -64,30 +80,16 @@ a:active {
     /* Cambia el color a rojo cuando se hace clic en el enlace */
 }
 
+/*estilo para el texto BIENVENIDA*/
 #textoB {
     padding: 0%;
     text-align: center;
-   
+
     width: 25rem;
 }
 
-#textoG {
-    background-color: #FCFCFC;
-}
-
-#imgG {
-    background-color: #FCFCFC;
-}
-
-#imgGoogle{
+/*estilo para la imagen de Google*/
+#imgGoogle {
     height: 2rem;
-}
-
-#textoAlias{
-    border-radius: 5px;
-    
-}
-
-#textoContra{
-    border-radius: 5px;
+    margin-right: 10px;
 }
