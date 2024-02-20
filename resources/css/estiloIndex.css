@@ -78,10 +78,7 @@ a:active {
 
 /*estilo para el texto BIENVENIDA*/
 #textoB {
-    padding: 0%;
-    text-align: center;
-
-    width: 25rem;
+    margin-left: 5.5rem;
 }
 
 /*estilo para la imagen de Google*/
