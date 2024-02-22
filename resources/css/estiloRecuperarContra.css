@@ -1,93 +1,20 @@
-
-.red-bar {
+#barra{
     background-color: #6D0E0E;
     width: 100%;
-    height: 60px;
+    height: 50px;
     margin-bottom: 5px;
 }
-/*Estilo para el texto de recuperar contraseña*/
-#imgLogo{
-    margin-right: 5rem;
-    height: 200px;
+
+.col-md-8{
+
+    margin-top: 7%;
 }
 
-.form-labelRC{
-    margin-top: 7rem;
-    margin-right: 15rem;
-    font-size: 30px;
-    font-weight: bold;
+.containerTittle{
+    margin-top: 7%;
 }
 
-#textoRecu{
-    margin-left: 24rem;
-    font-size: 20px;
-}
-
-#input{
-    width: 64%;
-    border: none;
-    border-bottom: 1px solid #000000;
-    border-radius: 0;
-    padding: 1%;
-    background-color: transparent;
-    box-shadow: none;
-}
-
-#inputCodigo{
-    width: 60%;
-    border: none;
-    border-bottom: 1px solid #000000;
-    border-radius: 0;
-    padding: 1%;
-    background-color: transparent;
-    box-shadow: none;
-}
-
-
-#btnEnviar{
+#btnIngresar{
     background-color: #6D0E0E;
-    margin-right: 27rem;
-    width: 200px;
     border-radius: 5px;
-}
-
-/*Estilos para el ingreso del código*/
-
-#imgLogoCo{
-    margin-right: 2rem;
-    height: 200px;
-}
-
-.form-labelRCco{
-    margin-top: 7rem;
-    margin-right: 9rem;
-    font-size: 30px;
-    font-weight: bold;
-}
-
-#btnReenviar{
-    background-color: #6D0E0E;
-    margin-left: 19rem;
-    width: 200px;
-}
-
-#btnVerificar{
-    background-color: #6D0E0E;
-    margin-left: 0.2rem;
-    width: 150px;
-}
-
-#inputCodigo{
-    width: 62%;
-    border: none;
-    border-bottom: 1px solid #000000;
-    border-radius: 0;
-    padding: 1%;
-    background-color: transparent;
-    box-shadow: none;
-}
-
-#textoCodi{
-    margin-left: 27rem;
-    font-size: 20px;
 }
