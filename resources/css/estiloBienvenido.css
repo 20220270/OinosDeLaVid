@@ -1,0 +1,17 @@
+.imagenLogoB{
+    display: flex;
+    justify-content: center;
+}
+
+.imagenvino{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    background-color: brown;
+    color: white;
+}
