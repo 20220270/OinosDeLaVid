@@ -1,0 +1,22 @@
+.col{
+    text-align: center;
+}
+
+
+element.style {
+    background: brown;
+}
+
+#txtCategoria{
+    background-color: rgb(90, 0, 0);
+    color: azure;
+}
+
+.card{
+    image-rendering: 300px;
+}
+
+thead{
+    background-color: #6D0202;
+    color: white;
+}

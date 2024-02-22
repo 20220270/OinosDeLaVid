@@ -1,7 +1,6 @@
-const HEADER = document.querySelector('header');
+const DIV = document.querySelector('header');
 
-HEADER.innerHTMLMAIN.insertAdjacentHTML('beforebegin', `
-<header>
+DIV.innerHTMLMAIN.insertAdjacentHTML('beforebegin', `
 <div class="red-bar" id="barra"></div>
 
 <div class="container text-center">
@@ -18,5 +17,5 @@ HEADER.innerHTMLMAIN.insertAdjacentHTML('beforebegin', `
     </div>
 
     <hr>
-</header>
+
 `);
