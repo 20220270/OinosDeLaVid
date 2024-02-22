@@ -23,7 +23,8 @@
                 <div class="container-sm">
                     <form class="d-flex">
 
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="Search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                            id="Search">
 
                     </form>
                 </div>
@@ -32,28 +33,112 @@
     </div>
     <br>
 
+    <div class="col-11 table-wrapper">
+        <table class="table table-hover">
+            <!-- Encabezado de la tabla para mostrar la cantidad de registros y los títulos de las columnas -->
+            <thead>
+                <tr>
+                    <td colspan="7" id="Filas"></td>
+                </tr>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre completo</th>
+                    <th>Correo</th>
+                    <th>Alias</th>
+                    <th>Clave</th>
+                    <th>Fecha de registro</th>
+                    <th>Acciones</th>
+                </tr>
 
-    <table class="table table-hover">
-        <!-- Encabezado de la tabla para mostrar la cantidad de registros y los títulos de las columnas -->
-        <thead>
-            <tr>
-                <td colspan="6" id="Filas"></td>
-            </tr>
-            <tr>
-                <th>ID</th>
-                <th>Nombre completo</th>
-                <th>Correo</th>
-                <th>Alias</th>
-                <th>Clave</th>
-                <th>Fecha de registro</th>
-            </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="col-8">
+                            <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
+                                <i class="bi bi-search"></i>
+                                <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
+                                    class="mb-1">
 
-        </thead>
-        <!-- Cuerpo de la tabla para mostrar un registro por fila -->
-        <tbody id="tableBody"></tbody>
+                            </button>
+                            <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar">
+                                <i class="bi bi-x-square-fill"></i>
+                                <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px"
+                                    height="30px" class="mb-1">
+                            </button>
+
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="col-8">
+                            <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
+                                <i class="bi bi-search"></i>
+                                <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
+                                    class="mb-1">
+
+                            </button>
+                            <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar">
+                                <i class="bi bi-x-square-fill"></i>
+                                <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px"
+                                    height="30px" class="mb-1">
+                            </button>
+
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="col-8">
+                            <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
+                                <i class="bi bi-search"></i>
+                                <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="btnEliminar" width="30px"
+                                    height="30px" class="mb-1">
+
+                            </button>
+                            <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar">
+                                <i class="bi bi-x-square-fill"></i>
+                                <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="btnActualizar"
+                                    width="30px" height="30px" class="mb-1">
+                            </button>
+
+                        </div>
+                    </td>
+                </tr>
+
+            </thead>
+            <!-- Cuerpo de la tabla para mostrar un registro por fila -->
+            <tbody id="tableBody"></tbody>
 
 
-    </table>
+        </table>
+    </div>
+
+
+    <div class="text-center">
+        <button class="btn mt-4 fw-semibold" id="btnRegistrar" name="btnIngresar">
+            <i class="bi bi-x-square-fill"></i>
+            <img src="../../resources/Imagenes/btnAgregarIMG.png" alt="" width="60px" height="60px" class="mb-1">
+
+        </button>
+    </div>
 
 
     <!-- Llamada al controlador de la página web -->
