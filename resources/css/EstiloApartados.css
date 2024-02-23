@@ -39,3 +39,39 @@ thead{
     max-width: 1200px;
 }
 
+.div-text{
+    margin-top: 1%;
+}
+
+.containerB{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 8%;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px; /* Ajusta el espaciado a tu gusto */
+    transform: translateY(-50%);
+    width: 20px; /* Ajusta el tamaño del icono a tu gusto */
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+}
+
+#imagenLL, 
+#irSitioP{
+    width: 160px;
+    margin-bottom: 2rem;
+}
+
+#LogoTwiiter,
+#LogoInsta{
+    width: 30px;
+}
+
+#Search{
+    width: 750px;
+    padding-left: 5%;
+}
