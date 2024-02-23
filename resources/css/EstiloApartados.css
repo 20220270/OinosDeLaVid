@@ -16,10 +16,13 @@ element.style {
     image-rendering: 300px;
 }
 
-thead{
-    background-color: #6D0202;
-    color: white;
-}
+
+.th{
+    background-color: brown;
+    color: white; 
+    
+    padding: 10px;
+  }
 
 #Search{
     box-shadow: none;
