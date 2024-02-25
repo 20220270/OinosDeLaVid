@@ -1,0 +1,29 @@
+.col1{
+    background-color: rgb(145, 0, 0);
+    color: rgb(245, 241, 241);
+    text-align: center;
+}
+
+
+#txtNproducto{
+    margin-top: 20%;
+}
+
+#imgAG{
+    margin-top: 30%;
+}
+
+#txtDesc{
+    margin-top: 17%;
+}
+
+#txtEstado{
+    margin-top: 15%;
+}
+
+#btnEnviar{
+    margin-top: 18%;
+    text-align: center;
+}
+
+
