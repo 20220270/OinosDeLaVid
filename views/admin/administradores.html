@@ -45,14 +45,38 @@
         </button>
     </div>
 
-    
+    <div class="container mt-5">
+        <button type="button" class="btn btn-primary" id="btnAbrirModal">Abrir Modal</button>
+      </div>
+      
+      <!-- Ventana modal -->
+      <div class="modal" id="miModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Encabezado de la ventana modal -->
+            <div class="modal-header">
+              <h5 class="modal-title">Mi Ventana Modal</h5>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Contenido de la ventana modal -->
+            <div class="modal-body">
+              <p>¡Hola! Esta es una ventana modal de ejemplo.</p>
+            </div>
+            <!-- Pie de la ventana modal -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
     <div class="col-11 table-wrapper">
         <table class="table table-hover">
             <!-- Encabezado de la tabla para mostrar la cantidad de registros y los títulos de las columnas -->
             <thead>
                 <tr>
-                    <td colspan="7" id="Filas"></td>
+                    <td colspan="8" id="Filas"></td>
                 </tr>
                 <tr>
                     <th>ID</th>
@@ -61,6 +85,7 @@
                     <th>Alias</th>
                     <th>Clave</th>
                     <th>Fecha de registro</th>
+                    <th>Nivel de usuario</th>
                     <th>Acciones</th>
                 </tr>
 
@@ -71,29 +96,6 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>
-                        <div class="col-8">
-                            <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
-                                <i class="bi bi-search"></i>
-                                <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                                    class="mb-1">
-
-                            </button>
-                            <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar">
-                                <i class="bi bi-x-square-fill"></i>
-                                <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px"
-                                    height="30px" class="mb-1">
-                            </button>
-
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
                     <td></td>
                     <td>
                         <div class="col-8">
@@ -119,18 +121,44 @@
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td></td>
                     <td>
                         <div class="col-8">
                             <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
                                 <i class="bi bi-search"></i>
-                                <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="btnEliminar" width="30px"
-                                    height="30px" class="mb-1">
+                                <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
+                                    class="mb-1">
 
                             </button>
                             <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar">
                                 <i class="bi bi-x-square-fill"></i>
-                                <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="btnActualizar"
-                                    width="30px" height="30px" class="mb-1">
+                                <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px"
+                                    height="30px" class="mb-1">
+                            </button>
+
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="col-8">
+                            <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
+                                <i class="bi bi-search"></i>
+                                <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
+                                    class="mb-1">
+
+                            </button>
+                            <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar">
+                                <i class="bi bi-x-square-fill"></i>
+                                <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px"
+                                    height="30px" class="mb-1">
                             </button>
 
                         </div>
@@ -150,16 +178,20 @@
 
 
     <footer>
-        
+
 
     </footer>
 
 
 
     <!-- Llamada al controlador de la página web -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../controllers/utils/Apartados.js"></script>
     <script type="text/javascript" src="../../controllers/admin/administrador.js"></script>
     <script type="text/javascript" src="../../controllers/utils/footer.js"></script>
+    <script type="text/javascript" src="../../controllers/utils/admin.js"></script>
 
 </body>
 
