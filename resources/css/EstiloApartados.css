@@ -17,12 +17,11 @@ element.style {
 }
 
 
-.th{
-    background-color: brown;
-    color: white; 
-    
-    padding: 10px;
+th, td {
+    width: 2%; /* Divide el ancho total entre el número de columnas */
+    text-align: center;
   }
+
 
 #Search{
     box-shadow: none;
