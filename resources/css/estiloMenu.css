@@ -13,12 +13,14 @@
 
 #columnas{
     text-align: center;
-    margin-top: 8%;
 }
 
 #btnTodos{
     margin-top: 2%;
 
     margin-bottom: 2%;
+}
+#columnaaa{
+    margin-bottom: 10rem;
 }
 
