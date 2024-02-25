@@ -92,13 +92,9 @@ th, td {
     margin: 1.75rem auto;
   }
 
-  .modal-header,
-  #btnGuardar,
-  #btnCerrar{
+  .modal-header{
     background-color: #6d0e0e;
     color: #ffffff;
   }
-
-
   
 
