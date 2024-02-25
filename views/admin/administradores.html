@@ -45,7 +45,7 @@
         </button>
     </div>
 
-    <!-- Ventana modal -->
+    <!-- Ventana modal para agregar-->
     <div class="modal" id="miModal" data-backdrop="static">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
@@ -102,14 +102,15 @@
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
                                         <option value="3">Three</option>
-                                      </select>
-                                  </div>
+                                    </select>
+                                </div>
                             </div>
 
                         </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-dark" id="btnGuardar">Guardar</button>
-                            <button type="button" class="btn btn-dark" data-dismiss="modal" id="btnCerrar">Cerrar</button>
+                            <button type="button" class="btn btn-dark" data-dismiss="modal"
+                                id="btnCerrar">Cerrar</button>
                         </div>
                     </form>
                 </div>
@@ -224,6 +225,112 @@
 
     </div>
 
+
+    <!-- Ventana modal para actualizar-->
+    <div class="modal" id="miModal2" data-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Encabezado de la ventana modal -->
+                <div class="modal-header">
+                    <h5 class="modal-title text-align-center">Actualizar datos</h5>
+                </div>
+                <!-- Contenido de la ventana modal -->
+                <div class="modal-body">
+                    <form id="saveForm">
+                        <div class="modal-body row g-3">
+                            <!-- Campo oculto para asignar el id del registro al momento de modificar -->
+                            <input type="hidden" id="idCategoria" name="idCategoria">
+                            <div class="col-sm-12 col-md-6" id="columnas">
+                                <label for="nombreCategoria" class="form-label">Nombre del administrador</label>
+                                <input id="nombreCategoria" type="text" name="nombreCategoria" class="form-control"
+                                    required>
+                            </div>
+                            <div class="col-sm-12 col-md-6" id="columnas">
+                                <label for="descripcionCategoria" class="form-label">Apellido del administrador</label>
+                                <input id="descripcionCategoria" type="text" name="descripcionCategoria"
+                                    class="form-control">
+                            </div>
+
+                            <div class="col-sm-12 col-md-6" id="columnas">
+                                <label for="descripcionCategoria" class="form-label">Correo del administrador</label>
+                                <input id="descripcionCategoria" type="text" name="descripcionCategoria"
+                                    class="form-control">
+                            </div>
+
+                            <div class="col-sm-12 col-md-6" id="columnas">
+                                <label for="descripcionCategoria" class="form-label">Alias del administrador</label>
+                                <input id="descripcionCategoria" type="text" name="descripcionCategoria"
+                                    class="form-control">
+                            </div>
+
+                            <div class="col-sm-12 col-md-6" id="columnas">
+                                <label for="descripcionCategoria" class="form-label">Nivel del administrador</label>
+                                <div class="dropdown">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seleccione el nivel de usuario</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-dark" id="btnGuardar">Guardar</button>
+                            <button type="button" class="btn btn-dark" data-dismiss="modal"
+                                id="btnCerrar">Cerrar</button>
+                            <button type="button" class="btn btn-dark" data-dismiss="modal" id="btnContra">Actualizar
+                                Contraseña</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+                
+    <!-- Ventana modal para actualizar contraseña-->
+    <div class="modal" id="miModal3" data-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Encabezado de la ventana modal -->
+                <div class="modal-header">
+                    <h5 class="modal-title text-align-center">Actualizar contraseña</h5>
+                </div>
+                <!-- Contenido de la ventana modal -->
+                <div class="modal-body">
+                    <form id="saveForm">
+                        <div class="modal-body row g-3">
+                            <!-- Campo oculto para asignar el id del registro al momento de modificar -->
+                            <input type="hidden" id="idCategoria" name="idCategoria">
+                            <div class="col-sm-12 col-md-6" id="columnas">
+                                <label for="nombreCategoria" class="form-label">Nueva contraseña</label>
+                                <input id="nombreCategoria" type="password" name="nombreCategoria" class="form-control"
+                                    required>
+                            </div>
+                            <div class="col-sm-12 col-md-6" id="columnas">
+                                <label for="descripcionCategoria" class="form-label">Confirmar contraseña</label>
+                                <input id="descripcionCategoria" type="password" name="descripcionCategoria"
+                                    class="form-control">
+                            </div>
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-dark" id="btnGuardar">Guardar</button>
+                            <button type="button" class="btn btn-dark" data-dismiss="modal"
+                                id="btnCerrar">Cerrar</button>
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     <footer>
 

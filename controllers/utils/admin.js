@@ -6,4 +6,16 @@ $(document).ready(function(){
     });
   });
 
+  $(document).ready(function(){
+    $("#btnActualizar").click(function(){
+      $("#miModal2").modal("show");
+    });
+  });
+
+  $(document).ready(function(){
+    $("#btnContra").click(function(){
+      $("#miModal3").modal("show");
+    });
+  });
+
 
