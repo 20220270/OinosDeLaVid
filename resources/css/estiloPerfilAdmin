@@ -1,0 +1,22 @@
+.col1{
+    background-color: rgb(145, 0, 0);
+    color: rgb(145, 0, 0);
+}
+
+.col{
+    background-color: azure;
+    text-align: center;
+    margin-top: 1%;
+}
+
+#agg{
+    background-color:#6D0E0E    ;
+}
+
+#mi-imagen { width: 100px; height: 100px; } 
+
+.row{
+    text-align: center;
+}
+
+
