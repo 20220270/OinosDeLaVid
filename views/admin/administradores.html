@@ -47,28 +47,85 @@
 
     <div class="container mt-5">
         <button type="button" class="btn btn-primary" id="btnAbrirModal">Abrir Modal</button>
-      </div>
-      
-      <!-- Ventana modal -->
-      <div class="modal" id="miModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <!-- Encabezado de la ventana modal -->
-            <div class="modal-header">
-              <h5 class="modal-title">Mi Ventana Modal</h5>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+
+    <!-- Ventana modal -->
+    <div class="modal" id="miModal" data-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Encabezado de la ventana modal -->
+                <div class="modal-header">
+                    <h5 class="modal-title text-align-center">Registrar nuevo administrador</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Contenido de la ventana modal -->
+                <div class="modal-body">
+                    <form id="saveForm">
+                        <div class="modal-body row g-3">
+                            <!-- Campo oculto para asignar el id del registro al momento de modificar -->
+                            <input type="hidden" id="idCategoria" name="idCategoria">
+                            <div class="col-sm-12 col-md-6" id="columnas">
+                                <label for="nombreCategoria" class="form-label">Nombre del administrador</label>
+                                <input id="nombreCategoria" type="text" name="nombreCategoria" class="form-control"
+                                    required>
+                            </div>
+                            <div class="col-sm-12 col-md-6" id="columnas">
+                                <label for="descripcionCategoria" class="form-label">Apellido del administrador</label>
+                                <input id="descripcionCategoria" type="text" name="descripcionCategoria"
+                                    class="form-control">
+                            </div>
+
+                            <div class="col-sm-12 col-md-6" id="columnas">
+                                <label for="descripcionCategoria" class="form-label">Correo del administrador</label>
+                                <input id="descripcionCategoria" type="text" name="descripcionCategoria"
+                                    class="form-control">
+                            </div>
+
+                            <div class="col-sm-12 col-md-6" id="columnas">
+                                <label for="descripcionCategoria" class="form-label">Alias del administrador</label>
+                                <input id="descripcionCategoria" type="text" name="descripcionCategoria"
+                                    class="form-control">
+                            </div>
+
+                            <div class="col-sm-12 col-md-6" id="columnas">
+                                <label for="descripcionCategoria" class="form-label">Clave del administrador</label>
+                                <input id="descripcionCategoria" type="text" name="descripcionCategoria"
+                                    class="form-control">
+                            </div>
+
+                            <div class="col-sm-12 col-md-6" id="columnas">
+                                <label for="descripcionCategoria" class="form-label">Confirmar clave</label>
+                                <input id="descripcionCategoria" type="text" name="descripcionCategoria"
+                                    class="form-control">
+                            </div>
+
+                            <div class="col-sm-12 col-md-6" id="columnas">
+                                <label for="descripcionCategoria" class="form-label">Nivel del administrador</label>
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      Seleccione el nivel de usuario
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                      <li><a class="dropdown-item active" href="#">Action</a></li>
+                                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                      <li><hr class="dropdown-divider"></li>
+                                      <li><a class="dropdown-item" href="#">Separated link</a></li>
+                                    </ul>
+                                  </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnCerrar">Cerrar</button>
+                        </div>
+                    </form>
+                </div>
+
             </div>
-            <!-- Contenido de la ventana modal -->
-            <div class="modal-body">
-              <p>¡Hola! Esta es una ventana modal de ejemplo.</p>
-            </div>
-            <!-- Pie de la ventana modal -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
 
 
     <div class="col-11 table-wrapper">
@@ -186,8 +243,8 @@
 
     <!-- Llamada al controlador de la página web -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../controllers/utils/Apartados.js"></script>
     <script type="text/javascript" src="../../controllers/admin/administrador.js"></script>
     <script type="text/javascript" src="../../controllers/utils/footer.js"></script>

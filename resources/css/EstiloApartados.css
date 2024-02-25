@@ -54,9 +54,9 @@ th, td {
 .search-icon {
     position: absolute;
     top: 50%;
-    left: 10px; /* Ajusta el espaciado a tu gusto */
+    left: 10px; 
     transform: translateY(-50%);
-    width: 20px; /* Ajusta el tamaño del icono a tu gusto */
+    width: 20px;
     height: auto;
     z-index: 1;
     pointer-events: none;
@@ -77,3 +77,28 @@ th, td {
     width: 750px;
     padding-left: 5%;
 }
+
+/*Modal*/
+
+.modal-content {
+
+    margin: auto;
+    margin-top: 100px; /* Espacio arriba personalizado */
+  }
+  
+  .modal-dialog {
+    width: 100%; /* Ancho personalizado */
+    max-width: 1000px; /* Ancho máximo personalizado */
+    margin: 1.75rem auto;
+  }
+
+  .modal-header,
+  #btnGuardar,
+  #btnCerrar{
+    background-color: #6d0e0e;
+    color: #ffffff;
+  }
+
+
+  
+
