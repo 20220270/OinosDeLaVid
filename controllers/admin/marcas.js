@@ -5,7 +5,7 @@ $(document).ready(function(){
   });
 
   $(document).ready(function(){
-    $("#btnActualizar").click(function(){
-      $("#miModalP2").modal("show");
+    $("#botonActu").click(function(){
+      $("#miModalM2").modal("show");
     });
   });
