@@ -11,3 +11,8 @@ h3{
     background-color: transparent;
     border: none;
 }
+
+.modal-content{
+    max-width: 70%;
+
+}
