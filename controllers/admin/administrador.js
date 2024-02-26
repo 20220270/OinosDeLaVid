@@ -82,7 +82,7 @@ $(document).ready(function () {
 //Ventana modal para mostrar la actualización de contraseña
 $(document).ready(function () {
   $("#btnGuardarContraseña").click(function () {
-    $("#miModalAC").modal("show");
+    $("#miModalACCon").modal("show");
   });
   $("#btnGuardarContraseña").click(function () {
     $("#miModal3").modal("hide");
