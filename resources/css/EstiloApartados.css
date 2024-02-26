@@ -28,9 +28,19 @@ th, td {
     
 }
 
+#labelsinputs{
+    border: none;
+    border-bottom: 1px solid #000000;
+    border-radius: 0;
+    padding: 1%;
+    background-color: transparent;
+    box-shadow: none;
+}
+
 #btnEliminar,
 #btnActualizar,
-#btnAgregar{
+#btnAgregar,
+#btnMostrar{
     background-color: transparent;
     border: none;
 }

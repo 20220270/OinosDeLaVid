@@ -1,14 +1,5 @@
-.col{
-    text-align: center;
-}
-
-
-element.style {
-    background: brown;
-}
-
-#txtCategoria11{
-    background: brown;
+#txtCategoria1{
+    background-color: rgb(156, 1, 1);
     color: azure;
 }
 
@@ -16,11 +7,9 @@ h3{
     margin-top: 1.3rem;
 }
 
-.card{
-    image-rendering: 300px;
-}
-
-#labelsinputs{
+#nombreCategoria,
+.form-select,
+#descripcionCategoria{
     border: none;
     border-bottom: 1px solid #000000;
     border-radius: 0;
