@@ -48,81 +48,6 @@
         </button>
     </div>
 
-    <!-- Ventana modal para agregar-->
-    <div class="modal" id="miModal" data-backdrop="static">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <!-- Encabezado de la ventana modal -->
-                <div class="modal-header">
-                    <h5 class="modal-title text-align-center">Registrar nuevo administrador</h5>
-                </div>
-                <!-- Contenido de la ventana modal -->
-                <div class="modal-body">
-                    <form id="saveForm">
-                        <div class="modal-body row g-3">
-                            <!-- Campo oculto para asignar el id del registro al momento de modificar -->
-                            <input type="hidden" id="idCategoria" name="idCategoria">
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="nombreCategoria" class="form-label">Nombre del administrador</label>
-                                <input id="nombreCategoria" type="text" name="nombreCategoria" class="form-control"
-                                    required>
-                            </div>
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="descripcionCategoria" class="form-label">Apellido del administrador</label>
-                                <input id="descripcionCategoria" type="text" name="descripcionCategoria"
-                                    class="form-control">
-                            </div>
-
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="descripcionCategoria" class="form-label">Correo del administrador</label>
-                                <input id="descripcionCategoria" type="text" name="descripcionCategoria"
-                                    class="form-control">
-                            </div>
-
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="descripcionCategoria" class="form-label">Alias del administrador</label>
-                                <input id="descripcionCategoria" type="text" name="descripcionCategoria"
-                                    class="form-control">
-                            </div>
-
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="descripcionCategoria" class="form-label">Clave del administrador</label>
-                                <input id="descripcionCategoria" type="text" name="descripcionCategoria"
-                                    class="form-control">
-                            </div>
-
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="descripcionCategoria" class="form-label">Confirmar clave</label>
-                                <input id="descripcionCategoria" type="text" name="descripcionCategoria"
-                                    class="form-control">
-                            </div>
-
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="descripcionCategoria" class="form-label">Nivel del administrador</label>
-                                <div class="dropdown">
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Seleccione el nivel de usuario</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-dark" id="btnGuardar">Guardar</button>
-                            <button type="button" class="btn btn-dark" data-dismiss="modal"
-                                id="btnCerrar">Cerrar</button>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
     <div class="col-11 table-wrapper">
         <table class="table table-hover">
             <!-- Encabezado de la tabla para mostrar la cantidad de registros y los títulos de las columnas -->
@@ -228,6 +153,82 @@
 
     </div>
 
+<!--Modals-->
+
+<!-- Ventana modal para agregar-->
+<div class="modal" id="miModal" data-backdrop="static">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Encabezado de la ventana modal -->
+            <div class="modal-header">
+                <h5 class="modal-title text-align-center">Registrar nuevo administrador</h5>
+            </div>
+            <!-- Contenido de la ventana modal -->
+            <div class="modal-body">
+                <form id="saveForm">
+                    <div class="modal-body row g-3">
+                        <!-- Campo oculto para asignar el id del registro al momento de modificar -->
+                        <input type="hidden" id="idCategoria" name="idCategoria">
+                        <div class="col-sm-12 col-md-6" id="columnas">
+                            <label for="nombreCategoria" class="form-label">Nombre del administrador</label>
+                            <input id="nombreCategoria" type="text" name="nombreCategoria" class="form-control"
+                                required>
+                        </div>
+                        <div class="col-sm-12 col-md-6" id="columnas">
+                            <label for="descripcionCategoria" class="form-label">Apellido del administrador</label>
+                            <input id="descripcionCategoria" type="text" name="descripcionCategoria"
+                                class="form-control">
+                        </div>
+
+                        <div class="col-sm-12 col-md-6" id="columnas">
+                            <label for="descripcionCategoria" class="form-label">Correo del administrador</label>
+                            <input id="descripcionCategoria" type="text" name="descripcionCategoria"
+                                class="form-control">
+                        </div>
+
+                        <div class="col-sm-12 col-md-6" id="columnas">
+                            <label for="descripcionCategoria" class="form-label">Alias del administrador</label>
+                            <input id="descripcionCategoria" type="text" name="descripcionCategoria"
+                                class="form-control">
+                        </div>
+
+                        <div class="col-sm-12 col-md-6" id="columnas">
+                            <label for="descripcionCategoria" class="form-label">Clave del administrador</label>
+                            <input id="descripcionCategoria" type="text" name="descripcionCategoria"
+                                class="form-control">
+                        </div>
+
+                        <div class="col-sm-12 col-md-6" id="columnas">
+                            <label for="descripcionCategoria" class="form-label">Confirmar clave</label>
+                            <input id="descripcionCategoria" type="text" name="descripcionCategoria"
+                                class="form-control">
+                        </div>
+
+                        <div class="col-sm-12 col-md-6" id="columnas">
+                            <label for="descripcionCategoria" class="form-label">Nivel del administrador</label>
+                            <div class="dropdown">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Seleccione el nivel de usuario</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-dark" id="btnGuardar">Guardar</button>
+                        <button type="button" class="btn btn-dark" data-dismiss="modal"
+                            id="btnCerrar">Cerrar</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 
     <!-- Ventana modal para actualizar-->
     <div class="modal" id="miModal2" data-backdrop="static">
@@ -280,7 +281,7 @@
 
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-dark" id="btnGuardar">Guardar</button>
+                            <button type="submit" class="btn btn-dark" id="btnActuA">Actualizar</button>
                             <button type="button" class="btn btn-dark" data-dismiss="modal"
                                 id="btnCerrar">Cerrar</button>
                             <button type="button" class="btn btn-dark" data-dismiss="modal" id="btnContra">Actualizar
@@ -323,7 +324,7 @@
 
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-dark" id="btnGuardar">Guardar</button>
+                            <button type="submit" class="btn btn-dark" id="btnGuardarContraseña">Guardar</button>
                             <button type="button" class="btn btn-dark" data-dismiss="modal"
                                 id="btnCerrar">Cerrar</button>
 
@@ -334,6 +335,130 @@
             </div>
         </div>
     </div>
+
+
+    <!--Modal para mostrar la inserción de un registro-->
+    <div class="modal" id="miModalR" data-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Contenido de la ventana modal -->
+                <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
+                    <form id="saveForm">
+                        <div class="d-flex justify-content-center align-items-center flex-column"> <!-- Agregamos clases para centrar vertical y horizontalmente -->
+                            <img src="../../resources/Imagenes/exito.png" alt="">
+                            <br>
+                            <h4 class="text-align-center">¡Registro realizado con éxito!</h4>
+                            <br>
+                            <h6 class="text-align-center">Se ha realizado un nuevo registro.</h6>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center"> <!-- Agregamos clases para centrar horizontalmente -->
+                            <button type="button" class="btn btn-dark" data-dismiss="modal"
+                            id="btnCerrar">Cerrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Primera Modal para mostrar la eliminación de un registro-->
+    <div class="modal" id="miModalDe" data-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Contenido de la ventana modal -->
+                <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
+                    <form id="saveForm">
+                        <div class="d-flex justify-content-center align-items-center flex-column"> <!-- Agregamos clases para centrar vertical y horizontalmente -->
+                            <img src="../../resources/Imagenes/pregunta.png" alt="">
+                            <br>
+                            <h4 class="text-align-center">¿Desea realmente eliminar este dato?</h4>
+                            <br>
+                            <h6 class="text-align-center">Se eliminará el dato para siempre.</h6>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center"> <!-- Agregamos clases para centrar horizontalmente -->
+                            <button type="button" class="btn btn-dark" id="btnElimin">Eliminar</button>
+                            <button type="button" class="btn btn-dark btn-block" data-dismiss="modal" id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Segunda Modal para mostrar la eliminación de un registro-->
+    <div class="modal" id="miModalDe2" data-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Contenido de la ventana modal -->
+                <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
+                    <form id="saveForm">
+                        <div class="d-flex justify-content-center align-items-center flex-column"> <!-- Agregamos clases para centrar vertical y horizontalmente -->
+                            <img src="../../resources/Imagenes/exito.png" alt="">
+                            <br>
+                            <h4 class="text-align-center">¡Registro eliminado con éxito!</h4>
+                            <br>
+                            <h6 class="text-align-center">Se ha eliminado un registro.</h6>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center"> <!-- Agregamos clases para centrar horizontalmente -->
+                            <button type="button" class="btn btn-dark btn-block" data-dismiss="modal" id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!--Primera Modal para mostrar la actualización de un registro-->
+    <div class="modal" id="miModalAC" data-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Contenido de la ventana modal -->
+                <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
+                    <form id="saveForm">
+                        <div class="d-flex justify-content-center align-items-center flex-column"> <!-- Agregamos clases para centrar vertical y horizontalmente -->
+                            <img src="../../resources/Imagenes/exito.png" alt="">
+                            <br>
+                            <h4 class="text-align-center">¡Registro actualizado con éxito!</h4>
+                            <br>
+                            <h6 class="text-align-center">Se ha actualizado un registro.</h6>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center"> <!-- Agregamos clases para centrar horizontalmente -->
+                            <button type="submit" class="btn btn-dark btn-block" data-dismiss="modal" id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!-- Segunda Modal para mostrar la actualización de un registro-->
+    <div class="modal" id="miModalACCon" data-bs-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Contenido de la ventana modal -->
+                <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
+                    <form id="saveForm">
+                        <div class="d-flex justify-content-center align-items-center flex-column"> <!-- Agregamos clases para centrar vertical y horizontalmente -->
+                            <img src="../../resources/Imagenes/exito.png" alt="">
+                            <br>
+                            <h4 class="text-align-center">¡Contraseña actualizada con éxito!</h4>
+                            <br>
+                            <h6 class="text-align-center">Se ha actualizado la contraseña.</h6>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center"> <!-- Agregamos clases para centrar horizontalmente -->
+                            <button type="button" class="btn btn-dark btn-block" data-bs-dismiss="modal" id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <footer>
+
+    </footer>
 
     <footer>
 
