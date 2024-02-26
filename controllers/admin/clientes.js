@@ -1,0 +1,13 @@
+$(document).ready(function(){
+    $("#btnEliminar").click(function(){
+        $("#miModalDe").modal("show");
+    });
+});
+$(document).ready(function(){
+    $("#btnElimin").click(function(){
+        $("#miModalDe2").modal("show");
+    });
+    $("#btnElimin").click(function(){
+        $("#miModalDe").modal("hide");
+    });
+});
