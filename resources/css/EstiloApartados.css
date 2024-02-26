@@ -17,6 +17,7 @@ element.style {
 }
 
 
+
 th, td {
     width: 2%; /* Divide el ancho total entre el número de columnas */
     text-align: center;
@@ -40,7 +41,8 @@ th, td {
 #btnEliminar,
 #btnActualizar,
 #btnAgregar,
-#btnMostrar{
+#btnMostrar,
+#mostrarPedidos{
     background-color: transparent;
     border: none;
 }
