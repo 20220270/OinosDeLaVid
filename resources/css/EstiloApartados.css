@@ -42,7 +42,8 @@ th, td {
 #btnActualizar,
 #btnAgregar,
 #btnMostrar,
-#mostrarPedidos{
+#mostrarPedidos,
+#mostrarValoracion{
     background-color: transparent;
     border: none;
 }
