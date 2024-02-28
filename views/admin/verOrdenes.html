@@ -227,6 +227,70 @@
         </div>
     </div>
 
+    <!--Modal para actualizar el estado de la orden-->
+
+    <div class="modal" id="modalActualizarEstado" data-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Encabezado de la ventana modal -->
+                <div class="modal-header">
+                    <h5 class="modal-title text-align-center">Actualizar estado de la órden</h5>
+                </div>
+                <!-- Contenido de la ventana modal -->
+                <div class="modal-body ">
+                    <form id="saveForm">
+                        <div class="col-sm-12 col-md-12" id="columnas">
+                            <label for="descripcionCategoria" class="form-label">Estado de la órden:</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Seleccione el estado de la órden</option>
+                                <option value="1">Entregada</option>
+                                <option value="2">Anulada</option>
+                                <option value="3">Finalizada</option>
+                                <option value="4">Pendiente</option>
+
+                            </select>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-dark" id="btnActualizarR">Actualizar</button>
+                            <button type="submit" class="btn btn-dark" data-bs-dismiss="modal"
+                                id="btnCerrar">Cerrar</button>
+
+                        </div>
+                </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <!-- Modal para mostrar la actualización del estado de la orden-->
+    <div class="modal" id="miModalACEs" data-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Contenido de la ventana modal -->
+                <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
+                    <form id="saveForm">
+                        <div class="d-flex justify-content-center align-items-center flex-column">
+                            <!-- Agregamos clases para centrar vertical y horizontalmente -->
+                            <img src="../../resources/Imagenes/exito.png" alt="">
+                            <br>
+                            <h4 class="text-align-center">Estado de la orden actualizado</h4>
+                            <br>
+                            <h6 class="text-align-center">Se ha actualizado correctamente el estado de la órden.</h6>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center">
+                            <!-- Agregamos clases para centrar horizontalmente -->
+                            <button type="button" class="btn btn-dark btn-block" data-dismiss="modal"
+                                id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
 
     </footer>
