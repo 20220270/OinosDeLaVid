@@ -19,3 +19,7 @@ document.getElementById("btnClientes").addEventListener("click", function () {
 document.getElementById("btnAdmins").addEventListener("click", function () {
     window.location.href = "../../views/admin/administradores.html";
   });
+    //método para que un botón abra una ventana
+document.getElementById("btnCerrarCe").addEventListener("click", function () {
+  window.location.href = "../../views/admin/index.html";
+});

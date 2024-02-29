@@ -14,20 +14,26 @@ HEADER.innerHTML = `
 <div class="container col1">
             <div class="row row-cols-2 row-cols-lg-3">
 
-                <div class="col-2 col-lg-2 col-md-3 col-sm-3" id="btnProductos">
+            <div class="col-2 col-lg-3 col-md-1 col-sm-2" id="btnCerrarCe">
+            <button type="button" class="btn btn-dark">
+                <img src="../../resources/Imagenes/cerrarS.png" id="imagenC" alt="" height="20px" width="20px">
+                Cerrar sesión</button>
+        </div>
+
+                <div class="col-2 col-lg-2 col-md-2 col-sm-2" id="btnProductos">
                     <button type="button" class="btn btn-dark">Productos</button>
                 </div>
 
-                <div class="col-2 col-lg-3 col-md-3 col-sm-3" id="btnCatego">
+                <div class="col-2 col-lg-2 col-md-2 col-sm-2" id="btnCatego">
                     <button type="button" class="btn btn-dark">Categorias</button>
                 </div>
-                <div class="col-1 col-lg-2 col-md-2 col-sm-2" id="btnMarcas">
+                <div class="col-1 col-lg-2 col-md-2 col-sm-1" id="btnMarcas">
                     <button type="button" class="btn btn-dark">Marcas</button>
                 </div>
-                <div class="col-1 col-lg-2 col-md-3 col-sm-2" id="btnClientes">
+                <div class="col-1 col-lg-2 col-md-2 col-sm-2" id="btnClientes">
                     <button type="button" class="btn btn-dark">Clientes</button>
                 </div>
-                <div class="col-2 col-lg-3 col-md-1 col-sm-2" id="btnAdmins">
+                <div class="col-2 col-lg-1 col-md-1" id="btnAdmins">
                     <button type="button" class="btn btn-dark">Administradores</button>
                 </div>
 
