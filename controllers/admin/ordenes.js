@@ -29,3 +29,4 @@ $(document).ready(function(){
 document.getElementById("mostrarValoracion").addEventListener("click", function () {
     window.location.href = "../../views/admin/Valoraciones.html";
   });
+  

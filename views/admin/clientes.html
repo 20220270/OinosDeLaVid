@@ -11,10 +11,12 @@
 </head>
 
 <body>
+    <!-- Nav Bar que aparece en la parte de arriba de cada pantalla, enviado desde el archivo Apartados.js-->
     <nav>
 
     </nav>
 
+    <!-- Barra roja con el apartado -->
     <div class="container mt-4">
         <div class="row">
             <div class="col" id="txtCategoria">
@@ -23,6 +25,7 @@
                 </div>
 
             </div>
+            <!-- Barra de busqueda-->
             <div class="col">
                 <div class="container-sm mt-2">
                     <form class="d-flex">
@@ -35,6 +38,7 @@
                     </form>
                 </div>
             </div>
+            <!--Botón para ver la pantalla de pedidos-->
             <div class="col">
                 <button type="submit" class="btn btn-success mt-1" id="mostrarPedidos">
                     <i class="bi bi-search"></i>
@@ -68,15 +72,15 @@
                 </tr>
 
                 <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <th scope="row">1</th>
+                    <td>Iván Salguero</td>
+                    <td>00000000-0</td>
+                    <td>idse@gmail.com</td>
+                    <td>0000-0000</td>
+                    <td>Condominios Machado</td>
+                    <td>187ueue72yuheq72u1h1wjq</td>
+                    <td>05/02/2024</td>
+                    <td>Activo</td>
                     <td>
                         <div class="col-12">
                             <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
@@ -85,7 +89,7 @@
                                     class="mb-1">
                             </button>
                             
-                            <button type="submit" class="btn btn-success mt-1" id="mostrarPedidos">
+                            <button type="submit" class="btn btn-success mt-1" id="mostrarPedidosFiltados">
                                 <i class="bi bi-search"></i>
                                 <img src="../../resources/Imagenes/pedidos.png" alt="" width="30px" height="30px"
                                     class="mb-1">
@@ -94,15 +98,15 @@
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <th scope="row">2</th>
+                    <td>Santiago Montes</td>
+                    <td>00000000-0</td>
+                    <td>sm@gmail.com</td>
+                    <td>0000-0000</td>
+                    <td>Condominios Nueva Guinea</td>
+                    <td>187ueue72yuheq72u1h1wjq</td>
+                    <td>05/02/2024</td>
+                    <td>Inactivo</td>
                     <td>
                         <div class="col-12">
                             <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
@@ -111,7 +115,7 @@
                                     class="mb-1">
 
                             </button>
-                            <button type="submit" class="btn btn-success mt-1" id="mostrarPedidos">
+                            <button type="submit" class="btn btn-success mt-1" id="mostrarPedidosFiltados">
                                 <i class="bi bi-search"></i>
                                 <img src="../../resources/Imagenes/pedidos.png" alt="" width="30px" height="30px"
                                     class="mb-1">
@@ -122,15 +126,15 @@
                    
                 </tr>
                 <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <th scope="row">3</th>
+                    <td>Camila Sánchez</td>
+                    <td>00000000-0</td>
+                    <td>cami@gmail.com</td>
+                    <td>0000-0000</td>
+                    <td>Condominios Bella Mar</td>
+                    <td>187ueue72yuheq72u1h1wjq</td>
+                    <td>05/02/2024</td>
+                    <td>Activo</td>
                     <td>
                         <div class="col-12">
                             <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
@@ -138,7 +142,7 @@
                                 <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
                                     class="mb-1">
                             </button>
-                            <button type="submit" class="btn btn-success mt-1" id="mostrarPedidos">
+                            <button type="submit" class="btn btn-success mt-1" id="mostrarPedidosFiltados">
                                 <i class="bi bi-search"></i>
                                 <img src="../../resources/Imagenes/pedidos.png" alt="" width="30px" height="30px"
                                     class="mb-1">
@@ -209,9 +213,11 @@
 
     </footer>
 
+        <!-- Llamada a las librerías que utiliza javascript para el funcionamiento de la página web -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!-- Llamada a los controlador y utils de la página web -->
     <script type="text/javascript" src="../../controllers/utils/Apartados.js"></script>
     <script type="text/javascript" src="../../controllers/utils/footer.js"></script>
     <script type="text/javascript" src="../../controllers/admin/clientes.js"></script>

@@ -51,7 +51,9 @@ th, td {
 #btnAgregar,
 #btnMostrar,
 #mostrarPedidos,
-#mostrarValoracion{
+#mostrarValoracion,
+#mostrarPedidosFiltados
+{
     background-color: transparent;
     border: none;
 }
