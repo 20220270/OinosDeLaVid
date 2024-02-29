@@ -17,3 +17,18 @@ h3{
     background-color: transparent;
     box-shadow: none;
 }
+@media (max-width: 450px) {
+    #Search {
+        width: 350px;
+    }
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        left: 4px; 
+        transform: translateY(-50%);
+        width: 12px;
+        height: auto;
+        z-index: 1;
+        pointer-events: none;
+    }
+}

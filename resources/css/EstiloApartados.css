@@ -17,7 +17,6 @@ element.style {
 }
 
 
-
 th, td {
     width: 2%; /* Divide el ancho total entre el número de columnas */
     text-align: center;
@@ -119,5 +118,68 @@ th, td {
     background-color: #6d0e0e;
     color: #ffffff;
   }
+
+    /*Adaptar la barra de búsqueda*/
+@media (max-width: 450px) {
+        #Search {
+            width: 350px;
+        }
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            left: 4px; 
+            transform: translateY(-50%);
+            width: 12px;
+            height: auto;
+            z-index: 1;
+            pointer-events: none;
+        }
+    }
+
+@media (max-width: 576px) {
+    #Search {
+        width: 500px;
+    }
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        left: 10px; 
+        transform: translateY(-50%);
+        width: 12px;
+        height: auto;
+        z-index: 1;
+        pointer-events: none;
+    }
+}
+@media (max-width: 720px) {
+    #Search {
+        width: 460px;
+    }
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        left: 10px; 
+        transform: translateY(-50%);
+        width: 10px;
+        height: auto;
+        z-index: 1;
+        pointer-events: none;
+    }
+}
+@media (max-width: 1000px) {
+    #Search {
+        width: 460px;
+    }
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        left: 10px; 
+        transform: translateY(-50%);
+        width: 10px;
+        height: auto;
+        z-index: 1;
+        pointer-events: none;
+    }
+}
   
 

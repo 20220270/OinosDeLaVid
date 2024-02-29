@@ -1,3 +1,4 @@
+
 //método para que un botón abra una ventana
 document.getElementById("btnProductos").addEventListener("click", function () {
     window.location.href = "../../views/admin/productos.html";
