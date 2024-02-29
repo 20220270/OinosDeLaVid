@@ -120,7 +120,7 @@ th, td {
   }
 
     /*Adaptar la barra de búsqueda*/
-    @media (max-width: 450px) {
+@media (max-width: 450px) {
         #Search {
             width: 350px;
         }
