@@ -29,7 +29,15 @@ th, td {
     
 }
 
-#labelsinputs{
+#labelsinputs,
+#nombreAd,
+#ApellidoAd,
+#CorreoAd,
+#AliasAd,
+#ClaveAd,
+#ConfirmarCla,
+#selectN
+{
     border: none;
     border-bottom: 1px solid #000000;
     border-radius: 0;
