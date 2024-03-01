@@ -4,7 +4,7 @@
 
 
 /*estilo para el botón de login*/
-#btnIngresar {
+.btnIngresar {
 
     background-color: #6D0E0E;
     border-radius: 10px;
