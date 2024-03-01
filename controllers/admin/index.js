@@ -1,3 +1,4 @@
+/*Declaracion y obtencion de variables del inicio privado*/
 function login() {
     var user, pass;
 
@@ -12,3 +13,4 @@ function login() {
         alert("Datos Incorrectos");
     }
 }
+
