@@ -16,6 +16,17 @@ h3{
     max-width: 70%;
 
 }
+
+#nombreMarca,
+#inputImgMarca{
+    border: none;
+    border-bottom: 1px solid #000000;
+    border-radius: 0;
+    padding: 1%;
+    background-color: transparent;
+    box-shadow: none;
+}
+
 @media (max-width: 450px) {
     #Search {
         width: 350px;

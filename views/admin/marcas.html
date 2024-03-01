@@ -183,7 +183,7 @@
         </div>
     </div>
 
-<!--Aquí comienzan las modals-->
+    <!--Aquí comienzan las modals-->
 
     <!-- Ventana modal para agregar-->
     <div class="modal" id="miModalM" data-bs-backdrop="static">
@@ -199,21 +199,19 @@
                         <div class="modal-body row g-3">
                             <!-- Campo oculto para asignar el id del registro al momento de modificar -->
                             <input type="hidden" id="idCategoria" name="idCategoria">
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="nombreCategoria" class="form-label">Nombre de la marca:</label>
-                                <input id="nombreCategoria" type="text" name="nombreCategoria" class="form-control"
+                            <div class="col-sm-12 col-md-5 mt-1">
+                                <label for="descripcionCategoria" class="form-label">Nombre de la marca:</label>
+                                <input id="nombreMarca" type="text" name="descripcionProducto" class="form-control"
                                     placeholder="Ingrese el nombre de la marca" required>
                             </div>
 
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="descripcionCategoria" class="form-label">Imagen del producto:</label>
+                            <div class="col-sm-12 col-md-7 mt-1">
+                                <label for="descripcionCategoria" class="col-sm-7">Imagen del
+                                    producto:</label>
                                 <div class="position-relative">
-                                    <img src="../../resources/Imagenes/iconoImagen.png" alt="imagen icono"
-                                        style="position: absolute; top: 50%; transform: translateY(-50%); left: 5px;"
-                                        width="20px" height="20px">
-                                    <input id="descripcionCategoria" type="text" name="descripcionCategoria"
-                                        class="form-control" style="padding-left: 30px;"
-                                        placeholder="Formatos permitidos: .png, .jpg" required>
+                                    <div class="input-group mb-3 mt-1">
+                                        <input type="file" class="form-control" id="inputImgMarca">
+                                    </div>
                                 </div>
                             </div>
 
@@ -278,22 +276,25 @@
         </div>
     </div>
 
-<!--Modal para mostrar la inserción de un registro-->
+    <!--Modal para mostrar la inserción de un registro-->
     <div class="modal" id="miModalR" data-bs-backdrop="static">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <!-- Contenido de la ventana modal -->
                 <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
                     <form id="saveForm">
-                        <div class="d-flex justify-content-center align-items-center flex-column"> <!-- Agregamos clases para centrar vertical y horizontalmente -->
+                        <div class="d-flex justify-content-center align-items-center flex-column">
+                            <!-- Agregamos clases para centrar vertical y horizontalmente -->
                             <img src="../../resources/Imagenes/exito.png" alt="">
                             <br>
                             <h4 class="text-align-center">¡Registro realizado con éxito!</h4>
                             <br>
                             <h6 class="text-align-center">Se ha realizado un nuevo registro.</h6>
                         </div>
-                        <div class="modal-footer d-flex justify-content-center"> <!-- Agregamos clases para centrar horizontalmente -->
-                            <button type="button" class="btn btn-dark btn-block" data-bs-dismiss="modal" id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+                        <div class="modal-footer d-flex justify-content-center">
+                            <!-- Agregamos clases para centrar horizontalmente -->
+                            <button type="button" class="btn btn-dark btn-block" data-bs-dismiss="modal"
+                                id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
                         </div>
                     </form>
                 </div>
@@ -308,16 +309,20 @@
                 <!-- Contenido de la ventana modal -->
                 <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
                     <form id="saveForm">
-                        <div class="d-flex justify-content-center align-items-center flex-column"> <!-- Agregamos clases para centrar vertical y horizontalmente -->
+                        <div class="d-flex justify-content-center align-items-center flex-column">
+                            <!-- Agregamos clases para centrar vertical y horizontalmente -->
                             <img src="../../resources/Imagenes/pregunta.png" alt="">
                             <br>
                             <h4 class="text-align-center">¿Desea realmente eliminar este dato?</h4>
                             <br>
                             <h6 class="text-align-center">Se eliminará el dato para siempre.</h6>
                         </div>
-                        <div class="modal-footer d-flex justify-content-center"> <!-- Agregamos clases para centrar horizontalmente -->
-                            <button type="button" class="btn btn-dark btn-block" id="btnElim">Eliminar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
-                            <button type="button" class="btn btn-dark btn-block" data-bs-dismiss="modal" id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+                        <div class="modal-footer d-flex justify-content-center">
+                            <!-- Agregamos clases para centrar horizontalmente -->
+                            <button type="button" class="btn btn-dark btn-block" id="btnElim">Eliminar</button>
+                            <!-- Agregamos clase btn-block para ajustar el ancho -->
+                            <button type="button" class="btn btn-dark btn-block" data-bs-dismiss="modal"
+                                id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
                         </div>
                     </form>
                 </div>
@@ -332,15 +337,18 @@
                 <!-- Contenido de la ventana modal -->
                 <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
                     <form id="saveForm">
-                        <div class="d-flex justify-content-center align-items-center flex-column"> <!-- Agregamos clases para centrar vertical y horizontalmente -->
+                        <div class="d-flex justify-content-center align-items-center flex-column">
+                            <!-- Agregamos clases para centrar vertical y horizontalmente -->
                             <img src="../../resources/Imagenes/exito.png" alt="">
                             <br>
                             <h4 class="text-align-center">¡Registro eliminado con éxito!</h4>
                             <br>
                             <h6 class="text-align-center">Se ha eliminado un registro.</h6>
                         </div>
-                        <div class="modal-footer d-flex justify-content-center"> <!-- Agregamos clases para centrar horizontalmente -->
-                            <button type="button" class="btn btn-dark btn-block" data-bs-dismiss="modal" id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+                        <div class="modal-footer d-flex justify-content-center">
+                            <!-- Agregamos clases para centrar horizontalmente -->
+                            <button type="button" class="btn btn-dark btn-block" data-bs-dismiss="modal"
+                                id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
                         </div>
                     </form>
                 </div>
@@ -349,29 +357,32 @@
     </div>
 
 
-<!-- Primera Modal para mostrar la actualización de un registro-->
+    <!-- Primera Modal para mostrar la actualización de un registro-->
     <div class="modal" id="miModalAC" data-bs-backdrop="static">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <!-- Contenido de la ventana modal -->
                 <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
                     <form id="saveForm">
-                        <div class="d-flex justify-content-center align-items-center flex-column"> <!-- Agregamos clases para centrar vertical y horizontalmente -->
+                        <div class="d-flex justify-content-center align-items-center flex-column">
+                            <!-- Agregamos clases para centrar vertical y horizontalmente -->
                             <img src="../../resources/Imagenes/exito.png" alt="">
                             <br>
                             <h4 class="text-align-center">¡Registro actualizado con éxito!</h4>
                             <br>
                             <h6 class="text-align-center">Se ha actualizado un registro.</h6>
                         </div>
-                        <div class="modal-footer d-flex justify-content-center"> <!-- Agregamos clases para centrar horizontalmente -->
-                            <button type="button" class="btn btn-dark btn-block" data-bs-dismiss="modal" id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+                        <div class="modal-footer d-flex justify-content-center">
+                            <!-- Agregamos clases para centrar horizontalmente -->
+                            <button type="button" class="btn btn-dark btn-block" data-bs-dismiss="modal"
+                                id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    
+
 
     <footer>
 
