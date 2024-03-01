@@ -13,8 +13,8 @@
 
 <body>
     <div>
-                
-            <!--esta en la barra del fondo color rojo  -->
+
+        <!--esta en la barra del fondo color rojo  -->
         <div class="red-bar" id="barra"></div>
         <div class="d-flex justify-content-center p-3">
 
@@ -49,7 +49,7 @@
         <div class="container">
             <form class="row">
                 <div class="col-sm-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mt-4">
-                    <label for="correo" class="form-label">Alias del usuario:</label>
+                    <label for="textoAlias" class="form-label">Alias del usuario:</label>
 
                 </div>
 
@@ -67,7 +67,7 @@
 
                 <!--segundo campo -->
                 <div class="col-sm-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mt-4">
-                    <label for="Contraseña" class="form-label">Contraseña:</label>
+                    <label for="textoContra" class="form-label">Contraseña:</label>
 
                 </div>
                 <div class="col-sm-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
@@ -80,7 +80,13 @@
                             id="textoContra" />
                     </div>
                 </div>
-
+                <!--boton  -->
+                <div class="text-center">
+                    <button type="button" class="submit text-white px-5  mt-4 fw-semibold shadow-sm btnIngresar" onclick="login()">
+                        Ingresar
+                    </button>
+                </div>
+            </form>
         </div>
 
 
@@ -91,15 +97,6 @@
                 <label class="form-check-label px-2" for="condicion">Recuérdame</label>
             </div>
         </div>
-
-
-        <!--boton  -->
-        <div class="text-center">
-            <button class="submit text-white px-5  mt-4 fw-semibold shadow-sm" id="btnIngresar">
-                Ingresar
-            </button>
-        </div>
-
 
         <!--de olvido la contraseña -->
         <div class="pt-3 text-center">
@@ -136,22 +133,12 @@
                 Continúa con Google
             </button>
         </div>
-
-        </form>
-    </div>
-
-    </div>
-
-
-
     </div>
 
     <!-- IMPORTACIÓN DE ARCHIVOS JAVASCRIPT -->
-
-    <!-- Llamada al framework y librería de mensajes -->
-   
-    <!-- Llamada al controlador general de la aplicación -->
-    <script type="text/javascript" src="../../controllers/utils/components.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <!-- Llamada al fcontrolador del index-->
     <script type="text/javascript" src="../../controllers/admin/index.js"></script>
 </body>
