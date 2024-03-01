@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="../../resources/css/EstiloApartados.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="../../resources/css/estiloMenu.css">
-    <link rel="stylesheet" type="text/css" href="../../resources/css/estiloCategorias">
-    <link rel="stylesheet" href="../../resources/css/EstiloApartados.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/css/estiloMenu.css">
+    <link rel="stylesheet" href="../../resources/css/estiloAdmins.css">
+
     <title>Administradores</title>
 </head>
 
@@ -194,50 +194,54 @@
                         <div class="modal-body row g-3">
                             <!-- Campo oculto para asignar el id del registro al momento de modificar -->
                             <input type="hidden" id="idCategoria" name="idCategoria">
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="nombreCategoria" class="form-label">Nombre del administrador</label>
-                                <input id="nombreAd" type="text" name="nombreCategoria" class="form-control"
+                            <div class="col-sm-12 col-md-6">
+                                <label for="nombreCategoria" class="col-sm-7 col-form-label">Nombre del
+                                    administrador:</label>
+                                <input id="nombreAdmin" type="text" name="nombreProducto" class="form-control"
                                     placeholder="Ingrese el nombre del administrador" required>
                             </div>
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="descripcionCategoria" class="form-label">Apellido del administrador</label>
-                                <input id="ApellidoAd" type="text" name="Apellido"
-                                    placeholder="Ingrese el apellido del administrador" class="form-control">
+                            <div class="col-sm-12 col-md-6">
+                                <label for="nombreCategoria" class="col-sm-7 col-form-label">Apellido del
+                                    administrador:</label>
+                                <input id="apellidoAdmin" type="text" name="nombreProducto" class="form-control"
+                                    placeholder="Ingrese el apellido del administrador" required>
                             </div>
 
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="descripcionCategoria" class="form-label">Correo del administrador</label>
-                                <input id="CorreoAd" type="text" name="CorreoAd"
-                                    placeholder="Ingrese el correo del administrador" class="form-control">
+                            <div class="col-sm-12 col-md-6">
+                                <label for="nombreCategoria" class="col-sm-7 col-form-label">Correo del
+                                    administrador:</label>
+                                <input id="correoAdmin" type="email" name="nombreProducto" class="form-control"
+                                    placeholder="micorreo@gmail.com" required>
                             </div>
 
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="descripcionCategoria" class="form-label">Alias del administrador</label>
-                                <input id="AliasAd" type="text" name="descripcionCategoria"
-                                    placeholder="Ingrese el alias del administrador" class="form-control">
+                            <div class="col-sm-12 col-md-6">
+                                <label for="nombreCategoria" class="col-sm-7 col-form-label">Alias del
+                                    administrador:</label>
+                                <input id="aliasAdmin" type="text" name="nombreProducto" class="form-control"
+                                    placeholder="Ingrese el alias del administrador" required>
                             </div>
 
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="descripcionCategoria" class="form-label">Clave del administrador</label>
-                                <input id="ClaveAd" type="text" name="descripcionCategoria"
-                                    placeholder="Ingrese la clave del administrador" class="form-control">
+                            <div class="col-sm-12 col-md-6">
+                                <label for="nombreCategoria" class="col-sm-7 col-form-label">Clave del
+                                    administrador:</label>
+                                <input id="claveAdmin" type="password" name="nombreProducto" class="form-control"
+                                    placeholder="Ingrese la clave del administrador" required>
                             </div>
 
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="descripcionCategoria" class="form-label">Confirmar clave</label>
-                                <input id="ConfirmarCla" type="text" name="descripcionCategoria" class="form-control">
+                            <div class="col-sm-12 col-md-6">
+                                <label for="nombreCategoria" class="col-sm-7 col-form-label">Confirmar clave:</label>
+                                <input id="confirmarClaveAdmin" type="password" name="nombreProducto" class="form-control" required>
                             </div>
 
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="descripcionCategoria" class="form-label">Nivel del administrador</label>
-                                <div class="dropdown">
-                                    <select class="form-select" id="selectN" aria-label="Default select example">
-                                        <option selected>Seleccione el nivel de usuario</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                </div>
+                            <div class="col-sm-12 col-md-6">
+                                <label for="descripcionCategoria" class="col-sm-7 col-form-label">Nivel del 
+                                    administrador:</label>
+                                <select class="form-select" id="selectNivelAdmin" aria-label="Default select example">
+                                    <option selected>Seleccione el nivel del administrador</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
                             </div>
 
                         </div>
@@ -268,39 +272,42 @@
                         <div class="modal-body row g-3">
                             <!-- Campo oculto para asignar el id del registro al momento de modificar -->
                             <input type="hidden" id="idCategoria" name="idCategoria">
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="nombreCategoria" class="form-label">Nombre del administrador</label>
-                                <input id="nombreAd" type="text" name="nombreCategoria" class="form-control"
+                            <div class="col-sm-12 col-md-6">
+                                <label for="nombreCategoria" class="col-sm-7 col-form-label">Nombre del
+                                    administrador:</label>
+                                <input id="nombreAdminA" type="text" name="nombreProducto" class="form-control"
                                     placeholder="Ingrese el nombre del administrador" required>
                             </div>
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="descripcionCategoria" class="form-label">Apellido del administrador</label>
-                                <input id="ApellidoAd" type="text" name="Apellido"
-                                    placeholder="Ingrese el apellido del administrador" class="form-control">
+                            <div class="col-sm-12 col-md-6">
+                                <label for="nombreCategoria" class="col-sm-7 col-form-label">Apellido del
+                                    administrador:</label>
+                                <input id="apellidoAdminA" type="text" name="nombreProducto" class="form-control"
+                                    placeholder="Ingrese el apellido del administrador" required>
                             </div>
 
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="descripcionCategoria" class="form-label">Correo del administrador</label>
-                                <input id="CorreoAd" type="text" name="CorreoAd"
-                                    placeholder="Ingrese el correo del administrador" class="form-control">
+                            <div class="col-sm-12 col-md-6">
+                                <label for="nombreCategoria" class="col-sm-7 col-form-label">Correo del
+                                    administrador:</label>
+                                <input id="correoAdminA" type="email" name="nombreProducto" class="form-control"
+                                    placeholder="micorreo@gmail.com" required>
                             </div>
 
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="descripcionCategoria" class="form-label">Alias del administrador</label>
-                                <input id="AliasAd" type="text" name="descripcionCategoria"
-                                    placeholder="Ingrese el alias del administrador" class="form-control">
+                            <div class="col-sm-12 col-md-6">
+                                <label for="nombreCategoria" class="col-sm-7 col-form-label">Alias del
+                                    administrador:</label>
+                                <input id="aliasAdminA" type="text" name="nombreProducto" class="form-control"
+                                    placeholder="Ingrese el alias del administrador" required>
                             </div>
 
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="descripcionCategoria" class="form-label">Nivel del administrador</label>
-                                <div class="dropdown">
-                                    <select class="form-select" id="selectN" aria-label="Default select example">
-                                        <option selected>Seleccione el nivel de usuario</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                </div>
+                            <div class="col-sm-12 col-md-6">
+                                <label for="descripcionCategoria" class="col-sm-7 col-form-label">Nivel del 
+                                    administrador:</label>
+                                <select class="form-select" id="selectNivelAdminA" aria-label="Default select example">
+                                    <option selected>Seleccione el nivel del administrador</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
                             </div>
 
                         </div>
@@ -336,15 +343,16 @@
                             <!-- Campo oculto para asignar el id del registro al momento de modificar -->
                             <input type="hidden" id="idCategoria" name="idCategoria">
                             <!-- Campos oculto para asignar la contraseña y confirmarla-->
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="descripcionCategoria" class="form-label">Clave del administrador</label>
-                                <input id="ClaveAd" type="text" name="descripcionCategoria"
-                                    placeholder="Ingrese la clave del administrador" class="form-control">
+                            <div class="col-sm-12 col-md-6">
+                                <label for="nombreCategoria" class="col-sm-7 col-form-label">Clave del
+                                    administrador:</label>
+                                <input id="claveAdminA" type="password" name="nombreProducto" class="form-control"
+                                    placeholder="Ingrese la clave del administrador" required>
                             </div>
 
-                            <div class="col-sm-12 col-md-6" id="columnas">
-                                <label for="descripcionCategoria" class="form-label">Confirmar clave</label>
-                                <input id="ConfirmarCla" type="text" name="descripcionCategoria" class="form-control">
+                            <div class="col-sm-12 col-md-6">
+                                <label for="nombreCategoria" class="col-sm-7 col-form-label">Confirmar clave:</label>
+                                <input id="confirmarClaveAdminA" type="password" name="nombreProducto" class="form-control" required>
                             </div>
 
 
@@ -508,10 +516,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <!-- Llamada a los controlador y utils de la página web -->
+    <!-- Llamada a los controlador y utils de la página web -->
     <script type="text/javascript" src="../../controllers/utils/Apartados.js"></script>
     <script type="text/javascript" src="../../controllers/utils/footer.js"></script>
-    <script type="text/javascript" src="../../controllers/admin/administrador.js"></script>   
+    <script type="text/javascript" src="../../controllers/admin/administrador.js"></script>
     <script src="../../controllers/admin/menu.js"></script>
 
 </body>

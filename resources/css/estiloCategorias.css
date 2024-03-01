@@ -20,7 +20,12 @@ h3{
     image-rendering: 300px;
 }
 
-#labelsinputs{
+#nombreCategoria,
+#descripcionCategoria,
+#inputImgCat,
+#nombreCategoriaA,
+#descripcionCategoriaA,
+#inputImgCatA{
     border: none;
     border-bottom: 1px solid #000000;
     border-radius: 0;

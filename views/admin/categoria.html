@@ -193,28 +193,24 @@
             <div class="modal-body row g-3">
               <!-- Campo oculto para asignar el id del registro al momento de modificar -->
               <input type="hidden" id="idCategoria" name="idCategoria">
-              <div class="col-sm-12 col-md-6" id="columnas">
-                <label for="nombreCategoria" class="form-label">Nombre de la categoría</label>
-                <input id="nombreCategoria" type="text" name="nombreCategoria" class="form-control"
+              <div class="col-sm-12 col-md-6">
+                <label for="nombreCategoria" class="col-sm-7 col-form-label">Nombre de la categoría:</label>
+                <input id="nombreCategoria" type="text" name="nombreProducto" class="form-control"
                   placeholder="Ingrese el nombre de la categoría" required>
               </div>
 
-              <!--esto ya es dentro de los botones-->
-
-              <div class="col-sm-12 col-md-6" id="columnas">
-                <label for="descripcionCategoria" class="form-label">Descripción de la categoría</label>
+              <div class="col-sm-12 col-md-6">
+                <label for="nombreCategoria" class="col-sm-7 col-form-label">Descripción de la categoría:</label>
                 <input id="descripcionCategoria" type="text" name="descripcionCategoria" class="form-control"
                   placeholder="Ingrese una descripción para la categoría" required>
               </div>
 
-              <div class="col-sm-12 col-md-6" id="columnas">
-                <label for="descripcionCategoria" class="form-label">Imagen de la categoría</label>
+              <div class="col-sm-12 col-md-6">
+                <label for="imagenCat" class="col-sm-7 col-form-label">Imagen de la categoría:</label>
                 <div class="position-relative">
-                  <img src="../../resources/Imagenes/iconoImagen.png" alt="imagen icono"
-                    style="position: absolute; top: 50%; transform: translateY(-50%); left: 5px;" width="20px"
-                    height="20px">
-                  <input id="descripcionCategoria" type="text" name="descripcionCategoria" class="form-control"
-                    style="padding-left: 30px;" placeholder="Formatos permitidos: .png, .jpg" required>
+                  <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="inputImgCat">
+                  </div>
                 </div>
               </div>
 
@@ -245,25 +241,24 @@
             <div class="modal-body row g-3">
               <!-- Campo oculto para asignar el id del registro al momento de modificar -->
               <input type="hidden" id="idCategoria" name="idCategoria">
-              <div class="col-sm-12 col-md-6" id="columnas">
-                <label for="nombreCategoria" class="form-label">Nombre de la categoría</label>
-                <input id="nombreCategoria" type="text" name="nombreCategoria" class="form-control"
+              <div class="col-sm-12 col-md-6">
+                <label for="nombreCategoria" class="col-sm-7 col-form-label">Nombre de la categoría:</label>
+                <input id="nombreCategoriaA" type="text" name="nombreProducto" class="form-control"
                   placeholder="Ingrese el nombre de la categoría" required>
               </div>
-              <div class="col-sm-12 col-md-6" id="columnas">
-                <label for="descripcionCategoria" class="form-label">Descripción de la categoría</label>
-                <input id="descripcionCategoria" type="text" name="descripcionCategoria" class="form-control"
+
+              <div class="col-sm-12 col-md-6">
+                <label for="nombreCategoria" class="col-sm-7 col-form-label">Descripción de la categoría:</label>
+                <input id="descripcionCategoriaA" type="text" name="descripcionCategoria" class="form-control"
                   placeholder="Ingrese una descripción para la categoría" required>
               </div>
 
-              <div class="col-sm-12 col-md-6" id="columnas">
-                <label for="descripcionCategoria" class="form-label">Imagen de la categoría</label>
+              <div class="col-sm-12 col-md-6">
+                <label for="imagenCat" class="col-sm-7 col-form-label">Imagen de la categoría:</label>
                 <div class="position-relative">
-                  <img src="../../resources/Imagenes/iconoImagen.png" alt="imagen icono"
-                    style="position: absolute; top: 50%; transform: translateY(-50%); left: 5px;" width="20px"
-                    height="20px">
-                  <input id="descripcionCategoria" type="text" name="descripcionCategoria" class="form-control"
-                    style="padding-left: 30px;" placeholder="Formatos permitidos: .png, .jpg" required>
+                  <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="inputImgCatA">
+                  </div>
                 </div>
               </div>
 

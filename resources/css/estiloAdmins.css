@@ -1,0 +1,21 @@
+#nombreAdmin,
+#apellidoAdmin,
+#correoAdmin,
+#aliasAdmin,
+#claveAdmin,
+#confirmarClaveAdmin,
+#selectNivelAdmin,
+#nombreAdminA,
+#apellidoAdminA,
+#correoAdminA,
+#aliasAdminA,
+#claveAdminA,
+#confirmarClaveAdminA,
+#selectNivelAdminA{
+    border: none;
+    border-bottom: 1px solid #000000;
+    border-radius: 0;
+    padding: 1%;
+    background-color: transparent;
+    box-shadow: none;
+}

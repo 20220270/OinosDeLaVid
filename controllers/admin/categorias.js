@@ -47,7 +47,6 @@ $(document).ready(function () {
   });
 });
 
-
 //Ventana modal para mostrar la eliminación de un datos
 
 $(document).ready(function () {
@@ -66,6 +65,19 @@ $(document).ready(function () {
   });
   $("#btnActuA").click(function () {
     $("#miModal2").modal("hide");
+  });
+});
+
+//Validación para que solamente se escriban letras, pero que pueda haber guiones y espacios
+$(document).ready(function() {
+  $("#nombreProducto").on("keypress", function(event) {
+      var inputValue = event.which;
+      // Permitir solo letras y algunos caracteres especiales como espacio, guión, etc.
+      if (!(inputValue >= 65 && inputValue <= 90) && // letras mayúsculas
+          !(inputValue >= 97 && inputValue <= 122) && // letras minúsculas
+          !(inputValue == 32 || inputValue == 45 || inputValue == 46 || inputValue == 44)) { // espacio, guión, punto, coma
+          event.preventDefault();
+      }
   });
 });
 
