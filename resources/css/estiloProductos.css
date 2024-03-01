@@ -7,9 +7,13 @@ h3{
     margin-top: 1.3rem;
 }
 
-#nombreCategoria,
+#nombreProducto,
 .form-select,
-#descripcionCategoria{
+#inputImgProducto,
+#descripcionProducto,
+#PrecioProducto,
+#cantidadProducto,
+#descuentoProducto{
     border: none;
     border-bottom: 1px solid #000000;
     border-radius: 0;
