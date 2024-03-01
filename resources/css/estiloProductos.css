@@ -12,8 +12,15 @@ h3{
 #inputImgProducto,
 #descripcionProducto,
 #PrecioProducto,
+#logoDolar,
 #cantidadProducto,
-#descuentoProducto{
+#descuentoProducto,
+#nombreProductoA,
+#inputImgProductoA,
+#descripcionProductoA,
+#PrecioProductoA,
+#cantidadProductoA,
+#descuentoProductoA{
     border: none;
     border-bottom: 1px solid #000000;
     border-radius: 0;
