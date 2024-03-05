@@ -1,0 +1,38 @@
+body{
+    background-color: #F2F2F2;
+}
+
+.form-control,
+#basic-addon1{
+    border: none;
+    border-bottom: 1px solid #000000;
+    border-radius: 0;
+    padding: 1%;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.barra-roja{
+    height: 50px;
+    background-color: #6D0E0E;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+#division{
+    border-top: 2px solid #000000;
+    border-right: 2px solid #000000;
+}
+
+#division2{
+    border-top: 2px solid #000000;
+}
+
+#btnRegistrarCliente{
+    background-color: #6D0E0E;
+    color: #ffffff;
+    border-radius: 10px;
+}

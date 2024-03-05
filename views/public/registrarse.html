@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="../../resources/cssPublic/cssRegistrarse.css">
+    <title>Registro de clientes</title>
+</head>
+
+<body>
+    <div class="barra-roja"></div>
+
+    <main>
+        
+        <div class="container text-center mt-4">
+            <div class="row">
+                <div class="col mt-5">
+                    <span>
+                        <p class="text-center fw-bold fs-3">Registro de nuevo cliente</p>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container text-center mt-2">
+            <div class="row">
+                <div class="col text-start" id="division">
+                    <div class="mb-3 mt-4">
+                        <label for="formGroupExampleInput" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" id="nombreCliente"
+                            placeholder="Ingrese su nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Apellido:</label>
+                        <input type="text" class="form-control" id="apellidoCliente"
+                            placeholder="Ingrese su apellido">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">DUI:</label>
+                        <input type="text" class="form-control" id="duiCliente"
+                            placeholder="00000000-0">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Correo electrónico:</label>
+                        <input type="email" class="form-control" id="correoCliente"
+                            placeholder="Ingrese su correo electrónico">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Teléfono:</label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">+503</span>
+                            <input type="text" class="form-control" placeholder="0000-0000" id="telefonoCliente">
+                          </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Dirección:</label>
+                        <input type="text" class="form-control" id="direccionCliente"
+                            placeholder="Ingrese su dirección">
+                    </div>
+                </div>
+                <div class="col text-start" id="division2">
+                    <div class="mb-3 mt-4">
+                        <label for="formGroupExampleInput2" class="form-label">Contraseña:</label>
+                        <input type="password" class="form-control" id="contraCliente"
+                            placeholder="Ingrese una contraseña segura">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Confirmar contraseña:</label>
+                        <input type="password" class="form-control" id="confirmarContraCliente"
+                            placeholder="">
+                    </div>
+                    
+                    <div class="mb-3 text-center">
+                        <button type="submit" class="btn mt-4 w-50" id="btnRegistrarCliente">Registrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--Librerías para conectar archivos js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!--Archivos js para la ventana de registrarse-->
+    <script src="../../controllers/public/signup.js"></script>
+</body>
+
+</html>
