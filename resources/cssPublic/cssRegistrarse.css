@@ -36,3 +36,14 @@ body{
     color: #ffffff;
     border-radius: 10px;
 }
+
+#imagenCerrarSesion{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    #division,
+    #division2 {
+        border: none; /* Quita todos los bordes */
+    }
+}

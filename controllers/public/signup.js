@@ -1,5 +1,3 @@
-
-
 //validaciones
 
 //validación para los campos del nombre y apellido
