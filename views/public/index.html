@@ -11,9 +11,9 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <head>
-        <link rel="stylesheet" type="text/css" href="/resources/cssPublic/stiloIndexP.css">
+        <link rel="stylesheet" type="text/css" href="../../resources/cssPublic/stiloIndexP.css">
     </head>
-    <title>Wines Shop!</title>
+    <title>Menú de Oinos de la Vid</title>
 </head>
 
 <body>
@@ -22,33 +22,20 @@
 
     </nav>
 
-    <ul class="nav justify-content-center">
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Menù</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Contacto</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
+    
 
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-
-
-    </ul>
-
-    <div class="container-sm">
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+    <div class="container">
+        <form class="row justify-content-end mb-3">
+            <div class="position-relative col-lg-10">
+                <img class="search-icon" src="../../resources/Imagenes/lupa.png" alt="Lupa">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                    id="Search">
+            </div>
+           
         </form>
     </div>
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide mt-2" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
@@ -84,13 +71,14 @@
     </div>
 
 
-    <div class="container"></div>
-
-
-
     <div class="container">
+    </div>
+
+
+
+    <div class="container mt-5" id="catalogo">
         <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" >
                 <div class="card mb-3">
                     <img src="https://hips.hearstapps.com/hmg-prod/images/pago-de-otazu-2019-vino-elle-1647167160.jpg"
                         class="card-img-top" alt="...">
@@ -172,70 +160,37 @@
             </div>
         </div>
     </div>
-    <footer>
-        <div class="container-fluid bg-dark text-light">
-            <div class="mt-3">
-                <h3 class="text center">Aca pondremos algun textito</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dignissimos commodi doloribus repellendus
-                    iusto maiores, esse, beatae eligendi quod non, fuga perspiciatis earum qui sit dolor aliquid
-                    consequuntur ullam culpa?</p>
-                <hr>
-            </div>
-    
-            <div class="row justify-content-around text-center text-md-start">
-                <div class="col-md-2 text-center">
-    
-                    <h1 class="fw-bold mt-3">TP</h1>
-                    <h4>aca ira logo y nombre de la empresa</h4>
-                </div>
-    
-                <div class="col-md-3">
-    
-                    <ul class="list-unstyled">
-                        <li class="fw-bold my-2">partners</li>
-                        <li><a href="#" class="text-decoration-none text-white">website</a></li>
-                        <li><a href="#" class="text-decoration-none text-white">social media</a></li>
-                        <li><a href="#" class="text-decoration-none text-white">otra coas</a></li>
-                    </ul>
-                </div>
-    
-                <div class="col-md-2">
-                    <ul class="list-unstyled">
-                        <li class="fw-bold my-2">anosotros</li>
-                        <li><a href="#" class="text-decoration-none text-white">alguna otra cosita</a></li>
-                        <li><a href="#" class="text-decoration-none text-white">again otra cosita</a></li>
-                        <li><a href="#" class="text-decoration-none text-white">alguna otra cosita2</a></li>
-                    </ul>
-                </div>
-    
-                <div class="col-md-2">
-    
-                    <ul class="list-unstyled">
-                        <li class="fw-bold my-2">soporte tec</li>
-                        <li> <a href="#" class="text-decoration-none text-white">contactanos</a></li>
-                        <li> <a href="#" class="text-decoration-none text-white">jasfksaf</a></li>
-                    </ul>
-                </div>
-    
-                <div class="col-md-2">
-                    <li class="fw-bold my-2 list-unstyled">follow us</li>
-                    <ul class="list-unstyled d-flex justify-content-center justify-content-md-start">
-                        <li><a href="#" class="text-white"><i class="fa-brands fa-facebook me-2 fa-1x"></i></a></li>
-                        <li><a href="#" class="text-white"><i class="fa-brands fa-whatsapp mx-2 fa-1x"></i></a></li>
-                        <li><a href="#" class="text-white"><i class="fa-brands fa-youtube me-2 fa-1x"></i></a></li>
-                        <li><a href="#" class="text-white"><i class="fa-brands fa-instagram me-2 fa-1x"></i></a></li>
-                    </ul>
-                </div>
-    
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-md-12 text-center pt-2">
-                    <p>&copy; 2024 Copyright <a href="#" class="text-white">Luxury Wines</a></p>
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="mb-4">
+                    Sobre nosotros
+                </h3>
+                <div class="timeline">
+                   
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h2>Year 1</h2>
+                            <p>Description of Year 1</p>
+                        </div>
+                        
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h2>Year 2</h2>
+                            <p>Description of Year 2</p>
+                        </div>
+                    </div>
+                    <!-- More timeline items here -->
                 </div>
             </div>
-    
         </div>
+    </div>
+    
+
+    <footer>
+        
     
     </footer>
 
@@ -248,6 +203,7 @@
         crossorigin="anonymous"></script>
 
         <script src="../../controllers/utils/ApartadosPublico.js"></script>
+        <script src="../../controllers/utils/footerPublico.js"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

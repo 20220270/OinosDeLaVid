@@ -1,4 +1,8 @@
 
+body{
+    background-color: #F5F5F5;
+}
+
 .card{
     margin-top: 10%;
 }
@@ -7,14 +11,82 @@
     transition: transform 0.3s ease;
 }
 
-#hover:hover{
-    transform: scale(1.1);
-}
-
-.carousel{
-    margin-top: 5%;
-}
-
 footer{
     margin-top: 5%;
 }
+#Search{
+    box-shadow: none;
+    
+}
+
+.nav-link{
+    color: #000;
+    text-decoration: none;
+}
+
+.nav-link:hover{
+    color: #000;
+}
+
+#catalogo{
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+
+#menu,
+#nos,
+#carrito,
+#Contac,
+#ses{
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    margin-right: 1rem;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    transform: translate(50%, -48%);
+    width: 20px;
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+}
+
+#Search{
+    border-radius: 10px;
+    padding-left: 40px;
+}
+
+.timeline {
+    position: relative;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: #000;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+}
+
+.timeline-content {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #000;
+    color: #fff;
+}
+
+.timeline-content h2 {
+    margin-top: 0;
+}
+
