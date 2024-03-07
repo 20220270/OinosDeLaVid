@@ -3,8 +3,22 @@ body{
     background-color: #F5F5F5;
 }
 
-.card{
+#card1,
+#card2{
     margin-top: 10%;
+    position: relative;
+}
+
+#card2::before {
+    content: "20%";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #E74C3C; /* Color rojo */
+    color: white;
+    padding: 5px 10px;
+    transform: rotate(-45deg);
+    border-radius: 0 0 0 5px; /* Ajusta el radio del borde para que sea más redondeado en la esquina diagonal */
 }
 
 #hover{
@@ -17,6 +31,13 @@ footer{
 #Search{
     box-shadow: none;
     
+}
+
+#sn2{
+    margin-top: 15%;
+}
+#sn3{
+    margin-top: 4%;
 }
 
 .nav-link{
@@ -33,6 +54,25 @@ footer{
     border-bottom: 2px solid #000;
 }
 
+#sobreNos{
+    border-bottom: 2px solid #000;
+}
+
+#botonCarrito{
+    background-color: #6D0E0E;
+    color: #fff;
+    width: 160px;
+    padding-left: 22%;
+}
+
+#imagenCarrito{
+    transform: translate(150%, -5%);
+}
+
+#textoCar{
+    border-left: 3px solid #000;
+
+}
 
 #menu,
 #nos,
@@ -68,7 +108,7 @@ footer{
     position: absolute;
     top: 0;
     left: 50%;
-    width: 2px;
+    width: 5px;
     height: 100%;
     background: #000;
     transform: translateX(-50%);
@@ -84,6 +124,7 @@ footer{
     border-radius: 5px;
     background: #000;
     color: #fff;
+    height: 200px;
 }
 
 .timeline-content h2 {

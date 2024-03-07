@@ -2,64 +2,63 @@ const FOOTERP = document.querySelector('footer');
 
 FOOTERP.innerHTML = `
 <div class="container-fluid bg-dark text-light">
+    
+            <div class="container-fluid bg-dark text-light">
             <div class="mt-3">
-                <h3 class="text center">Aca pondremos algun textito</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dignissimos commodi doloribus repellendus
-                    iusto maiores, esse, beatae eligendi quod non, fuga perspiciatis earum qui sit dolor aliquid
-                    consequuntur ullam culpa?</p>
+                <br>
+                <h3 class="text-center">Oinos de la Vid</h3>
+                <p class="text-center">
+                No olvides recomendar nuestra tienda en línea ¡a todos!
+                </p>
+
                 <hr>
             </div>
-    
+
             <div class="row justify-content-around text-center text-md-start">
                 <div class="col-md-2 text-center">
-    
-                    <h1 class="fw-bold mt-3">TP</h1>
-                    <h4>aca ira logo y nombre de la empresa</h4>
+
+                    <img src="../../resources/Imagenes/logoBlanco.png" alt="logo" id="imagenLL" height="300px" width="300px">
+                    <h6>
+                    Avenida Aguilares 218 San Salvador CP, San Salvador 1101
+                    </h6>
                 </div>
-    
+
                 <div class="col-md-3">
-    
+
                     <ul class="list-unstyled">
-                        <li class="fw-bold my-2">partners</li>
-                        <li><a href="#" class="text-decoration-none text-white">website</a></li>
-                        <li><a href="#" class="text-decoration-none text-white">social media</a></li>
-                        <li><a href="#" class="text-decoration-none text-white">otra coas</a></li>
+                        <li class="fw-bold my-2">Redes sociales:</li>
+                        <li><a href="#" class="text-decoration-none text-white">
+                                <img src="../../resources/Imagenes/LogoTwiiter.png" alt="" id="LogoTwiiter" height="50px" width="50px">
+                                <img src="../../resources/Imagenes/LogoInsta.png" alt="" id="LogoTwiiter" height="50px" width="50px">
+                            </a>
+                        </li>
+                        <br>
+                        <br>
+                        ¡Síguenos para mantenerte informado sobre nuestros productos!
                     </ul>
                 </div>
-    
+
                 <div class="col-md-2">
                     <ul class="list-unstyled">
-                        <li class="fw-bold my-2">anosotros</li>
-                        <li><a href="#" class="text-decoration-none text-white">alguna otra cosita</a></li>
-                        <li><a href="#" class="text-decoration-none text-white">again otra cosita</a></li>
-                        <li><a href="#" class="text-decoration-none text-white">alguna otra cosita2</a></li>
+                        <li class="fw-bold my-2">O contacta nuestros teléfonos:</li>
+                        <li class="mt-4">
+                            +503 7215-0999
+                           </li>
+                        <li class="mt-4">
+                            +503 7835-5374
+                            </li>
+                        <li class="mt-4">
+                            +503 7497-5439
+                            </li>
+
                     </ul>
                 </div>
-    
-                <div class="col-md-2">
-    
-                    <ul class="list-unstyled">
-                        <li class="fw-bold my-2">soporte tec</li>
-                        <li> <a href="#" class="text-decoration-none text-white">contactanos</a></li>
-                        <li> <a href="#" class="text-decoration-none text-white">jasfksaf</a></li>
-                    </ul>
-                </div>
-    
-                <div class="col-md-2">
-                    <li class="fw-bold my-2 list-unstyled">follow us</li>
-                    <ul class="list-unstyled d-flex justify-content-center justify-content-md-start">
-                        <li><a href="#" class="text-white"><i class="fa-brands fa-facebook me-2 fa-1x"></i></a></li>
-                        <li><a href="#" class="text-white"><i class="fa-brands fa-whatsapp mx-2 fa-1x"></i></a></li>
-                        <li><a href="#" class="text-white"><i class="fa-brands fa-youtube me-2 fa-1x"></i></a></li>
-                        <li><a href="#" class="text-white"><i class="fa-brands fa-instagram me-2 fa-1x"></i></a></li>
-                    </ul>
-                </div>
-    
+
             </div>
             <hr>
             <div class="row">
                 <div class="col-md-12 text-center pt-2">
-                    <p>&copy; 2024 Copyright <a href="#" class="text-white">Luxury Wines</a></p>
+                    <p>&copy; 2024 Copyright <a href="#" class="text-white">Oinos de la vid</a></p>
                 </div>
             </div>
     

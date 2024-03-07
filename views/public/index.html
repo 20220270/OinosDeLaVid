@@ -22,16 +22,15 @@
 
     </nav>
 
-    
+
 
     <div class="container">
         <form class="row justify-content-end mb-3">
             <div class="position-relative col-lg-10">
                 <img class="search-icon" src="../../resources/Imagenes/lupa.png" alt="Lupa">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                    id="Search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="Search">
             </div>
-           
+
         </form>
     </div>
 
@@ -77,9 +76,13 @@
 
 
     <div class="container mt-5" id="catalogo">
+        <h5 class="mt-2 text-center">
+            Menú de vinos
+        </h5>
         <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" >
-                <div class="card mb-3">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                <div class="card mb-3" id="card1">
+                   
                     <img src="https://hips.hearstapps.com/hmg-prod/images/pago-de-otazu-2019-vino-elle-1647167160.jpg"
                         class="card-img-top" alt="...">
                     <div class="card-body">
@@ -92,7 +95,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card mb-3">
+                <div class="card mb-3" id="card2">
                     <img src="https://cdn.zerca.com/medias/-1200-baseFormat-botijo-rojo.jpg-300Wx300H?context=bWFzdGVyfGltYWdlc3w1NDA3fGltYWdlL2pwZWd8aW1hZ2VzL2g2Ny9oMmEvOTQ2MDc0MDg4MjQ2Mi5qcGd8MmJjMDJlNjE5MGMwYTNmODgyN2Q0ZTI2Mjk5ZTI0Nzk0MDIxOTNhNzQ1MmJmODNhOGVmMzQxMTQyOWU3MjQzMA"
                         class="card-img-top" alt="...">
                     <div class="card-body">
@@ -105,7 +108,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card mb-3">
+                <div class="card mb-3" id="card1">
                     <img src="https://hips.hearstapps.com/hmg-prod/images/pago-de-otazu-2019-vino-elle-1647167160.jpg"
                         class="card-img-top" alt="...">
                     <div class="card-body">
@@ -118,21 +121,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card mb-3">
-                    <img src="https://hips.hearstapps.com/hmg-prod/images/pago-de-otazu-2019-vino-elle-1647167160.jpg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content.</p>
-                    </div>
-
-                    <button type="button" class="btn btn-outline-primary">Agregar</button>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card mb-3" id="hover">
+                <div class="card mb-3" id="card1">
                     <img src="https://hips.hearstapps.com/hmg-prod/images/pago-de-otazu-2019-vino-elle-1647167160.jpg"
                         class="card-img-top" alt="...">
                     <div class="card-body">
@@ -146,7 +135,21 @@
             </div>
 
             <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card mb-3">
+                <div class="card mb-3" id="card2">
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/pago-de-otazu-2019-vino-elle-1647167160.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content.</p>
+                    </div>
+
+                    <button type="button" class="btn btn-outline-primary">Agregar</button>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                <div class="card mb-3" id="card1">
                     <img src="https://hips.hearstapps.com/hmg-prod/images/pago-de-otazu-2019-vino-elle-1647167160.jpg"
                         class="card-img-top" alt="...">
                     <div class="card-body">
@@ -161,37 +164,61 @@
         </div>
     </div>
 
-    <div class="container mt-3">
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="mb-4">
-                    Sobre nosotros
-                </h3>
-                <div class="timeline">
-                   
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h2>Year 1</h2>
-                            <p>Description of Year 1</p>
+
+
+    <div class="container mt-3" id="sobreNos">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <h3 class="mb-4">Sobre nosotros</h3>
+                <div class="timeline mb-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <h2>¿Quiénes somos?</h2>
+                                    <p>Description of Year 1</p>
+                                </div>
+                            </div>
                         </div>
-                        
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h2>Year 2</h2>
-                            <p>Description of Year 2</p>
+                        <div class="col-md-6" id="sn2">
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <h2>Nuestra misión</h2>
+                                    <p>Description of Year 2</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <!-- More timeline items here -->
+
+                    <div class="row" id="sn3">
+                        <div class="col-md-6">
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <h2>Nuestra visión</h2>
+                                    <p>Description of Year 2</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" id="sn2">
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <h2>Equipo realizador</h2>
+                                    <p>Description of Year 2</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
     </div>
-    
+
+
 
     <footer>
-        
-    
+
+
     </footer>
 
 
@@ -202,8 +229,8 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
-        <script src="../../controllers/utils/ApartadosPublico.js"></script>
-        <script src="../../controllers/utils/footerPublico.js"></script>
+    <script src="../../controllers/utils/ApartadosPublico.js"></script>
+    <script src="../../controllers/utils/footerPublico.js"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

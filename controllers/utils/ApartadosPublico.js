@@ -17,9 +17,6 @@ HEADER.innerHTML = `
                 <li class="nav-item" id="nos">
                     <a class="nav-link" href="#">Sobre nosotros</a>
                 </li>
-                <li class="nav-item" id="carrito">
-                    <a class="nav-link" href="#">Ver carrito</a>
-                </li>
                 <li class="nav-item" id="Contac">
                     <a class="nav-link" href="#">Contactos</a>
                 </li>
@@ -28,7 +25,18 @@ HEADER.innerHTML = `
                 </li>
             </ul>
         </div>
+
         <button class="btn" type="submit">ivanSalgue</button>
+
+        <div class="botonCar">
+            <img src="../../resources/Imagenes/carrito.png" alt="" width="25 px" height="25 px" id="imagenCarrito">
+            <button class="btn" type="submit" id="botonCarrito">
+            
+            <h6 class="mt-1" id="textoCar">Ver carrito ()</h6>
+           
+            </button>
+        </div>
+        
     </div>
 </nav>
 `;
