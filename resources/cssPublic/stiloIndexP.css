@@ -1,0 +1,20 @@
+
+.card{
+    margin-top: 10%;
+}
+
+#hover{
+    transition: transform 0.3s ease;
+}
+
+#hover:hover{
+    transform: scale(1.1);
+}
+
+.carousel{
+    margin-top: 5%;
+}
+
+footer{
+    margin-top: 5%;
+}
