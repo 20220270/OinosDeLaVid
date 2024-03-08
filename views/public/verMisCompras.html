@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-        <!--Bootstrap icons para las estrellas-->
+    <!--Bootstrap icons para las estrellas-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <head>
@@ -63,7 +63,8 @@
                             <div class="position-relative col-lg-12">
                                 <img class="search-icon" src="../../resources/Imagenes/lupa.png" alt="Lupa">
                                 <input class="form-control me-2" type="search"
-                                    placeholder="Busca tus ordenes por fecha de registro o por el producto adquirido" aria-label="Search" id="Search">
+                                    placeholder="Busca tus ordenes por fecha de registro o por el producto adquirido"
+                                    aria-label="Search" id="Search">
                             </div>
 
                         </form>
@@ -73,8 +74,8 @@
             </div>
         </div>
         <!--Tabla para ver las ordenes realizadas-->
-        <div class="col-11 table-wrapper">
-            <table class="table table-hover">
+        <div class="col-lg-12 col-md-6 col-sm-7 table-wrapper">
+            <table class="table table-hover text-center">
 
                 <!-- Encabezado de la tabla para mostrar la cantidad de registros y los títulos de las columnas -->
                 <thead>
@@ -159,71 +160,74 @@
         </div>
 
         <!-- Modal -->
-<div class="modal fade" id="modalValoracion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Calificar compra</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          
-            <div class="container text-center">
-                <div class="row">
-                  <div class="col">
-                    <label for="nombreCategoria" class="col-sm-7 col-form-label  text-center">Califica tu orden</label>
-                    <div class="rating">
-                        <i class="bi bi-star-fill star"></i>
-                        <i class="bi bi-star-fill star"></i>
-                        <i class="bi bi-star-fill star"></i>
-                        <i class="bi bi-star-fill star"></i>
-                        <i class="bi bi-star-fill star"></i>
-                        
+        <div class="modal fade" id="modalValoracion" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Calificar compra</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <input type="text" name="texto" id="texto" readonly>
-                  </div>
-                  <div class="col">
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                        <label for="floatingTextarea2">Agrega tu comentario</label>
-                      </div>
-                  </div>
-                  
+                    <div class="modal-body">
+
+                        <div class="container text-center">
+                            <div class="row">
+                                <div class="col">
+                                    <label for="nombreCategoria" class="col-sm-7 col-form-label  text-center">Califica
+                                        tu orden</label>
+                                    <div class="rating">
+                                        <i class="bi bi-star-fill star"></i>
+                                        <i class="bi bi-star-fill star"></i>
+                                        <i class="bi bi-star-fill star"></i>
+                                        <i class="bi bi-star-fill star"></i>
+                                        <i class="bi bi-star-fill star"></i>
+
+                                    </div>
+                                    <input type="text" name="texto" id="texto" readonly>
+                                </div>
+                                <div class="col">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a comment here"
+                                            id="floatingTextarea2" style="height: 100px"></textarea>
+                                        <label for="floatingTextarea2">Agrega tu comentario</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <!-- Puedes agregar aquí un botón para enviar la calificación, si es necesario -->
+                    </div>
                 </div>
-              </div>
+            </div>
+        </div>
 
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <!-- Puedes agregar aquí un botón para enviar la calificación, si es necesario -->
-        </div>
-      </div>
-    </div>
-  </div>
-  
     </div>
 
-
-
-    <footer id="footer">
-
-
+    
+    <footer>
+        
     </footer>
 
 
-    <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
 
-    <script src="../../controllers/utils/footerPublico.js"></script>
-    <script src="../../controllers/public/Valoracion.js"></script>
-    <script src="../../controllers/utils/estrellas.js"></script>
+        <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+        <script src="../../controllers/utils/footerPublico.js"></script>
+        <script src="../../controllers/public/Valoracion.js"></script>
+        <script src="../../controllers/utils/estrellas.js"></script>
+
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->

@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     buttons.forEach(button => {
         button.addEventListener('click', function() {
+            alert("Su producto ha sido registrado correctamente");
             cantidadCarrito++;
             textoCarrito.innerText = `Ver carrito (${cantidadCarrito})`;
         });
