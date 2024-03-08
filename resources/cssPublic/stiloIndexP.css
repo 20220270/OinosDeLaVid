@@ -21,7 +21,7 @@ body{
     color: white;
     padding: 5px 5px;
     transform: rotate(-45deg);
-    border-radius: 0 0 0 5px; 
+    border-radius: 0 0 0 5px;
 }
 
 #precio{
@@ -174,7 +174,7 @@ footer{
     border-radius: 5px;
     background: #000;
     color: #fff;
-    height: 200px;
+    height: 250px;
 }
 
 .timeline-content h2 {
