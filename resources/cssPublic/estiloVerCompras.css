@@ -148,36 +148,31 @@ footer{
     padding-left: 40px;
 }
 
-.timeline {
-    position: relative;
+#perfilUsuario{
+    border: none;
+    box-shadow: none;
 }
 
-.timeline:before {
-    content: '';
-    position: absolute;
-    top: -1%;
-    left: 50%;
-    width: 5px;
-    height: 100%;
-    background: #000;
-    transform: translateX(-50%);
-    z-index: -1; /*Z-indez hace que la linea sea transparente*/
+/*estrellas*/
+.rating{
+    display: flex;
+    justify-content: space-between;
 }
 
-.timeline-item {
-    margin-bottom: 20px;
+.star{
+    font-size: 32px;
+    color: gray;
+    transition: color 0.1s;
+    cursor: pointer;
 }
 
-.timeline-content {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background: #000;
-    color: #fff;
-    height: 200px;
+#texto{
+    border: none;
+    text-align: center;
 }
 
-.timeline-content h2 {
-    margin-top: 0;
+.star:hover,
+.star.checked{
+    color: yellow;
 }
 
