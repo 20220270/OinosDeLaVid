@@ -59,7 +59,7 @@ footer{
 
 #catalogo{
     border-top: 2px solid #000;
-    border-bottom: 2px solid #000;
+    
 }
 
 #sobreNos{
@@ -148,6 +148,7 @@ footer{
     }
 }
 
+
 #Search{
     border-radius: 10px;
     padding-left: 40px;
@@ -157,6 +158,12 @@ footer{
     border: none;
     box-shadow: none;
 }
+
+.calificar{
+    background-color: #6D0E0E;
+    color: #fff;
+}
+
 
 /*estrellas*/
 .rating{

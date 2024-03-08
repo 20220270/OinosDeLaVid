@@ -46,6 +46,10 @@ footer{
     
 }
 
+.navbar-toggler-icon {
+    color: black; 
+}
+
 
 .nav-link{
     color: #000;
