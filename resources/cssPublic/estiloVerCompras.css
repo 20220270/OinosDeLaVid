@@ -70,7 +70,7 @@ footer{
     background-color: #6D0E0E;
     color: #fff;
     width: 160px;
-    padding-left: 22%;
+    padding-left: 30%;
 }
 
 #imagenCarrito{
@@ -79,7 +79,6 @@ footer{
 
 #textoCar{
     border-left: 3px solid #000;
-
 }
 
 #menu,
