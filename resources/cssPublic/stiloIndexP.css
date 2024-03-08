@@ -33,7 +33,7 @@ body{
 }
 
 
-#btnAgregarAlCarrito{
+.btnAgregarAlCarrito{
     width: 100px;
     background-color: #6D0E0E;
     color: #fff;
