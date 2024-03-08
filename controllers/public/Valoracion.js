@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
             modal.show();
         });
     });
-});
+})
+
+document.getElementById("perfilUsuario").addEventListener("click", function () {
+    location.href = "perfil.html";
+  });
 
 

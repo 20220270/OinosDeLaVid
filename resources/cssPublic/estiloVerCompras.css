@@ -73,6 +73,12 @@ footer{
     padding-left: 30%;
 }
 
+#btnCerrarFormularioV,
+#btnENviarValoracion{
+    background-color: #6D0E0E;
+    color: #fff;
+}
+
 #imagenCarrito{
     transform: translate(150%, -5%);
 }

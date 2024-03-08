@@ -10,6 +10,9 @@ HEADER.innerHTML = `
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
+                <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Menu.html">Menú</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="productos.html">Productos</a>
                     </li>
@@ -24,6 +27,9 @@ HEADER.innerHTML = `
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="administradores.html">Administradores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="perfilAdmin.html">Mi perfil</a>
                     </li>
 
                 </ul>
