@@ -1,0 +1,15 @@
+img{
+    width: 100px;
+    height: 100px;
+}
+
+#imgEliminar{
+    width: 20px;
+    height: 20px;
+    margin-top: 20%;
+    margin-right: 100%;
+}
+
+#ultimaFila{
+    text-align: center;
+}
