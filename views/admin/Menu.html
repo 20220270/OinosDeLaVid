@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <!-- Required meta tags -->
@@ -18,15 +18,17 @@
 
 <body>
 
+
     <nav>
 
     </nav>
 
 
-    <div class="row mt-4 titulos">
+
+    <div class="row mt-5 titulos">
         <div class="col-sm"></div>
         <div class="col-sm">
-            <h2>BIENVENIDO</h2>
+            <h2 class="mt-5">BIENVENIDO</h2>
         </div>
         <div class="col-sm"></div>
     </div>
@@ -40,74 +42,30 @@
     </div>
     <!--Gráfico-->
 
-    <div class="row">
-        <div class="col">
 
-            <h1 class="title_grafico">Vinos mas vendidos</h1>
-            <br>
-            <section class="container_grafico">
-                <div class="grafico"></div>
-                <div class="container_leyenda">
-                    <span class="leyenda_all">
-                        <span class="color_producto1"></span>
-                        <p class="social">Producto1</p>
-                    </span>
-                    <span class="leyenda_all">
-                        <span class="color_producto2"></span>
-                        <p class="social">Producto2</p>
-                    </span>
-                    <span class="leyenda_all">
-                        <span class="color_producto3"></span>
-                        <p class="social">Producto3</p>
-                    </span>
-                    <span class="leyenda_all">
-                        <span class="color_producto4"></span>
-                        <p class="social">Producto4</p>
-                    </span>
-                    <p class="total">Total: 1,000,000,000</p>
-
-                </div>
-            </section>
-
-        </div>
-
-
-        <div class="col">
-            <div class="container">
-                <div class="chart">
-                    <h3 class="text-white">Marcas más vendidas</h3>
-                    <canvas id="barchart" width="300" height="300"></canvas>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="container">
+                    <div class="chart">
+                        <h3 class="text-white">Marcas más vendidas</h3>
+                        <canvas id="barchart" width="300" height="300"></canvas>
+                    </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="chart">
-                    <h3 class="text-white">Clientes frecuentes</h3>
-                    <canvas id="doughnut" width="300" height="300"></canvas>
+            <div class="col">
+                <div class="container">
+                    <div class="chart">
+                        <h3 class="text-white">Clientes frecuentes</h3>
+                        <canvas id="doughnut" width="300" height="300"></canvas>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-
-    </div>
-
-
-    <div class="modal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Modal body text goes here.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
             </div>
         </div>
     </div>
+
+
 
     <footer>
 
@@ -120,7 +78,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
-    <script src="../../controllers/utils/Apartados.js"></script>
 
     <script src="../../controllers/utils/footer.js"></script>
 
@@ -129,6 +86,7 @@
     <script src="../../controllers/utils/graficoP2.js"></script>
 
     <script src="../../controllers/admin/menu.js"></script>
+    <script src="../../controllers/utils/Apartados.js"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

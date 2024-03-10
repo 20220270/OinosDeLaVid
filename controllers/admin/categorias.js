@@ -1,3 +1,6 @@
+
+        localStorage.setItem('paginaOrigen', window.location.href);
+
 $(document).ready(function(){
     $("#btnModalAbrir").click(function(){
       $("#miModal").modal("show");

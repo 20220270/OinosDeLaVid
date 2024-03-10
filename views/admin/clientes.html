@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../resources/css/EstiloApartados.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="../../resources/css/estiloMenu.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/css/estiloMenu.css">
     <title>Clientes</title>
 </head>
 
@@ -20,14 +20,14 @@
     <!-- Barra roja con el apartado -->
     <div class="container mt-4">
         <div class="row">
-            <div class="col" id="txtCategoria">
+            <div class="col mt-5" id="txtCategoria">
                 <div class="div-text mt-3">
                     <h3>Clientes</h3>
                 </div>
 
             </div>
             <!-- Barra de busqueda-->
-            <div class="col">
+            <div class="col mt-5">
                 <div class="container-sm mt-2">
                     <form class="d-flex">
                         <div class="position-relative">
@@ -40,19 +40,18 @@
                 </div>
             </div>
             <!--Botón para ver la pantalla de pedidos-->
-            <div class="col">
+            <div class="col mt-5">
                 <button type="submit" class="btn btn-success mt-1" id="mostrarPedidos">
                     <i class="bi bi-search"></i>
-                    <img src="../../resources/Imagenes/pedidos.png" alt="" width="60px" height="60px"
-                        class="mb-1">
+                    <img src="../../resources/Imagenes/pedidos.png" alt="" width="60px" height="60px" class="mb-1">
                 </button>
             </div>
         </div>
-        
+
     </div>
 
 
-    <div class="col-11 table-wrapper">
+    <div class="col-11 table-wrapper mt-5">
         <table class="table table-hover">
             <!-- Encabezado de la tabla para mostrar la cantidad de registros y los títulos de las columnas -->
             <thead>
@@ -73,7 +72,7 @@
                 </tr>
 
 
-                        <!--campos de la tabla-->
+                <!--campos de la tabla-->
 
                 <tr>
                     <th scope="row">1</th>
@@ -87,7 +86,7 @@
                     <td>Activo</td>
                     <td>
 
-                                <!--boton de eliminar-->
+                        <!--boton de eliminar-->
 
                         <div class="col-12">
                             <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
@@ -96,9 +95,9 @@
                                     class="mb-1">
                             </button>
 
-                                    <!--boton para poder ver pedidos-->
+                            <!--boton para poder ver pedidos-->
 
-                            
+
                             <button type="submit" class="btn btn-success mt-1" id="mostrarPedidosFiltados">
                                 <i class="bi bi-search"></i>
                                 <img src="../../resources/Imagenes/pedidos.png" alt="" width="30px" height="30px"
@@ -107,59 +106,7 @@
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Santiago Montes</td>
-                    <td>00000000-0</td>
-                    <td>sm@gmail.com</td>
-                    <td>0000-0000</td>
-                    <td>Condominios Nueva Guinea</td>
-                    <td>187ueue72yuheq72u1h1wjq</td>
-                    <td>05/02/2024</td>
-                    <td>Inactivo</td>
-                    <td>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
-                                <i class="bi bi-search"></i>
-                                <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                                    class="mb-1">
 
-                            </button>
-                            <button type="submit" class="btn btn-success mt-1" id="mostrarPedidosFiltados">
-                                <i class="bi bi-search"></i>
-                                <img src="../../resources/Imagenes/pedidos.png" alt="" width="30px" height="30px"
-                                    class="mb-1">
-                            </button>
-
-                        </div>
-                    </td>
-                   
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Camila Sánchez</td>
-                    <td>00000000-0</td>
-                    <td>cami@gmail.com</td>
-                    <td>0000-0000</td>
-                    <td>Condominios Bella Mar</td>
-                    <td>187ueue72yuheq72u1h1wjq</td>
-                    <td>05/02/2024</td>
-                    <td>Activo</td>
-                    <td>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
-                                <i class="bi bi-search"></i>
-                                <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                                    class="mb-1">
-                            </button>
-                            <button type="submit" class="btn btn-success mt-1" id="mostrarPedidosFiltados">
-                                <i class="bi bi-search"></i>
-                                <img src="../../resources/Imagenes/pedidos.png" alt="" width="30px" height="30px"
-                                    class="mb-1">
-                            </button>
-                        </div>
-                    </td>
-                </tr>
 
             </thead>
             <!-- Cuerpo de la tabla para mostrar un registro por fila -->
@@ -172,62 +119,71 @@
 
     </div>
 
-<!--Primera Modal para mostrar la eliminación de un registro-->
-<div class="modal" id="miModalDe" data-backdrop="static">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <!-- Contenido de la ventana modal -->
-            <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
+    <!--Primera Modal para mostrar la eliminación de un registro-->
+    <div class="modal" id="miModalDe" data-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Contenido de la ventana modal -->
                 <form id="saveForm">
-                    <div class="d-flex justify-content-center align-items-center flex-column"> <!-- Agregamos clases para centrar vertical y horizontalmente -->
-                        <img src="../../resources/Imagenes/pregunta.png" alt="">
-                        <br>
-                        <h4 class="text-align-center">¿Desea realmente eliminar este dato?</h4>
-                        <br>
-                        <h6 class="text-align-center">Se eliminará el dato para siempre.</h6>
-                    </div>
-                    <div class="modal-footer d-flex justify-content-center"> <!-- Agregamos clases para centrar horizontalmente -->
-                        <button type="button" class="btn btn-dark" id="btnElimin">Eliminar</button>
-                        <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal" id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+                    <div class="modal-body text-center">
+                        <!-- Agregamos la clase text-center para centrar el contenido -->
 
-<!--Segunda Modal para mostrar la eliminación de un registro-->
-<div class="modal" id="miModalDe2" data-backdrop="static">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <!-- Contenido de la ventana modal -->
-            <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
-                <form id="saveForm">
-                    <div class="d-flex justify-content-center align-items-center flex-column"> <!-- Agregamos clases para centrar vertical y horizontalmente -->
-                        <img src="../../resources/Imagenes/exito.png" alt="">
-                        <br>
-                        <h4 class="text-align-center">¡Registro eliminado con éxito!</h4>
-                        <br>
-                        <h6 class="text-align-center">Se ha eliminado un registro.</h6>
-                    </div>
-                    <div class="modal-footer d-flex justify-content-center"> <!-- Agregamos clases para centrar horizontalmente -->
-                        <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal" id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
-                    </div>
+                        <div class="d-flex justify-content-center align-items-center flex-column">
+                            <!-- Agregamos clases para centrar vertical y horizontalmente -->
+                            <img src="../../resources/Imagenes/pregunta.png" alt="">
+                            <br>
+                            <h4 class="text-align-center">¿Desea realmente eliminar este dato?</h4>
+                            <br>
+                            <h6 class="text-align-center">Se eliminará el dato para siempre.</h6>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center">
+                            <!-- Agregamos clases para centrar horizontalmente -->
+                            <button type="button" class="btn btn-dark" id="btnElimin">Eliminar</button>
+                            <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal"
+                                id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+                        </div>
                 </form>
             </div>
         </div>
     </div>
-</div>
+    </div>
+
+    <!--Segunda Modal para mostrar la eliminación de un registro-->
+    <div class="modal" id="miModalDe2" data-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <form id="saveForm">
+                <!-- Contenido de la ventana modal -->
+                <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
+                    
+                        <div class="d-flex justify-content-center align-items-center flex-column">
+                            <!-- Agregamos clases para centrar vertical y horizontalmente -->
+                            <img src="../../resources/Imagenes/exito.png" alt="">
+                            <br>
+                            <h4 class="text-align-center">¡Registro eliminado con éxito!</h4>
+                            <br>
+                            <h6 class="text-align-center">Se ha eliminado un registro.</h6>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center">
+                            <!-- Agregamos clases para centrar horizontalmente -->
+                            <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal"
+                                id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer>
 
     </footer>
 
-        <!-- Llamada a las librerías que utiliza javascript para el funcionamiento de la página web -->
+    <!-- Llamada a las librerías que utiliza javascript para el funcionamiento de la página web -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <!-- Llamada a los controlador y utils de la página web -->
+    <!-- Llamada a los controlador y utils de la página web -->
     <script type="text/javascript" src="../../controllers/utils/Apartados.js"></script>
     <script type="text/javascript" src="../../controllers/utils/footer.js"></script>
     <script type="text/javascript" src="../../controllers/admin/clientes.js"></script>

@@ -1,3 +1,6 @@
+//Codigo para redireccionar el perfil del administrador a la ventana anterior
+localStorage.setItem('paginaOrigen', window.location.href);
+
 $(document).ready(function(){
     $("#btnEliminar").click(function(){
         $("#miModalDe").modal("show");

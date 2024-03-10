@@ -1,5 +1,4 @@
 .col1 {
-    background-color: rgb(145, 0, 0);
     color: rgb(255, 255, 255);
     text-align: center;
     height: 4rem;
@@ -59,5 +58,49 @@
     #btnCerrarCe{
         width: 80px;
         margin-left: 0.2%;
+    }
+}
+
+
+.navbar{
+    background-color: rgb(96, 0, 0) !important;
+ 
+}
+
+.nav-link{
+    color: antiquewhite !important;
+}
+
+.navbar-brand{
+    color: antiquewhite !important;
+}
+
+
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
     }
 }
