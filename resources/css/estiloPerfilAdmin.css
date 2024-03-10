@@ -1,22 +1,33 @@
 .col1{
     background-color: rgb(145, 0, 0);
     color: rgb(145, 0, 0);
+    height: 50px;
 }
 
-.col{
-    background-color: azure;
-    text-align: center;
-    margin-top: 1%;
+#conte{
+    border: 3px solid #000;
 }
 
-#agg{
-    background-color:#6D0E0E    ;
+#VP,
+#actuInfo,
+#cerrarS{
+    border: none;
+    border-radius: 10px;
 }
 
-#mi-imagen { width: 100px; height: 100px; } 
+#imagenS{
+    transform: translateY(-15%);
+}
 
 .row{
     text-align: center;
 }
 
+.modal-header{
+    background-color: rgb(145, 0, 0);
+    color: #fff;
+}
 
+.btn-close{
+    background-color: #fff;
+}
