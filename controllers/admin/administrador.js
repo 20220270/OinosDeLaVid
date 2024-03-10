@@ -1,3 +1,7 @@
+//Codigo para redireccionar el perfil del administrador a la ventana anterior
+localStorage.setItem('paginaOrigen', window.location.href);
+
+
 /* aqui se muestra el formulario para registrar */
 $(document).ready(function () {
   $("#btnAbrirModal").click(function () {
@@ -90,54 +94,54 @@ $(document).ready(function () {
 });
 
 //Validación para que solamente se escriban letras, pero que pueda haber guiones y espacios en el nombre
-$(document).ready(function() {
-  $("#nombreAdmin").on("keypress", function(event) {
-      var inputValue = event.which;
-      // Permitir solo letras y guiones
-      if (!((inputValue >= 65 && inputValue <= 90) || // letras mayúsculas
-            (inputValue >= 97 && inputValue <= 122) || // letras minúsculas
-            inputValue == 45)) { // guión
-          event.preventDefault();
-      }
+$(document).ready(function () {
+  $("#nombreAdmin").on("keypress", function (event) {
+    var inputValue = event.which;
+    // Permitir solo letras y guiones
+    if (!((inputValue >= 65 && inputValue <= 90) || // letras mayúsculas
+      (inputValue >= 97 && inputValue <= 122) || // letras minúsculas
+      inputValue == 45)) { // guión
+      event.preventDefault();
+    }
   });
 });
 
 //Validación para que solamente se escriban letras, pero que pueda haber guiones y espacios en el apellido
-$(document).ready(function() {
-  $("#apellidoAdmin").on("keypress", function(event) {
-      var inputValue = event.which;
-      // Permitir solo letras y guiones
-      if (!((inputValue >= 65 && inputValue <= 90) || // letras mayúsculas
-            (inputValue >= 97 && inputValue <= 122) || // letras minúsculas
-            inputValue == 45)) { // guión
-          event.preventDefault();
-      }
+$(document).ready(function () {
+  $("#apellidoAdmin").on("keypress", function (event) {
+    var inputValue = event.which;
+    // Permitir solo letras y guiones
+    if (!((inputValue >= 65 && inputValue <= 90) || // letras mayúsculas
+      (inputValue >= 97 && inputValue <= 122) || // letras minúsculas
+      inputValue == 45)) { // guión
+      event.preventDefault();
+    }
   });
 });
 
 //Validación para que solamente se escriban letras, pero que pueda haber guiones y espacios en el nombre
-$(document).ready(function() {
-  $("#nombreAdminA").on("keypress", function(event) {
-      var inputValue = event.which;
-      // Permitir solo letras y guiones
-      if (!((inputValue >= 65 && inputValue <= 90) || // letras mayúsculas
-            (inputValue >= 97 && inputValue <= 122) || // letras minúsculas
-            inputValue == 45)) { // guión
-          event.preventDefault();
-      }
+$(document).ready(function () {
+  $("#nombreAdminA").on("keypress", function (event) {
+    var inputValue = event.which;
+    // Permitir solo letras y guiones
+    if (!((inputValue >= 65 && inputValue <= 90) || // letras mayúsculas
+      (inputValue >= 97 && inputValue <= 122) || // letras minúsculas
+      inputValue == 45)) { // guión
+      event.preventDefault();
+    }
   });
 });
 
 //Validación para que solamente se escriban letras, pero que pueda haber guiones y espacios en el apellido
-$(document).ready(function() {
-  $("#apellidoAdminA").on("keypress", function(event) {
-      var inputValue = event.which;
-      // Permitir solo letras y guiones
-      if (!((inputValue >= 65 && inputValue <= 90) || // letras mayúsculas
-            (inputValue >= 97 && inputValue <= 122) || // letras minúsculas
-            inputValue == 45)) { // guión
-          event.preventDefault();
-      }
+$(document).ready(function () {
+  $("#apellidoAdminA").on("keypress", function (event) {
+    var inputValue = event.which;
+    // Permitir solo letras y guiones
+    if (!((inputValue >= 65 && inputValue <= 90) || // letras mayúsculas
+      (inputValue >= 97 && inputValue <= 122) || // letras minúsculas
+      inputValue == 45)) { // guión
+      event.preventDefault();
+    }
   });
 });
 
