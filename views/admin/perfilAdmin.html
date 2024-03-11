@@ -98,7 +98,7 @@
                       </div>
                       <div class="col-sm-12 col-md-6 col-lg-12">
                         <label for="nombreCategoria" class="col-sm-7 col-form-label text-start w-100">Correo:</label>
-                        <input id="CorreoAdminA" type="text" name="CorreoAdminA" class="form-control" placeholder=""
+                        <input id="CorreoAdminA" type="email" name="CorreoAdminA" class="form-control" placeholder=""
                           required>
                       </div>
                       <div class="col-sm-12 col-md-6 col-lg-12">
@@ -205,6 +205,32 @@
           </div>
         </form>
       </div>
+
+      <!--Modal para mostrar la actualización de la contraseña-->
+    <div class="modal" id="modalContraCtualizada" data-backdrop="static">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+              <!-- Contenido de la ventana modal -->
+              <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
+                  <form id="saveForm">
+                      <div class="d-flex justify-content-center align-items-center flex-column">
+                          <!-- Agregamos clases para centrar vertical y horizontalmente -->
+                          <img src="../../resources/Imagenes/exito.png" alt="">
+                          <br>
+                          <h4 class="text-align-center">¡Contraseña actualizada con éxito!</h4>
+                          <br>
+                          <h6 class="text-align-center">Se ha actualizado la contraseña.</h6>
+                      </div>
+                      <div class="modal-footer d-flex justify-content-center">
+                          <!-- Agregamos clases para centrar horizontalmente el botón-->
+                          <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal"
+                              id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
 
 
       <!-- Optional JavaScript; choose one of the two! -->
