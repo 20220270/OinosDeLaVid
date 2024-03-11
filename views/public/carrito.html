@@ -47,13 +47,14 @@
   </div>
 
   <div class="mt-5">
-      <table class="table mt-5">
+      <table class="table mt-5 text-center">
         <thead>
           <tr>
             <th scope="col">Producto</th>
             <th scope="col">Precio</th>
             <th scope="col">Cantidad</th>
             <th scope="col">Subtotal</th>
+            <th scope="col">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -63,11 +64,20 @@
                 alt="">Country Slider</th>
             <td>$78.78
             </td>
-            <td>3
-              <img src="https://cdn-icons-png.freepik.com/256/6861/6861362.png" alt="" id="imgEliminar">
-
+            <td>
+              <div class="input-group mb-3">
+                <button class="btn btn-outline-secondary" type="button" id="decrementBtn">-</button>
+                <!--Resta la cantidad-->
+                <input type="number" class="form-control" placeholder="0" aria-label="0"
+                    aria-describedby="incrementBtn decrementBtn" min="0" readonly>
+                <button class="btn btn-outline-secondary" type="button" id="incrementBtn">+</button>
+                <!--Suma la cantidad-->
+            </div>
             </td>
+            
             <td>$130.45</td>
+            <td><img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" id="imgEliminar" height="30px" width="30px">
+            </td>
           </tr>
 
         </tbody>
