@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });*/
 
+
 document.getElementById("textoCar").addEventListener("click", function () {
   window.location.href = "carrito.html";
 });

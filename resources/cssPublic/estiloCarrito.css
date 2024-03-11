@@ -1,14 +1,7 @@
-img{
-    width: 100px;
-    height: 100px;
+#imagenCarrito{
+    transform: translateX(130%);
 }
 
-#imgEliminar{
-    width: 20px;
-    height: 20px;
-    margin-top: 20%;
-    margin-right: 100%;
-}
 
 #ultimaFila{
     text-align: center;
@@ -16,8 +9,16 @@ img{
 
 #textorr{
     color: #fff;
+    
 }
 .te{
     color: #fff;
+    
+}
+
+#botonCarrito{
+    background-color: #6D0E0E;
+    color: #fff;
+    width: 200px;
 }
 
