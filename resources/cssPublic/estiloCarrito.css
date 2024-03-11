@@ -22,3 +22,14 @@
     width: 200px;
 }
 
+#decrementBtn,
+#incrementBtn{
+    background-color: #6D0E0E;
+    color: #fff;
+}
+
+.form-control:read-only{
+    background: #000;
+    color: #fff;
+}
+

@@ -15,3 +15,23 @@ HEADER.innerHTML = `
 </div>
 <hr>
 `;
+
+document.getElementById("btnEnviarCod").addEventListener("click", function () {
+    location.href = "RecuperarContraIngresarCodigo.html";
+  });
+
+  document.getElementById("btnVo").addEventListener("click", function () {
+    location.href = "index.html";
+  });
+
+  document.getElementById("btnVerificar").addEventListener("click", function () {
+    location.href = "RecuperarContraCambiarContra.html";
+  });
+
+  document.getElementById("btnRegre").addEventListener("click", function () {
+    location.href = "index.html";
+  });
+
+  document.getElementById("btnVolver").addEventListener("click", function () {
+    location.href = "index.html";
+  });
