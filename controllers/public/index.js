@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const buttons = document.querySelectorAll('.btnAgregarAlCarrito');
   const textoCarrito = document.getElementById('textoCar');
   const inputsCantidad = document.querySelectorAll('input[type="number"]');
-
+  
   let cantidadCarrito = 0;
-
+  
   buttons.forEach((button, index) => {
       button.addEventListener('click', function() {
           alert("Su producto ha sido registrado correctamente");
@@ -16,11 +16,11 @@ document.addEventListener('DOMContentLoaded', function() {
           actualizarTextoCarrito();
       });
   });
-
+  
   function actualizarTextoCarrito() {
       textoCarrito.innerText = `Ver carrito (${cantidadCarrito})`;
   }
-
+  
   // Actualizar el texto del carrito cuando se cambie la cantidad desde los inputs
   inputsCantidad.forEach(input => {
       input.addEventListener('input', function() {
@@ -31,7 +31,16 @@ document.addEventListener('DOMContentLoaded', function() {
           actualizarTextoCarrito();
       });
   });
+  
+  document.getElementById("textoCar").addEventListener("click", function () {
+      window.location.href = "carrito.html?cantidad=" + cantidadCarrito;
+  });
+  
+  document.getElementById("btnVerPerfil").addEventListener("click", function () {
+      window.location.href = "perfil.html";
+  });
 });
+
 
 /*document.addEventListener('DOMContentLoaded', function() {
   const buttons = document.querySelectorAll('.btnAgregarAlCarrito');
@@ -47,15 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 });*/
-
-
-document.getElementById("textoCar").addEventListener("click", function () {
-  window.location.href = "carrito.html";
-});
-
-document.getElementById("btnVerPerfil").addEventListener("click", function () {
-  window.location.href = "perfil.html";
-});
 
 
     document.querySelectorAll('.card').forEach(card => {
