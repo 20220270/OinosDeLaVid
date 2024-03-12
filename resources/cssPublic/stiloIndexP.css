@@ -296,8 +296,8 @@ footer {
     margin-top: 0;
 }
 
-.carousel-control-prev,
-.carousel-control-next{
+#prev,
+#next{
     background-color: gray;
     width: 50px;
     height: 100px;

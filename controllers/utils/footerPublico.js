@@ -93,13 +93,13 @@ FOOTERP.innerHTML = `
             </div>
         </div>
 
-        <button class="carousel-control-prev mt-5" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <button class="carousel-control-prev mt-3" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span class="visually-hidden" id="prev">Previous</span>
         </button>
-        <button class="carousel-control-next mt-5" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <button class="carousel-control-next mt-3" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span class="visually-hidden" id="next">Next</span>
         </button>
     </div>
     <!--Fin de apartado de frases célebres-->
