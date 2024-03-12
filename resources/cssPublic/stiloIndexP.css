@@ -295,3 +295,14 @@ footer {
 .timeline-content h2 {
     margin-top: 0;
 }
+
+.carousel-control-prev,
+.carousel-control-next{
+    background-color: gray;
+    width: 50px;
+    height: 100px;
+}
+
+#frases{
+    border-bottom: 1px solid #fff;
+}
