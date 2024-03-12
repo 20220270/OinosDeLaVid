@@ -98,4 +98,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+document.getElementById("cerrarS").addEventListener("click", function () {
+    location.href = "login.html";
+  });
+
+
+//Función investigada para la ejecución de una modal mientras se cierra la anterior.
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Aquí obtenemos la referencia a la modal ModalActualizarContraseña, la cual se va a mostrar
+    var modalActualizarContraseña = new bootstrap.Modal(document.getElementById('ModalActualizarContraseña'));
+
+    // Aquí obtenemos la referencia a la modal ModalActualizarDatosPublico, la cual es la que se va a ocultar
+    var modalActualizarDatosPublico = new bootstrap.Modal(document.getElementById('ModalActualizarDatosPublico'));
+
+    
+    // Añadimos un event listener para el clic en el botón btnContraseniaNueva, el cual abrirá la modal
+    //para cambiar la contraseña y cerrará la anterior
+    var btnContraseniaNueva = document.getElementById('btnContraseniaNueva');
+    btnContraseniaNueva.addEventListener('click', function() {
+        // Abre la modal ModalActualizarContraseña
+        modalActualizarContraseña.show();
+    });
+
+    // Añade un event listener para el evento "shown.bs.modal" en la modal ModalActualizarContraseña
+    //haciendo referencia a que al detectar una modal disparada, la modal anterior se oculte
+    modalActualizarContraseña._element.addEventListener('shown.bs.modal', function() {
+        // Cierra la modal ModalActualizarDatosPublico
+        modalActualizarDatosPublico.hide();
+    });
+
+});
+
 

@@ -15,7 +15,9 @@
 }
 
 #btnVo,
-#btnEnviarCod{
+#btnEnviarCod,
+#btnRestaContra,
+#btnRegre{
     background-color: #6D0E0E;
     border-radius: 6px;
 }
