@@ -111,6 +111,8 @@ FOOTERP.innerHTML = `
                     <img src="../../resources/Imagenes/logoBlanco.png" alt="logo" id="imagenLL" height="130px"
                         width="130px">
                     <h6 class="text-center mt-3">
+                    <img src="../../resources/Imagenes/ubicacion.png" alt="logo" id="imagenLL" height="15px"
+                        width="10px">
                         Avenida Aguilares 218 San Salvador CP, San Salvador 1101
                     </h6>
                 </div>
