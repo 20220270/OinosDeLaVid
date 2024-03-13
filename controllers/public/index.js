@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         decrementBtn.addEventListener('click', () => {
-            if (input.value > 0) {
+            if (input.value > 1) {
                 input.stepDown();
             } else {
                 const bsToast = new bootstrap.Toast(toast);

@@ -12,13 +12,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listener para el botón de incremento
     incrementBtn.addEventListener('click', function() {
-        cantidadCarrito++;
-        actualizarCantidadCarrito();
+        if (cantidadCarrito > 1) {
+            cantidadCarrito ++;
+            actualizarCantidadCarrito();
+        }
     });
 
     // Event listener para el botón de decremento
     decrementBtn.addEventListener('click', function() {
-        if (cantidadCarrito > 0) {
+        if (cantidadCarrito > 1) {
             cantidadCarrito--;
             actualizarCantidadCarrito();
         }
@@ -52,7 +54,7 @@ document.querySelectorAll('.card').forEach(card => {
     });
 
     decrementBtn.addEventListener('click', () => {
-        if (input.value > 0) {
+        if (input.value > 1) {
             input.stepDown();
         } else {
             const bsToast = new bootstrap.Toast(toast);
