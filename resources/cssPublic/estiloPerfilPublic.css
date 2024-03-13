@@ -17,7 +17,8 @@
 .row{
     text-align: center;
 }
-.form-control{
+.form-control,
+#basic-addon1{
     border: none;
     border-bottom: 1px solid #000000;
     border-radius: 0;

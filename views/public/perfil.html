@@ -105,11 +105,13 @@
                         <input id="CorreoClienteA" type="email" name="CorreoAdminA" class="form-control" placeholder=""
                           required>
                       </div>
-                      <div class="col-sm-12 col-md-6 col-lg-12">
-                        <label for="nombreCategoria" class="col-sm-7 col-form-label text-start w-100">Teléfono:</label>
-                        <input id="telefonoClienteA" type="text" name="telefonoAdminA" class="form-control" placeholder=""
-                          required>
-                      </div>
+                      <div class="mb-3 col-sm-12 col-md-12 col-lg-12">
+                        <label for="formGroupExampleInput2" class="form-label text-start w-100">Teléfono:</label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">+503</span>
+                            <input type="text" id="telefonoClienteA" class="form-control" placeholder="0000-0000" name="telefonoClienteA">
+                        </div>
+                    </div>
                       <div class="col-sm-12 col-md-6 col-lg-12">
                         <label for="nombreCategoria" class="col-sm-7 col-form-label text-start w-100">Dirección:</label>
                         <input id="direccionClienteA" type="text" name="AliasAdminA" class="form-control" placeholder=""
@@ -119,7 +121,7 @@
                     <div class="modal-footer">
                       <button type="submit" class="btn btn-dark" id="btnGuardarAc">Actualizar</button>
                       <button type="button" class="btn btn-dark" id="btnContraseniaNueva" data-bs-toggle="modal"
-                        data-bs-target="#ModalActualizarContraseña">Actualizar contraseña</button>
+                        data-bs-target="#ModalActualizarContraseña">Actualizar clave</button>
 
 
                       <button type="button" class="btn btn-dark" data-bs-dismiss="modal" id="btnCerrar">Cerrar</button>
@@ -204,7 +206,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Actualiza tu contraseña</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Actualiza tu clave</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form>
@@ -243,9 +245,9 @@
                           <!-- Agregamos clases para centrar vertical y horizontalmente -->
                           <img src="../../resources/Imagenes/exito.png" alt="">
                           <br>
-                          <h4 class="text-align-center">¡Contraseña actualizada con éxito!</h4>
+                          <h4 class="text-align-center">¡Clave actualizada con éxito!</h4>
                           <br>
-                          <h6 class="text-align-center">Se ha actualizado la contraseña.</h6>
+                          <h6 class="text-align-center">Se ha actualizado la clave.</h6>
                       </div>
                       <div class="modal-footer d-flex justify-content-center">
                           <!-- Agregamos clases para centrar horizontalmente el botón-->
