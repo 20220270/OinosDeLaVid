@@ -102,6 +102,10 @@ document.getElementById("cerrarS").addEventListener("click", function () {
     location.href = "login.html";
   });
 
+  document.getElementById("VP").addEventListener("click", function () {
+    location.href = "index.html";
+  });
+
 
 //Función investigada para la ejecución de una modal mientras se cierra la anterior.
 

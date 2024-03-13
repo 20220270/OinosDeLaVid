@@ -89,7 +89,7 @@
                     </tr>
                     <tr>
                         <th>Compra Número</th>
-                        <th>Productos enlistados</th>
+                        <th>Productos adquiridos</th>
                         <th>Cantidad de productos</th>
                         <th>Precio pagado</th>
                         <th>Fecha de la compra</th>
@@ -169,7 +169,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header calificar">
-                        <h5 class="modal-title" id="exampleModalLabel">Calificar compra</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Valorar productos</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <form id="formularioValoracion">
@@ -178,9 +178,10 @@
                             <div class="container text-center">
                                 <div class="row">
                                     <div class="col">
+                                        <input type="hidden" id="iddetalleOrden" name="iddetalleOrden">
+                                        <input type="hidden" id="idProducto" name="idProducto">
                                         <label for="nombreCategoria"
-                                            class="col-sm-7 col-form-label text-center">Califica
-                                            tu orden</label>
+                                            class="col-sm-7 col-md-12 col-lg-12 col-form-label text-center">Valora tus productos</label>
                                         <div class="rating">
                                             <i class="bi bi-star-fill star"></i>
                                             <i class="bi bi-star-fill star"></i>
