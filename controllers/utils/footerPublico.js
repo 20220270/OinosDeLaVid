@@ -105,7 +105,7 @@ FOOTERP.innerHTML = `
     <!--Fin de apartado de frases célebres-->
             </div>
 
-            <div class="row justify-content-around text-center text-md-start">
+            <div class="row justify-content-around text-center text-md-start mt-4">
                 <div class="col-md-2 text-center">
 
                     <img src="../../resources/Imagenes/logoBlanco.png" alt="logo" id="imagenLL" height="130px"
