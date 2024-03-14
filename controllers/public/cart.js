@@ -75,4 +75,37 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('cantidadProductos').value = cantidadProductos;
     }
   });
+
+  //Actualizar la cantidad dentro del carrito
+  document.addEventListener('DOMContentLoaded', function() {
+    const inputCantidad = document.querySelector('input[type="number"]');
+    const incrementBtns = document.querySelectorAll('#incrementBtn1');
+    const decrementBtns = document.querySelectorAll('#decrementBtn1');
+
+    // Obtener la cantidad del carrito del valor del input de cantidad
+    let cantidadCarrito = parseInt(inputCantidad.value);
+
+    // Event listener para los botones de incremento
+    incrementBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            cantidadCarrito++;
+            actualizarCantidadCarrito();
+        });
+    });
+
+    // Event listener para los botones de decremento
+    decrementBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            if (cantidadCarrito > 1) {
+                cantidadCarrito--;
+                actualizarCantidadCarrito();
+            }
+        });
+    });
+
+    function actualizarCantidadCarrito() {
+        inputCantidad.value = cantidadCarrito;
+    }
+});
+
   
