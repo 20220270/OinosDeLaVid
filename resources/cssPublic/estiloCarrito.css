@@ -1,15 +1,37 @@
-img{
-    width: 100px;
-    height: 100px;
+#imagenCarrito{
+    transform: translateX(130%);
 }
 
-#imgEliminar{
-    width: 20px;
-    height: 20px;
-    margin-top: 20%;
-    margin-right: 100%;
-}
 
 #ultimaFila{
     text-align: center;
 }
+
+#textorr{
+    color: #fff;
+    
+}
+.te{
+    color: #fff;
+    
+}
+
+#botonCarrito{
+    background-color: #6D0E0E;
+    color: #fff;
+    width: 200px;
+}
+
+#decrementBtn,
+#incrementBtn,
+#botonPedido{
+    background-color: #6D0E0E;
+    color: #fff;
+}
+
+
+.form-control:read-only{
+    background: #000;
+    color: #fff;
+}
+

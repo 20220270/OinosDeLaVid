@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-//función para cerrar una modal a la vez que se abre otra modal
+//función para cerrar una modal a la vez que se abre otra modal. El mtodo de abrir está en el codigo html
 
 document.addEventListener('DOMContentLoaded', function () {
   var btnContraseniaNueva = document.getElementById('btnContraseniaNueva');
@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
     modalActualizarDatosAdmin.hide(); 
   });
 });
+
+
 
 //función para cerrar una ventana y abrir el login
 

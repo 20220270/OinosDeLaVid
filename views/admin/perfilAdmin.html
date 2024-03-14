@@ -5,14 +5,11 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <head>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../../resources/css/estiloPerfilAdmin.css">
     <title>Perfil de administrador</title>
-  </head>
 
 </head>
 
@@ -22,7 +19,7 @@
 
   </nav>
 
-  <div class="col1">h</div>
+  <div class="col1"></div>
 
   <div class="container">
     <div class="row">
@@ -34,7 +31,7 @@
       <div class="col">
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12 mt-4">
-            <h1>Perfil de usuario</h1>
+            <h1>Perfil de administrador</h1>
           </div>
 
         </div>
@@ -98,7 +95,7 @@
                       </div>
                       <div class="col-sm-12 col-md-6 col-lg-12">
                         <label for="nombreCategoria" class="col-sm-7 col-form-label text-start w-100">Correo:</label>
-                        <input id="CorreoAdminA" type="text" name="CorreoAdminA" class="form-control" placeholder=""
+                        <input id="CorreoAdminA" type="email" name="CorreoAdminA" class="form-control" placeholder=""
                           required>
                       </div>
                       <div class="col-sm-12 col-md-6 col-lg-12">
@@ -205,6 +202,32 @@
           </div>
         </form>
       </div>
+
+      <!--Modal para mostrar la actualización de la contraseña-->
+    <div class="modal" id="modalContraCtualizada" data-backdrop="static">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+              <!-- Contenido de la ventana modal -->
+              <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
+                  <form id="saveForm">
+                      <div class="d-flex justify-content-center align-items-center flex-column">
+                          <!-- Agregamos clases para centrar vertical y horizontalmente -->
+                          <img src="../../resources/Imagenes/exito.png" alt="">
+                          <br>
+                          <h4 class="text-align-center">¡Contraseña actualizada con éxito!</h4>
+                          <br>
+                          <h6 class="text-align-center">Se ha actualizado la contraseña.</h6>
+                      </div>
+                      <div class="modal-footer d-flex justify-content-center">
+                          <!-- Agregamos clases para centrar horizontalmente el botón-->
+                          <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal"
+                              id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
 
 
       <!-- Optional JavaScript; choose one of the two! -->

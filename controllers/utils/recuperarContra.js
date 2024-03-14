@@ -1,4 +1,3 @@
-
 /*Código para tener la barra roja que esta encima de la pantalla, el logo de la empresa y el texto "Recuperación de contraseña"*/
 const HEADER = document.querySelector('header');
 HEADER.innerHTML = `
