@@ -10,7 +10,7 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="../../resources/cssPublic/estiloCarrito.css">
   <title>Carrito de compras</title>
-  
+
 </head>
 
 <body>
@@ -37,87 +37,118 @@
 
           <h6 class="mt-1 text-left" id="textoCarrito">Agregar productos</h6>
 
-      </button>
+        </button>
       </div>
 
-      
+
     </div>
   </nav>
 
+  <div>
+    <div class="te text-white">
+      p
+    </div>
+    <div class="te text-white">
+      p
+    </div>
+    <div class="te text-white">
+      p
+    </div>
+    <div class="te text-white">
+      p
+    </div>
 
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Producto</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Subtotal</th>
-            <th scope="col">Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row"><img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEi4KgvjWG5q6kiAJMQb7yTHmya-ajxnzzKQ&usqp=CAU"
-                alt="">Country Slider</th>
-            <td>$78.78
-            </td>
-            <td>
-              <div class="input-group mb-3">
-                <button class="btn btn-outline-secondary" type="button" id="decrementBtn1">-</button>
-                <!--Resta la cantidad-->
-                <input type="number" class="form-control" placeholder="1" aria-label="0" aria-describedby="incrementBtn decrementBtn"
-                  id="cantidadProductos" min="1" readonly>
-                <button class="btn btn-outline-secondary" type="button" id="incrementBtn1">+</button>
-                <!--Suma la cantidad-->
-              </div>
-            </td>
-            
-            <td>$130.45</td>
-            <td><img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" id="imgEliminar" height="30px" width="30px">
-            </td>
-          </tr>
+    <div class="bg-info" id="contenedorSito">
+      <div class="px-5">
+        <div class="d-flex col-lg-12 justify-content-end px-5">
 
-        </tbody>
-      </table>
-      
-  </div>
+          <button class="btn mt-3" type="submit" id="botonPedido">
 
-
-
-
-
-
-  <div class="container mt-4 mb-4" id="ultimaFila">
-    <div class="row">
-      <div class="col">
-        <h6>Descuento:</h6>
-        20%
-      </div>
-      <div class="col">
-        <h4>Total:</h4>
-        $63.68
-      </div>
-      <div class="col">
-        <div class="d-flex col-lg-12 justify-content-end">
-      
-          <button class="btn" type="submit" id="botonPedido">
-    
             <h6 class="mt-1 text-left" id="textoCarrito">Realizar pedido</h6>
-    
-        </button>
-        </div>
 
+          </button>
+        </div>
+      </div>
+
+
+
+      <div class="mt-4 col-sm-8 col-lg-12 px-5">
+        <table class="table mt-2 text-center">
+          <thead>
+            <tr>
+              <th scope="col">Producto</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Subtotal</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEi4KgvjWG5q6kiAJMQb7yTHmya-ajxnzzKQ&usqp=CAU"
+                  alt="" height="130px" width="100px">Country Slider
+              </th>
+              <td>$78.78
+              </td>
+              <td>
+                <div class="input-group mb-3 mt-4">
+                  <button class="btn btn-outline-secondary" type="button" id="decrementBtn1">-</button>
+                  <!--Resta la cantidad-->
+                  <input type="number" class="form-control" placeholder="1" aria-label="0"
+                    aria-describedby="incrementBtn decrementBtn" id="cantidadProductos" min="1" readonly>
+                  <button class="btn btn-outline-secondary" type="button" id="incrementBtn1">+</button>
+                  <!--Suma la cantidad-->
+                </div>
+              </td>
+
+              <td>$130.45</td>
+              <td><img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" id="imgEliminar" height="30px"
+                  width="30px">
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+
+
+
+
+
+
+      <div class="container mt-2 mb-4" id="ultimaFila">
+        <div class="row">
+          <div class="col">
+            <h4>Descuento:</h4>
+            20%
+          </div>
+          <div class="col">
+            <h4>Total:</h4>
+            $63.68
+          </div>
+          <div class="col">
+            <div class="d-flex col-lg-12 justify-content-end">
+
+              <button class="btn" type="submit" id="botonPedido">
+
+                <h6 class="mt-1 text-left" id="textoCarrito">Realizar pedido</h6>
+
+              </button>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  </div>
-  </div>
 
 
 
 
-  <footer class="mt-5">
+
+  <footer class="mt-5 h-100 w-100">
 
   </footer>
 
