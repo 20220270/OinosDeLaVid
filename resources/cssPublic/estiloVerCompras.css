@@ -74,7 +74,7 @@ footer{
 }
 
 #btnCerrarFormularioV,
-#btnENviarValoracion{
+.btnENviarValoracion{
     background-color: #6D0E0E;
     color: #fff;
 }

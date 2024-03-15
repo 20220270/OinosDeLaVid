@@ -58,66 +58,62 @@
       p
     </div>
 
-    <div class="bg-info" id="contenedorSito">
-      <div class="px-5">
+
+
+
+
+    <div class="mt-4 col-sm-8 col-lg-12 col-md-12 col-sm-12 px-5" id="contenedorPedido">
+      <!--Primer botón para realizar el pedido-->
+      <div class="px-5 me-2">
         <div class="d-flex col-lg-12 justify-content-end px-5">
 
-          <button class="btn mt-3" type="submit" id="botonPedido">
+          <button class="btn mt-3 btnPedido" type="button">
 
             <h6 class="mt-1 text-left" id="textoCarrito">Realizar pedido</h6>
 
           </button>
         </div>
+        <!--Tabla con la info del pedido-->
       </div>
+      <table class="table mt-2 text-center">
+        <thead>
+          <tr>
+            <th scope="col">Producto</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Subtotal</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEi4KgvjWG5q6kiAJMQb7yTHmya-ajxnzzKQ&usqp=CAU"
+                alt="" height="130px" width="100px">Country Slider
+            </th>
+            <td>$78.78
+            </td>
+            <td>
+              <div class="input-group mb-3 mt-4">
+                <button class="btn btn-outline-secondary" type="button" id="decrementBtn1">-</button>
+                <!--Resta la cantidad-->
+                <input type="number" class="form-control" placeholder="1" aria-label="0"
+                  aria-describedby="incrementBtn decrementBtn" id="cantidadProductos" min="1" readonly>
+                <button class="btn btn-outline-secondary" type="button" id="incrementBtn1">+</button>
+                <!--Suma la cantidad-->
+              </div>
+            </td>
 
+            <td>$130.45</td>
+            <td><img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" class="imgEliminar" height="30px"
+                width="30px">
+            </td>
+          </tr>
 
+        </tbody>
+      </table>
 
-      <div class="mt-4 col-sm-8 col-lg-12 px-5">
-        <table class="table mt-2 text-center">
-          <thead>
-            <tr>
-              <th scope="col">Producto</th>
-              <th scope="col">Precio</th>
-              <th scope="col">Cantidad</th>
-              <th scope="col">Subtotal</th>
-              <th scope="col">Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row"><img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEi4KgvjWG5q6kiAJMQb7yTHmya-ajxnzzKQ&usqp=CAU"
-                  alt="" height="130px" width="100px">Country Slider
-              </th>
-              <td>$78.78
-              </td>
-              <td>
-                <div class="input-group mb-3 mt-4">
-                  <button class="btn btn-outline-secondary" type="button" id="decrementBtn1">-</button>
-                  <!--Resta la cantidad-->
-                  <input type="number" class="form-control" placeholder="1" aria-label="0"
-                    aria-describedby="incrementBtn decrementBtn" id="cantidadProductos" min="1" readonly>
-                  <button class="btn btn-outline-secondary" type="button" id="incrementBtn1">+</button>
-                  <!--Suma la cantidad-->
-                </div>
-              </td>
-
-              <td>$130.45</td>
-              <td><img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" id="imgEliminar" height="30px"
-                  width="30px">
-              </td>
-            </tr>
-
-          </tbody>
-        </table>
-
-      </div>
-
-
-
-
-
-
+      <!--Ultima fila, donde se muestra el total de la compra, el descuento aplicado y el botón para realizar el pedido-->
       <div class="container mt-2 mb-4" id="ultimaFila">
         <div class="row">
           <div class="col">
@@ -128,10 +124,12 @@
             <h4>Total:</h4>
             $63.68
           </div>
-          <div class="col">
-            <div class="d-flex col-lg-12 justify-content-end">
 
-              <button class="btn" type="submit" id="botonPedido">
+          <!--Segundo botón para realizar el pedido-->
+          <div class="col ms-5">
+            <div class="ms-5 col-lg-12">
+
+              <button class="btn btnPedido ms-5" type="button">
 
                 <h6 class="mt-1 text-left" id="textoCarrito">Realizar pedido</h6>
 
@@ -142,15 +140,94 @@
         </div>
       </div>
     </div>
+
+
   </div>
 
+  <!--Modal para mostrar la realización del pedido-->
+  <div class="modal" id="modalConfirmarPedido" data-backdrop="static">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <!-- Contenido de la ventana modal -->
+        <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
+          <form id="saveForm">
+            <div class="d-flex justify-content-center align-items-center flex-column">
+              <!-- Agregamos clases para centrar vertical y horizontalmente -->
+              <img src="../../resources/Imagenes/exito.png" alt="">
+              <br>
+              <h4 class="text-align-center">¡Pedido realizado con éxito!</h4>
+              <br>
+              <h6 class="text-align-center">Se ha realizado su pedido exitosamente.</h6>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <!-- Agregamos clases para centrar horizontalmente el botón-->
+              <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal"
+                id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!--Modal para la confirmación para eliminar un dato-->
+  <div class="modal" id="modalEliminar1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <!-- Contenido de la ventana modal -->
+        <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
+          <form id="saveForm">
+            <div class="d-flex justify-content-center align-items-center flex-column">
+              <!-- Agregamos clases para centrar vertical y horizontalmente -->
+              <img src="../../resources/Imagenes/pregunta.png" alt="">
+              <br>
+              <h4 class="text-align-center">¿Estás seguro de que quieres quitar este producto de tu orden?</h4>
+              <br>
+              <h6 class="text-align-center">Una vez lo elimines, deberás volver a agregarlo</h6>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <!-- Agregamos clases para centrar horizontalmente el botón-->
+              <button type="button" class="btn btn-dark btn-block btnCerrar" data-bs-dismiss="modal">Quitar producto</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+              <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal"
+                id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!--Modal para la eliminación de un dato-->
+  <div class="modal" id="modalEliminar2" data-bs-backdrop="static">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <!-- Contenido de la ventana modal -->
+        <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
+          <form id="saveForm">
+            <div class="d-flex justify-content-center align-items-center flex-column">
+              <!-- Agregamos clases para centrar vertical y horizontalmente -->
+              <img src="../../resources/Imagenes/exito.png" alt="">
+              <br>
+              <h4 class="text-align-center">¡Producto removido de la orden!</h4>
+              <br>
+              <h6 class="text-align-center">Se ha quitado un producto de la orden.</h6>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <!-- Agregamos clases para centrar horizontalmente el botón-->
+              <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal"
+                id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
-
-  <footer class="mt-5 h-100 w-100">
+  <!--Footer-->
+  <footer class="bg-dark text-light mt-5 h-100 w-100">
 
   </footer>
+
 
 
 

@@ -1,4 +1,5 @@
 // JavaScript para abrir la modal al hacer clic en el botón
+// JavaScript para abrir la modal al hacer clic en el botón
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.mostrarModalValoracion');
     buttons.forEach(button => {
@@ -12,5 +13,3 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById("perfilUsuario").addEventListener("click", function () {
     location.href = "perfil.html";
   });
-
-

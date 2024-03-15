@@ -108,4 +108,35 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+//Modals
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.btnPedido');
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            const modal = new bootstrap.Modal(document.getElementById('modalConfirmarPedido'));
+            modal.show();
+        });
+    });
+})
+
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.imgEliminar');
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            const modal = new bootstrap.Modal(document.getElementById('modalEliminar1'));
+            modal.show();
+        });
+    });
+})
+
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.btnCerrar');
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            const modal = new bootstrap.Modal(document.getElementById('modalEliminar2'));
+            modal.show();
+        });
+    });
+})
+
   

@@ -1,3 +1,8 @@
+
+body{
+    background-color: #F4F4F4;
+}
+
 #imagenCarrito{
     transform: translateX(130%);
 }
@@ -26,8 +31,12 @@
 #incrementBtn,
 #decrementBtn1,
 #incrementBtn1,
-#botonPedido{
+.btnPedido{
     background-color: #6D0E0E;
+    color: #fff;
+}
+
+.btnPedido:hover{
     color: #fff;
 }
 
@@ -37,8 +46,12 @@
     color: #fff;
 }
 
-#contenedorSito{
-    width: 1300px;
-    
+#contenedorPedido{
+    border: 3px solid #000;
+    background-color: #fff;
+}
+
+.imgEliminar{
+    cursor: pointer;
 }
 

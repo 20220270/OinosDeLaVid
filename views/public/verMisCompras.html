@@ -163,6 +163,32 @@
 
         </div>
 
+         <!--Modal para la eliminación de un dato-->
+  <div class="modal" id="modalEnviarMiValoracion" data-bs-backdrop="static">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <!-- Contenido de la ventana modal -->
+        <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
+          <form id="saveForm">
+            <div class="d-flex justify-content-center align-items-center flex-column">
+              <!-- Agregamos clases para centrar vertical y horizontalmente -->
+              <img src="../../resources/Imagenes/exito.png" alt="">
+              <br>
+              <h4 class="text-align-center">¡Muchas gracias!</h4>
+              <br>
+              <h6 class="text-align-center">Tu valoración nos será de mucha utilidad para mejorar.</h6>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <!-- Agregamos clases para centrar horizontalmente el botón-->
+              <button type="button" class="btn btn-dark btn-block" data-bs-dismiss="modal"
+                id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
         <!-- Modal -->
         <div class="modal fade" id="modalValoracion" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true" data-bs-backdrop="static">
@@ -202,8 +228,9 @@
 
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="btn" class="btn" id="btnENviarValoracion">Enviar mi
+                                    <button type="button" class="btn btnENviarValoracion" id="">Enviar mi
                                         valoración</button>
+                                       
                                     <button type="reset" class="btn" data-bs-dismiss="modal"
                                         id="btnCerrarFormularioV">Cerrar</button>
                                     <!-- Puedes agregar aquí un botón para enviar la calificación, si es necesario -->
@@ -215,6 +242,8 @@
 
             </div>
         </div>
+
+       
 
     </div>
 
