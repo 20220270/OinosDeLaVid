@@ -150,6 +150,20 @@ footer {
 
 }
 
+@media screen and (max-width: 1160px) {
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        transform: translate(-940%, -48%);
+        width: 20px;
+        height: auto;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+
+}
+
 
 @media screen and (max-width: 1109px) {
     .search-icon {
@@ -179,6 +193,7 @@ footer {
     }
 
 }
+
 
 @media screen and (max-width: 768px) {
     .search-icon {

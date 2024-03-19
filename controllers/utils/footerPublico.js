@@ -1,7 +1,7 @@
 const FOOTERP = document.querySelector('footer');
 
 FOOTERP.innerHTML = `
-<div class="container-fluid bg-dark text-light">
+<div class="container-fluid bg-dark text-light w-100">
 
 <div id="frases" class="carousel slide mt-5 bg-dark text-white mb-3" data-bs-ride="carousel">
       <div class="carousel-inner">

@@ -147,6 +147,9 @@ footer{
         pointer-events: none;
     }
 }
+@media screen and (max-width: 551px) {
+    
+}
 
 
 #Search{
