@@ -66,6 +66,9 @@ document.querySelectorAll('.card').forEach(card => {
 document.getElementById("perfilUsuario").addEventListener("click", function () {
     window.location.href = "perfil.html";
 });
+document.getElementById("botonCarrito").addEventListener("click", function () {
+    window.location.href = "index.html";
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);

@@ -235,9 +235,8 @@
           </div>
         </form>
       </div>
-
       <!--Modal para mostrar la actualización de la contraseña-->
-      <div class="modal" id="modalContraCtualizada" data-backdrop="static">
+      <div class="modal" id="modalDatosActua" data-bs-backdrop="static">
         <div class="modal-dialog modal-lg modal-dialog-centered">
           <div class="modal-content">
             <!-- Contenido de la ventana modal -->
@@ -262,7 +261,59 @@
         </div>
       </div>
 
+      <!--Modal para mostrar la actualización de la contraseña-->
+      <div class="modal" id="modalDatoErro" data-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <!-- Contenido de la ventana modal -->
+            <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
+              <form id="saveForm">
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                  <!-- Agregamos clases para centrar vertical y horizontalmente -->
+                  <img src="../../resources/Imagenes/error.png" alt="">
+                  <br>
+                  <h4 class="text-align-center">Error al actualizar datos</h4>
+                  <br>
+                  <h6 class="text-align-center">No se han podido actualizar sus datos. Reintente ingresar los nuevos
+                    datos..</h6>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                  <!-- Agregamos clases para centrar horizontalmente el botón-->
+                  <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal"
+                    id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+          <!--Modal para mostrar la actualización de la contraseña-->
+          <div class="modal" id="modalContraCtualizada" data-backdrop="static">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <!-- Contenido de la ventana modal -->
+                <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
+                  <form id="saveForm">
+                    <div class="d-flex justify-content-center align-items-center flex-column">
+                      <!-- Agregamos clases para centrar vertical y horizontalmente -->
+                      <img src="../../resources/Imagenes/exito.png" alt="">
+                      <br>
+                      <h4 class="text-align-center">¡Clave actualizada con éxito!</h4>
+                      <br>
+                      <h6 class="text-align-center">Se ha actualizado la clave.</h6>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                      <!-- Agregamos clases para centrar horizontalmente el botón-->
+                      <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal"
+                        id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
       <!-- Optional JavaScript; choose one of the two! -->
@@ -272,6 +323,7 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
       <script src="../../controllers/public/perfilPublico.js"></script>
+      <script src="../../controllers/public/actuSignUp.js"></script>
 
 
       <!-- Option 2: Separate Popper and Bootstrap JS -->

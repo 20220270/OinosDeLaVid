@@ -37,9 +37,6 @@
                     <div class="botonCar">
                         <img src="../../resources/Imagenes/carrito.png" alt="" width="25 px" height="25 px"
                             id="imagenCarrito">
-                        <button class="btn" type="submit" id="botonCarrito"> <!-- Agrega onclick -->
-                            <h6 class="mt-1" id="textoCar">Ver carrito</h6>
-                        </button>
 
                     </div>
                 </div>
@@ -163,35 +160,7 @@
 
         </div>
 
-        <!--Modal para la eliminación de un dato-->
-        <div class="modal" id="modalEnviarMiValoracion" data-bs-backdrop="static">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <!-- Contenido de la ventana modal -->
-                    <div class="modal-body text-center">
-                        <!-- Agregamos la clase text-center para centrar el contenido -->
-                        <form id="saveForm">
-                            <div class="d-flex justify-content-center align-items-center flex-column">
-                                <!-- Agregamos clases para centrar vertical y horizontalmente -->
-                                <img src="../../resources/Imagenes/exito.png" alt="">
-                                <br>
-                                <h4 class="text-align-center">¡Muchas gracias!</h4>
-                                <br>
-                                <h6 class="text-align-center">Tu valoración nos será de mucha utilidad para mejorar.
-                                </h6>
-                            </div>
-                            <div class="modal-footer d-flex justify-content-center">
-                                <!-- Agregamos clases para centrar horizontalmente el botón-->
-                                <button type="button" class="btn btn-dark btn-block" data-bs-dismiss="modal"
-                                    id="btnCerrar">Cerrar</button>
-                                <!-- Agregamos clase btn-block para ajustar el ancho -->
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        
         <!-- Modal -->
         <div class="modal fade" id="modalValoracion" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true" data-bs-backdrop="static">
@@ -247,10 +216,36 @@
             </div>
         </div>
 
+        
+ 
 
 
     </div>
-
+ <!--Modal para mostrar la realización del pedido-->
+ <div class="modal" id="modalEnviarValoracion" data-bs-backdrop="static">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <!-- Contenido de la ventana modal -->
+        <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
+          <form id="saveForm">
+            <div class="d-flex justify-content-center align-items-center flex-column">
+              <!-- Agregamos clases para centrar vertical y horizontalmente -->
+              <img src="../../resources/Imagenes/exito.png" alt="">
+              <br>
+              <h4 class="text-align-center">¡Muchas gracias!</h4>
+              <br>
+              <h6 class="text-align-center">Tu valoración nos ayuda a ser mejores.</h6>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <!-- Agregamos clases para centrar horizontalmente el botón-->
+              <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal"
+                id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <footer>
 
