@@ -1,3 +1,5 @@
+//Codigo para redireccionar el perfil del administrador a la ventana anterior
+localStorage.setItem('paginaOrigen', window.location.href);
 
 //método para que un botón abra una ventana
 document.getElementById("btnProductos").addEventListener("click", function () {

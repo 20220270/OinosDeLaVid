@@ -1,39 +1,69 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <head>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="../../resources/cssPublic/stiloIndexP.css">
-    </head>
-    <title>Menú de Oinos de la Vid</title>
+        <title>Menú de Oinos de la Vid</title>
+
 </head>
 
 <body>
 
-    <nav>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="login.html">
+                    <img src="../../resources/Imagenes/logo.png" alt="" width="70 px" height="70 px"
+                        class="d-inline-block">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    </nav>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item" id="menu">
+                            <a class="nav-link active" aria-current="page" href="#"
+                                onclick="scrollToElement('catalogo')">Menú</a>
+                        </li>
+                        <li class="nav-item" id="nos">
+                            <a class="nav-link" href="#" onclick="scrollToElement('sobreNos')">Sobre nosotros</a>
+                        </li>
+                        <li class="nav-item" id="Contac">
+                            <a class="nav-link" href="#" onclick="scrollToElement('footer')">Contactos</a>
+                        </li>
+                        <li class="nav-item" id="Contac">
+                            <a class="nav-link" href="verMisCompras.html">Ver mis compras</a>
+                        </li>
+                        <li class="nav-item" id="ses">
+                            <a class="nav-link" href="login.html">Cerrar sesión</a>
+                        </li>
+                    </ul>
+                </div>
 
-    
+                <button class="btn" type="submit" id="btnVerPerfil">IvanSalgue</button>
 
-    <div class="container">
-        <form class="row justify-content-end mb-3">
-            <div class="position-relative col-lg-10">
-                <img class="search-icon" src="../../resources/Imagenes/lupa.png" alt="Lupa">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                    id="Search">
+                <div class="botonCar">
+                    <img src="../../resources/Imagenes/carrito.png" alt="" width="25 px" height="25 px"
+                        id="imagenCarrito">
+                    <button class="btn" type="submit" id="botonCarrito">
+
+                        <h6 class="mt-1" id="textoCar">Ver carrito</h6>
+
+                    </button>
+                </div>
+
             </div>
-           
-        </form>
-    </div>
+        </nav>
+    </header>
 
     <div id="carouselExampleIndicators" class="carousel slide mt-2" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -77,121 +107,251 @@
 
 
     <div class="container mt-5" id="catalogo">
-        <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" >
-                <div class="card mb-3">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col">
+                    <h5 class="mt-2 text-center">
+                        Menú de vinos
+                    </h5>
+                </div>
+                <div class="col">
+
+
+
+                    <div class="container mt-1">
+                        <form class="row justify-content-end mb-3">
+                            <div class="position-relative col-lg-12">
+                                <img class="search-icon" src="../../resources/Imagenes/lupa.png" alt="Lupa">
+                                <input class="form-control me-2" type="search"
+                                    placeholder="Busca por producto, por su categoría o por su marca" aria-label="Search" id="Search">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!--Cards con botones para aumentar o disminuir la cantidad-->
+        <div class="row text-center">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                <div class="card mb-3" id="card1">
                     <img src="https://hips.hearstapps.com/hmg-prod/images/pago-de-otazu-2019-vino-elle-1647167160.jpg"
                         class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content.</p>
+                        <h5 class="card-title">country sliders</h5>
+                        <label for="precio" class="text-center py-1 fs-5 col-12 col-sm-9 col-md-12 col-lg-10"
+                            id="precio">$92.15</label>
+                        <p class="card-text">a elixir do brillante para la vida de los humanoides.</p>
+                        <div class="input-group mb-3">
+                            <button class="btn btn-outline-secondary" type="button" id="decrementBtn">-</button>
+                            <!--Resta la cantidad-->
+                            <input type="number" class="form-control" placeholder="1" aria-label="0"
+                                aria-describedby="incrementBtn decrementBtn" min="0" readonly>
+                            <button class="btn btn-outline-secondary" type="button" id="incrementBtn">+</button>
+                            <!--Suma la cantidad-->
+                        </div>
+                        <button type="button" class="btn btnAgregarAlCarrito">Agregar</button>
                     </div>
-
-                    <button type="button" class="btn btn-outline-primary">Agregar</button>
                 </div>
+
             </div>
             <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card mb-3">
-                    <img src="https://cdn.zerca.com/medias/-1200-baseFormat-botijo-rojo.jpg-300Wx300H?context=bWFzdGVyfGltYWdlc3w1NDA3fGltYWdlL2pwZWd8aW1hZ2VzL2g2Ny9oMmEvOTQ2MDc0MDg4MjQ2Mi5qcGd8MmJjMDJlNjE5MGMwYTNmODgyN2Q0ZTI2Mjk5ZTI0Nzk0MDIxOTNhNzQ1MmJmODNhOGVmMzQxMTQyOWU3MjQzMA"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content.</p>
-                    </div>
+                <div class="card mb-3" id="card1">
 
-                    <button type="button" class="btn btn-outline-primary">Agregar</button>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card mb-3">
                     <img src="https://hips.hearstapps.com/hmg-prod/images/pago-de-otazu-2019-vino-elle-1647167160.jpg"
                         class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content.</p>
+                        <h5 class="card-title">country sliders</h5>
+                        <label for="precio" class="text-center py-1 fs-5 col-12 col-sm-9 col-md-12 col-lg-10"
+                            id="precio"> $92.15</label>
+                        <p class="card-text">a elixir do brillante para la vida de los humanoides.</p>
+                        <div class="input-group mb-3">
+                            <button class="btn btn-outline-secondary" type="button" id="decrementBtn">-</button>
+                            <input type="number" class="form-control" placeholder="1" aria-label="0"
+                                aria-describedby="incrementBtn decrementBtn" min="0" readonly>
+                            <button class="btn btn-outline-secondary" type="button" id="incrementBtn">+</button>
+                        </div>
+                        <button type="button" class="btn btnAgregarAlCarrito">Agregar</button>
                     </div>
 
-                    <button type="button" class="btn btn-outline-primary">Agregar</button>
+
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card mb-3">
+                <div class="card mb-3" id="card1">
+
                     <img src="https://hips.hearstapps.com/hmg-prod/images/pago-de-otazu-2019-vino-elle-1647167160.jpg"
                         class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content.</p>
+                        <h5 class="card-title">country sliders</h5>
+                        <label for="precio" class="text-center py-1 fs-5 col-12 col-sm-9 col-md-12 col-lg-10"
+                            id="precio"> $92.15</label>
+                        <p class="card-text">a elixir do brillante para la vida de los humanoides.</p>
+                        <div class="input-group mb-3">
+                            <button class="btn btn-outline-secondary" type="button" id="decrementBtn">-</button>
+                            <input type="number" class="form-control" placeholder="1" aria-label="0"
+                                aria-describedby="incrementBtn decrementBtn" min="0" readonly>
+                            <button class="btn btn-outline-secondary" type="button" id="incrementBtn">+</button>
+                        </div>
+                        <button type="button" class="btn btnAgregarAlCarrito">Agregar</button>
                     </div>
 
-                    <button type="button" class="btn btn-outline-primary">Agregar</button>
+
                 </div>
             </div>
-
             <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card mb-3" id="hover">
+                <div class="card mb-3" id="card2">
+
                     <img src="https://hips.hearstapps.com/hmg-prod/images/pago-de-otazu-2019-vino-elle-1647167160.jpg"
                         class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content.</p>
+                        <h5 class="card-title">country sliders</h5>
+                        <label for="precio" class="text-center py-1 fs-5 col-12 col-sm-9 col-md-12 col-lg-10"
+                            id="precio"> $92.15</label>
+                        <p class="card-text">a elixir do brillante para la vida de los humanoides.</p>
+                        <div class="input-group mb-3">
+                            <button class="btn btn-outline-secondary" type="button" id="decrementBtn">-</button>
+                            <input type="number" class="form-control" placeholder="1" aria-label="0"
+                                aria-describedby="incrementBtn decrementBtn" min="0" readonly>
+                            <button class="btn btn-outline-secondary" type="button" id="incrementBtn">+</button>
+                        </div>
+                        <button type="button" class="btn btnAgregarAlCarrito">Agregar</button>
                     </div>
 
-                    <button type="button" class="btn btn-outline-primary">Agregar</button>
-                </div>
-            </div>
 
-            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card mb-3">
-                    <img src="https://hips.hearstapps.com/hmg-prod/images/pago-de-otazu-2019-vino-elle-1647167160.jpg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content.</p>
-                    </div>
-
-                    <button type="button" class="btn btn-outline-primary">Agregar</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container mt-3">
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="mb-4">
-                    Sobre nosotros
-                </h3>
-                <div class="timeline">
-                   
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h2>Year 1</h2>
-                            <p>Description of Year 1</p>
+
+    <!--Aquí se encuentra el timeline sobre nosotros-->
+
+    <div class="container mt-3" id="sobreNos">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <h3 class="mb-4">Sobre nosotros</h3>
+                <div class="timeline mb-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <h2>¿Quiénes somos?</h2>
+                                    <div class="container text-center">
+                                        <div class="row">
+                                            <div class="col mt-3">
+                                                <img src="../../resources/Imagenes/QuienesSomos.png" alt=""
+                                                    height="120px" width="130px">
+                                            </div>
+                                            <div class="col">
+                                                <p class="text mt-3 col-12 col-sm-9 col-md-12 col-lg-12">Somos Oinos de
+                                                    la Vid, una tienda en línea que se
+                                                    dedica tanto
+                                                    a la venta y promoción de vinos como a la gestión de pedidos.
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h2>Year 2</h2>
-                            <p>Description of Year 2</p>
+                        <div class="col-md-6">
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <h2>Nuestra misión</h2>
+
+                                    <div class="container text-center">
+                                        <div class="row">
+                                            <div class="col mt-3">
+                                                <img src="../../resources/Imagenes/Mision.png" alt="Imagen de misión"
+                                                    height="120px" width="130px">
+                                            </div>
+                                            <div class="col mt-3">
+                                                <p class="text mt-1 text-center">Ofrecer una experiencia excepcional de
+                                                    compra de
+                                                    vinos,
+                                                    proporcionando una cuidadosa selección de vinos de alta calidad de
+                                                    todo el mundo.</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <!-- More timeline items here -->
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <h2>Nuestra visión</h2>
+
+                                    <div class="container text-center">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="col mt-3">
+                                                    <img src="../../resources/Imagenes/Vision.png"
+                                                        alt="Imagen de misión" height="120px" width="130px">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <p class="text mt-4">Ser un referente en la promoción de vinos en El
+                                                    Salvador,
+                                                    ofreciendo los mejores
+                                                    servicios y promocionando las mejores marcas de vinos de todo el
+                                                    mundo.
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <h2>Equipo realizador</h2>
+
+                                    <div class="container text-center text">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="col mt-3">
+                                                    <img src="../../resources/Imagenes/Equipo.png"
+                                                        alt="Imagen de misión" height="120px" width="130px">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <ul>
+                                                    <li class="mt-4">Iván Daniel Salguero Esperanza</li>
+                                                    <li>Ricardo Daniel DeLeón Cruz</li>
+                                                    <li>Edgar Enrique Sarco García</li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
-    
 
-    <footer>
-        
-    
+
+    <footer id="footer">
+
+
     </footer>
 
 
@@ -202,8 +362,9 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
-        <script src="../../controllers/utils/ApartadosPublico.js"></script>
-        <script src="../../controllers/utils/footerPublico.js"></script>
+    <script src="../../controllers/utils/ApartadosPublico.js"></script>
+    <script src="../../controllers/utils/footerPublico.js"></script>
+    <script src="../../controllers/public/index.js"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

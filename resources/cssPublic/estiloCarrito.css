@@ -1,0 +1,57 @@
+
+body{
+    background-color: #F4F4F4;
+}
+
+#imagenCarrito{
+    transform: translateX(130%);
+}
+
+
+#ultimaFila{
+    text-align: center;
+}
+
+#textorr{
+    color: #fff;
+    
+}
+.te{
+    color: #fff;
+    
+}
+
+#botonCarrito{
+    background-color: #6D0E0E;
+    color: #fff;
+    width: 200px;
+}
+
+#decrementBtn,
+#incrementBtn,
+#decrementBtn1,
+#incrementBtn1,
+.btnPedido{
+    background-color: #6D0E0E;
+    color: #fff;
+}
+
+.btnPedido:hover{
+    color: #fff;
+}
+
+
+.form-control:read-only{
+    background: #000;
+    color: #fff;
+}
+
+#contenedorPedido{
+    border: 3px solid #000;
+    background-color: #fff;
+}
+
+.imgEliminar{
+    cursor: pointer;
+}
+

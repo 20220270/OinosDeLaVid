@@ -1,44 +1,107 @@
-
-body{
+body {
     background-color: #F5F5F5;
 }
 
-.card{
+/*Modificamos la card para que la viñeta se pueda agregar*/
+#card1,
+#card2 {
     margin-top: 10%;
+    position: relative;
 }
 
-#hover{
-    transition: transform 0.3s ease;
+/*Viñeta para los descuentos*/
+
+#card2::before {
+    content: "20% de descuento";
+    position: absolute;
+    top: 15px;
+    left: -30px;
+    background-color: #A00000;
+    color: white;
+    padding: 5px 5px;
+    transform: rotate(-45deg);
+    border-radius: 0 0 0 5px;
 }
 
-footer{
+#precio {
+    background-color: #000;
+    border-radius: 50px;
+    color: #fff;
+
+}
+
+
+.btnAgregarAlCarrito {
+    width: 100px;
+    background-color: #6D0E0E;
+    color: #fff;
+}
+
+footer {
     margin-top: 5%;
 }
-#Search{
+
+#Search {
     box-shadow: none;
-    
+
 }
 
-.nav-link{
+.form-control:read-only{
+    background: #000;
+    color: #fff;
+}
+
+.navbar-toggler-icon {
+    color: black;
+}
+
+#decrementBtn,
+#incrementBtn {
+    background-color: #6D0E0E;
+    color: #fff;
+}
+
+.nav-link {
     color: #000;
     text-decoration: none;
 }
 
-.nav-link:hover{
+.nav-link:hover {
     color: #000;
 }
 
-#catalogo{
+#catalogo {
     border-top: 2px solid #000;
     border-bottom: 2px solid #000;
 }
+
+#sobreNos {
+    border-bottom: 2px solid #000;
+}
+
+#botonCarrito {
+    background-color: #6D0E0E;
+    color: #fff;
+    width: 160px;
+    padding-left: 22%;
+}
+
+#imagenCarrito {
+    transform: translate(150%, -5%);
+}
+
+#textoCar {
+    border-left: 3px solid #000;
+    padding-left: 10%;
+}
+
 
 
 #menu,
 #nos,
 #carrito,
 #Contac,
-#ses{
+#ses {
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
     margin-right: 1rem;
@@ -47,17 +110,172 @@ footer{
 .search-icon {
     position: absolute;
     top: 50%;
-    transform: translate(50%, -48%);
+    transform: translate(-1380%, -48%);
     width: 20px;
     height: auto;
     z-index: 1;
     pointer-events: none;
 }
 
-#Search{
+.navbar-toggler-icon .navbar-toggler-icon-bar {
+    background-color: black;
+    /* Cambia el color del icono del menú hamburguesa */
+}
+
+@media screen and (max-width: 1399px) {
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        transform: translate(-1370%, -48%);
+        width: 20px;
+        height: auto;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+
+}
+
+@media screen and (max-width: 1300px) {
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        transform: translate(-1150%, -48%);
+        width: 20px;
+        height: auto;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+
+}
+
+@media screen and (max-width: 1160px) {
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        transform: translate(-940%, -48%);
+        width: 20px;
+        height: auto;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+
+}
+
+
+@media screen and (max-width: 1109px) {
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        transform: translate(-930%, -48%);
+        width: 20px;
+        height: auto;
+        z-index: 1;
+        pointer-events: none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        transform: translate(-630%, -48%);
+        width: 20px;
+        height: auto;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .text {
+        font-size: 11px;
+    }
+
+}
+
+
+@media screen and (max-width: 768px) {
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        transform: translate(-640%, -48%);
+        width: 20px;
+        height: auto;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .text {
+        font-size: 15px;
+    }
+
+}
+
+@media screen and (max-width: 541px) {
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        transform: translate(-400%, -48%);
+        width: 20px;
+        height: auto;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .text {
+        font-size: 13px;
+    }
+}
+
+
+@media screen and (max-width: 431px) {
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        transform: translate(-250%, -48%);
+        width: 20px;
+        height: auto;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+}
+
+@media screen and (max-width: 376px) {
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        transform: translate(-190%, -48%);
+        width: 20px;
+        height: auto;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .text {
+        font-size: 10px;
+    }
+
+}
+
+@media screen and (max-width: 281px) {
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        transform: translate(-120%, -48%);
+        width: 20px;
+        height: auto;
+        z-index: 1;
+        pointer-events: none;
+    }
+}
+
+#Search {
     border-radius: 10px;
     padding-left: 40px;
 }
+
 
 .timeline {
     position: relative;
@@ -66,12 +284,14 @@ footer{
 .timeline:before {
     content: '';
     position: absolute;
-    top: 0;
+    top: -1%;
     left: 50%;
-    width: 2px;
+    width: 5px;
     height: 100%;
     background: #000;
     transform: translateX(-50%);
+    z-index: -1;
+    /*Z-indez hace que la linea sea transparente*/
 }
 
 .timeline-item {
@@ -84,9 +304,22 @@ footer{
     border-radius: 5px;
     background: #000;
     color: #fff;
+    height: 300px;
 }
 
 .timeline-content h2 {
     margin-top: 0;
 }
 
+#prev,
+#next{
+    background-color: gray;
+    width: 50px;
+    height: 100px;
+}
+
+#frases{
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    transform: translateY(5%);
+}
