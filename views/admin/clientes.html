@@ -41,7 +41,7 @@
             </div>
             <!--Botón para ver la pantalla de pedidos-->
             <div class="col mt-5">
-                <button type="submit" class="btn btn-success mt-1" id="mostrarPedidos">
+                <button type="submit" class="btn btn-success mt-1 mostrarPedidos" id="mostrarPedidos">
                     <i class="bi bi-search"></i>
                     <img src="../../resources/Imagenes/pedidos.png" alt="" width="60px" height="60px" class="mb-1">
                 </button>
@@ -83,7 +83,7 @@
                     <td>Condominios Machado</td>
                     <td>187ueue72yuheq72u1h1wjq</td>
                     <td>05/02/2024</td>
-                    <td>Activo</td>
+                    <td id="estadoCliente">Activo</td>
                     <td>
 
                         <!--boton de eliminar-->
@@ -92,13 +92,14 @@
                             <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
                                 <i class="bi bi-search"></i>
                                 <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                                    class="mb-1">
+                                    class="mb-1" data-bs-toggle="modal"
+                                    data-bs-target="#miModalDe">
                             </button>
 
                             <!--boton para poder ver pedidos-->
 
 
-                            <button type="submit" class="btn btn-success mt-1" id="mostrarPedidosFiltados">
+                            <button type="submit" class="btn btn-success mt-1 mostrarPedidosFiltados" id="mostrarPedidosFiltados">
                                 <i class="bi bi-search"></i>
                                 <img src="../../resources/Imagenes/pedidos.png" alt="" width="30px" height="30px"
                                     class="mb-1">
