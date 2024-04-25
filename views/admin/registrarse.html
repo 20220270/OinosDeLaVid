@@ -32,91 +32,102 @@
 
     <!-- Labels identificadores e inputs para ingresar la información de los administradores, 
         separados por espacios -->
-    <div class="container text-center" id="contenedorPrincipal">
-        <div class="row">
-            <div class="col col-lg-4 col-md-6">
-                <div class="mb-2">
-                    <!--Label e input para agregar el nombre del administrador-->
-                    <label class="form-label">Nombre del administrador:</label>
-                    <br>
-                    <br>
-                    <input type="text" class="form-control mb-5" id="labelsinputs"
-                        placeholder="Ingrese el nombre del administrador">
-                </div>
-                
-
-                <div class="mb-2">
-                    <!--Label e input para agregar el apellido del administrador-->
-                    <label class="form-label">Apellido del administrador:</label>
-                    <br>
-                    <br>
-                    <input type="text" class="form-control mb-5" id="labelsinputs"
-                        placeholder="Ingrese el apellido del administrador">
-                </div>
-                
-                <div class="mb-3">
-                        <!--Label e input para agregar el correo del administrador-->
-                        <label class="form-label">Correo del administrador:</label>
+    <form id="FormValidacion" >
+        <div class="container text-center" id="contenedorPrincipal">
+            <div class="row">
+                <div class="col col-lg-4 col-md-6">
+                    <div class="mb-2">
+                        <!--Label e input para agregar el nombre del administrador-->
+                        <label class="form-label">Nombre del administrador:</label>
                         <br>
                         <br>
-                        <input type="email" class="form-control mb-5" id="labelsinputs"
-                            placeholder="Ingrese el correo del administrador">
+                        <input type="text" class="form-control mb-5" id="Nombre" required
+                            placeholder="Ingrese el nombre del administrador">
+                        <small>Ingresa tu nombre</small>
+                    </div>
                     
+    
+                    <div class="mb-2">
+                        <!--Label e input para agregar el apellido del administrador-->
+                        <label class="form-label">Apellido del administrador:</label>
+                        <br>
+                        <br>
+                        <input type="text" class="form-control mb-5" id="Apellido" required
+                            placeholder="Ingrese el apellido del administrador">
+                            <small>Ingresa tu apellido</small>
+                    </div>
+                    
+                    <div class="mb-3">
+                            <!--Label e input para agregar el correo del administrador-->
+                            <label class="form-label">Correo del administrador:</label>
+                            <br>
+                            <br>
+                            <input type="email" class="form-control mb-5" id="Correo" required
+                                placeholder="Ingrese el correo del administrador">
+                                <small>Ingresa tu correo</small>
+                        
+                    </div>
                 </div>
+    
+    
+                <div class="col col-lg-4 col-md-6">
+                    <div class="mb-3">
+                        <!--Label e input para agregar el alias del administrador-->
+                        <label class="form-label1 mb-2">Alias del administrador:</label>
+                        <br>
+                        <br>
+                        <input type="text" class="form-control mb-5" id="Alias" required
+                            placeholder="Ingrese el alias del administrador">
+                            <small>Ingresa un alias</small>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <!--Label e input para agregar la clave del administrador-->
+                        <label class="form-label1 mb-2">Clave del administrador:</label>
+                        <br>
+                        <br>
+                        <input type="password" class="form-control mb-5" id="Clave" required
+                            placeholder="Ingrese la clave del administrador">
+                            <small>Ingresa tu clave</small>
+                    </div>
+                    
+    
+                    <div class="mb-3">
+                        <!--Label e input para confirmar la clave del administrador-->
+                        <label class="form-label2 mb-2">Confirmar clave:</label>
+                        <br>
+                        <br>
+                        <input type="password" class="form-control mb-5" id="Confirmar" required>
+                        <small>Porfavor confirma tu contraseña</small>
+                    </div>
+                </div>
+    
+    
+                <div class="col-12 col-lg-4 col-md-6 col-sm-12">
+                    <div class="dropdown">
+                        <label class="form-label1 nivel mb-3">Nivel de usuario:</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Seleccione el nivel de usuario</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">Trabajador</option>
+                        </select>
+                    </div>
+                </div>
+                <!--Fin de los labels e inputs-->
             </div>
-
-
-            <div class="col col-lg-4 col-md-6">
-                <div class="mb-3">
-                    <!--Label e input para agregar el alias del administrador-->
-                    <label class="form-label1 mb-2">Alias del administrador:</label>
-                    <br>
-                    <br>
-                    <input type="text" class="form-control mb-5" id="labelsinputs"
-                        placeholder="Ingrese el alias del administrador">
-                </div>
-                
-                <div class="mb-3">
-                    <!--Label e input para agregar la clave del administrador-->
-                    <label class="form-label1 mb-2">Clave del administrador:</label>
-                    <br>
-                    <br>
-                    <input type="password" class="form-control mb-5" id="labelsinputs"
-                        placeholder="Ingrese la clave del administrador">
-                </div>
-                
-
-                <div class="mb-3">
-                    <!--Label e input para confirmar la clave del administrador-->
-                    <label class="form-label2 mb-2">Confirmar clave:</label>
-                    <br>
-                    <br>
-                    <input type="password" class="form-control mb-5" id="labelsinputs">
-                </div>
+    
+    
+            <!--Botón para registrar la información-->
+            <div class="col">
+                <button type="submit" class="btn btn-dark">Registrar</button>
             </div>
-
-
-            <div class="col-12 col-lg-4 col-md-6 col-sm-12">
-                <div class="dropdown">
-                    <label class="form-label1 nivel mb-3">Nivel de usuario:</label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Seleccione el nivel de usuario</option>
-                        <option value="1">Administrador</option>
-                        <option value="2">Trabajador</option>
-                    </select>
-                </div>
-            </div>
-            <!--Fin de los labels e inputs-->
+    
         </div>
-
-
-        <!--Botón para registrar la información-->
-        <div class="col">
-            <button type="submit" class="btn btn-dark">Registrar</button>
-        </div>
-
-
-    </div>
+        
+    </form>
+    
+    <script src="../../controllers/admin/registrarse.js"></script>
+    
 </body>
 
 </html>

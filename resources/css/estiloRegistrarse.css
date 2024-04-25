@@ -4,6 +4,15 @@
 
 /*Modificamos la imagen para que aparezca a la izquierda*/
 
+small{
+    display: none;
+}
+
+.was-validated small{
+    display: block;
+    color: red;
+
+}
 .col1 {
     background-color: #871313;
     color: aliceblue;
