@@ -7,7 +7,7 @@ function login() {
 
     if (user == "Enrique" && pass == "12345") {
         console.log(location.href)
-        alert('Datos correctos');
+        alert('Inicio de Sesion Correcto');
         location.href = 'menu.html';
     } else {
         alert("Datos Incorrectos");
