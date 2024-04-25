@@ -27,6 +27,27 @@ h3{
     box-shadow: none;
 }
 
+
+.btnEliminar,
+.btnActualizar,
+.btnAgregar,
+.btnMostrar,
+.btnEliminar:hover,
+.btnActualizar:hover,
+.btnAgregar:hover,
+.btnMostrar:hover,
+.btnEliminar:focus,
+.btnActualizar:focus,
+.btnAgregar:focus,
+.btnMostrar:focus,
+#mostrarPedidos,
+#mostrarValoracion,
+#mostrarPedidosFiltados
+{
+    background-color: transparent;
+    border: none;
+}
+
 @media (max-width: 450px) {
     #Search {
         width: 350px;
