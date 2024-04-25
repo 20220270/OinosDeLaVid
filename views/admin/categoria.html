@@ -2,9 +2,9 @@
 <html lang="es">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -18,287 +18,312 @@
 
 <body>
 
-  <nav>
+    <nav>
 
-  </nav>
+    </nav>
 
-  <!--aca es para la barra de busqueda el texto de categorias y boton de agregar-->
+    <!--aca es para la barra de busqueda el texto de categorias y boton de agregar-->
 
 
-  <div class="container mt-4">
-    <div class="row">
-      <div class="col mt-5" id="txtCategoria11">
-        <h3>Categorias</h3>
-      </div>
-      <div class="col mt-5">
-        <div class="container-sm mt-2">
-          <form class="d-flex">
-
-            <div class="position-relative">
-              <img class="search-icon" src="../../resources/Imagenes/lupa.png" alt="Lupa">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="Search">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col mt-5" id="txtCategoria11">
+                <h3>Categorias</h3>
             </div>
+            <div class="col mt-5">
+                <div class="container-sm mt-2">
+                    <form class="d-flex">
 
-          </form>
-        </div>
-      </div>
+                        <div class="position-relative">
+                            <img class="search-icon" src="../../resources/Imagenes/lupa.png" alt="Lupa">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                                id="Search">
+                        </div>
 
-      <!--para agregar-->
-
-
-      <div class="col mt-5">
-        <button class="btn fw-semibold" id="btnModalAbrir" name="btnRegistrar">
-          <i class="bi bi-x-square-fill"></i>
-          <img src="../../resources/Imagenes/btnAgregarIMG.png" alt="" width="60px" height="60px" class="mb-1">
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <br>
-
-
-  <!--Aca ya iran las cards donde se vera el producto, descripcion y botones de editar-->
-
-
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
-      <div class="card h-100">
-        <img src="https://www.supermercadosantamaria.com/documents/10180/10504/169452942_G.jpg" class="card-img-top"
-          alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Vino Renegado</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-            content. This content is a little bit longer.</p>
-        </div>
-        <div class="col-8">
-          <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
-            <i class="bi bi-search"></i>
-            <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px" class="mb-1">
-
-          </button>
-          <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar">
-            <i class="bi bi-x-square-fill"></i>
-            <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px" class="mb-1">
-          </button>
-          <button type="submit" class="btn btn-secondary mt-1" id="btnMostrar">
-            <i class="bi bi-x-square-fill"></i>
-            <img src="../../resources/Imagenes/verProductos.png" alt="" width="40px" height="40px" class="mb-1">
-          </button>
-
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img
-          src="https://walmartsv.vtexassets.com/arquivos/ids/294845/Vino-Tinto-Santa-Helena-Caber-Sauv-750Ml-3-6705.jpg?v=638104630093900000"
-          class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Vino Rojo</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, accusantium.
-            Dolorum, et optio. Voluptates eos, debitis corporis, facere officia reprehenderit vero inventore et
-            assumenda illo alias nulla sequi, quidem facilis.</p>
-        </div>
-        <div class="col-8">
-          <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
-            <i class="bi bi-search"></i>
-            <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px" class="mb-1">
-
-          </button>
-          <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar">
-            <i class="bi bi-x-square-fill"></i>
-            <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px" class="mb-1">
-          </button>
-          <button type="submit" class="btn btn-secondary mt-1" id="btnMostrar">
-            <i class="bi bi-x-square-fill"></i>
-            <img src="../../resources/Imagenes/verProductos.png" alt="" width="40px" height="40px" class="mb-1">
-          </button>
-
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8cAzKkuxrQO3IT9obvZ5NDd4B9eFg5HG8L-xaj4pqoZb2W7C7bUo1nZqlVI-zl8QQhdo&usqp=CAU"
-          class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Vino tinto</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-            content.</p>
-
-        </div>
-        <div class="col-8">
-          <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
-            <i class="bi bi-search"></i>
-            <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px" class="mb-1">
-
-          </button>
-          <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar">
-            <i class="bi bi-x-square-fill"></i>
-            <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px" class="mb-1">
-          </button>
-          <button type="submit" class="btn btn-secondary mt-1" id="btnMostrar">
-            <i class="bi bi-x-square-fill"></i>
-            <img src="../../resources/Imagenes/verProductos.png" alt="" width="40px" height="40px" class="mb-1">
-          </button>
-
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="https://www.supermercadosantamaria.com/documents/10180/10504/169452942_G.jpg" class="card-img-top"
-          alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Vino Rosa</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-            content. This content is a little bit longer.</p>
-
-        </div>
-        <div class="col-8">
-          <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
-            <i class="bi bi-search"></i>
-            <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px" class="mb-1">
-
-          </button>
-          <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar">
-            <i class="bi bi-x-square-fill"></i>
-            <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px" class="mb-1">
-          </button>
-          <button type="submit" class="btn btn-secondary mt-1" id="btnMostrar">
-            <i class="bi bi-x-square-fill"></i>
-            <img src="../../resources/Imagenes/verProductos.png" alt="" width="40px" height="40px" class="mb-1">
-          </button>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Ventana modal para agregar-->
-  <div class="modal" id="miModal" data-bs-backdrop="static">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <!-- Encabezado de la ventana modal -->
-        <div class="modal-header">
-          <h5 class="modal-title text-align-center">Registrar nueva categoría</h5>
-        </div>
-        <!-- Contenido de la ventana modal -->
-        <div class="modal-body">
-          <form id="saveForm">
-            <div class="modal-body row g-3">
-              <!-- Campo oculto para asignar el id del registro al momento de modificar -->
-              <input type="hidden" id="idCategoria" name="idCategoria">
-              <div class="col-sm-12 col-md-6">
-                <label for="nombreCategoria" class="col-sm-7 col-form-label">Nombre de la categoría:</label>
-                <input id="nombreCategoria" type="text" name="nombreProducto" class="form-control"
-                  placeholder="Ingrese el nombre de la categoría" required>
-              </div>
-
-              <div class="col-sm-12 col-md-6">
-                <label for="nombreCategoria" class="col-sm-7 col-form-label">Descripción de la categoría:</label>
-                <input id="descripcionCategoria" type="text" name="descripcionCategoria" class="form-control"
-                  placeholder="Ingrese una descripción para la categoría" required>
-              </div>
-
-              <div class="col-sm-12 col-md-6">
-                <label for="imagenCat" class="col-sm-7 col-form-label">Imagen de la categoría:</label>
-                <div class="position-relative">
-                  <div class="input-group mb-3">
-                    <input type="file" class="form-control" id="inputImgCat">
-                  </div>
+                    </form>
                 </div>
-              </div>
+            </div>
+
+            <!--para agregar-->
 
 
+            <div class="col mt-5">
+                <button class="btn fw-semibold" id="btnModalAbrir" name="btnRegistrar">
+                    <i class="bi bi-x-square-fill"></i>
+                    <img src="../../resources/Imagenes/btnAgregarIMG.png" alt="" width="60px" height="60px"
+                        class="mb-1">
+                </button>
             </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-dark" id="btnGuardar">Guardar</button>
-              <button type="button" class="btn btn-dark" data-bs-dismiss="modal" id="btnCerrar">Cerrar</button>
-            </div>
-          </form>
         </div>
-
-      </div>
     </div>
-  </div>
 
-  <!--Modal para actualizar-->
-  <div class="modal" id="miModal2" data-bs-backdrop="static">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <!-- Encabezado de la ventana modal -->
-        <div class="modal-header">
-          <h5 class="modal-title text-align-center">Actualizar categoría</h5>
-        </div>
-        <!-- Contenido de la ventana modal -->
-        <div class="modal-body">
-          <form id="saveForm">
-            <div class="modal-body row g-3">
-              <!-- Campo oculto para asignar el id del registro al momento de modificar -->
-              <input type="hidden" id="idCategoria" name="idCategoria">
-              <div class="col-sm-12 col-md-6">
-                <label for="nombreCategoria" class="col-sm-7 col-form-label">Nombre de la categoría:</label>
-                <input id="nombreCategoriaA" type="text" name="nombreProducto" class="form-control"
-                  placeholder="Ingrese el nombre de la categoría" required>
-              </div>
+    <br>
 
-              <div class="col-sm-12 col-md-6">
-                <label for="nombreCategoria" class="col-sm-7 col-form-label">Descripción de la categoría:</label>
-                <input id="descripcionCategoriaA" type="text" name="descripcionCategoria" class="form-control"
-                  placeholder="Ingrese una descripción para la categoría" required>
-              </div>
 
-              <div class="col-sm-12 col-md-6">
-                <label for="imagenCat" class="col-sm-7 col-form-label">Imagen de la categoría:</label>
-                <div class="position-relative">
-                  <div class="input-group mb-3">
-                    <input type="file" class="form-control" id="inputImgCatA">
-                  </div>
+    <!--Aca ya iran las cards donde se vera el producto, descripcion y botones de editar-->
+
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://www.supermercadosantamaria.com/documents/10180/10504/169452942_G.jpg"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Vino Renegado</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional
+                        content. This content is a little bit longer.</p>
                 </div>
-              </div>
+                <div class="col-8">
+                    <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
+                        <i class="bi bi-search"></i>
+                        <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
+                            class="mb-1">
 
+                    </button>
+                    <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar">
+                        <i class="bi bi-x-square-fill"></i>
+                        <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
+                            class="mb-1">
+                    </button>
+                    <button type="submit" class="btn btn-secondary mt-1" id="btnMostrar">
+                        <i class="bi bi-x-square-fill"></i>
+                        <img src="../../resources/Imagenes/verProductos.png" alt="" width="40px" height="40px"
+                            class="mb-1">
+                    </button>
 
+                </div>
             </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-dark" id="btnActtu">Actualizar</button>
-              <button type="button" class="btn btn-dark" data-bs-dismiss="modal" id="btnCerrar">Cerrar</button>
-            </div>
-          </form>
         </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://walmartsv.vtexassets.com/arquivos/ids/294845/Vino-Tinto-Santa-Helena-Caber-Sauv-750Ml-3-6705.jpg?v=638104630093900000"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Vino Rojo</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore,
+                        accusantium.
+                        Dolorum, et optio. Voluptates eos, debitis corporis, facere officia reprehenderit vero inventore
+                        et
+                        assumenda illo alias nulla sequi, quidem facilis.</p>
+                </div>
+                <div class="col-8">
+                    <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
+                        <i class="bi bi-search"></i>
+                        <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
+                            class="mb-1">
 
-      </div>
+                    </button>
+                    <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar">
+                        <i class="bi bi-x-square-fill"></i>
+                        <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
+                            class="mb-1">
+                    </button>
+                    <button type="submit" class="btn btn-secondary mt-1" id="btnMostrar">
+                        <i class="bi bi-x-square-fill"></i>
+                        <img src="../../resources/Imagenes/verProductos.png" alt="" width="40px" height="40px"
+                            class="mb-1">
+                    </button>
+
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8cAzKkuxrQO3IT9obvZ5NDd4B9eFg5HG8L-xaj4pqoZb2W7C7bUo1nZqlVI-zl8QQhdo&usqp=CAU"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Vino tinto</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional
+                        content.</p>
+
+                </div>
+                <div class="col-8">
+                    <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
+                        <i class="bi bi-search"></i>
+                        <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
+                            class="mb-1">
+
+                    </button>
+                    <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar">
+                        <i class="bi bi-x-square-fill"></i>
+                        <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
+                            class="mb-1">
+                    </button>
+                    <button type="submit" class="btn btn-secondary mt-1" id="btnMostrar">
+                        <i class="bi bi-x-square-fill"></i>
+                        <img src="../../resources/Imagenes/verProductos.png" alt="" width="40px" height="40px"
+                            class="mb-1">
+                    </button>
+
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://www.supermercadosantamaria.com/documents/10180/10504/169452942_G.jpg"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Vino Rosa</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional
+                        content. This content is a little bit longer.</p>
+
+                </div>
+                <div class="col-8">
+                    <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
+                        <i class="bi bi-search"></i>
+                        <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
+                            class="mb-1">
+
+                    </button>
+                    <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar">
+                        <i class="bi bi-x-square-fill"></i>
+                        <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
+                            class="mb-1">
+                    </button>
+                    <button type="submit" class="btn btn-secondary mt-1" id="btnMostrar">
+                        <i class="bi bi-x-square-fill"></i>
+                        <img src="../../resources/Imagenes/verProductos.png" alt="" width="40px" height="40px"
+                            class="mb-1">
+                    </button>
+
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!--Datos provenientes del .js de las alertas-->
-  <div id="alerts">
+    <!-- Ventana modal para agregar-->
+    <div class="modal" id="miModal" data-bs-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Encabezado de la ventana modal -->
+                <div class="modal-header">
+                    <h5 class="modal-title text-align-center">Registrar nueva categoría</h5>
+                </div>
+                <!-- Contenido de la ventana modal -->
+                <div class="modal-body">
+                    <form id="saveForm">
+                        <div class="modal-body row g-3">
+                            <!-- Campo oculto para asignar el id del registro al momento de modificar -->
+                            <input type="hidden" id="idCategoria" name="idCategoria">
+                            <div class="col-sm-12 col-md-6">
+                                <label for="nombreCategoria" class="col-sm-7 col-form-label">Nombre de la
+                                    categoría:</label>
+                                <input id="nombreCategoria" type="text" name="nombreProducto" class="form-control"
+                                    placeholder="Ingrese el nombre de la categoría" required>
+                            </div>
 
-  </div>
+                            <div class="col-sm-12 col-md-6">
+                                <label for="nombreCategoria" class="col-sm-7 col-form-label">Descripción de la
+                                    categoría:</label>
+                                <input id="descripcionCategoria" type="text" name="descripcionCategoria"
+                                    class="form-control" placeholder="Ingrese una descripción para la categoría"
+                                    required>
+                            </div>
 
-  <footer>
+                            <div class="col-sm-12 col-md-6">
+                                <label for="imagenCat" class="col-sm-7 col-form-label">Imagen de la categoría:</label>
+                                <div class="position-relative">
+                                    <div class="input-group mb-3">
+                                        <input type="file" class="form-control" id="inputImgCat">
+                                    </div>
+                                </div>
+                            </div>
 
-  </footer>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-dark" id="btnGuardar">Guardar</button>
+                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal"
+                                id="btnCerrar">Cerrar</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--Modal para actualizar-->
+    <div class="modal" id="miModal2" data-bs-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Encabezado de la ventana modal -->
+                <div class="modal-header">
+                    <h5 class="modal-title text-align-center">Actualizar categoría</h5>
+                </div>
+                <!-- Contenido de la ventana modal -->
+                <div class="modal-body">
+                    <form id="saveForm">
+                        <div class="modal-body row g-3">
+                            <!-- Campo oculto para asignar el id del registro al momento de modificar -->
+                            <input type="hidden" id="idCategoria" name="idCategoria">
+                            <div class="col-sm-12 col-md-6">
+                                <label for="nombreCategoria" class="col-sm-7 col-form-label">Nombre de la
+                                    categoría:</label>
+                                <input id="nombreCategoriaA" type="text" name="nombreProducto" class="form-control"
+                                    placeholder="Ingrese el nombre de la categoría" required>
+                            </div>
+
+                            <div class="col-sm-12 col-md-6">
+                                <label for="nombreCategoria" class="col-sm-7 col-form-label">Descripción de la
+                                    categoría:</label>
+                                <input id="descripcionCategoriaA" type="text" name="descripcionCategoria"
+                                    class="form-control" placeholder="Ingrese una descripción para la categoría"
+                                    required>
+                            </div>
+
+                            <div class="col-sm-12 col-md-6">
+                                <label for="imagenCat" class="col-sm-7 col-form-label">Imagen de la categoría:</label>
+                                <div class="position-relative">
+                                    <div class="input-group mb-3">
+                                        <input type="file" class="form-control" id="inputImgCatA">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-dark" id="btnActtu">Actualizar</button>
+                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal"
+                                id="btnCerrar">Cerrar</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--Datos provenientes del .js de las alertas-->
+    <div id="alerts">
+
+    </div>
+
+    <footer>
+
+    </footer>
 
 
 
-  <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Optional JavaScript; choose one of the two! -->
 
-  <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-  <script src="../../controllers/utils/footer.js"></script>
-  <script src="../../controllers/utils/Apartados.js"></script>
-  <!-- Llamada a las librerías que utiliza javascript para el funcionamiento de la página web -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="../../controllers/admin/categorias.js"></script>
-  <script type="text/javascript" src="../../controllers/utils/alerts.js"></script>
-  <script src="../../controllers/admin/menu.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="../../controllers/utils/footer.js"></script>
+    <script src="../../controllers/utils/Apartados.js"></script>
+    <!-- Llamada a las librerías que utiliza javascript para el funcionamiento de la página web -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../controllers/admin/categorias.js"></script>
+    <script type="text/javascript" src="../../controllers/utils/alerts.js"></script>
+    <script src="../../controllers/admin/menu.js"></script>
 
 </body>
 
