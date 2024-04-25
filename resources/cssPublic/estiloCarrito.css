@@ -31,7 +31,9 @@ body{
 #incrementBtn,
 #decrementBtn1,
 #incrementBtn1,
-.btnPedido{
+.btnPedido,
+.btnPedido:hover,
+.btnPedido:focus{
     background-color: #6D0E0E;
     color: #fff;
 }
