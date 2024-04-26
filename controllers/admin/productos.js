@@ -67,44 +67,6 @@ $(document).ready(function() {
   });
 });
 
-//Validación para que solamente se escriban números, un punto y dos números luego del punto en el precio
-$(document).ready(function() {
-  $("#PrecioProducto").on("keypress", function(event) {
-      var inputValue = event.key;
-      var currentValue = $(this).val();
-
-      // Permitir solo números y un único punto decimal
-      if (isNaN(inputValue) && inputValue !== '.') {
-          event.preventDefault();
-      }
-
-      // Permitir solo un punto decimal
-      if (inputValue === '.' && currentValue.indexOf('.') !== -1) {
-          event.preventDefault();
-      }
-
-      // Limitar a dos dígitos después del punto decimal
-      if (currentValue.indexOf('.') !== -1) {
-          var dotSplit = currentValue.split('.');
-          if (dotSplit[1].length >= 2) {
-              event.preventDefault();
-          }
-      }
-  });
-});
-
-//Validación para que solamente se escriban números en la cantidad
-$(document).ready(function() {
-  $("#cantidadProducto").on("input", function() {
-      var value = $(this).val();
-
-      // Eliminar cualquier carácter que no sea un número
-      value = value.replace(/\D/g, '');
-
-      // Establecer el nuevo valor en el campo
-      $(this).val(value);
-  });
-});
 
 
 //Validación para que solamente se escriban números, un punto y dos números antes y después del punto en el descuento
@@ -147,58 +109,6 @@ $(document).ready(function() {
 });
 
 //Validaciones de actualizar
-
-//Validación para que solamente se escriban letras, pero que pueda haber guiones y espacios
-$(document).ready(function() {
-  $("#nombreProductoA").on("keypress", function(event) {
-      var inputValue = event.which;
-      // Permitir solo letras y algunos caracteres especiales como espacio, guión, etc.
-      if (!(inputValue >= 65 && inputValue <= 90) && // letras mayúsculas
-          !(inputValue >= 97 && inputValue <= 122) && // letras minúsculas
-          !(inputValue == 32 || inputValue == 45 || inputValue == 46 || inputValue == 44)) { // espacio, guión, punto, coma
-          event.preventDefault();
-      }
-  });
-});
-
-//Validación para que solamente se escriban números, un punto y dos números luego del punto en el precio
-$(document).ready(function() {
-  $("#PrecioProductoA").on("keypress", function(event) {
-      var inputValue = event.key;
-      var currentValue = $(this).val();
-
-      // Permitir solo números y un único punto decimal
-      if (isNaN(inputValue) && inputValue !== '.') {
-          event.preventDefault();
-      }
-
-      // Permitir solo un punto decimal
-      if (inputValue === '.' && currentValue.indexOf('.') !== -1) {
-          event.preventDefault();
-      }
-
-      // Limitar a dos dígitos después del punto decimal
-      if (currentValue.indexOf('.') !== -1) {
-          var dotSplit = currentValue.split('.');
-          if (dotSplit[1].length >= 2) {
-              event.preventDefault();
-          }
-      }
-  });
-});
-
-//Validación para que solamente se escriban números en la cantidad
-$(document).ready(function() {
-  $("#cantidadProductoA").on("input", function() {
-      var value = $(this).val();
-
-      // Eliminar cualquier carácter que no sea un número
-      value = value.replace(/\D/g, '');
-
-      // Establecer el nuevo valor en el campo
-      $(this).val(value);
-  });
-});
 
 
 //Validación para que solamente se escriban números, un punto y dos números antes y después del punto en el descuento

@@ -238,7 +238,7 @@
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="logoDolar">$</span>
                                     <input type="number" class="form-control" id="PrecioProducto"
-                                        aria-label="Dollar amount (with dot and two decimal places)">
+                                        aria-label="Dollar amount (with dot and two decimal places)" min="1" step="0.01">
                                 </div>
                             </div>
 
@@ -255,12 +255,12 @@
                                 <label for="descripcionCategoria" class="form-label">Cantidad de producto a
                                     registrar:</label>
                                 <input id="cantidadProducto" type="number" name="cantidadProducto" class="form-control"
-                                    placeholder="Ingrese la cantidad que se registrará del producto" required>
+                                    placeholder="Ingrese la cantidad que se registrará del producto" min="1" step="1" required>
                             </div>
                             <div class="col-sm-12 col-md-6">
                                 <label for="descripcionCategoria" class="form-label">Descuento:</label>
-                                <input id="descuentoProducto" type="text" name="descuentoProducto" class="form-control"
-                                    placeholder="00.00%" required>
+                                <input id="descuentoProducto" type="number" name="descuentoProducto" class="form-control"
+                                    placeholder="00.00%" min="1" step="0.01" required>
                             </div>
 
                         </div>
@@ -336,8 +336,8 @@
                                 <label for="descripcionCategoria" class="form-label">Precio del producto:</label>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="logoDolar">$</span>
-                                    <input type="text" class="form-control" id="PrecioProductoA"
-                                        aria-label="Dollar amount (with dot and two decimal places)">
+                                    <input type="number" class="form-control" id="PrecioProductoA"
+                                        aria-label="Dollar amount (with dot and two decimal places)" min="1" step="0.01">
                                 </div>
                             </div>
 
@@ -353,13 +353,13 @@
                             <div class="col-sm-12 col-md-6">
                                 <label for="descripcionCategoria" class="form-label">Cantidad de producto a
                                     registrar:</label>
-                                <input id="cantidadProductoA" type="text" name="cantidadProducto" class="form-control"
+                                <input id="cantidadProductoA" type="number" name="cantidadProducto" min="1" class="form-control"
                                     placeholder="Ingrese la cantidad que se registrará del producto" required>
                             </div>
                             <div class="col-sm-12 col-md-6">
                                 <label for="descripcionCategoria" class="form-label">Descuento:</label>
-                                <input id="descuentoProductoA" type="text" name="descuentoProducto" class="form-control"
-                                    placeholder="00.00%" required>
+                                <input id="descuentoProductoA" type="number" name="descuentoProducto" class="form-control"
+                                    placeholder="00.00%" min="1" step="0.01" required>
                             </div>
 
                         </div>
