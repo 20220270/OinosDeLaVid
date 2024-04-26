@@ -57,7 +57,8 @@
                             <div class="input-group-text">
                                 <img src="../../resources/Imagenes/texto.png" alt="user-icon" style="height: 2rem">
                             </div>
-                            <input class="form-control bg-light" type="text" placeholder="Alias" id="textoAlias" name="textoAlias"  required/>
+                            <input class="form-control bg-light" type="text" placeholder="Alias" id="textoAlias"
+                                name="textoAlias" required />
 
                         </div>
                     </div>
@@ -75,7 +76,7 @@
                                 <img src="../../resources/Imagenes/pass.png" alt="user-icon" style="height: 2rem">
                             </div>
                             <input class="form-control bg-light" type="password" placeholder="Contraseña"
-                                id="textoContra" name="textoContra" required/>
+                                id="textoContra" name="textoContra" required />
                         </div>
                     </div>
                     <!--boton  -->
@@ -111,9 +112,10 @@
                     ¿No tienes una cuenta?
                 </div>
                 <br>
-                <button type="button" class="btn btn-white" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <button type="button" class="btn btn-white p-0" data-bs-toggle="modal"
+                    data-bs-target="#modalRegistrasrte">
                     Inicia sesión
-                  </button>
+                </button>
             </div>
             <div class="p-2">
                 <div class="border-bottom text-center border-secondary OO">
@@ -135,7 +137,7 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        <div class="modal fade" id="modalRegistrasrte" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -153,9 +155,8 @@
                                         <div class="mb-2">
                                             <!--Label e input para agregar el nombre del administrador-->
                                             <label class="form-label">Nombre del administrador:</label>
-                                            <br>
-                                            <br>
-                                            <input type="text" class="form-control mb-5" id="Nombre" required
+                                            
+                                            <input type="text" class="form-control mb-5" id="Nombre" name="Nombre" required
                                                 placeholder="Ingrese el nombre del administrador">
                                             <small>Ingresa tu nombre</small>
                                         </div>
@@ -164,8 +165,7 @@
                                         <div class="mb-2">
                                             <!--Label e input para agregar el apellido del administrador-->
                                             <label class="form-label">Apellido del administrador:</label>
-                                            <br>
-                                            <br>
+                                            
                                             <input type="text" class="form-control mb-5" id="Apellido" required
                                                 placeholder="Ingrese el apellido del administrador">
                                             <small>Ingresa tu apellido</small>
@@ -174,8 +174,7 @@
                                         <div class="mb-3">
                                             <!--Label e input para agregar el correo del administrador-->
                                             <label class="form-label">Correo del administrador:</label>
-                                            <br>
-                                            <br>
+                                           
                                             <input type="email" class="form-control mb-5" id="Correo" required
                                                 placeholder="Ingrese el correo del administrador">
                                             <small>Ingresa tu correo</small>
@@ -188,8 +187,7 @@
                                         <div class="mb-3">
                                             <!--Label e input para agregar el alias del administrador-->
                                             <label class="form-label1 mb-2">Alias del administrador:</label>
-                                            <br>
-                                            <br>
+                                            
                                             <input type="text" class="form-control mb-5" id="Alias" required
                                                 placeholder="Ingrese el alias del administrador">
                                             <small>Ingresa un alias</small>
@@ -198,8 +196,7 @@
                                         <div class="mb-3">
                                             <!--Label e input para agregar la clave del administrador-->
                                             <label class="form-label1 mb-2">Clave del administrador:</label>
-                                            <br>
-                                            <br>
+                                            
                                             <input type="password" class="form-control mb-5" id="Clave" required
                                                 placeholder="Ingrese la clave del administrador">
                                             <small>Ingresa tu clave</small>
@@ -209,8 +206,7 @@
                                         <div class="mb-3">
                                             <!--Label e input para confirmar la clave del administrador-->
                                             <label class="form-label2 mb-2">Confirmar clave:</label>
-                                            <br>
-                                            <br>
+                                            
                                             <input type="password" class="form-control mb-5" id="Confirmar" required>
                                             <small>Por favor confirma tu contraseña</small>
                                         </div>
@@ -246,12 +242,12 @@
 
 
 
-    <!-- IMPORTACIÓN DE ARCHIVOS JAVASCRIPT -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <!-- Llamada al fcontrolador del index-->
-    <script type="text/javascript" src="../../controllers/admin/index.js"></script>
+        <!-- IMPORTACIÓN DE ARCHIVOS JAVASCRIPT -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <!-- Llamada al fcontrolador del index-->
+        <script type="text/javascript" src="../../controllers/admin/index.js"></script>
 </body>
 
 </html>
