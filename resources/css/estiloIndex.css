@@ -19,23 +19,41 @@ small{
     border-radius: 10px;
 }
 
-/*estilo para el hover del botón, para que al pasar el cursos cambie ligeramente de color*/
-.btn:hover {
-    background-color: #871313;
-}
 
-/*estilo para los inputs*/
-input.form-control:hover {
-    box-shadow: 0 0 5px #871313;
-    outline: none;
-}
 
 /* Este codigo agrega una sombra roja al hacer hover o focus sobre los inputs */
+
 input.form-control:hover,
 input.form-control:focus {
     box-shadow: 0 0 5px #871313;
     outline: none;
+    border-bottom: 1px solid #000000;
+    border-radius: 0;
+    padding: 1%;
+    background-color: transparent;
+    box-shadow: none;
 }
+
+
+.modal .form-control,
+.modal select{
+    border: none;
+    border-bottom: 1px solid #000000;
+    border-radius: 0;
+    padding: 1%;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.modal{
+    background-color: transparent;
+    transform: translateX(-13%);
+}
+
+.modal-content{
+    width: 170%;
+}
+
 
 
 /*estilos para los inputs de alias y contraseña*/
@@ -105,5 +123,35 @@ a:active {
    
 }
 
+.OO{
+    height: 0.9rem;
+}
+
+/*Modificamos los inputs para que solamente tenga visible la linea de abajo*/
+
+/*Modificamos los labels para que aparezcan a la izquierda y alineados con los inputs*/
+.form-label {
+    margin-right: 80px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.form-label1 {
+    margin-right: 80px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.nivel{
+    margin-right: 80px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.form-label2 {
+    margin-right: 130px;
+    font-size: 13px;
+    font-weight: bold;
+}
 
 

@@ -57,7 +57,7 @@
                             <div class="input-group-text">
                                 <img src="../../resources/Imagenes/texto.png" alt="user-icon" style="height: 2rem">
                             </div>
-                            <input class="form-control bg-light" type="text" placeholder="Alias" id="textoAlias"  required/>
+                            <input class="form-control bg-light" type="text" placeholder="Alias" id="textoAlias" name="textoAlias"  required/>
 
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                                 <img src="../../resources/Imagenes/pass.png" alt="user-icon" style="height: 2rem">
                             </div>
                             <input class="form-control bg-light" type="password" placeholder="Contraseña"
-                                id="textoContra" required/>
+                                id="textoContra" name="textoContra" required/>
                         </div>
                     </div>
                     <!--boton  -->
@@ -111,12 +111,12 @@
                     ¿No tienes una cuenta?
                 </div>
                 <br>
-                <a href="registrarse.html" class="text-decoration-none fw-semibold">
-                    Regístrate aquí
-                </a>
+                <button type="button" class="btn btn-white" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Inicia sesión
+                  </button>
             </div>
             <div class="p-2">
-                <div class="border-bottom text-center border-secondary" style="height: 0.9rem">
+                <div class="border-bottom text-center border-secondary OO">
                     <span class="px-3">
                         o
                     </span>
@@ -133,7 +133,118 @@
                 Continúa con Google
             </button>
         </div>
-    </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title" id="staticBackdropLabel">Registre sus datos</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Labels identificadores e inputs para ingresar la información de los administradores, 
+        separados por espacios -->
+                        <form id="FormValidacion">
+                            <div class="container text-center" id="contenedorPrincipal">
+                                <div class="row">
+                                    <div class="col col-lg-4 col-md-6">
+                                        <div class="mb-2">
+                                            <!--Label e input para agregar el nombre del administrador-->
+                                            <label class="form-label">Nombre del administrador:</label>
+                                            <br>
+                                            <br>
+                                            <input type="text" class="form-control mb-5" id="Nombre" required
+                                                placeholder="Ingrese el nombre del administrador">
+                                            <small>Ingresa tu nombre</small>
+                                        </div>
+
+
+                                        <div class="mb-2">
+                                            <!--Label e input para agregar el apellido del administrador-->
+                                            <label class="form-label">Apellido del administrador:</label>
+                                            <br>
+                                            <br>
+                                            <input type="text" class="form-control mb-5" id="Apellido" required
+                                                placeholder="Ingrese el apellido del administrador">
+                                            <small>Ingresa tu apellido</small>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <!--Label e input para agregar el correo del administrador-->
+                                            <label class="form-label">Correo del administrador:</label>
+                                            <br>
+                                            <br>
+                                            <input type="email" class="form-control mb-5" id="Correo" required
+                                                placeholder="Ingrese el correo del administrador">
+                                            <small>Ingresa tu correo</small>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col col-lg-4 col-md-6">
+                                        <div class="mb-3">
+                                            <!--Label e input para agregar el alias del administrador-->
+                                            <label class="form-label1 mb-2">Alias del administrador:</label>
+                                            <br>
+                                            <br>
+                                            <input type="text" class="form-control mb-5" id="Alias" required
+                                                placeholder="Ingrese el alias del administrador">
+                                            <small>Ingresa un alias</small>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <!--Label e input para agregar la clave del administrador-->
+                                            <label class="form-label1 mb-2">Clave del administrador:</label>
+                                            <br>
+                                            <br>
+                                            <input type="password" class="form-control mb-5" id="Clave" required
+                                                placeholder="Ingrese la clave del administrador">
+                                            <small>Ingresa tu clave</small>
+                                        </div>
+
+
+                                        <div class="mb-3">
+                                            <!--Label e input para confirmar la clave del administrador-->
+                                            <label class="form-label2 mb-2">Confirmar clave:</label>
+                                            <br>
+                                            <br>
+                                            <input type="password" class="form-control mb-5" id="Confirmar" required>
+                                            <small>Por favor confirma tu contraseña</small>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-12 col-lg-4 col-md-6 col-sm-12">
+                                        <div class="dropdown">
+                                            <label class="form-label1 nivel mb-3">Nivel de usuario:</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Seleccione el nivel de usuario</option>
+                                                <option value="1">Administrador</option>
+                                                <option value="2">Trabajador</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!--Fin de los labels e inputs-->
+                                </div>
+
+
+                                <!--Botón para registrar la información-->
+                                <div class="col">
+                                    <button type="submit" class="btn btn-dark" id="btnRegistrar">Registrar</button>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
 
     <!-- IMPORTACIÓN DE ARCHIVOS JAVASCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
