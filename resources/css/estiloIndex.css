@@ -2,6 +2,15 @@
     background-color: #FCFCFC;
 }
 
+small{
+    display: none;
+}
+
+.was-validated small{
+    display: block;
+    color: red;
+
+}
 
 /*estilo para el botón de login*/
 .btnIngresar {

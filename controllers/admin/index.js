@@ -1,17 +1,12 @@
-/*Declaracion y obtencion de variables del inicio privado*/
-function login() {
-    var user, pass;
+const addForm = document.getElementById("ValidacionInicio");
 
-    user = document.getElementById("textoAlias").value;
-    pass = document.getElementById("textoContra").value;
-
-    if (user == "Enrique" && pass == "12345") {
-        console.log(location.href)
-        alert('Inicio de Sesion Correcto');
-        location.href = 'menu.html';
-    } else {
-        alert("Datos Incorrectos");
+addForm.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    if(addForm.checkValidity() === false){
+        e.stopPropagation();
+        addForm.classList.add('was-validated');
+        return false
     }
-}
+})
 
 
