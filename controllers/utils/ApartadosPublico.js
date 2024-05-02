@@ -23,14 +23,14 @@ NAVBAR.innerHTML = `
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item" id="menu">
-                            <a class="nav-link active" aria-current="page" href="#"
+                            <a class="nav-link active" aria-current="page" href="index.html#menuVinos"
                                 onclick="scrollToElement('catalogo')">Menú</a>
                         </li>
                         <li class="nav-item" id="nos">
-                            <a class="nav-link" href="#" onclick="scrollToElement('sobreNos')">Sobre nosotros</a>
+                            <a class="nav-link" href="index.html#sobreus" onclick="scrollToElement('sobreNos')">Sobre nosotros</a>
                         </li>
                         <li class="nav-item" id="Contac">
-                            <a class="nav-link" href="#" onclick="scrollToElement('footer')">Contactos</a>
+                            <a class="nav-link" href="index.html#footer" onclick="scrollToElement('footer')">Contactos</a>
                         </li>
                         <li class="nav-item" id="Contac">
                             <a class="nav-link" href="miscompras.html">Ver mis compras</a>

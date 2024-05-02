@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
-document.getElementById("perfilUsuario").addEventListener("click", function () {
-    location.href = "perfil.html";
-  });
+document.getElementById("btnVerPerfil").addEventListener("click", function () {
+    window.location.href = "perfil.html";
+});
