@@ -48,60 +48,272 @@
         </button>
     </div>
 
-    <div class="col-11 table-wrapper">
-        <table class="table table-hover">
-            <!-- Encabezado de la tabla para mostrar la cantidad de registros y los títulos de las columnas -->
-            <thead>
-                <tr>
-                    <td colspan="8" id="Filas"></td>
-                </tr>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre completo</th>
-                    <th>Correo</th>
-                    <th>Alias</th>
-                    <th>Clave</th>
-                    <th>Fecha de registro</th>
-                    <th>Nivel de usuario</th>
-                    <th>Acciones</th>
-                </tr>
 
-                <tr>
-                    <th scope="row">1</th>
-                    <td>William Flores</td>
-                    <td>wilflo@gmail.com</td>
-                    <td>admin1</td>
-                    <td>187ueue72yuheq72u1h1wjq</td>
-                    <td>07/02/2024</td>
-                    <td>Administrador</td>
-                    <td>
-                        <div class="col-8">
-                            <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
-                                <i class="bi bi-search"></i>
-                                <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                                    class="mb-1">
+    <div class="card col-lg-10 col-md-11 col-sm-12 col-12 mx-auto mt-2">
+        <div class="card-body">
 
-                            </button>
-                            <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar">
-                                <i class="bi bi-x-square-fill"></i>
-                                <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px"
-                                    height="30px" class="mb-1">
-                            </button>
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>ID:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>1</span>
+                </div>
+            </div>
 
-                        </div>
-                    </td>
-                </tr>
-                
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Nombre:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>William flores</span>
+                </div>
+            </div>
 
-            </thead>
-            <!-- Cuerpo de la tabla para mostrar un registro por fila -->
-            <tbody id="tableBody"></tbody>
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Correo:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>wilflo@gmail.com</span>
+                </div>
+            </div>
 
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Alias:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>willito</span>
+                </div>
+            </div>
 
-        </table>
-        <br>
-        <br>
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Clave:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>0919ehdjahsdja928hd</span>
+                </div>
+            </div>
+           
+            <div class="row mb-2">
+                <div class="col-lg-4 col-md-3">
+                    <strong>Fecha de registro:</strong>
+                </div>
+                <div class="col-lg-4 col-md-9">
+                    <span>00/00/0000</span>
+                </div>
+            </div>
 
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Nivel de usuario:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>Administrador</span>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Estado:</strong>
+                </div>
+                <div class="col-md-9">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input estado" type="checkbox" role="switch" id="estado" name="estado">
+                        <label for="tipoEstado" id="Estado">Activo</label>
+                      </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-3">
+                    <strong>Acciones:</strong>
+                </div>
+                <div class="col-lg-4 col-md-9">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card col-lg-10 col-md-11 col-sm-12 col-12 mx-auto mt-2">
+        <div class="card-body">
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>ID:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>1</span>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Nombre:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>William flores</span>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Correo:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>wilflo@gmail.com</span>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Alias:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>willito</span>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Clave:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>0919ehdjahsdja928hd</span>
+                </div>
+            </div>
+           
+            <div class="row mb-2">
+                <div class="col-lg-4 col-md-3">
+                    <strong>Fecha de registro:</strong>
+                </div>
+                <div class="col-lg-4 col-md-9">
+                    <span>00/00/0000</span>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Nivel de usuario:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>Administrador</span>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Estado:</strong>
+                </div>
+                <div class="col-md-9">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input estado" type="checkbox" role="switch" id="estado" name="estado">
+                        <label for="tipoEstado" id="Estado">Activo</label>
+                      </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-3">
+                    <strong>Acciones:</strong>
+                </div>
+                <div class="col-lg-4 col-md-9">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card col-lg-10 col-md-11 col-sm-12 col-12 mx-auto mt-2">
+        <div class="card-body">
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>ID:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>1</span>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Nombre:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>William flores</span>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Correo:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>wilflo@gmail.com</span>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Alias:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>willito</span>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Clave:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>0919ehdjahsdja928hd</span>
+                </div>
+            </div>
+           
+            <div class="row mb-2">
+                <div class="col-lg-4 col-md-3">
+                    <strong>Fecha de registro:</strong>
+                </div>
+                <div class="col-lg-4 col-md-9">
+                    <span>00/00/0000</span>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Nivel de usuario:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>Administrador</span>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Estado:</strong>
+                </div>
+                <div class="col-md-9">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input estado" type="checkbox" role="switch" id="estado" name="estado">
+                        <label for="tipoEstado" id="Estado">Activo</label>
+                      </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-3">
+                    <strong>Acciones:</strong>
+                </div>
+                <div class="col-lg-4 col-md-9">
+
+                </div>
+            </div>
+        </div>
     </div>
 
     <!--Modals-->

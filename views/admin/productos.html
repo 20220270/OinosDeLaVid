@@ -9,11 +9,11 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-        <link rel="stylesheet" href="../../resources/css/EstiloApartados.css">
-        <link rel="stylesheet" href="../../resources/css/estiloProductos.css">
-        <link rel="stylesheet" href="../../resources/css/estiloMenu.css">
-        <title>Productos</title>
-    
+    <link rel="stylesheet" href="../../resources/css/EstiloApartados.css">
+    <link rel="stylesheet" href="../../resources/css/estiloProductos.css">
+    <link rel="stylesheet" href="../../resources/css/estiloMenu.css">
+    <title>Productos</title>
+
 </head>
 
 <body>
@@ -39,7 +39,8 @@
                 </div>
             </div>
             <div class="col mt-5">
-                <button class="btn fw-semibold" id="btnModalAbrir" name="btnRegistrar">
+                <button class="btn fw-semibold" id="btnModalAbrir" name="btnRegistrar" data-bs-toggle="modal"
+                data-bs-target="#miModalP">
                     <i class="bi bi-x-square-fill"></i>
                     <img src="../../resources/Imagenes/btnAgregarIMG.png" alt="" width="60px" height="60px"
                         class="mb-1">
@@ -56,23 +57,52 @@
                     class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Vino Renegado</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional
-                        content. This content is a little bit longer.</p>
+
+                    <div class="container text-center">
+                        <div class="row mt-3">
+                            <div class="col">
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in to
+                                    additional
+                                    content. This content is a little bit longer.</p>
+                            </div>
+                            <div class="col">
+                                <label for="" class="fw-bold">Precio:</label>
+                                <label for="" class="mb-4">$50.00</label>
+
+                                <label for="" class="fw-bold">Existencias:</label>
+                                <label for="" class="mb-4">4</label>
+
+                                <label for="" class="fw-bold">Descuento:</label>
+                                <label for="">20%</label>
+                            </div>
+                            <div class="col">
+                                <label for="" class="fw-bold">Estado:</label>
+                                <label for="" class="mb-4">En venta</label>
+
+                                <label for="" class="fw-bold">Registrado desde:</label>
+                                <label for="">00/00/0000</label>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+
                 <div class="col-8">
-                    <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
+                    <button type="submit" class="btn btn-success mt-1 btnEliminar" id="btnEliminar" data-bs-toggle="modal"
+                    data-bs-target="#miModalDe">
                         <i class="bi bi-search"></i>
                         <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
                             class="mb-1">
 
                     </button>
-                    <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar">
+                    <button type="reset" class="btn btn-secondary mt-1 btnActualizar" id="btnActualizar" data-bs-toggle="modal"
+                    data-bs-target="#miModalP2">
                         <i class="bi bi-x-square-fill"></i>
                         <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
                             class="mb-1">
                     </button>
-                    <button type="submit" class="btn btn-secondary mt-1" id="btnMostrar">
+                    <button type="submit" class="btn btn-secondary mt-1 btnMostrar" id="btnMostrar">
                         <i class="bi bi-x-square-fill"></i>
                         <img src="../../resources/Imagenes/ocultar.png" alt="" width="40px" height="40px" class="mb-1">
                     </button>
@@ -86,25 +116,49 @@
                     class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Vino Rojo</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore,
-                        accusantium.
-                        Dolorum, et optio. Voluptates eos, debitis corporis, facere officia reprehenderit vero inventore
-                        et
-                        assumenda illo alias nulla sequi, quidem facilis.</p>
+                    <div class="container text-center">
+                        <div class="row mt-3">
+                            <div class="col">
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in to
+                                    additional
+                                    content. This content is a little bit longer.</p>
+                            </div>
+                            <div class="col">
+                                <label for="" class="fw-bold">Precio:</label>
+                                <label for="" class="mb-4">$50.00</label>
+
+                                <label for="" class="fw-bold">Existencias:</label>
+                                <label for="" class="mb-4">4</label>
+
+                                <label for="" class="fw-bold">Descuento:</label>
+                                <label for="">20%</label>
+                            </div>
+                            <div class="col">
+                                <label for="" class="fw-bold">Estado:</label>
+                                <label for="" class="mb-4">En venta</label>
+
+                                <label for="" class="fw-bold">Registrado desde:</label>
+                                <label for="">00/00/0000</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-8">
-                    <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
+                    <button type="submit" class="btn btn-success mt-1 btnEliminar" id="btnEliminar" data-bs-toggle="modal"
+                    data-bs-target="#miModalDe">
                         <i class="bi bi-search"></i>
                         <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
                             class="mb-1">
 
                     </button>
-                    <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar">
+                    <button type="reset" class="btn btn-secondary mt-1 btnActualizar" id="btnActualizar" data-bs-toggle="modal"
+                    data-bs-target="#miModalP2">
                         <i class="bi bi-x-square-fill"></i>
                         <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
                             class="mb-1">
                     </button>
-                    <button type="submit" class="btn btn-secondary mt-1" id="btnMostrar">
+                    <button type="submit" class="btn btn-secondary mt-1 btnMostrar" id="btnMostrar">
                         <i class="bi bi-x-square-fill"></i>
                         <img src="../../resources/Imagenes/ocultar.png" alt="" width="40px" height="40px" class="mb-1">
                     </button>
@@ -118,24 +172,50 @@
                     class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Vino tinto</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional
-                        content.</p>
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col">
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in to
+                                    additional
+                                    content. This content is a little bit longer.</p>
+                            </div>
+                            <div class="col">
+                                <label for="" class="fw-bold">Precio:</label>
+                                <label for="" class="mb-4">$50.00</label>
+
+                                <label for="" class="fw-bold">Existencias:</label>
+                                <label for="" class="mb-4">4</label>
+
+                                <label for="" class="fw-bold">Descuento:</label>
+                                <label for="">20%</label>
+                            </div>
+                            <div class="col">
+                                <label for="" class="fw-bold">Estado:</label>
+                                <label for="" class="mb-4">En venta</label>
+
+                                <label for="" class="fw-bold">Registrado desde:</label>
+                                <label for="">00/00/0000</label>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <div class="col-8">
-                    <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
+                    <button type="submit" class="btn btn-success mt-1 btnEliminar" id="btnEliminar" data-bs-toggle="modal"
+                    data-bs-target="#miModalDe">
                         <i class="bi bi-search"></i>
                         <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
                             class="mb-1">
 
                     </button>
-                    <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar">
+                    <button type="reset" class="btn btn-secondary mt-1 btnActualizar" id="btnActualizar" data-bs-toggle="modal"
+                    data-bs-target="#miModalP2">
                         <i class="bi bi-x-square-fill"></i>
                         <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
                             class="mb-1">
                     </button>
-                    <button type="submit" class="btn btn-secondary mt-1" id="btnMostrar">
+                    <button type="submit" class="btn btn-secondary mt-1 btnMostrar" id="btnMostrar">
                         <i class="bi bi-x-square-fill"></i>
                         <img src="../../resources/Imagenes/ocultar.png" alt="" width="40px" height="40px" class="mb-1">
                     </button>
@@ -149,30 +229,60 @@
                     class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Vino Rosa</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional
-                        content. This content is a little bit longer.</p>
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col">
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in to
+                                    additional
+                                    content. This content is a little bit longer.</p>
+                            </div>
+                            <div class="col">
+                                <label for="" class="fw-bold">Precio:</label>
+                                <label for="" class="mb-4">$50.00</label>
+
+                                <label for="" class="fw-bold">Existencias:</label>
+                                <label for="" class="mb-4">4</label>
+
+                                <label for="" class="fw-bold">Descuento:</label>
+                                <label for="">20%</label>
+                            </div>
+                            <div class="col">
+                                <label for="" class="fw-bold">Estado:</label>
+                                <label for="" class="mb-4">En venta</label>
+
+                                <label for="" class="fw-bold">Registrado desde:</label>
+                                <label for="">00/00/0000</label>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <div class="col-8">
-                    <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
+                    <button type="submit" class="btn btn-success mt-1 btnEliminar" id="btnEliminar" data-bs-toggle="modal"
+                    data-bs-target="#miModalDe">
                         <i class="bi bi-search"></i>
                         <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
                             class="mb-1">
 
                     </button>
-                    <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar">
+                    <button type="reset" class="btn btn-secondary mt-1 btnActualizar" id="btnActualizar" data-bs-toggle="modal"
+                    data-bs-target="#miModalP2">
                         <i class="bi bi-x-square-fill"></i>
                         <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
                             class="mb-1">
                     </button>
-                    <button type="submit" class="btn btn-secondary mt-1" id="btnMostrar">
+                    <button type="submit" class="btn btn-secondary mt-1 btnMostrar" id="btnMostrar">
                         <i class="bi bi-x-square-fill"></i>
                         <img src="../../resources/Imagenes/ocultar.png" alt="" width="40px" height="40px" class="mb-1">
                     </button>
 
                 </div>
             </div>
+        </div>
+        <div id="noResults">
+            <img src="/OinosDeLaVid/resources/Imagenes/error.png" alt="...">
+            No se ha encontrado ninguna coincidencia.
         </div>
     </div>
 
@@ -190,7 +300,7 @@
                     <form id="saveForm">
                         <div class="modal-body row g-3">
                             <!-- Campo oculto para asignar el id del registro al momento de modificar -->
-                            <input type="hidden" id="idCategoria" name="idCategoria">
+                            <input type="hidden" id="idProducto" name="idProducto">
                             <div class="col-sm-12 col-md-6">
                                 <label for="nombreCategoria" class="col-sm-7 col-form-label">Nombre del
                                     producto:</label>
@@ -198,7 +308,7 @@
                                     placeholder="Ingrese el nombre del producto" required>
                             </div>
                             <div class="col-sm-12 col-md-6">
-                                <label for="descripcionCategoria" class="col-sm-7 col-form-label">Categoría:</label>
+                                <label for="Categoria" class="col-sm-7 col-form-label">Categoría:</label>
                                 <select class="form-select" id="selectCategoria" aria-label="Default select example">
                                     <option selected>Seleccione la categoría a la que pertenece el producto</option>
                                     <option value="1">One</option>
@@ -208,7 +318,7 @@
                             </div>
 
                             <div class="col-sm-12 col-md-6">
-                                <label for="descripcionCategoria" class="col-sm-7 col-form-label">Marca:</label>
+                                <label for="Marca" class="col-sm-7 col-form-label">Marca:</label>
                                 <select class="form-select" id="selectMarca" aria-label="Default select example">
                                     <option selected>Seleccione la marca a la que pertenece el producto</option>
                                     <option value="1">One</option>
@@ -218,7 +328,7 @@
                             </div>
 
                             <div class="col-sm-12 col-md-6">
-                                <label for="descripcionCategoria" class="col-sm-7 col-form-label">Imagen del
+                                <label for="imagenProducto" class="col-sm-7 col-form-label">Imagen del
                                     producto:</label>
                                 <div class="position-relative">
                                     <div class="input-group mb-3">
@@ -228,22 +338,23 @@
                             </div>
 
                             <div class="col-sm-12 col-md-6">
-                                <label for="descripcionCategoria" class="form-label">Descripción del producto:</label>
+                                <label for="descripcionProducto" class="form-label">Descripción del producto:</label>
                                 <input id="descripcionProducto" type="text" name="descripcionProducto"
                                     class="form-control" placeholder="Ingrese una descripción para el producto"
                                     required>
                             </div>
                             <div class="col-sm-12 col-md-6">
-                                <label for="descripcionCategoria" class="form-label">Precio del producto:</label>
+                                <label for="precio" class="form-label">Precio del producto:</label>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="logoDolar">$</span>
                                     <input type="number" class="form-control" id="PrecioProducto"
-                                        aria-label="Dollar amount (with dot and two decimal places)" min="1" step="0.01">
+                                        aria-label="Dollar amount (with dot and two decimal places)" min="1"
+                                        step="0.01">
                                 </div>
                             </div>
 
                             <div class="col-sm-12 col-md-6">
-                                <label for="descripcionCategoria" class="form-label">Estado del producto:</label>
+                                <label for="estado" class="form-label">Estado del producto:</label>
                                 <select class="form-select" id="selectEstado" aria-label="Default select example">
                                     <option selected>Seleccione el estado del producto</option>
                                     <option value="1">One</option>
@@ -255,12 +366,13 @@
                                 <label for="descripcionCategoria" class="form-label">Cantidad de producto a
                                     registrar:</label>
                                 <input id="cantidadProducto" type="number" name="cantidadProducto" class="form-control"
-                                    placeholder="Ingrese la cantidad que se registrará del producto" min="1" step="1" required>
+                                    placeholder="Ingrese la cantidad que se registrará del producto" min="1" step="1"
+                                    required>
                             </div>
                             <div class="col-sm-12 col-md-6">
                                 <label for="descripcionCategoria" class="form-label">Descuento:</label>
-                                <input id="descuentoProducto" type="number" name="descuentoProducto" class="form-control"
-                                    placeholder="00.00%" min="1" step="0.01" required>
+                                <input id="descuentoProducto" type="number" name="descuentoProducto"
+                                    class="form-control" placeholder="00.00%" min="1" step="0.01" required>
                             </div>
 
                         </div>
@@ -337,7 +449,8 @@
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="logoDolar">$</span>
                                     <input type="number" class="form-control" id="PrecioProductoA"
-                                        aria-label="Dollar amount (with dot and two decimal places)" min="1" step="0.01">
+                                        aria-label="Dollar amount (with dot and two decimal places)" min="1"
+                                        step="0.01">
                                 </div>
                             </div>
 
@@ -353,18 +466,19 @@
                             <div class="col-sm-12 col-md-6">
                                 <label for="descripcionCategoria" class="form-label">Cantidad de producto a
                                     registrar:</label>
-                                <input id="cantidadProductoA" type="number" name="cantidadProducto" min="1" class="form-control"
+                                <input id="cantidadProductoA" type="number" name="cantidadProducto" min="1" step="1"
+                                    class="form-control"
                                     placeholder="Ingrese la cantidad que se registrará del producto" required>
                             </div>
                             <div class="col-sm-12 col-md-6">
                                 <label for="descripcionCategoria" class="form-label">Descuento:</label>
-                                <input id="descuentoProductoA" type="number" name="descuentoProducto" class="form-control"
-                                    placeholder="00.00%" min="1" step="0.01" required>
+                                <input id="descuentoProductoA" type="number" name="descuentoProducto"
+                                    class="form-control" placeholder="00.00%" min="1" step="0.01" required>
                             </div>
 
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-dark" id="btnGuardarD">Actualizar</button>
+                            <button type="submit" class="btn btn-dark" id="btnGuardarD" >Actualizar</button>
                             <button type="button" class="btn btn-dark" data-bs-dismiss="modal"
                                 id="btnCerrar">Cerrar</button>
                         </div>
@@ -481,33 +595,6 @@
         </div>
     </div>
 
-    <!--este codigo no aplica en la vista de categoria-->
-
-    <!-- Segunda Modal para mostrar la actualización de un registro-->
-    <div class="modal" id="miModalACCon" data-bs-backdrop="static">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <!-- Contenido de la ventana modal -->
-                <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
-                    <form id="saveForm">
-                        <div class="d-flex justify-content-center align-items-center flex-column">
-                            <!-- Agregamos clases para centrar vertical y horizontalmente -->
-                            <img src="../../resources/Imagenes/exito.png" alt="">
-                            <br>
-                            <h4 class="text-align-center">¡Contraseña actualizada con éxito!</h4>
-                            <br>
-                            <h6 class="text-align-center">Se ha actualizado la contraseña.</h6>
-                        </div>
-                        <div class="modal-footer d-flex justify-content-center">
-                            <!-- Agregamos clases para centrar horizontalmente -->
-                            <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal"
-                                id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!--Modal para mostrar que un prodcuto ha sido ocultado-->
     <div class="modal" id="ModalOcultar" data-bs-backdrop="static">

@@ -1,17 +1,7 @@
 //Codigo para redireccionar el perfil del administrador a la ventana anterior
 localStorage.setItem('paginaOrigen', window.location.href);
 
-$(document).ready(function(){
-    $("#btnModalAbrir").click(function(){
-      $("#miModalP").modal("show");
-    });
-  });
 
-  $(document).ready(function(){
-    $("#btnActualizar").click(function(){
-      $("#miModalP2").modal("show");
-    });
-  });
 
   //Ventana modal para mostrar la inserción de datos y ocultar la ventana anterior
 $(document).ready(function () {
@@ -30,13 +20,6 @@ $(document).ready(function () {
   });
   $("#btnAAActualiz").click(function () {
     $("#miModalP2").modal("hide");
-  });
-});
-
-//Ventana modal para mostrar la confirmación de un dato eliminado
-$(document).ready(function () {
-  $("#btnEliminar").click(function () {
-    $("#miModalDe").modal("show");
   });
 });
 
@@ -67,87 +50,57 @@ $(document).ready(function() {
   });
 });
 
+//Barra de busqueda para las cards
+document.addEventListener("DOMContentLoaded", function() {
+  const searchInput = document.getElementById("Search");
+  const noResultsElement = document.getElementById("noResults"); // Referencia al elemento del mensaje
 
+  searchInput.addEventListener("input", function() {
+      const searchText = searchInput.value.toLowerCase();
+      const cards = document.querySelectorAll(".card");
+      let found = false; // Indicador de si se encontró al menos una coincidencia
 
-//Validación para que solamente se escriban números, un punto y dos números antes y después del punto en el descuento
-$(document).ready(function() {
-  $("#descuentoProducto").on("input", function() {
-      var value = $(this).val();
+      cards.forEach(card => {
+          const cardText = card.textContent.toLowerCase();
+          if (cardText.includes(searchText)) {
+              card.style.display = "";
+              found = true; // Marca como encontrada una coincidencia
+          } else {
+              card.style.display = "none";
+          }
+      });
 
-      // Eliminar cualquier carácter que no sea un número o un punto decimal
-      value = value.replace(/[^0-9.]/g, '');
-
-      // Separar la parte entera de la decimal
-      var parts = value.split('.');
-      var integerPart = parts[0];
-      var decimalPart = parts[1];
-
-      // Limitar la parte entera a dos dígitos
-      if (integerPart.length > 2) {
-          integerPart = integerPart.slice(0, 2);
-      }
-
-      // Si hay exactamente dos dígitos en la parte entera, agregar automáticamente un punto
-      if (integerPart.length === 2 && decimalPart === undefined) {
-          integerPart += '.';
-      }
-
-      // Limitar la parte decimal a dos dígitos
-      if (decimalPart && decimalPart.length > 2) {
-          decimalPart = decimalPart.slice(0, 2);
-      }
-
-      // Reconstruir el valor del campo con las limitaciones
-      var newValue = integerPart;
-      if (decimalPart !== undefined) {
-          newValue += '.' + decimalPart;
-      }
-
-      // Establecer el nuevo valor en el campo
-      $(this).val(newValue);
+      // Muestra u oculta el mensaje de 'no resultados' basado en si se encontraron coincidencias
+      noResultsElement.style.display = found ? "none" : "block";
   });
 });
 
-//Validaciones de actualizar
+//Cambiar el estado
+document.addEventListener("DOMContentLoaded", function() {
+  const mostrarButtons = document.querySelectorAll(".btnMostrar");
 
+  mostrarButtons.forEach(button => {
+      button.addEventListener("click", function() {
+          // Asignar el contexto de cada botón a su card específica
+          const card = button.closest('.card');
 
-//Validación para que solamente se escriban números, un punto y dos números antes y después del punto en el descuento
-$(document).ready(function() {
-  $("#descuentoProductoA").on("input", function() {
-      var value = $(this).val();
+          // Buscar el label de 'Estado:' dentro de esta card
+          const estadoLabel = Array.from(card.querySelectorAll("label")).find(label => label.textContent.includes("Estado:"));
+          if (estadoLabel) {
+              const valueLabel = estadoLabel.nextElementSibling;
 
-      // Eliminar cualquier carácter que no sea un número o un punto decimal
-      value = value.replace(/[^0-9.]/g, '');
-
-      // Separar la parte entera de la decimal
-      var parts = value.split('.');
-      var integerPart = parts[0];
-      var decimalPart = parts[1];
-
-      // Limitar la parte entera a dos dígitos
-      if (integerPart.length > 2) {
-          integerPart = integerPart.slice(0, 2);
-      }
-
-      // Si hay exactamente dos dígitos en la parte entera, agregar automáticamente un punto
-      if (integerPart.length === 2 && decimalPart === undefined) {
-          integerPart += '.';
-      }
-
-      // Limitar la parte decimal a dos dígitos
-      if (decimalPart && decimalPart.length > 2) {
-          decimalPart = decimalPart.slice(0, 2);
-      }
-
-      // Reconstruir el valor del campo con las limitaciones
-      var newValue = integerPart;
-      if (decimalPart !== undefined) {
-          newValue += '.' + decimalPart;
-      }
-
-      // Establecer el nuevo valor en el campo
-      $(this).val(newValue);
+              // Cambiar el texto dependiendo del estado actual
+              if (valueLabel.textContent.trim() === "En venta") {
+                  valueLabel.textContent = "No disponible";
+              } else {
+                  valueLabel.textContent = "En venta";
+              }
+          }
+      });
   });
 });
+
+
+
 
 
