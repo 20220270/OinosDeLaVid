@@ -2,7 +2,7 @@
 localStorage.setItem('paginaOrigen', window.location.href);
 
 
-//Busqueda de datos dentro de la card
+//Busqueda de datos dentro de la card.
 
 document.addEventListener("DOMContentLoaded", function() {
   const searchInput = document.getElementById("Search");
