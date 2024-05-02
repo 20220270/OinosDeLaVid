@@ -63,11 +63,11 @@ $(document).ready(function(){
 
 //método para que un botón abra una ventana
 document.querySelector('.mostrarPedidos').addEventListener("click", function () {
-    window.location.href = "../../views/admin/verOrdenes.html";
+    window.location.href = "../../views/admin/ordenes.html";
   });
 
   document.querySelector('.mostrarPedidosFiltados').addEventListener("click", function () {
-    window.location.href = "../../views/admin/verOrdenes.html";
+    window.location.href = "../../views/admin/ordenes.html";
   });
 
 
