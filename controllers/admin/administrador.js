@@ -4,6 +4,7 @@ localStorage.setItem('paginaOrigen', window.location.href);
 
 //Busqueda de datos dentro de la card.
 
+//Barra de busqueda para las cards
 document.addEventListener("DOMContentLoaded", function() {
   const searchInput = document.getElementById("Search");
   const noResultsElement = document.getElementById("noResults"); // Referencia al elemento del mensaje

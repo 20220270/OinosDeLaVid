@@ -19,3 +19,8 @@
     background-color: transparent;
     box-shadow: none;
 }
+
+#noResults{
+    display: none;
+    font-weight: bold;
+}
