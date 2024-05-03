@@ -15,6 +15,11 @@
     text-align: center;
 }
 
+#noResults{
+    display: none;
+    font-weight: bold;
+}
+
 #btnProductos,
 #btnCatego,
 #btnMarcas,

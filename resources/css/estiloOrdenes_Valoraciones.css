@@ -13,3 +13,8 @@
     color: #ffffff;
     height: 70px;
 }
+
+#noResults{
+    display: none;
+    font-weight: bold;
+}

@@ -113,9 +113,13 @@ FOOTERP.innerHTML = `
           <ul class="list-unstyled text-center">
               <li class="fw-bold my-2">Redes sociales:</li>
               <li>
-                  <a href="#" class="text-decoration-none text-white">
+                  <a href="https://twitter.com/" class="text-decoration-none text-white">
                       <img src="../../resources/Imagenes/LogoTwiiter.png" alt="" id="LogoTwiiter" height="50px" width="50px">
-                      <img src="../../resources/Imagenes/LogoInsta.png" alt="" id="LogoTwiiter" height="50px" width="50px">
+                      
+                  </a>
+                  <a href="https://instagram.com/" class="text-decoration-none text-white">
+                      <img src="../../resources/Imagenes/LogoInsta.png" alt="" id="LogoInsta" height="50px" width="50px">
+                      
                   </a>
               </li>
               <li class="mt-2">¡Síguenos para mantenerte informado sobre nuestros productos y sobre nosotros!</li>

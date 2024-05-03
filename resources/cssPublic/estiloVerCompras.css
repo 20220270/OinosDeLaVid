@@ -100,23 +100,34 @@ footer{
 .search-icon {
     position: absolute;
     top: 50%;
-    transform: translate(-1380%, -48%);
+    transform: translate(-1430%, -48%);
     width: 20px;
     height: auto;
     z-index: 1;
     pointer-events: none;
 }
 
+.textoVerPerfil{
+    text-decoration: none;
+    color: #000;
+}
+
 .navbar-toggler-icon .navbar-toggler-icon-bar {
     background-color: black; /* Cambia el color del icono del menú hamburguesa */
 }
 
+.card .imagenVino {
+    width: 100%;    /* Hace que la imagen no sea más ancha que su contenedor */
+    height: auto;   /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina cualquier espacio extra alrededor de la imagen */
+}
 
-@media screen and (max-width: 1109px) {
+
+@media (min-width: 1200px) and  (max-width: 1370px) {
     .search-icon {
         position: absolute;
         top: 50%;
-        transform: translate(-930%, -48%);
+        transform: translate(-1200%, -48%);
         width: 20px;
         height: auto;
         z-index: 1;
@@ -124,11 +135,11 @@ footer{
     }
 }
 
-@media screen and (max-width: 992px) {
+@media (min-width: 1109px) and  (max-width: 1200px) {
     .search-icon {
         position: absolute;
         top: 50%;
-        transform: translate(-630%, -48%);
+        transform: translate(-1000%, -48%);
         width: 20px;
         height: auto;
         z-index: 1;
@@ -136,20 +147,111 @@ footer{
     }
 }
 
-@media screen and (max-width: 768px) {
+@media (min-width: 992px) and (max-width: 1108px) {
     .search-icon {
         position: absolute;
         top: 50%;
-        transform: translate(-400%, -48%);
+        transform: translate(-980%, -48%);
         width: 20px;
         height: auto;
         z-index: 1;
         pointer-events: none;
     }
 }
-@media screen and (max-width: 551px) {
-    
+
+
+@media (min-width: 769px) and  (max-width: 991px){
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        transform: translate(-700%, -48%);
+        width: 20px;
+        height: auto;
+        z-index: 1;
+        pointer-events: none;
+    }
 }
+
+@media (min-width: 531px) and  (max-width: 769px){
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        transform: translate(-1100%, -48%);
+        width: 20px;
+        height: auto;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    #Search{
+        width: 450px;
+    }
+}
+
+@media (min-width: 427px) and  (max-width: 531px){
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        transform: translate(-600%, -48%);
+        width: 20px;
+        height: auto;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    #Search{
+        width: 250px;
+    }
+}
+
+@media (min-width: 389px) and  (max-width: 427px){
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        transform: translate(-800%, -48%);
+        width: 20px;
+        height: auto;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    #Search{
+        width: 350px;
+    }
+}
+
+@media (max-width: 376px){
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        transform: translate(-670%, -48%);
+        width: 20px;
+        height: auto;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    #Search{
+        width: 300px;
+    }
+}
+
+@media (max-width: 321px){
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        transform: translate(-580%, -48%);
+        width: 20px;
+        height: auto;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    #Search{
+        width: 250px;
+    }
+}
+
 
 
 #Search{

@@ -11,7 +11,7 @@ HEADER.innerHTML = `
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                 <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="Menu.html">Menú</a>
+                        <a class="nav-link active" aria-current="page" href="menu.html">Menú</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="productos.html">Productos</a>
@@ -29,7 +29,7 @@ HEADER.innerHTML = `
                         <a class="nav-link" href="administradores.html">Administradores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="perfilAdmin.html">Mi perfil</a>
+                        <a class="nav-link active" aria-current="page" href="perfil.html">Mi perfil</a>
                     </li>
 
                 </ul>

@@ -51,75 +51,265 @@
     </div>
 
 
-    <div class="col-11 table-wrapper mt-5">
-        <table class="table table-hover">
-            <!-- Encabezado de la tabla para mostrar la cantidad de registros y los títulos de las columnas -->
-            <thead>
-                <tr>
-                    <td colspan="11" id="Filas"></td>
-                </tr>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre completo</th>
-                    <th>DUI</th>
-                    <th>Correo</th>
-                    <th>Telefono</th>
-                    <th>Dirección</th>
-                    <th>Clave</th>
-                    <th>Fecha de registro</th>
-                    <th>Estado</th>
-                    <th>Acciones</th>
-                </tr>
+    <div class="card col-lg-10 col-md-11 col-sm-12 col-12 mx-auto mb-2 mt-4">
+        <div class="card-body">
 
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>ID:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>1</span>
+                </div>
+            </div>
 
-                <!--campos de la tabla-->
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Nombre:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>Iván Salguero</span>
+                </div>
+            </div>
 
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Iván Salguero</td>
-                    <td>00000000-0</td>
-                    <td>idse@gmail.com</td>
-                    <td>0000-0000</td>
-                    <td>Condominios Machado</td>
-                    <td>187ueue72yuheq72u1h1wjq</td>
-                    <td>05/02/2024</td>
-                    <td id="estadoCliente">Activo</td>
-                    <td>
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>DUI:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>01010109-8</span>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Correo:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>salguerod@gmail.com</span>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Teléfono:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>0101-0999</span>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Dirección:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>Condominios Machado</span>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-lg-4 col-md-3">
+                    <strong>Fecha de registro:</strong>
+                </div>
+                <div class="col-lg-4 col-md-9">
+                    <span>00/00/0000</span>
+                </div>
+            </div>
 
-                        <!--boton de eliminar-->
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Estado:</strong>
+                </div>
+                <div class="col-md-9">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input estado" type="checkbox" role="switch" id="estado" name="estado">
+                        <label for="tipoEstado" id="Estado">Inactivo</label>
+                    </div>
+                </div>
+            </div>
 
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
-                                <i class="bi bi-search"></i>
-                                <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                                    class="mb-1" data-bs-toggle="modal"
-                                    data-bs-target="#miModalDe">
-                            </button>
+            <div class="row">
+                <div class="col-lg-4 col-md-3">
+                    <strong>Acciones:</strong>
+                </div>
+                <div class="col-lg-4 col-md-9">
 
-                            <!--boton para poder ver pedidos-->
-
-
-                            <button type="submit" class="btn btn-success mt-1 mostrarPedidosFiltados" id="mostrarPedidosFiltados">
-                                <i class="bi bi-search"></i>
-                                <img src="../../resources/Imagenes/pedidos.png" alt="" width="30px" height="30px"
-                                    class="mb-1">
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-
-
-            </thead>
-            <!-- Cuerpo de la tabla para mostrar un registro por fila -->
-            <tbody id="tableBody"></tbody>
-
-
-        </table>
-        <br>
-        <br>
-
+                </div>
+            </div>
+        </div>
     </div>
 
+    <div class="card col-lg-10 col-md-11 col-sm-12 col-12 mx-auto">
+        <div class="card-body">
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>ID:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>1</span>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Nombre:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>Iván Salguero</span>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>DUI:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>01010109-8</span>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Correo:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>salguerod@gmail.com</span>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Teléfono:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>0101-0999</span>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Dirección:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>Condominios Machado</span>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-lg-4 col-md-3">
+                    <strong>Fecha de registro:</strong>
+                </div>
+                <div class="col-lg-4 col-md-9">
+                    <span>00/00/0000</span>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Estado:</strong>
+                </div>
+                <div class="col-md-9">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input estado" type="checkbox" role="switch" id="estado" name="estado">
+                        <label for="tipoEstado" id="Estado">Inactivo</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-3">
+                    <strong>Acciones:</strong>
+                </div>
+                <div class="col-lg-4 col-md-9">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card col-lg-10 col-md-11 col-sm-12 col-12 mx-auto mt-2">
+        <div class="card-body">
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>ID:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>1</span>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Nombre:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>Iván Salguero</span>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>DUI:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>01010109-8</span>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Correo:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>salguerod@gmail.com</span>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Teléfono:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>0101-0999</span>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Dirección:</strong>
+                </div>
+                <div class="col-md-9">
+                    <span>Condominios Machado</span>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-lg-4 col-md-3">
+                    <strong>Fecha de registro:</strong>
+                </div>
+                <div class="col-lg-4 col-md-9">
+                    <span>00/00/0000</span>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <strong>Estado:</strong>
+                </div>
+                <div class="col-md-9">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input estado" type="checkbox" role="switch" id="estado" name="estado">
+                        <label for="tipoEstado" id="Estado">Inactivo</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-3">
+                    <strong>Acciones:</strong>
+                </div>
+                <div class="col-lg-4 col-md-9">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="noResults" class="mt-4 d-flex justify-content-center align-items-center">
+        <img src="/OinosDeLaVid/resources/Imagenes/error.png" alt="...">
+        No se ha encontrado ninguna coincidencia.
+    </div>
     <!--Primera Modal para mostrar la eliminación de un registro-->
     <div class="modal" id="miModalDe" data-backdrop="static">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -154,9 +344,10 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <form id="saveForm">
-                <!-- Contenido de la ventana modal -->
-                <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
-                    
+                    <!-- Contenido de la ventana modal -->
+                    <div class="modal-body text-center">
+                        <!-- Agregamos la clase text-center para centrar el contenido -->
+
                         <div class="d-flex justify-content-center align-items-center flex-column">
                             <!-- Agregamos clases para centrar vertical y horizontalmente -->
                             <img src="../../resources/Imagenes/exito.png" alt="">
@@ -170,10 +361,10 @@
                             <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal"
                                 id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
                         </div>
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
+    </div>
     </div>
 
     <footer>

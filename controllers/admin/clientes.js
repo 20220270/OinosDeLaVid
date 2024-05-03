@@ -1,3 +1,29 @@
+//Busqueda de datos dentro de la card
+
+document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.getElementById("Search");
+    const noResultsElement = document.getElementById("noResults"); // Referencia al elemento del mensaje
+
+    searchInput.addEventListener("input", function() {
+        const searchText = searchInput.value.toLowerCase();
+        const cards = document.querySelectorAll(".card");
+        let found = false; // Indicador de si se encontró al menos una coincidencia
+
+        cards.forEach(card => {
+            const cardText = card.textContent.toLowerCase();
+            if (cardText.includes(searchText)) {
+                card.style.display = "";
+                found = true; // Marca como encontrada una coincidencia
+            } else {
+                card.style.display = "none";
+            }
+        });
+
+        // Muestra u oculta el mensaje de 'no resultados' basado en si se encontraron coincidencias
+        noResultsElement.style.display = found ? "none" : "block";
+    });
+});
+
 
 document.addEventListener("DOMContentLoaded", function() {
     var estadoCliente = document.getElementById("estadoCliente");
@@ -37,11 +63,11 @@ $(document).ready(function(){
 
 //método para que un botón abra una ventana
 document.querySelector('.mostrarPedidos').addEventListener("click", function () {
-    window.location.href = "../../views/admin/verOrdenes.html";
+    window.location.href = "../../views/admin/ordenes.html";
   });
 
   document.querySelector('.mostrarPedidosFiltados').addEventListener("click", function () {
-    window.location.href = "../../views/admin/verOrdenes.html";
+    window.location.href = "../../views/admin/ordenes.html";
   });
 
 

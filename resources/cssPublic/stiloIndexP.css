@@ -109,6 +109,11 @@ footer {
     margin-right: 1rem;
 }
 
+.textoVerPerfil{
+    text-decoration: none;
+    color: #000;
+}
+
 .search-icon {
     position: absolute;
     top: 50%;
