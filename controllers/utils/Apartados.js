@@ -17,7 +17,7 @@ HEADER.innerHTML = `
                         <a class="nav-link active" aria-current="page" href="productos.html">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="categoria.html">Categorias</a>
+                        <a class="nav-link" href="categoria.html">Categorías</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="marcas.html">Marcas</a>

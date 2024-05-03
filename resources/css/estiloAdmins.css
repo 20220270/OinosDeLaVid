@@ -24,3 +24,31 @@
     display: none;
     font-weight: bold;
 }
+
+@media (min-width: 556px) and (max-width: 768px) {
+    
+    html{
+        width: 115%;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 556px) {
+    
+    html{
+        width: 210%;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 425px) {
+    
+    html{
+        width: 230%;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 375px) {
+    
+    html{
+        width: 270%;
+    }
+}
