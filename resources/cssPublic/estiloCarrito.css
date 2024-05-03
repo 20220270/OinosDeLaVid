@@ -77,3 +77,9 @@ body{
     display: block;
 }
 
+@media (min-width: 200px) and (max-width:500px) {
+    html{
+        width: 200%;
+    }
+}
+
