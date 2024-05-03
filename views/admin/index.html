@@ -43,53 +43,6 @@
 
 
         <form id="ValidacionInicio">
-            <!--Primer campo -->
-            <div class="container">
-                <form class="row">
-                    <div class="col-sm-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mt-4">
-                        <label for="textoAlias" class="form-label">Alias del usuario:</label>
-
-                    </div>
-
-                    <div class="col-sm-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-                        <div class="input-group mt-2 ">
-
-                            <div class="input-group-text">
-                                <img src="../../resources/Imagenes/texto.png" alt="user-icon" style="height: 2rem">
-                            </div>
-                            <input class="form-control bg-light" type="text" placeholder="Alias" id="textoAlias"
-                                name="textoAlias" required />
-
-                        </div>
-                    </div>
-
-
-                    <!--segundo campo -->
-                    <div class="col-sm-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mt-4">
-                        <label for="textoContra" class="form-label">Clave:</label>
-
-                    </div>
-                    <div class="col-sm-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-                        <div class="input-group mt-1">
-
-                            <div class="input-group-text">
-                                <img src="../../resources/Imagenes/pass.png" alt="user-icon" style="height: 2rem">
-                            </div>
-                            <input class="form-control bg-light" type="password" placeholder="Contraseña"
-                                id="textoContra" name="textoContra" required />
-                        </div>
-                    </div>
-                    <!--boton  -->
-                    <div class="text-center">
-                        <button type="submit" class="submit text-white px-5  mt-4 fw-semibold shadow-sm btnIngresar"
-                            onclick="login()">
-                            Ingresar
-                        </button>
-                    </div>
-                </form>
-            </div>
-
-
             <!--para que la pagina no pida iniciar sesion cada ves que se salga de ella -->
             <div class="text-center mt-2">
                 <div class="form-check d-flex justify-content-center">
@@ -126,10 +79,48 @@
             </div>
         </form>
 
+        <!--Primer campo -->
+        <div class="container">
+            <form class="row" id="sessionForm">
+                <div class="col-sm-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mt-4">
+                    <label for="textoAlias" class="form-label">Alias del usuario:</label>
+                </div>
+                <div class="col-sm-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+                    <div class="input-group mt-2 ">
+
+                        <div class="input-group-text">
+                            <img src="../../resources/Imagenes/texto.png" alt="user-icon" style="height: 2rem">
+                        </div>
+                        <input class="form-control bg-light" type="text" placeholder="Alias" id="textoAlias"
+                            name="alias" required />
+                    </div>
+                </div>
+
+                <!--segundo campo -->
+                <div class="col-sm-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mt-4">
+                    <label for="textoContra" class="form-label">Clave:</label>
+                </div>
+                <div class="col-sm-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+                    <div class="input-group mt-1">
+
+                        <div class="input-group-text">
+                            <img src="../../resources/Imagenes/pass.png" alt="user-icon" style="height: 2rem">
+                        </div>
+                        <input class="form-control bg-light" type="password" placeholder="Contraseña" id="textoContra"
+                            name="clave" required />
+                    </div>
+                </div>
+                <!--boton  -->
+                <div class="text-center">
+                    <button type="submit" class="submit text-white px-5  mt-4 fw-semibold shadow-sm btnIngresar">
+                        Ingresar
+                    </button>
+                </div>
+            </form>
+        </div>
         <!--para iniiciar sesion con una de tus cuentas-->
 
         <div class="text-center">
-
             <button class="btn text-danger px-2 mt-2 fw-semibold shadow-sm" id="btnGoogle">
                 <img src="../../resources/Imagenes/google.png" id="imgGoogle">
                 Continúa con Google
@@ -155,9 +146,9 @@
                                         <div class="mb-2">
                                             <!--Label e input para agregar el nombre del administrador-->
                                             <label class="form-label">Nombre del administrador:</label>
-                                            
-                                            <input type="text" class="form-control mb-5" id="Nombre" name="Nombre" required
-                                                placeholder="Ingrese el nombre del administrador">
+
+                                            <input type="text" class="form-control mb-5" id="Nombre" name="Nombre"
+                                                required placeholder="Ingrese el nombre del administrador">
                                             <small>Ingresa tu nombre</small>
                                         </div>
 
@@ -165,7 +156,7 @@
                                         <div class="mb-2">
                                             <!--Label e input para agregar el apellido del administrador-->
                                             <label class="form-label">Apellido del administrador:</label>
-                                            
+
                                             <input type="text" class="form-control mb-5" id="Apellido" required
                                                 placeholder="Ingrese el apellido del administrador">
                                             <small>Ingresa tu apellido</small>
@@ -174,7 +165,7 @@
                                         <div class="mb-3">
                                             <!--Label e input para agregar el correo del administrador-->
                                             <label class="form-label">Correo del administrador:</label>
-                                           
+
                                             <input type="email" class="form-control mb-5" id="Correo" required
                                                 placeholder="Ingrese el correo del administrador">
                                             <small>Ingresa tu correo</small>
@@ -187,18 +178,18 @@
                                         <div class="mb-3">
                                             <!--Label e input para agregar el alias del administrador-->
                                             <label class="form-label1 mb-2">Alias del administrador:</label>
-                                            
-                                            <input type="text" class="form-control mb-5" id="Alias" required
-                                                placeholder="Ingrese el alias del administrador">
+
+                                            <input type="text" class="form-control mb-5" id="alias" required
+                                                placeholder="Ingrese el alias del administrador" name="alias">
                                             <small>Ingresa un alias</small>
                                         </div>
 
                                         <div class="mb-3">
                                             <!--Label e input para agregar la clave del administrador-->
                                             <label class="form-label1 mb-2">Clave del administrador:</label>
-                                            
-                                            <input type="password" class="form-control mb-5" id="Clave" required
-                                                placeholder="Ingrese la clave del administrador">
+
+                                            <input type="password" class="form-control mb-5" id="clave" required
+                                                placeholder="Ingrese la clave del administrador" name="clave">
                                             <small>Ingresa tu clave</small>
                                         </div>
 
@@ -206,7 +197,7 @@
                                         <div class="mb-3">
                                             <!--Label e input para confirmar la clave del administrador-->
                                             <label class="form-label2 mb-2">Confirmar clave:</label>
-                                            
+
                                             <input type="password" class="form-control mb-5" id="Confirmar" required>
                                             <small>Por favor confirma tu contraseña</small>
                                         </div>
@@ -231,25 +222,21 @@
                                 <div class="col">
                                     <button type="submit" class="btn btn-dark" id="btnRegistrar">Registrar</button>
                                 </div>
-
                             </div>
-
                         </form>
                     </div>
                 </div>
             </div>
         </div>
 
-
-
         <!-- IMPORTACIÓN DE ARCHIVOS JAVASCRIPT -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
-            <script src="../../controllers/utils/components.js"></script>
+        <script src="../../controllers/utils/sweetalert.min.js"></script>
+        <script src="../../controllers/utils/components.js"></script>
         <!-- Llamada al fcontrolador del index-->
         <script type="text/javascript" src="../../controllers/admin/index.js"></script>
-
 </body>
 
 </html>
