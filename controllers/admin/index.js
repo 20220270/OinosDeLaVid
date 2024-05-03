@@ -1,6 +1,9 @@
 const addForm = document.getElementById('sessionForm');
 const USER_API = 'services/admin/administrador.php';
 
+// Constantes para los componentes del modal de registro 
+
+
 addForm.addEventListener('submit', async(event)=>{
     // Se evita recargar la página web después de enviar el formulario.
     event.preventDefault();

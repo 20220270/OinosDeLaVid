@@ -83,7 +83,8 @@ input.form-control:focus {
 
 /*estilo para la linea que separa la imagen del texto de bienvenida*/
 #linea1 {
-    height: 1rem;
+    height: 0rem;
+    margin-top: -15pt;
 }
 
 /*estilo para los textos con link*/
@@ -106,6 +107,8 @@ a:active {
 /*estilo para el texto BIENVENIDA*/
 #textoB {
     margin-left: 5.5rem;
+    align-items: center;
+    margin-top: -10pt;
 }
 
 /*estilo para la imagen de Google*/
