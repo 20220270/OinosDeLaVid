@@ -107,6 +107,11 @@ footer{
     pointer-events: none;
 }
 
+.textoVerPerfil{
+    text-decoration: none;
+    color: #000;
+}
+
 .navbar-toggler-icon .navbar-toggler-icon-bar {
     background-color: black; /* Cambia el color del icono del menú hamburguesa */
 }

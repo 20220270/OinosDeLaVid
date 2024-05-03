@@ -11,7 +11,7 @@ NAVBAR.innerHTML = `
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="login.html">
+                <a class="navbar-brand" href="index.html">
                     <img src="../../resources/Imagenes/logo.png" alt="" width="70 px" height="70 px"
                         class="d-inline-block">
                 </a>
@@ -41,7 +41,7 @@ NAVBAR.innerHTML = `
                     </ul>
                 </div>
 
-                <button class="btn" type="submit" id="btnVerPerfil">IvanSalgue</button>
+                <button class="btn" type="submit" id="btnVerPerfil"> <a href="perfil.html" class="textoVerPerfil">IvanSalgue</a></button>
 
                 <div class="botonCar">
                     <img src="../../resources/Imagenes/carrito.png" alt="" width="25 px" height="25 px"

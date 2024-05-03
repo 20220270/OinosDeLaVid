@@ -27,6 +27,16 @@ body{
     width: 200px;
 }
 
+#menu,
+#nos,
+#carrito,
+#Contac,
+#ses {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    margin-right: 1rem;
+}
+
 #decrementBtn,
 #incrementBtn,
 #decrementBtn1,
@@ -55,5 +65,15 @@ body{
 
 .imgEliminar{
     cursor: pointer;
+}
+
+.textoVerPerfil{
+    text-decoration: none;
+    color: #000;
+}
+
+.nombreProductoAdquirido,
+.subTotal{
+    display: block;
 }
 
