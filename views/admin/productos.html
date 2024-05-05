@@ -293,7 +293,7 @@
             <div class="modal-content">
                 <!-- Encabezado de la ventana modal -->
                 <div class="modal-header">
-                    <h5 class="modal-title text-align-center">Registrar nuevo producto</h5>
+                    <h5 class="modal-title text-align-center"></h5>
                 </div>
                 <!-- Contenido de la ventana modal -->
                 <div class="modal-body">
@@ -388,107 +388,7 @@
         </div>
     </div>
 
-    <!-- Ventana modal para actualizar-->
-    <div class="modal" id="miModalP2" data-bs-backdrop="static">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <!-- Encabezado de la ventana modal -->
-                <div class="modal-header">
-                    <h5 class="modal-title text-align-center">Actualizar producto</h5>
-                </div>
-                <!-- Contenido de la ventana modal -->
-                <div class="modal-body">
-                    <form id="saveForm">
-                        <div class="modal-body row g-3">
-                            <!-- Campo oculto para asignar el id del registro al momento de modificar -->
-                            <input type="hidden" id="idCategoria" name="idCategoria">
-                            <div class="col-sm-12 col-md-6">
-                                <label for="nombreCategoria" class="col-sm-7 col-form-label">Nombre del
-                                    producto:</label>
-                                <input id="nombreProductoA" type="text" name="nombreProducto" class="form-control"
-                                    placeholder="Ingrese el nombre del producto" required>
-                            </div>
-                            <div class="col-sm-12 col-md-6">
-                                <label for="descripcionCategoria" class="col-sm-7 col-form-label">Categoría:</label>
-                                <select class="form-select" id="selectCategoriaA" aria-label="Default select example">
-                                    <option selected>Seleccione la categoría a la que pertenece el producto</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-
-                            <div class="col-sm-12 col-md-6">
-                                <label for="descripcionCategoria" class="col-sm-7 col-form-label">Marca:</label>
-                                <select class="form-select" id="selectMarcaA" aria-label="Default select example">
-                                    <option selected>Seleccione la marca a la que pertenece el producto</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-
-                            <div class="col-sm-12 col-md-6">
-                                <label for="descripcionCategoria" class="col-sm-7 col-form-label">Imagen del
-                                    producto:</label>
-                                <div class="position-relative">
-                                    <div class="input-group mb-3">
-                                        <input type="file" class="form-control" id="inputImgProductoA">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-12 col-md-6">
-                                <label for="descripcionCategoria" class="form-label">Descripción del producto:</label>
-                                <input id="descripcionProductoA" type="text" name="descripcionProducto"
-                                    class="form-control" placeholder="Ingrese una descripción para el producto"
-                                    required>
-                            </div>
-                            <div class="col-sm-12 col-md-6">
-                                <label for="descripcionCategoria" class="form-label">Precio del producto:</label>
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text" id="logoDolar">$</span>
-                                    <input type="number" class="form-control" id="PrecioProductoA"
-                                        aria-label="Dollar amount (with dot and two decimal places)" min="1"
-                                        step="0.01">
-                                </div>
-                            </div>
-
-                            <div class="col-sm-12 col-md-6">
-                                <label for="descripcionCategoria" class="form-label">Estado del producto:</label>
-                                <select class="form-select" id="selectEstadoA" aria-label="Default select example">
-                                    <option selected>Seleccione el estado del producto</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                            <div class="col-sm-12 col-md-6">
-                                <label for="descripcionCategoria" class="form-label">Cantidad de producto a
-                                    registrar:</label>
-                                <input id="cantidadProductoA" type="number" name="cantidadProducto" min="1" step="1"
-                                    class="form-control"
-                                    placeholder="Ingrese la cantidad que se registrará del producto" required>
-                            </div>
-                            <div class="col-sm-12 col-md-6">
-                                <label for="descripcionCategoria" class="form-label">Descuento:</label>
-                                <input id="descuentoProductoA" type="number" name="descuentoProducto"
-                                    class="form-control" placeholder="00.00%" min="1" step="0.01" required>
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-dark" id="btnGuardarD" >Actualizar</button>
-                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal"
-                                id="btnCerrar">Cerrar</button>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
+    
     <!--Modal para mostrar la inserción de un registro-->
     <div class="modal" id="miModalR" data-bs-backdrop="static">
         <div class="modal-dialog modal-lg modal-dialog-centered">
