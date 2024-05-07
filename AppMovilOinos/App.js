@@ -1,104 +1,129 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, TextInput, View, Image, TouchableOpacity } from 'react-native';
-import { getCurrentDate } from './utils/obtenerfecha'; // Importamos la función para obtener la fecha actual
-import React, { useState, useEffect } from 'react';
-import Pie from 'react-native-pie';
 
 export default function App() {
+  return (
+    <View style={styles.container}>
 
-    //Codigo para obtener la fecha actual
-    const [currentDateTime, setCurrentDateTime] = useState(new Date());
+      <View style={styles.redBox}>
+      </View>
 
-    useEffect(() => {
-        // Función para actualizar la fecha y hora cada segundo
-        const intervalo = setInterval(() => {
-            setCurrentDateTime(new Date());
-        }, 1000);
+      {/* Imagen */}
+      <Image
+        source={require('./images/logo.png')}
+        style={styles.image}
+      />
 
-        // Limpiamos el intervalo al desmontar el componente
-        return () => clearInterval(intervalo);
-    }, []); // El segundo parámetro [] asegura que se ejecute solo una vez al montar el componente
+      <View style={styles.line}></View>
 
-    // Formatear la fecha y hora
-    const formattedDateTime = `${currentDateTime.getDate()}/${currentDateTime.getMonth() + 1}/${currentDateTime.getFullYear()} ${currentDateTime.getHours()}:${currentDateTime.getMinutes()}:${currentDateTime.getSeconds()}`;
+      <Text style = {styles.textoBienvenido} >BIENVENIDO</Text>
 
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>Alias del administrador:</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Ingrese su alias"
+          keyboardType="default"
+        />
+      </View>
 
-    //Grafico
-    const Data = [
-        {percentage : 40, color : '#FFAB0F'},
-        {percentage : 40, color : '#247AFD'},
-        {percentage : 20, color : '#FE4455'}
-    ]
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>Clave:</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Ingrese su clave"
+          secureTextEntry={true} // Asegura que el texto se oculte mientras se escribe
+          keyboardType="default"
+        />
+      </View>
 
-    return (
-        <View style={styles.container}>
+      <TouchableOpacity style = {styles.boton}>
+      <Text style={styles.textoBoton}>Ingresar</Text>
+      </TouchableOpacity>
 
-            <View style={styles.redBox}>
-                <Text style={styles.cerrarS}>Cerrar Sesión</Text>
-                <TouchableOpacity style={styles.menuH}>
-                    <Text style={styles.tresLineas}>≡</Text>
-                </TouchableOpacity>
-            </View>
+      <TouchableOpacity style = {styles.botonRecu}>
+      <Text style={styles.recuContra}>Olvidé mi contraseña</Text>
+      </TouchableOpacity>
 
+      <StatusBar style="auto" />
 
-            <Text style={styles.bienvenida}>BIENVENIDO</Text>
-
-            <View style = {styles.fondo}>
-            <Text style={styles.bienvenida}>Aqui va el grafico</Text>
-
-            
-
-            </View>
-
-            <Text style={styles.fechaActual}>Fecha y Hora actual: {formattedDateTime}</Text>
-
-            <StatusBar style="auto" />
-
-        </View>
-    );
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-    },
-    redBox: {
-        backgroundColor: '#871313',
-        width: '100%',
-        height: 70,
-        flexDirection: 'row', // Alinea los elementos horizontalmente
-        justifyContent: 'space-between', // Espacio entre los elementos
-        alignItems: 'center', // Alinea verticalmente
-        paddingHorizontal: 10, // Espacio interno horizontal
-    },
-    cerrarS: {
-        color: 'white',
-        fontWeight: 'bold',
-        marginTop: 20
-    },
-    menuH: {
-        color: 'white',
-        fontWeight: 'bold',
-        marginTop: 20,
-    },
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+  },
 
-    tresLineas: {
-        fontSize: 40,
-        color: 'white'
-    },
+  line: {
+    width: '100%',
+    borderBottomWidth: 1,
+    borderColor: '#000',
+    marginBottom: 10,
+  },
 
-    bienvenida: {
-        margin: 30,
-        fontSize: 30,
-        fontWeight: 'bold',
-    },
+  redBox: {
+    backgroundColor: '#871313',
+    width: '100%',
+    height: 70,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  inputContainer: {
+    width: '90%',
+    marginBottom: 20,
+  },
 
-    fondo:{
-        backgroundColor : '#345691',
-        marginBottom : 10
-    },
+  label: {
+    fontWeight: 'bold',
+    marginBottom: 5,
+  },
 
+  input: {
+    height: 40,
+    width: '100%',
+    borderWidth: 1,
+    padding: 10,
+    borderColor: '#ccc',
+    borderRadius: 5,
+  },
+
+  textoBienvenido:{
+    fontWeight: 'bold',
+    marginBottom:30,
+    marginTop:20
+  },
+
+  image: {
+    width: 200,
+    height: 200,
+    marginBottom: 30,
+  },
+
+  boton:{
+    backgroundColor : '#871313',
+    width: 130,
+    height: 40,
+    borderRadius:20,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+
+  textoBoton:{
+    color: '#fff'
+  },
+
+  botonRecu:{
+    margin:15
+  },
+
+  recuContra:{
+    fontStyle: 'italic',
+    fontSize: 15,
+    margin:15
+  }
 
 });
