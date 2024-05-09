@@ -29,7 +29,7 @@ HEADER.innerHTML = `
                         <a class="nav-link" href="administradores.html">Administradores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="administradores.html">Niveles</a>
+                        <a class="nav-link" href="nivelesusuario.html">Niveles</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="perfil.html">Mi perfil</a>

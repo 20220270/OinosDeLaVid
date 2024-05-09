@@ -21,7 +21,7 @@ class NivelesAdminsHandler
         $sql = 'SELECT id_nivel, nivel
                 FROM tb_niveles_administradores
                 WHERE nivel LIKE ?
-                ORDER BY id_categoria';
+                ORDER BY id_nivel';
         $params = array($value);
         return Database::getRows($sql, $params);
     }

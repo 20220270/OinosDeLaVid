@@ -23,18 +23,18 @@ class NivelesAdminsData extends NivelesAdminsHandler
             $this->id = $value;
             return true;
         } else {
-            $this->data_error = 'El identificador de la categoría es incorrecto';
+            $this->data_error = 'El identificador del nivel de usuario es incorrecto';
             return false;
         }
     }
 
     public function setNivel($value, $min = 2, $max = 50)
     {
-        if (!Validator::validateAlphanumeric($value)) {
+        if (!Validator::validateAlphabetic($value)) {
             $this->data_error = 'El nombre debe ser un valor alfanumérico';
             return false;
         } elseif (Validator::validateLength($value, $min, $max)) {
-            $this->nombre = $value;
+            $this->nivel = $value;
             return true;
         } else {
             $this->data_error = 'El nombre debe tener una longitud entre ' . $min . ' y ' . $max;

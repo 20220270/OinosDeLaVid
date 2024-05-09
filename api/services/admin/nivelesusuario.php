@@ -7,7 +7,7 @@ if (isset($_GET['action'])) {
     // Se crea una sesión o se reanuda la actual para poder utilizar variables de sesión en el script.
     session_start();
     // Se instancia la clase correspondiente.
-    $categoria = new CategoriaData;
+    $nivel = new NivelesAdminsData;
     // Se declara e inicializa un arreglo para guardar el resultado que retorna la API.
     $result = array('status' => 0, 'message' => null, 'dataset' => null, 'error' => null, 'exception' => null, 'fileStatus' => null);
     // Se verifica si existe una sesión iniciada como administrador, de lo contrario se finaliza el script con un mensaje de error.
@@ -17,7 +17,7 @@ if (isset($_GET['action'])) {
             case 'searchRows':
                 if (!Validator::validateSearch($_POST['search'])) {
                     $result['error'] = Validator::getSearchError();
-                } elseif ($result['dataset'] = $categoria->searchRows()) {
+                } elseif ($result['dataset'] = $nivel->searchRows()) {
                     $result['status'] = 1;
                     $result['message'] = 'Existen ' . count($result['dataset']) . ' coincidencias';
                 } else {
@@ -27,19 +27,19 @@ if (isset($_GET['action'])) {
             case 'createRow':
                 $_POST = Validator::validateForm($_POST);
                 if (
-                    !$categoria->setNivel($_POST['nombreNivel'])
+                    !$nivel->setNivel($_POST['nombreNivel'])
                 ) {
-                    $result['error'] = $categoria->getDataError();
-                } elseif ($categoria->createRow()) {
+                    $result['error'] = $nivel->getDataError();
+                } elseif ($nivel->createRow()) {
                     $result['status'] = 1;
                     $result['message'] = 'Nivel de usuario creado correctamente';
                     
                 } else {
-                    $result['error'] = 'Ocurrió un problema al crear la categoría';
+                    $result['error'] = 'Ocurrió un problema al crear el nivel de usuario';
                 }
                 break;
             case 'readAll':
-                if ($result['dataset'] = $categoria->readAll()) {
+                if ($result['dataset'] = $nivel->readAll()) {
                     $result['status'] = 1;
                     $result['message'] = 'Existen ' . count($result['dataset']) . ' registros';
                 } else {
@@ -47,9 +47,9 @@ if (isset($_GET['action'])) {
                 }
                 break;
             case 'readOne':
-                if (!$categoria->setId($_POST['idNivel'])) {
-                    $result['error'] = $categoria->getDataError();
-                } elseif ($result['dataset'] = $categoria->readOne()) {
+                if (!$nivel->setId($_POST['idNivel'])) {
+                    $result['error'] = $nivel->getDataError();
+                } elseif ($result['dataset'] = $nivel->readOne()) {
                     $result['status'] = 1;
                 } else {
                     $result['error'] = 'Nivel de usuario inexistente';
@@ -58,31 +58,29 @@ if (isset($_GET['action'])) {
             case 'updateRow':
                 $_POST = Validator::validateForm($_POST);
                 if (
-                    !$categoria->setId($_POST['idNivel']) or
-                    !$categoria->setNivel($_POST['nombreNivel'])
+                    !$nivel->setId($_POST['idNivel']) or
+                    !$nivel->setNivel($_POST['nombreNivel'])
                 ) {
-                    $result['error'] = $categoria->getDataError();
-                } elseif ($categoria->updateRow()) {
+                    $result['error'] = $nivel->getDataError();
+                } elseif ($nivel->updateRow()) {
                     $result['status'] = 1;
-                    $result['message'] = 'Nivel de usuari modificado correctamente';
+                    $result['message'] = 'Nivel de usuario modificado correctamente';
                     
                 } else {
-                    $result['error'] = 'Ocurrió un problema al modificar la categoría';
+                    $result['error'] = 'Ocurrió un problema al modificar el nivel de usuario';
                 }
                 break;
             case 'deleteRow':
                 if (
-                    !$categoria->setId($_POST['idCategoria']) or
-                    !$categoria->setFilename()
+                    !$nivel->setId($_POST['idNivel'])
                 ) {
-                    $result['error'] = $categoria->getDataError();
-                } elseif ($categoria->deleteRow()) {
+                    $result['error'] = $nivel->getDataError();
+                } elseif ($nivel->deleteRow()) {
                     $result['status'] = 1;
-                    $result['message'] = 'Categoría eliminada correctamente';
-                    // Se asigna el estado del archivo después de eliminar.
-                    $result['fileStatus'] = Validator::deleteFile($categoria::RUTA_IMAGEN, $categoria->getFilename());
+                    $result['message'] = 'Nivel de usuario eliminado correctamente';
+                    
                 } else {
-                    $result['error'] = 'Ocurrió un problema al eliminar la categoría';
+                    $result['error'] = 'Ocurrió un problema al eliminar el nivel de usuario';
                 }
                 break;
             default:
