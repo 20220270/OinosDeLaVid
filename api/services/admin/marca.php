@@ -63,7 +63,7 @@ if (isset($_GET['action'])) {
                     !$marcas->setId($_POST['idMarca']) or
                     !$marcas->setFilename() or
                     !$marcas->setNombre($_POST['nombreMarca']) or
-                    !$marcas->setImagen($_FILES['inputImgMarca'], $marcas->getFilename())
+                    !$marcas->setLogo($_FILES['inputImgMarca'], $marcas->getFilename())
                 ) {
                     $result['error'] = $marcas->getDataError();
                 } elseif ($marcas->updateRow()) {

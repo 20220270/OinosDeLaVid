@@ -26,7 +26,7 @@ class MarcaHandler
                 FROM tb_marcas
                 WHERE nombre_marca LIKE ?
                 ORDER BY id_marca';
-        $params = array($value, $value);
+        $params = array($value);
         return Database::getRows($sql, $params);
     }
 
