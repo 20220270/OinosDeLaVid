@@ -89,11 +89,6 @@ const fillTable = async (form = null) => {
                         <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
                             class="mb-1">
                     </button>
-                    <button type="submit" class="btn btn-secondary mt-1" id="btnMostrar" name="btnMostrar">
-                        <i class="bi bi-x-square-fill"></i>
-                        <img src="../../resources/Imagenes/verProductos.png" alt="" width="40px" height="40px"
-                            class="mb-1">
-                    </button>
 
 
                   </td>
