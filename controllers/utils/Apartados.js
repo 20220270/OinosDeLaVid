@@ -29,9 +29,6 @@ HEADER.innerHTML = `
                         <a class="nav-link" href="administradores.html">Administradores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="marcas.html">Niveles</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="perfil.html">Mi perfil</a>
                     </li>
 
