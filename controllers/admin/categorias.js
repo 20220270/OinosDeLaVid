@@ -18,9 +18,9 @@ const SAVE_FORM = document.getElementById('saveForm'),
 // Método del evento para cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', () => {
     // Llamada a la función para mostrar el encabezado y pie del documento.
-    loadTemplate();
+    //loadTemplate();
     // Se establece el título del contenido principal.
-    MAIN_TITLE.textContent = 'Gestionar categorías';
+    //MAIN_TITLE.textContent = 'Gestionar categorías';
     // Llamada a la función para llenar la tabla con los registros existentes.
     fillTable();
 });
@@ -74,19 +74,32 @@ const fillTable = async (form = null) => {
           // Se crean y concatenan las filas de la tabla con los datos de cada registro.
           TABLE_BODY.innerHTML += `
               <tr>
-                  <td><img src="${SERVER_URL}images/categorias/${row.imagen_categoria}" height="50"></td>
+                  <td>${row.id_categoria}</td>
                   <td>${row.nombre_categoria}</td>
                   <td>${row.descripcion_categoria}</td>
+                  <td><img src="${SERVER_URL}images/categorias/${row.imagen_categoria}" height="50"></td>
                   <td>
-                      <button type="button" class="btn btn-info" onclick="openUpdate(${row.id_categoria})">
-                          <i class="bi bi-pencil-fill"></i>
-                      </button>
-                      <button type="button" class="btn btn-danger" onclick="openDelete(${row.id_categoria})">
-                          <i class="bi bi-trash-fill"></i>
-                      </button>
-                      <button type="button" class="btn btn-warning" onclick="openReport(${row.id_categoria})">
-                          <i class="bi bi-filetype-pdf"></i>
-                      </button>
+                      
+
+                    
+                    <button type="submit" class="btn btn-success mt-1" id="btnEliminar" name="btnEliminar" onclick="openDelete(${row.id_categoria})">
+                        <i class="bi bi-search"></i>
+                        <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
+                            class="mb-1">
+
+                    </button>
+                    <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar" name="btnActualizar" onclick="openUpdate(${row.id_categoria})">
+                        <i class="bi bi-x-square-fill"></i>
+                        <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
+                            class="mb-1">
+                    </button>
+                    <button type="submit" class="btn btn-secondary mt-1" id="btnMostrar" name="btnMostrar">
+                        <i class="bi bi-x-square-fill"></i>
+                        <img src="../../resources/Imagenes/verProductos.png" alt="" width="40px" height="40px"
+                            class="mb-1">
+                    </button>
+
+
                   </td>
               </tr>
           `;
@@ -96,6 +109,14 @@ const fillTable = async (form = null) => {
   } else {
       sweetAlert(4, DATA.error, true);
   }
+}
+
+const openCreate = () => {
+  // Se muestra la caja de diálogo con su título.
+  SAVE_MODAL.show();
+  MODAL_TITLE.textContent = 'Crear categoría';
+  // Se prepara el formulario.
+  SAVE_FORM.reset();
 }
 
 /*
@@ -158,80 +179,5 @@ localStorage.setItem('paginaOrigen', window.location.href);
 
 
 
-$(document).ready(function () {
-  $("#btnActualizar").click(function () {
-    $("#miModal2").modal("show");
-  });
-});
-
-//Ventana modal para mostrar la inserción de datos y ocultar la ventana anterior
-$(document).ready(function () {
-  $("#btnGuardar").click(function () {
-    $("#miModalR").modal("show");
-  });
-  $("#btnGuardar").click(function () {
-    $("#miModal").modal("hide");
-  });
-});
-
-//Ventana modal para mostrar la confirmación de un dato eliminado
-$(document).ready(function () {
-  $("#btnEliminar").click(function () {
-    $("#miModalDe").modal("show");
-  });
-});
-
-
-//Ventana modal para mostrar la eliminación de un datos
-
-$(document).ready(function () {
-  $("#btnElimin").click(function () {
-    $("#miModalDe2").modal("show");
-  });
-  $("#btnElimin").click(function () {
-    $("#miModalDe").modal("hide");
-  });
-});
-
-//Ventana modal para mostrar la confirmación de un dato eliminado
-$(document).ready(function () {
-  $("#btnEliminar").click(function () {
-    $("#miModalDe").modal("show");
-  });
-});
-
-//Ventana modal para mostrar la eliminación de un datos
-
-$(document).ready(function () {
-  $("#btnElimin").click(function () {
-    $("#miModalDe2").modal("show");
-  });
-  $("#btnElimin").click(function () {
-    $("#miModalDe").modal("hide");
-  });
-});
-
-//Ventana modal para mostrar la actualización de datos
-$(document).ready(function () {
-  $("#btnActtu").click(function () {
-    $("#miModalAC").modal("show");
-  });
-  $("#btnActuA").click(function () {
-    $("#miModal2").modal("hide");
-  });
-});
-
-//Validación para que solamente se escriban letras, pero que pueda haber guiones y espacios
-$(document).ready(function () {
-  $("#nombreProducto").on("keypress", function (event) {
-    var inputValue = event.which;
-    // Permitir solo letras y algunos caracteres especiales como espacio, guión, etc.
-    if (!(inputValue >= 65 && inputValue <= 90) && // letras mayúsculas
-      !(inputValue >= 97 && inputValue <= 122) && // letras minúsculas
-      !(inputValue == 32 || inputValue == 45 || inputValue == 46 || inputValue == 44)) { // espacio, guión, punto, coma
-      event.preventDefault();
-    }
-  });
-});
 
 

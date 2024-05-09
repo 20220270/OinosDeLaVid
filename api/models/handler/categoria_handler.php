@@ -26,7 +26,7 @@ class CategoriaHandler
         $sql = 'SELECT id_categoria, nombre_categoria, imagen_categoria, descripcion_categoria
                 FROM categoria
                 WHERE nombre_categoria LIKE ? OR descripcion_categoria LIKE ?
-                ORDER BY nombre_categoria';
+                ORDER BY id_categoria';
         $params = array($value, $value);
         return Database::getRows($sql, $params);
     }
@@ -43,7 +43,7 @@ class CategoriaHandler
     {
         $sql = 'SELECT id_categoria, nombre_categoria, imagen_categoria, descripcion_categoria
                 FROM tb_categorias
-                ORDER BY nombre_categoria';
+                ORDER BY id_categoria';
         return Database::getRows($sql);
     }
 

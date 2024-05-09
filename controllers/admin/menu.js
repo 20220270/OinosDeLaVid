@@ -5,23 +5,23 @@
 }
 
 // Función para actualizar la fecha y la hora cada segundo
-function updateDateTime() {
+/*function updateDateTime() {
   var today = new Date();
   var formattedDateTime = addZero('Fecha actual: ' + today.getDate()) + '/' + addZero(today.getMonth() + 1) + '/' + today.getFullYear() +
       ', ' + addZero(today.getHours()) + ':' + addZero(today.getMinutes()) + ':' + addZero(today.getSeconds());
   document.getElementById("fechaLabel").innerText = formattedDateTime;
-}
+}*/
 
 // Llamar a la función para la primera actualización
-updateDateTime();
+//updateDateTime();
 
 // Actualizar cada segundo
-setInterval(updateDateTime, 1000);
+//setInterval(updateDateTime, 1000);
 
 
 
  // Insertar la fecha y la hora en el label
- document.getElementById("fechaLabel").innerText = formattedDateTime;
+ //document.getElementById("fechaLabel").innerText = formattedDateTime;
 
 
 //Codigo para redireccionar el perfil del administrador a la ventana anterior

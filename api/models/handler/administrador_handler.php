@@ -25,7 +25,6 @@ class AdministradorHandler
                 FROM tb_administradores
                 WHERE  alias_administrador = ?';
         $params = array($username);
-        $data = Database::getRow($sql, $params);
         if (!($data = Database::getRow($sql, $params))) {
             return false;
         }elseif (password_verify($password, $data['clave_administrador'])) {
