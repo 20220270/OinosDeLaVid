@@ -32,6 +32,12 @@ HEADER.innerHTML = `
                         <a class="nav-link" href="nivelesusuario.html">Niveles</a>
                     </li>
                     <li class="nav-item">
+                    <a class="nav-link" href="ordenes.html">Ordenes</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="valoraciones.html">Valoraciones</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="perfil.html">Mi perfil</a>
                     </li>
 
