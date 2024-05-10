@@ -29,24 +29,17 @@
             <!-- Barra de busqueda-->
             <div class="col mt-5">
                 <div class="container-sm mt-2">
-                    <form class="d-flex">
+                    <form class="d-flex" id="searchForm">
+
                         <div class="position-relative">
                             <img class="search-icon" src="../../resources/Imagenes/lupa.png" alt="Lupa">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                                id="Search">
+                                id="Search" name="search">
                         </div>
 
                     </form>
                 </div>
             </div>
-
-
-            <!--<div class="col mt-5">
-                <button type="submit" class="btn btn-success mt-1" id="" data-bs-toggle="modal" data-bs-target="#saveModal">
-                    <i class="bi bi-search"></i>
-                    <img src="../../resources/Imagenes/pedidos.png" alt="" width="60px" height="60px" class="mb-1">
-                </button>
-            </div>-->
 
         </div>
 
@@ -60,13 +53,12 @@
                 </tr>
                 <tr>
                     <th>ID</th>
-                    <th>Nombre completo</th>
                     <th>DUI</th>
                     <th>Correo</th>
                     <th>Teléfono</th>
                     <th>Dirección</th>
-                    <th>Fecha de registro</th>
                     <th>Estado</th>
+                    <th>Fecha de registro</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
