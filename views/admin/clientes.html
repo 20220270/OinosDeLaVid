@@ -37,6 +37,13 @@
                                 id="Search" name="search">
                         </div>
 
+
+                        <button type="button" class="btn" onclick="openCreate()">
+                            <img src="../../resources/Imagenes/btnAgregarIMG.png" alt="" width="60px" height="60px"
+                        class="mb-1">
+                        </button>
+
+
                     </form>
                 </div>
             </div>
@@ -58,7 +65,6 @@
                     <th>Teléfono</th>
                     <th>Dirección</th>
                     <th>Estado</th>
-                    <th>Fecha de registro</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -79,18 +85,54 @@
                 </div>
                 <div class="modal-body">
                     <form id="saveForm">
-                        <input type="hidden" id="idNivelUsuario" name="idNivelUsuario">
-                        <div class="col-sm-12 col-md-6 col-lg-10">
-                            <label for="nombreCategoria" class="col-sm-7 col-form-label">Nivel de usuario:</label>
-                            <input id="nivelUsuario" type="text" name="nivelUsuario" class="form-control"
-                                placeholder="Ingrese el nuevo nivel de usuario" required>
+                        <div class="modal-body row g-3">
+                            <!-- Campo oculto para asignar el id del registro al momento de modificar -->
+                            <input type="hidden" id="idCliente" name="idCliente">
+                            
+
+                            <div class="col-sm-12 col-md-6">
+                                <label for="nombreCategoria" class="col-sm-7 col-form-label">DUI del
+                                    cliente:</label>
+                                <input id="DUICliente" type="text" name="DUICliente" class="form-control"
+                                    placeholder="micorreo@gmail.com" required>
+                            </div>
+
+                            <div class="col-sm-12 col-md-6">
+                                <label for="nombreCategoria" class="col-sm-7 col-form-label">Correo del
+                                    cliente:</label>
+                                <input id="correoCliente" type="email" name="correoCliente" class="form-control"
+                                    placeholder="Ingrese el alias del cliente" required>
+                            </div>
+
+                            <div class="col-sm-12 col-md-6">
+                                <label for="nombreCategoria" class="col-sm-7 col-form-label">Teléfono del
+                                    cliente:</label>
+                                <input id="telefonoCliente" type="text" name="telefonoCliente" class="form-control"
+                                    placeholder="Ingrese el alias del cliente" required>
+                            </div>
+
+                            <div class="col-sm-12 col-md-6">
+                                <label for="nombreCategoria" class="col-sm-7 col-form-label">Dirección del
+                                    cliente:</label>
+                                <input id="direccionCliente" type="text" name="direccionCliente" class="form-control"
+                                    placeholder="Ingrese el alias del cliente" required>
+                            </div>
+
+                            <div class="col-sm-12 col-md-6">
+                                <label for="Marca" class="col-sm-7 col-form-label">Estado:</label>
+                                <select class="form-select" id="selectEstado" name="selectEstado"
+                                    aria-label="Default select example">
+                                   
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-dark" id="btnGuardar">Guardar</button>
+                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal"
+                                id="btnCerrar">Cerrar</button>
                         </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Guardar</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-
                 </div>
             </div>
         </div>

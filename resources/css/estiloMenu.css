@@ -99,6 +99,10 @@
     align-items: center;
 }
 
+.search-icon{
+    transform: translateY(-30px);
+}
+
 @media (max-width: 768px) {
     .container {
         width: 90%;

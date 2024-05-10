@@ -68,6 +68,10 @@ class ClienteHandler
         return Database::executeRow($sql, $params);
     }
 
+    /* funcion para cambiar el estado del cliente 
+    
+    
+    1*/ 
     public function changeStatus()
     {
         $sql = 'UPDATE tb_clientes
@@ -80,10 +84,14 @@ class ClienteHandler
     /*
     *   Métodos para realizar las operaciones SCRUD (search, create, read, update, and delete).
     */
+
+    /*
+    *  1
+    */
     public function searchRows()
     {
         $value = '%' . Validator::getSearchValue() . '%';
-        $sql = 'SELECT id_cliente, dui_cliente, correo_cliente, telefono_cliente, direccion_cliente, estado_cliente, fecha_registro
+        $sql = 'SELECT id_cliente, dui_cliente, correo_cliente, telefono_cliente, direccion_cliente, estado_cliente
                 FROM tb_clientes
                 WHERE dui_cliente LIKE ? OR correo_cliente LIKE ? OR estado_cliente LIKE ?
                 ORDER BY id_cliente';
@@ -91,25 +99,23 @@ class ClienteHandler
         return Database::getRows($sql, $params);
     }
 
-    public function createRow()
-    {
-        $sql = 'INSERT INTO tb_clientes(nombre_cliente, apellido_cliente, dui_cliente, correo_cliente, telefono_cliente, direccion_cliente, clave_cliente)
-                VALUES(?, ?, ?, ?, ?, ?, ?)';
-        $params = array($this->nombre, $this->apellido, $this->dui, $this->correo,  $this->telefono, $this->direccion, $this->clave);
-        return Database::executeRow($sql, $params);
-    }
-
+     /*
+    *  1
+    */
     public function readAll()
     {
-        $sql = 'SELECT id_cliente, dui_cliente, correo_cliente, telefono_cliente, direccion_cliente, estado_cliente, fecha_registro
+        $sql = 'SELECT id_cliente, dui_cliente, correo_cliente, telefono_cliente, direccion_cliente, estado_cliente
                 FROM tb_clientes
                 ORDER BY id_cliente';
         return Database::getRows($sql);
     }
 
+     /*
+    *  1
+    */
     public function readOne()
     {
-        $sql = 'SELECT id_cliente, dui_cliente, correo_cliente, telefono_cliente, direccion_cliente, estado_cliente, fecha_registro
+        $sql = 'SELECT id_cliente, dui_cliente, correo_cliente, telefono_cliente, direccion_cliente, estado_cliente
                 FROM tb_clientes
                 WHERE id_cliente = ?';
         $params = array($this->id);
@@ -119,17 +125,9 @@ class ClienteHandler
     public function updateRow()
     {
         $sql = 'UPDATE tb_clientes
-                SET nombre_cliente = ?, apellido_cliente = ?, dui_cliente = ?, estado_cliente = ?, telefono_cliente = ?, nacimiento_cliente = ?, direccion_cliente = ?
+                SET estado_cliente = ?
                 WHERE id_cliente = ?';
-        $params = array($this->nombre, $this->apellido, $this->dui, $this->estado, $this->telefono, $this->direccion, $this->id);
-        return Database::executeRow($sql, $params);
-    }
-
-    public function deleteRow()
-    {
-        $sql = 'DELETE FROM tb_clientes
-                WHERE id_cliente = ?';
-        $params = array($this->id);
+        $params = array($this->estado, $this->id);
         return Database::executeRow($sql, $params);
     }
 
