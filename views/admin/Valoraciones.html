@@ -30,17 +30,17 @@
                 </div>
             </div>
             <div class="col mt-5">
-                <div class="container-sm mt-3">
-                    <form class="d-flex">
+                <form class="d-flex" id="searchForm">
 
-                        <div class="position-relative">
-                            <img class="search-icon" src="../../resources/Imagenes/lupa.png" alt="Lupa">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                                id="Search">
-                        </div>
+                    <div class="position-relative">
+                        <img class="search-icon" src="../../resources/Imagenes/lupa.png" alt="Lupa">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                            id="Search" name="search">
+                    </div>
 
-                    </form>
-                </div>
+
+
+                </form>
             </div>
 
         </div>
@@ -51,16 +51,15 @@
         <table class="table text-center">
             <thead>
                 <tr>
-                    <td colspan="11" id="rowsFound"></td>
+                    <td colspan="7" id="rowsFound"></td>
                 </tr>
                 <tr>
                     <th>ID</th>
+                    <th>Detalle de orden</th>
                     <th>Producto calificado</th>
                     <th>Calificación</th>
                     <th>Comentario</th>
-                    <th>Fecha del comentario</th>
                     <th>Estado del comentario</th>
-                    
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -71,7 +70,60 @@
         </table>
     </div>
 
-    
+    <div class="modal fade" id="saveModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="saveForm">
+                    <div class="modal-body row g-3">
+                        <!-- Campo oculto para asignar el id del registro al momento de modificar -->
+                        <input type="hidden" id="idValoracion" name="idValoracion">
+                        <input type="hidden" id="idDetalle" name="idDetalle">
+
+                        <div class="col-sm-12 col-md-6">
+                            <label for="nombreCategoria" class="col-sm-7 col-form-label">Producto calificado:</label>
+                            <select class="form-select" id="selectProducto" name="selectProducto"
+                                aria-label="Default select example">
+                               
+                            </select>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6">
+                            <label for="nombreCategoria" class="col-sm-7 col-form-label">Calificación:</label>
+                            <input id="calificacionOrden" type="number" name="calificacionOrden" class="form-control" min="1" max="5"
+                                required>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6">
+                            <label for="nombreCategoria" class="col-sm-7 col-form-label">Comentario:</label>
+                            <input id="comentarioOrden" type="text" name="comentarioOrden" class="form-control"
+                                 required>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6">
+                            <label for="Marca" class="col-sm-7 col-form-label">Estado:</label>
+                            <select class="form-select" id="selectEstado" name="selectEstadoC"
+                                aria-label="Default select example">
+                               
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-dark" id="btnGuardar">Guardar</button>
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal"
+                            id="btnCerrar">Cerrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 
     <footer class="mt-5">
@@ -89,8 +141,8 @@
     <script src="../../controllers/utils/footer.js"></script>
     <script src="../../controllers/utils/Apartados.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../../controllers/utils/sweetalert.min.js"></script>
+    <script src="../../controllers/utils/components.js"></script>
     <script type="text/javascript" src="../../controllers/admin/valoraciones.js"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
