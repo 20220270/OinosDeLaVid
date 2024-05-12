@@ -10,7 +10,6 @@ class OrdenesHandler
      *  Declaración de atributos para el manejo de datos.
      */
     protected $iddetalle = null;
-    protected $ordenid = null;
     protected $nombrecliente = null;
     protected $estadoorden = null;
     protected $direccion = null;
@@ -26,7 +25,7 @@ class OrdenesHandler
     public function searchRows()
     {
         $value = '%' . Validator::getSearchValue() . '%';
-        $sql = 'SELECT id_detalle, id_orden, nombre_cliente, estado_orden, direccion_orden, nombre_producto, cantidad_producto, total_a_pagar FROM tb_detallesordenes
+        $sql = 'SELECT id_detalle, nombre_cliente, estado_orden, direccion_orden, nombre_producto, cantidad_producto, total_a_pagar FROM tb_detallesordenes
         INNER JOIN tb_ordenes USING(id_orden)
         INNER JOIN tb_clientes USING(id_cliente)
         INNER JOIN tb_productos USING(id_producto)
@@ -38,7 +37,7 @@ class OrdenesHandler
 
     public function readAll()
     {
-        $sql = 'SELECT id_detalle, id_orden, nombre_cliente, estado_orden, direccion_orden, nombre_producto, cantidad_producto, total_a_pagar FROM tb_detallesordenes
+        $sql = 'SELECT id_detalle, nombre_cliente, estado_orden, direccion_orden, nombre_producto, cantidad_producto, total_a_pagar FROM tb_detallesordenes
         INNER JOIN tb_ordenes USING(id_orden)
         INNER JOIN tb_clientes USING(id_cliente)
         INNER JOIN tb_productos USING(id_producto)
@@ -48,7 +47,7 @@ class OrdenesHandler
 
     public function readOne()
     {
-        $sql = 'SELECT id_detalle, id_orden, nombre_cliente, estado_orden, direccion_orden, nombre_producto, cantidad_producto, total_a_pagar FROM tb_detallesordenes
+        $sql = 'SELECT id_detalle, nombre_cliente, estado_orden, direccion_orden, nombre_producto, cantidad_producto, total_a_pagar FROM tb_detallesordenes
         INNER JOIN tb_ordenes USING(id_orden)
         INNER JOIN tb_clientes USING(id_cliente)
         INNER JOIN tb_productos USING(id_producto)

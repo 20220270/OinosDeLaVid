@@ -3,18 +3,23 @@
 }
 
 .textoT{
-    background-color: #6d0e0e;
+    background-color: brown;
     color: #ffffff;
     height: 40px;
 }
 
 #txtValora{
-    background-color: #6d0e0e;
+    background-color: brown;
     color: #ffffff;
-    height: 70px;
+    height: 50px;
 }
 
 #noResults{
     display: none;
     font-weight: bold;
 }
+
+.search-icon{
+    transform: translateY(-10px);
+}
+
