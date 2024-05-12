@@ -125,6 +125,8 @@ const openCreate = () => {
   MODAL_TITLE.textContent = 'Crear nuevo administrador';
   // Se prepara el formulario.
   SAVE_FORM.reset();
+
+  fillSelect(NIVELESUSUARIO_API, 'readAll', 'selectNivelAdmin', ROW.nivel);
 }
 
 /*
@@ -155,6 +157,8 @@ const openUpdate = async (id) => {
       CLAVE_ADMINISTRADOR.value = ROW.clave_administrador;
       NIVEL_USUARIO.value = ROW.nivel;
       ESTADO_ADMINISTRADOR.value = ROW.estado_adminstrador;
+
+      fillSelect(NIVELESUSUARIO_API, 'readAll', 'selectNivelAdmin', ROW.nivel);
       
   } else {
       sweetAlert(2, DATA.error, false);

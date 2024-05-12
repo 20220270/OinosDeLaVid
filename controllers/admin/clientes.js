@@ -11,6 +11,10 @@ const SAVE_MODAL = new bootstrap.Modal('#saveModal'),
 // Constantes para establecer los elementos del formulario de guardar.
 const SAVE_FORM = document.getElementById('saveForm'),
     ID_CLIENTE = document.getElementById('idCliente'),
+    DUI_CLIENTE = document.getElementById('DUICliente'),
+    CORREO_CLIENTE = document.getElementById('correoCliente'),
+    TELEFONO_CLIENTE = document.getElementById('telefonoCliente'),
+    DIRECCION_CLIENTE = document.getElementById('direccionCliente'),
     ESTADO_CLIENTE = document.getElementById('selectEstado');
 
 // Método del evento para cuando el documento ha cargado.
@@ -79,15 +83,7 @@ const fillTable = async (form = null) => {
                   <td>${row.direccion_cliente}</td>
                   <td>${row.estado_cliente}</td>
                   <td>
-                      
-
-                    
-                    <button type="submit" class="btn btn-success mt-1" id="btnEliminar" name="btnEliminar" onclick="openDelete(${row.id_cliente})">
-                        <i class="bi bi-search"></i>
-                        <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                            class="mb-1">
-
-                    </button>
+                     
                     <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar" name="btnActualizar" onclick="openUpdate(${row.id_cliente})">
                         <i class="bi bi-x-square-fill"></i>
                         <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
@@ -129,7 +125,7 @@ const openUpdate = async (id) => {
   if (DATA.status) {
       // Se muestra la caja de diálogo con su título.
       SAVE_MODAL.show();
-      MODAL_TITLE.textContent = 'Actualizar categoría';
+      MODAL_TITLE.textContent = 'Actualizar estado del cliente';
       // Se prepara el formulario.
       SAVE_FORM.reset();
       // Se inicializan los campos con los datos.
@@ -145,32 +141,6 @@ const openUpdate = async (id) => {
   }
 }
 
-/*
-*   Función asíncrona para eliminar un registro.
-*   Parámetros: id (identificador del registro seleccionado).
-*   Retorno: ninguno.
-*/
-const openDelete = async (id) => {
-  // Llamada a la función para mostrar un mensaje de confirmación, capturando la respuesta en una constante.
-  const RESPONSE = await confirmAction('¿Desea eliminar la categoría de forma permanente?');
-  // Se verifica la respuesta del mensaje.
-  if (RESPONSE) {
-      // Se define una constante tipo objeto con los datos del registro seleccionado.
-      const FORM = new FormData();
-      FORM.append('idCliente', id);
-      // Petición para eliminar el registro seleccionado.
-      const DATA = await fetchData(CLIENTE_API, 'deleteRow', FORM);
-      // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
-      if (DATA.status) {
-          // Se muestra un mensaje de éxito.
-          await sweetAlert(1, DATA.message, true);
-          // Se carga nuevamente la tabla para visualizar los cambios.
-          fillTable();
-      } else {
-          sweetAlert(2, DATA.error, false);
-      }
-  }
-}
 
 
 localStorage.setItem('paginaOrigen', window.location.href);

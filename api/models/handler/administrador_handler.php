@@ -15,6 +15,7 @@ class AdministradorHandler
     protected $correo = null;
     protected $alias = null;
     protected $clave = null;
+    protected $nivel = null;
 
     /*
      *  Métodos para gestionar la cuenta del administrador.
@@ -127,6 +128,17 @@ class AdministradorHandler
                 WHERE id_administrador = ?';
         $params = array($this->nombre, $this->apellido, $this->correo, $this->id);
         return Database::executeRow($sql, $params);
+    }
+
+    public function readProductosCategoria()
+    {
+        $sql = 'SELECT id_administrador, nombre_admistrador, apellido_administrador, correo_administrador, alias_administrador, clave_administrador, nivel, estado_adminstrador
+        FROM tb_administradores
+        INNER JOIN tb_niveles_administradores USING(id_nivel)
+                WHERE id_administrador = ? AND estado_administrador = true
+                ORDER BY nombre_admistrador';
+        $params = array($this->nivel);
+        return Database::getRows($sql, $params);
     }
 
     public function deleteRow()
