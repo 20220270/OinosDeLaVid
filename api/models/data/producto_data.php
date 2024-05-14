@@ -111,7 +111,7 @@ class ProductoData extends ProductoHandler
 
     public function setEstado($value)
     {
-        if (Validator::validateBoolean($value)) {
+        if (Validator::validateString($value)) {
             $this->estado = $value;
             return true;
         } else {

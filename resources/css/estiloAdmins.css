@@ -1,9 +1,9 @@
-#nombreAdmin,
-#apellidoAdmin,
-#correoAdmin,
-#aliasAdmin,
-#claveAdmin,
-#confirmarClaveAdmin,
+#nombreAdministrador,
+#apellidoAdministrador,
+#correoAdministrador,
+#aliasAdministrador,
+#claveAdministrador,
+#confirmarClave,
 #selectNivelAdmin,
 #nombreAdminA,
 #apellidoAdminA,
@@ -28,7 +28,7 @@
 @media (min-width: 556px) and (max-width: 769px) {
     
     html{
-        width: 205%;
+        width: 183%;
     }
 }
 

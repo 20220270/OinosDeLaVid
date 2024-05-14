@@ -99,7 +99,6 @@ const fillTable = async (form = null) => {
                     <td>${row.estado_producto}</td>
                     <td>${row.existencias_producto}</td>
                     <td>${row.descuento_producto}</td>
-                    <td><i class="${icon}"></i></td>
                     <td>
                         <button type="button" class="btn" onclick="openUpdate(${row.id_producto})">
                             
@@ -132,7 +131,7 @@ const openCreate = () => {
     MODAL_TITLE.textContent = 'Crear producto';
     // Se prepara el formulario.
     SAVE_FORM.reset();
-    ESTADO_PRODUCTO.disabled = false;
+    //ESTADO_PRODUCTO.disabled = false;
     fillSelect(CATEGORIA_API, 'readAll', 'selectCategoria');
     fillSelect(MARCA_API, 'readAll', 'selectMarca');
 }
@@ -155,14 +154,14 @@ const openUpdate = async (id) => {
         MODAL_TITLE.textContent = 'Actualizar producto';
         // Se prepara el formulario.
         SAVE_FORM.reset();
-        ESTADO_PRODUCTO.disabled = false;
+        //ESTADO_PRODUCTO.disabled = false;
         // Se inicializan los campos con los datos.
         const ROW = DATA.dataset;
         ID_PRODUCTO.value = ROW.id_producto;
         NOMBRE_PRODUCTO.value = ROW.nombre_producto;
         DESCRIPCION_PRODUCTO.value = ROW.descripcion_producto;
         PRECIO_PRODUCTO.value = ROW.precio_producto;
-        ESTADO_PRODUCTO.checked = ROW.estado_producto;
+        //ESTADO_PRODUCTO.value = ROW.estado_producto;
         CANTIDAD_PRODUCTO.value = ROW.existencias_producto;
         DESCUENTO_PRODUCTO.value = ROW.descuento_producto;
         

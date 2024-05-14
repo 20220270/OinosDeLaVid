@@ -15,6 +15,7 @@ class AdministradorHandler
     protected $correo = null;
     protected $alias = null;
     protected $clave = null;
+    protected $estado = null;
     protected $nivel = null;
 
     /*
@@ -96,9 +97,9 @@ class AdministradorHandler
 
     public function createRow()
     {
-        $sql = 'INSERT INTO tb_administradores(nombre_admistrador, apellido_administrador, correo_administrador, alias_administrador, clave_administrador)
-                VALUES(?, ?, ?, ?, ?)';
-        $params = array($this->nombre, $this->apellido, $this->correo, $this->alias, $this->clave);
+        $sql = 'INSERT INTO tb_administradores(nombre_admistrador, apellido_administrador, correo_administrador, alias_administrador, clave_administrador, estado_administrador id_nivel)
+                VALUES(?, ?, ?, ?, ?, ?)';
+        $params = array($this->nombre, $this->apellido, $this->correo, $this->alias, $this->clave, $this -> estado, $this -> nivel);
         return Database::executeRow($sql, $params);
     }
 
@@ -124,13 +125,13 @@ class AdministradorHandler
     public function updateRow()
     {
         $sql = 'UPDATE tb_administradores
-                SET nombre_admistrador = ?, apellido_administrador = ?, correo_administrador = ?
+                SET estado_adminstrador = ?
                 WHERE id_administrador = ?';
-        $params = array($this->nombre, $this->apellido, $this->correo, $this->id);
+        $params = array($this->estado, $this -> id);
         return Database::executeRow($sql, $params);
     }
 
-    public function readProductosCategoria()
+    public function readProductosNiveles()
     {
         $sql = 'SELECT id_administrador, nombre_admistrador, apellido_administrador, correo_administrador, alias_administrador, clave_administrador, nivel, estado_adminstrador
         FROM tb_administradores

@@ -92,6 +92,31 @@ class AdministradorData extends AdministradorHandler
         }
     }
 
+    public function setEstado($value, $min = 2, $max = 50)
+    {
+        if (!Validator::validateAlphabetic($value)) {
+            $this->data_error = 'El nombre debe ser un valor alfabético';
+            return false;
+        } elseif (Validator::validateLength($value, $min, $max)) {
+            $this->estado = $value;
+            return true;
+        } else {
+            $this->data_error = 'El estado debe tener una longitud entre ' . $min . ' y ' . $max;
+            return false;
+        }
+    }
+
+    public function setNivel($value)
+    {
+        if (Validator::validateNaturalNumber($value)) {
+            $this->nivel = $value;
+            return true;
+        } else {
+            $this->data_error = 'El identificador del nivel es incorrecto';
+            return false;
+        }
+    }
+
     // Método para obtener el error de los datos.
     public function getDataError()
     {

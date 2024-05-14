@@ -16,11 +16,11 @@ const SAVE_MODAL = new bootstrap.Modal('#saveModal'),
 // Constantes para establecer los elementos del formulario de guardar.
 const SAVE_FORM = document.getElementById('saveForm'),
     ID_ADMINISTRADOR = document.getElementById('idAdministrador'),
-    NOMBRE_ADMINISTRADOR = document.getElementById('nombreAdmin'),
-    APELLIDO_ADMINISTRADOR = document.getElementById('apellidoAdmin'),
-    CORREO_ADMINISTRADOR = document.getElementById('correoAdmin'),
-    ALIAS_ADMINISTRADOR = document.getElementById('aliasAdmin'),
-    CLAVE_ADMINISTRADOR = document.getElementById('claveAdmin'),
+    NOMBRE_ADMINISTRADOR = document.getElementById('nombreAdministrador'),
+    APELLIDO_ADMINISTRADOR = document.getElementById('apellidoAdministrador'),
+    CORREO_ADMINISTRADOR = document.getElementById('correoAdministrador'),
+    ALIAS_ADMINISTRADOR = document.getElementById('aliasAdministrador'),
+    CLAVE_ADMINISTRADOR = document.getElementById('claveAdministrador'),
     NIVEL_USUARIO = document.getElementById('selectNivelAdmin'),
     ESTADO_ADMINISTRADOR = document.getElementById('selectEstadoUsuario');
 
@@ -126,7 +126,7 @@ const openCreate = () => {
   // Se prepara el formulario.
   SAVE_FORM.reset();
 
-  fillSelect(NIVELESUSUARIO_API, 'readAll', 'selectNivelAdmin', ROW.nivel);
+  fillSelect(NIVELESUSUARIO_API, 'readAll', 'selectNivelAdmin');
 }
 
 /*
