@@ -62,7 +62,7 @@ class ValoracionHandler
         $sql = 'UPDATE tb_valoraciones
                 SET estado_comentario = ?
                 WHERE id_valoracion = ?';
-        $params = array($this->comentario, $this->idvaloracion);
+        $params = array($this->estado, $this->idvaloracion);
         return Database::executeRow($sql, $params);
     }
 }

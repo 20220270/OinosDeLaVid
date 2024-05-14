@@ -19,7 +19,7 @@ const SAVE_FORM = document.getElementById('saveForm'),
     PRODUCTO_VALORADO = document.getElementById('selectProducto'),
     VALORACION_PRODUCTO = document.getElementById('calificacionOrden'),
     COMENTARIO_PRODCUTO = document.getElementById('comentarioOrden')
-    ESTADO_COMENTARIO = document.getElementById('selectEstado');
+    ESTADO_COMENTARIO = document.getElementById('selectEstadoC');
 
 // Método del evento para cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', () => {
@@ -46,7 +46,7 @@ SAVE_FORM.addEventListener('submit', async (event) => {
   // Se evita recargar la página web después de enviar el formulario.
   event.preventDefault();
   // Se verifica la acción a realizar.
-  (ID_CLIENTE.value) ? action = 'updateRow' : action = 'createRow';
+  (ID_VALORACION.value) ? action = 'updateRow' : action = 'createRow';
   // Constante tipo objeto con los datos del formulario.
   const FORM = new FormData(SAVE_FORM);
   // Petición para guardar los datos del formulario.
@@ -87,15 +87,6 @@ const fillTable = async (form = null) => {
                   <td>${row.comentario_producto}</td>
                   <td>${row.estado_comentario}</td>
                   <td>
-                      
-
-                    
-                    <button type="submit" class="btn btn-success mt-1" id="btnEliminar" name="btnEliminar" onclick="openDelete(${row.id_valoracion})">
-                        <i class="bi bi-search"></i>
-                        <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                            class="mb-1">
-
-                    </button>
                     <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar" name="btnActualizar" onclick="openUpdate(${row.id_valoracion})">
                         <i class="bi bi-x-square-fill"></i>
                         <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"

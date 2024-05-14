@@ -78,7 +78,7 @@ class ValoracionData extends ValoracionHandler
 
     public function setEstadoComentario($value)
     {
-        if (Validator::validateBoolean($value)) {
+        if (Validator::validateString($value)) {
             $this->estado = $value;
             return true;
         } else {

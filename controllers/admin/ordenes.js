@@ -76,11 +76,11 @@ const fillTable = async (form = null) => {
               <tr>
                   <td>${row.id_detalle}</td>
                   <td>${row.nombre_cliente}</td>
-                  <td>${row.estado_orden}</td>
                   <td>${row.direccion_orden}</td>
                   <td>${row.nombre_producto}</td>
                   <td>${row.cantidad_producto}</td>
                   <td> $${row.total_a_pagar}</td>
+                  <td>${row.estado_orden}</td>
                   <td>
                       
 
@@ -109,13 +109,6 @@ const fillTable = async (form = null) => {
   }
 }
 
-const openCreate = () => {
-  // Se muestra la caja de diálogo con su título.
-  SAVE_MODAL.show();
-  MODAL_TITLE.textContent = 'Crear nivel de usuario';
-  // Se prepara el formulario.
-  SAVE_FORM.reset();
-}
 
 /*
 *   Función asíncrona para preparar el formulario al momento de actualizar un registro.
@@ -132,18 +125,13 @@ const openUpdate = async (id) => {
   if (DATA.status) {
       // Se muestra la caja de diálogo con su título.
       SAVE_MODAL.show();
-      MODAL_TITLE.textContent = 'Actualizar nivel de usuario';
+      MODAL_TITLE.textContent = 'Actualizar estado de la orden';
       // Se prepara el formulario.
       SAVE_FORM.reset();
       // Se inicializan los campos con los datos.
       const ROW = DATA.dataset;
       ID_ORDEN.value = ROW.id_detalle;
-      NOMBRE_CLIENTE.value = ROW.nombre_cliente;
       ESTADO_ORDEN.value = ROW.estado_orden;
-      DIRECCION_CLIENTE.value = ROW.direccion_orden;
-      NOMBRE_PRODUCTO.value = ROW.nombre_producto;
-      CANTIDAD_ENTREGADA.value = ROW.cantidad_producto;
-      TOTAL_PAGADO.value = ROW.total_a_pagar;
       
   } else {
       sweetAlert(2, DATA.error, false);

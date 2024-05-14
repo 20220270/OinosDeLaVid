@@ -30,7 +30,7 @@ if (isset($_GET['action'])) {
                     $result['status'] = 1;
                     $result['message'] = 'Existen ' . count($result['dataset']) . ' registros';
                 } else {
-                    $result['error'] = 'No existen clientes registrados';
+                    $result['error'] = 'No existen valoraciones registrados';
                 }
                 break;
             case 'readOne':
@@ -39,21 +39,21 @@ if (isset($_GET['action'])) {
                 } elseif ($result['dataset'] = $valoracion->readOne()) {
                     $result['status'] = 1;
                 } else {
-                    $result['error'] = 'Cliente inexistente';
+                    $result['error'] = 'Valoración inexistente';
                 }
                 break;
             case 'updateRow':
                 $_POST = Validator::validateForm($_POST);
                 if (
                     !$valoracion->setIdValoracion($_POST['idValoracion']) or
-                    !$valoracion->setEstadoComentario($_POST['selectEstadoComentario'])
+                    !$valoracion->setEstadoComentario($_POST['selectEstadoC'])
                 ) {
                     $result['error'] = $valoracion->getDataError();
                 } elseif ($valoracion->updateRow()) {
                     $result['status'] = 1;
-                    $result['message'] = 'Cliente modificado correctamente';
+                    $result['message'] = 'Estado modificado correctamente';
                     } else {
-                    $result['error'] = 'Ocurrió un problema al modificar la categoría';
+                    $result['error'] = 'Ocurrió un problema al modificar la valoracion';
                 }
                 break;
             

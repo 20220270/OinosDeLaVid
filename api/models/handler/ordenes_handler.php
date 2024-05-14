@@ -29,9 +29,9 @@ class OrdenesHandler
         INNER JOIN tb_ordenes USING(id_orden)
         INNER JOIN tb_clientes USING(id_cliente)
         INNER JOIN tb_productos USING(id_producto)
-                WHERE nombre_cliente LIKE ? OR estado_orden LIKE ?
+                WHERE nombre_cliente LIKE ? OR estado_orden LIKE ? OR direccion_orden LIKE ? OR nombre_producto LIKE ?
                 ORDER BY id_detalle';
-        $params = array($value, $value);
+        $params = array($value, $value, $value, $value);
         return Database::getRows($sql, $params);
     }
 
