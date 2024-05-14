@@ -42,7 +42,7 @@ class ProductoData extends ProductoHandler
     public function setMarca($value)
     {
         if (Validator::validateNaturalNumber($value)) {
-            $this->categoria = $value;
+            $this->marca = $value;
             return true;
         } else {
             $this->data_error = 'El identificador de la marca es incorrecto';
@@ -134,7 +134,7 @@ class ProductoData extends ProductoHandler
     public function setDescuento($value)
     {
         if (Validator::validateNaturalNumber($value)) {
-            $this->categoria = $value;
+            $this->descuento = $value;
             return true;
         } else {
             $this->data_error = 'Descuento incorrecto';
