@@ -33,6 +33,17 @@ h3{
     background-color: transparent;
     box-shadow: none;
 }
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px; 
+    transform: translateY(-50%);
+    width: 20px;
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+}
 @media (max-width: 450px) {
     #Search {
         width: 350px;

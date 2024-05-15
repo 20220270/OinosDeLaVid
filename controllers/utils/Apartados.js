@@ -1,3 +1,6 @@
+const USER_API = 'services/admin/administrador.php';
+
+
 const HEADER = document.querySelector('nav');
 HEADER.innerHTML = `
 
