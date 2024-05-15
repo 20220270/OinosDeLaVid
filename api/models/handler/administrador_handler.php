@@ -46,7 +46,7 @@ class AdministradorHandler
         $params = array($_SESSION['idAdministrador']);
         $data = Database::getRow($sql, $params);
         // Se verifica si la contraseña coincide con el hash almacenado en la base de datos.
-        if (password_verify($password, $data['textoContra'])) {
+        if (password_verify($password, $data['clave_administrador'])) {
             return true;
         } else {
             return false;
@@ -58,7 +58,7 @@ class AdministradorHandler
         $sql = 'UPDATE tb_administradores
                 SET clave_administrador = ?
                 WHERE id_administrador = ?';
-        $params = array($this->clave, $_SESSION['idadministrador']);
+        $params = array($this->clave, $_SESSION['idAdministrador']);
         return Database::executeRow($sql, $params);
     }
 
