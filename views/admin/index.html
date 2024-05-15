@@ -112,7 +112,6 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h1 class="modal-title" id="staticBackdropLabel">Registre sus datos</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <!-- Labels identificadores e inputs para ingresar la información de los administradores, 
@@ -125,7 +124,7 @@
                                             <!--Label e input para agregar el nombre del administrador-->
                                             <label class="form-label">Nombre del administrador:</label>
 
-                                            <input type="text" class="form-control mb-5" id="Nombre" name="Nombre"
+                                            <input type="text" class="form-control mb-5" id="nombreAdministrador" name="nombreAdministrador"
                                                 required placeholder="Ingrese el nombre del administrador">
                                             <small>Ingresa tu nombre</small>
                                         </div>
@@ -135,7 +134,7 @@
                                             <!--Label e input para agregar el apellido del administrador-->
                                             <label class="form-label">Apellido del administrador:</label>
 
-                                            <input type="text" class="form-control mb-5" id="Apellido" required
+                                            <input type="text" class="form-control mb-5" id="apellidoAdministrador" name="apellidoAdministrador" required
                                                 placeholder="Ingrese el apellido del administrador">
                                             <small>Ingresa tu apellido</small>
                                         </div>
@@ -144,7 +143,7 @@
                                             <!--Label e input para agregar el correo del administrador-->
                                             <label class="form-label">Correo del administrador:</label>
 
-                                            <input type="email" class="form-control mb-5" id="Correo" required
+                                            <input type="email" class="form-control mb-5" id="correoAdministrador" name="correoAdministrador" required
                                                 placeholder="Ingrese el correo del administrador">
                                             <small>Ingresa tu correo</small>
 
@@ -158,7 +157,7 @@
                                             <label class="form-label1 mb-2">Alias del administrador:</label>
 
                                             <input type="text" class="form-control mb-5" id="alias" required
-                                                placeholder="Ingrese el alias del administrador" name="alias">
+                                                placeholder="Ingrese el alias del administrador" name="aliasAdministrador">
                                             <small>Ingresa un alias</small>
                                         </div>
 
@@ -167,7 +166,7 @@
                                             <label class="form-label1 mb-2">Clave del administrador:</label>
 
                                             <input type="password" class="form-control mb-5" id="clave" required
-                                                placeholder="Ingrese la clave del administrador" name="clave">
+                                                placeholder="Ingrese la clave del administrador" name="claveAdministrador">
                                             <small>Ingresa tu clave</small>
                                         </div>
 
@@ -176,7 +175,7 @@
                                             <!--Label e input para confirmar la clave del administrador-->
                                             <label class="form-label2 mb-2">Confirmar clave:</label>
 
-                                            <input type="password" class="form-control mb-5" id="Confirmar" required>
+                                            <input type="password" class="form-control mb-5" id="Confirmar" name="confirmarClave" required>
                                             <small>Por favor confirma tu contraseña</small>
                                         </div>
                                     </div>
@@ -184,14 +183,26 @@
 
                                     <div class="col-12 col-lg-4 col-md-6 col-sm-12">
                                         <div class="dropdown">
+                                            <label class="form-label1 nivel mb-3">Estado del usuario:</label>
+                                            <select class="form-select" aria-label="Default select example" name="selectEstado">
+                                               
+                                                <option>Activo</option>
+                                                <option>Inactivo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-lg-4 col-md-6 col-sm-12">
+                                        <div class="dropdown">
                                             <label class="form-label1 nivel mb-3">Nivel de usuario:</label>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Seleccione el nivel de usuario</option>
+                                            <select class="form-select" aria-label="Default select example" name="selectNivelAdmin">
                                                 <option value="1">Administrador</option>
                                                 <option value="2">Trabajador</option>
                                             </select>
                                         </div>
                                     </div>
+
+                                    
                                     <!--Fin de los labels e inputs-->
                                 </div>
 
@@ -214,6 +225,7 @@
         <script src="../../controllers/utils/sweetalert.min.js"></script>
         <script src="../../controllers/utils/components.js"></script>
         <!-- Llamada al fcontrolador del index-->
+        
         <script type="text/javascript" src="../../controllers/admin/index.js"></script>
 </body>
 

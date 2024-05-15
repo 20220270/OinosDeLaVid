@@ -97,8 +97,8 @@ class AdministradorHandler
 
     public function createRow()
     {
-        $sql = 'INSERT INTO tb_administradores(nombre_admistrador, apellido_administrador, correo_administrador, alias_administrador, clave_administrador, estado_administrador id_nivel)
-                VALUES(?, ?, ?, ?, ?, ?)';
+        $sql = 'INSERT INTO tb_administradores(nombre_admistrador, apellido_administrador, correo_administrador, alias_administrador, clave_administrador, estado_adminstrador, id_nivel)
+                VALUES(?, ?, ?, ?, ?, ?, ?)';
         $params = array($this->nombre, $this->apellido, $this->correo, $this->alias, $this->clave, $this -> estado, $this -> nivel);
         return Database::executeRow($sql, $params);
     }

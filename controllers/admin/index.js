@@ -1,5 +1,7 @@
 const LOGIN = document.getElementById('sessionForm');
 const SIGNUP = document.getElementById('FormValidacion');
+const MODAL = new bootstrap.Modal('#modalRegistrasrte');
+const SELECTNIVEL = document.getElementById('selectNivelAdmin');
 const USER_API = 'services/admin/administrador.php';
 const NIVELES_API = 'services/admin/nivelesusuario.php';
 
@@ -23,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Se establece el título del contenido principal.
         //MAIN_TITLE.textContent = 'Registrar primer usuario';
         // Se muestra el formulario para registrar el primer usuario.
-        SIGNUP.classList.remove('d-none');
+        MODAL.show();
         sweetAlert(4, DATA.error, true);
     }
 });
@@ -35,8 +37,11 @@ SIGNUP.addEventListener('submit', async (event) => {
     event.preventDefault();
     // Constante tipo objeto con los datos del formulario.
     const FORM = new FormData(SIGNUP);
+
+ 
+
     // Petición para registrar el primer usuario del sitio privado.
-    const DATA = await fetchData(USER_API, 'FormValidacion', FORM);
+    const DATA = await fetchData(USER_API, 'signUp', FORM);
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
         sweetAlert(1, DATA.message, true, 'index.html');

@@ -33,7 +33,8 @@ if (isset($_GET['action'])) {
                     !$administrador->setCorreo($_POST['correoAdministrador']) or
                     !$administrador->setAlias($_POST['aliasAdministrador']) or
                     !$administrador->setClave($_POST['claveAdministrador']) or
-                    !$administrador->setNivel($_POST['selectNivelAdmin'])
+                    !$administrador->setEstado($_POST['selectEstadoUsuario']) or
+                    !$administrador->setNivel($_POST['selectNivelAdmin']) 
                 ) {
                     $result['error'] = $administrador->getDataError();
                 } elseif ($_POST['claveAdministrador'] != $_POST['confirmarClave']) {
@@ -165,7 +166,8 @@ if (isset($_GET['action'])) {
                     !$administrador->setCorreo($_POST['correoAdministrador']) or
                     !$administrador->setAlias($_POST['aliasAdministrador']) or
                     !$administrador->setClave($_POST['claveAdministrador'])  or
-                    !$administrador->setNivel($_POST['selectNivelAdmin'])
+                    !$administrador->setNivel($_POST['selectNivelAdmin'])or
+                    !$administrador->setEstado($_POST['selectEstado'])
                 ) {
                     $result['error'] = $administrador->getDataError();
                 } elseif ($_POST['claveAdministrador'] != $_POST['confirmarClave']) {
