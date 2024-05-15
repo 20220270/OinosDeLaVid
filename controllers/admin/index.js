@@ -3,7 +3,6 @@ const SIGNUP = document.getElementById('FormValidacion');
 const MODAL = new bootstrap.Modal('#modalRegistrasrte');
 const SELECTNIVEL = document.getElementById('selectNivelAdmin');
 const USER_API = 'services/admin/administrador.php';
-const NIVELES_API = 'services/admin/nivelesusuario.php';
 
 // Método del evento para cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', async () => {
@@ -30,7 +29,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Se muestra el formulario para registrar el primer usuario.
         
         MODAL.show();
-        fillSelect(NIVELES_API, 'readAll', 'selectNivelAdmin');
         sweetAlert(4, DATA.error, true);
     }
 });
@@ -47,7 +45,6 @@ SIGNUP.addEventListener('submit', async (event) => {
 
     // Petición para registrar el primer usuario del sitio privado.
     const DATA = await fetchData(USER_API, 'signUp', FORM);
-    
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
         sweetAlert(1, DATA.message, true, 'index.html');

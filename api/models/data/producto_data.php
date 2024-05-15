@@ -133,7 +133,7 @@ class ProductoData extends ProductoHandler
 
     public function setDescuento($value)
     {
-        if (Validator::validateNaturalNumber($value)) {
+        if (Validator::validateString($value)) {
             $this->descuento = $value;
             return true;
         } else {
