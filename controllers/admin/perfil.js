@@ -80,34 +80,5 @@ const openPassword = () => {
     // Se restauran los elementos del formulario.
     PASSWORD_FORM.reset();
 }
-//función para cerrar una ventana y abrir el login
 
-document.addEventListener('DOMContentLoaded', function () {
-  var cerrarSesionButton = document.getElementById('cerrarS');
-  cerrarSesionButton.addEventListener('click', function () {
-    window.location.href = 'index.html';
-  });
-});
-
-//función para cerrar una ventana y abrir el login
-
-document.addEventListener('DOMContentLoaded', function () {
-  var VolverButton = document.getElementById('VP');
-  VolverButton.addEventListener('click', function () {
-    window.location.href = 'Menu.html';
-  });
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-  var botonVolver = document.getElementById('VP');
-  botonVolver.addEventListener('click', function () {
-    var paginaOrigen = localStorage.getItem('paginaOrigen');
-    if (paginaOrigen) {
-      window.location.href = paginaOrigen;
-    } else {
-      // Si no se encuentra la URL de la página de origen en localStorage, redirige a una página predeterminada
-      window.location.href = 'index.html';
-    }
-  });
-});
 
