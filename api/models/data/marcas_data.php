@@ -45,16 +45,16 @@ class MarcasData extends MarcaHandler
     public function setLogo($file, $filename = null)
     {
         if (Validator::validateImageFile($file, 800, 800)) {
-            $this->imagen = Validator::getFilename();
+            $this->logo = Validator::getFilename();
             return true;
         } elseif (Validator::getFileError()) {
             $this->data_error = Validator::getFileError();
             return false;
         } elseif ($filename) {
-            $this->imagen = $filename;
+            $this->logo = $filename;
             return true;
         } else {
-            $this->imagen = 'default.png';
+            $this->logo = 'default.png';
             return true;
         }
     }

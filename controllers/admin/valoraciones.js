@@ -83,7 +83,7 @@ const fillTable = async (form = null) => {
                   <td>${row.id_valoracion}</td>
                   <td>${row.id_detalle}</td>
                   <td>${row.nombre_producto}</td>
-                  <td>${row.calificacion_producto}</td>
+                  <td>${convertRatingToStars(row.calificacion_producto)} ${row.calificacion_producto}</td>
                   <td>${row.comentario_producto}</td>
                   <td>${row.fecha_valoracion}</td>
                   <td>${row.estado_comentario}</td>
@@ -105,6 +105,19 @@ const fillTable = async (form = null) => {
       sweetAlert(4, DATA.error, true);
   }
 }
+
+//Funcion para convertir la calificacion a estrellas
+const convertRatingToStars = (rating) => {
+    let stars = '';
+    for (let i = 0; i < 5; i++) {
+        if (i < rating) {
+            stars += '<i class="fas fa-star text-warning text-danger"></i>'; // estrella llena
+        } else {
+            stars += '<i class="far fa-star text-warning text-danger"></i>'; // estrella vacía
+        }
+    }
+    return stars;
+};
 
 /*const openCreate = () => {
   // Se muestra la caja de diálogo con su título.

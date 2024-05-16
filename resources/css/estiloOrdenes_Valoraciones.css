@@ -30,6 +30,11 @@
     pointer-events: none;
 }
 
+.fa-star {
+    font-size: 1.2em;
+}
+
+
 @media (min-width: 556px) and (max-width: 769px) {
     
     html{
