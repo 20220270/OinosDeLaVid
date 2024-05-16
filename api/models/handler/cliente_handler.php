@@ -18,6 +18,7 @@ class ClienteHandler
     protected $direccion = null;
     protected $clave = null;
     protected $estado = null;
+    protected $fecha = null;
 
     /*
     *   Métodos para gestionar la cuenta del cliente.
@@ -91,7 +92,7 @@ class ClienteHandler
     public function searchRows()
     {
         $value = '%' . Validator::getSearchValue() . '%';
-        $sql = 'SELECT id_cliente, dui_cliente, correo_cliente, telefono_cliente, direccion_cliente, estado_cliente
+        $sql = 'SELECT id_cliente, dui_cliente, correo_cliente, telefono_cliente, direccion_cliente, estado_cliente, fecha_registro
                 FROM tb_clientes
                 WHERE dui_cliente LIKE ? OR correo_cliente LIKE ? OR estado_cliente LIKE ?
                 ORDER BY id_cliente';
@@ -104,7 +105,7 @@ class ClienteHandler
     */
     public function readAll()
     {
-        $sql = 'SELECT id_cliente, dui_cliente, correo_cliente, telefono_cliente, direccion_cliente, estado_cliente
+        $sql = 'SELECT id_cliente, dui_cliente, correo_cliente, telefono_cliente, direccion_cliente, estado_cliente, fecha_registro
                 FROM tb_clientes
                 ORDER BY id_cliente';
         return Database::getRows($sql);
@@ -115,7 +116,7 @@ class ClienteHandler
     */
     public function readOne()
     {
-        $sql = 'SELECT id_cliente, dui_cliente, correo_cliente, telefono_cliente, direccion_cliente, estado_cliente
+        $sql = 'SELECT id_cliente, dui_cliente, correo_cliente, telefono_cliente, direccion_cliente, estado_cliente, fecha_registro
                 FROM tb_clientes
                 WHERE id_cliente = ?';
         $params = array($this->id);

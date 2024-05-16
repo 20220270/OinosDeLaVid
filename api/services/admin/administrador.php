@@ -161,13 +161,13 @@ if (isset($_GET['action'])) {
             case 'signUp':
                 $_POST = Validator::validateForm($_POST);
                 if (
-                    !$administrador->setNombre($_POST['Nombre']) or
-                    !$administrador->setApellido($_POST['Apellido']) or
-                    !$administrador->setCorreo($_POST['Correo']) or
-                    !$administrador->setAlias($_POST['alias']) or
-                    !$administrador->setClave($_POST['clave']) or
-                    !$administrador->setConfirm($_POST['Confirmar']) or
-                    !$administrador->setNivel($_POST['Nivel'])
+                    !$administrador->setNombre($_POST['nombreAdministrador']) or
+                    !$administrador->setApellido($_POST['apellidoAdministrador']) or
+                    !$administrador->setCorreo($_POST['correoAdministrador']) or
+                    !$administrador->setAlias($_POST['aliasAdministrador']) or
+                    !$administrador->setClave($_POST['claveAdministrador']) or
+                    !$administrador->setEstado($_POST['selectEstado']) or
+                    !$administrador->setNivel($_POST['selectNivelAdmin'])
                 ) {
                     $result['error'] = $administrador->getDataError();
                 } elseif ($_POST['claveAdministrador'] != $_POST['confirmarClave']) {
