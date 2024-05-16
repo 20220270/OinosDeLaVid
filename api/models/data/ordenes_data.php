@@ -14,13 +14,24 @@ class OrdenesData extends OrdenesHandler
     /*
     *   Métodos para validar y establecer los datos.
     */
-    public function setId($value)
+    public function setId($value) //detalle del pedido
     {
         if (Validator::validateNaturalNumber($value)) {
             $this->iddetalle = $value;
             return true;
         } else {
             $this->data_error = 'El identificador de la orden es incorrecto';
+            return false;
+        }
+    }
+
+    public function setIdPedido($value) //id del pedido
+    {
+        if (Validator::validateNaturalNumber($value)) {
+            $this->idpedido = $value;
+            return true;
+        } else {
+            $this->data_error = 'El identificador del pedido es incorrecto';
             return false;
         }
     }
