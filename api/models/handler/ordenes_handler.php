@@ -16,6 +16,7 @@ class OrdenesHandler
     protected $direccion = null;
     protected $producto = null;
     protected $cantidad = null;
+    protected $fecha = null;
     protected $total = null;
 
 
@@ -26,20 +27,20 @@ class OrdenesHandler
     public function searchRows()
     {
         $value = '%' . Validator::getSearchValue() . '%';
-        $sql = 'SELECT id_detalle, nombre_cliente, estado_orden, direccion_orden, nombre_producto, cantidad_producto, total_a_pagar FROM tb_detallesordenes
-        INNER JOIN tb_ordenes USING(id_orden)
+        $sql = 'SELECT id_detalle, nombre_cliente, estado_orden, direccion_orden, nombre_producto, cantidad_producto, total_a_pagar, p.fecha_registro FROM tb_detallesordenes
+        INNER JOIN tb_ordenes p USING(id_orden)
         INNER JOIN tb_clientes USING(id_cliente)
         INNER JOIN tb_productos USING(id_producto)
-                WHERE nombre_cliente LIKE ? OR estado_orden LIKE ? OR direccion_orden LIKE ? OR nombre_producto LIKE ?
+                WHERE nombre_cliente LIKE ? OR estado_orden LIKE ? OR direccion_orden LIKE ? OR nombre_producto LIKE ? OR p.fecha_registro LIKE ?
                 ORDER BY id_detalle';
-        $params = array($value, $value, $value, $value);
+        $params = array($value, $value, $value, $value, $value);
         return Database::getRows($sql, $params);
     }
 
     public function readAll()
     {
-        $sql = 'SELECT id_detalle, nombre_cliente, estado_orden, direccion_orden, nombre_producto, cantidad_producto, total_a_pagar FROM tb_detallesordenes
-        INNER JOIN tb_ordenes USING(id_orden)
+        $sql = 'SELECT id_detalle, nombre_cliente, estado_orden, direccion_orden, nombre_producto, cantidad_producto, total_a_pagar, p.fecha_registro FROM tb_detallesordenes
+        INNER JOIN tb_ordenes p USING(id_orden)
         INNER JOIN tb_clientes USING(id_cliente)
         INNER JOIN tb_productos USING(id_producto)
                 ORDER BY id_detalle';
@@ -48,8 +49,8 @@ class OrdenesHandler
 
     public function readOne()
     {
-        $sql = 'SELECT id_detalle, nombre_cliente, estado_orden, direccion_orden, nombre_producto, cantidad_producto, total_a_pagar FROM tb_detallesordenes
-        INNER JOIN tb_ordenes USING(id_orden)
+        $sql = 'SELECT id_detalle, nombre_cliente, estado_orden, direccion_orden, nombre_producto, cantidad_producto, total_a_pagar, p.fecha_registro FROM tb_detallesordenes
+        INNER JOIN tb_ordenes p USING(id_orden)
         INNER JOIN tb_clientes USING(id_cliente)
         INNER JOIN tb_productos USING(id_producto)
                 WHERE id_detalle = ?';

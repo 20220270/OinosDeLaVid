@@ -85,6 +85,7 @@ const fillTable = async (form = null) => {
                   <td>${row.nombre_producto}</td>
                   <td>${row.calificacion_producto}</td>
                   <td>${row.comentario_producto}</td>
+                  <td>${row.fecha_valoracion}</td>
                   <td>${row.estado_comentario}</td>
                   <td>
                     <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar" name="btnActualizar" onclick="openUpdate(${row.id_valoracion})">

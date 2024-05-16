@@ -104,7 +104,18 @@ class OrdenesData extends OrdenesHandler
             $this->iddetalle = $value;
             return true;
         } else {
-            $this->data_error = 'La total de la orden es incorrecto';
+            $this->data_error = 'El total de la orden es incorrecto';
+            return false;
+        }
+    }
+
+    public function setFecha($value)
+    {
+        if (Validator::validateString($value)) {
+            $this->fecha = $value;
+            return true;
+        } else {
+            $this->data_error = 'La fecha es incorrecta';
             return false;
         }
     }

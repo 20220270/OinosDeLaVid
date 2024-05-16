@@ -80,6 +80,7 @@ const fillTable = async (form = null) => {
                   <td>${row.nombre_producto}</td>
                   <td>${row.cantidad_producto}</td>
                   <td> $${row.total_a_pagar}</td>
+                  <td>${row.fecha_registro}</td>
                   <td>${row.estado_orden}</td>
                   <td>
                       

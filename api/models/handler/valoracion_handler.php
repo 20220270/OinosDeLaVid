@@ -14,6 +14,7 @@ class ValoracionHandler
     protected $nombreproducto = null;
     protected $calificacion = null;
     protected $comentario = null;
+    protected $fecha = null;
     protected $estado = null;
 
 
@@ -23,7 +24,7 @@ class ValoracionHandler
     public function searchRows()
     {
         $value = '%' . Validator::getSearchValue() . '%';
-        $sql = 'SELECT id_valoracion, id_detalle, nombre_producto, calificacion_producto, comentario_producto, estado_comentario FROM tb_valoraciones
+        $sql = 'SELECT id_valoracion, id_detalle, nombre_producto, calificacion_producto, comentario_producto, estado_comentario, p.fecha_valoracion FROM tb_valoraciones p
         INNER JOIN tb_detallesordenes USING(id_detalle)
         INNER JOIN tb_ordenes USING(id_orden)
         INNER JOIN tb_clientes USING(id_cliente)
@@ -36,7 +37,7 @@ class ValoracionHandler
 
     public function readAll()
     {
-        $sql = 'SELECT id_valoracion, id_detalle, nombre_producto, calificacion_producto, comentario_producto, estado_comentario FROM tb_valoraciones
+        $sql = 'SELECT id_valoracion, id_detalle, nombre_producto, calificacion_producto, comentario_producto, estado_comentario, p.fecha_valoracion FROM tb_valoraciones p
         INNER JOIN tb_detallesordenes USING(id_detalle)
         INNER JOIN tb_ordenes USING(id_orden)
         INNER JOIN tb_clientes USING(id_cliente)
@@ -47,7 +48,7 @@ class ValoracionHandler
 
     public function readOne()
     {
-        $sql = 'SELECT id_valoracion, id_detalle, nombre_producto, calificacion_producto, comentario_producto, estado_comentario FROM tb_valoraciones
+        $sql = 'SELECT id_valoracion, id_detalle, nombre_producto, calificacion_producto, comentario_producto, estado_comentario, p.fecha_valoracion FROM tb_valoraciones p
         INNER JOIN tb_detallesordenes USING(id_detalle)
         INNER JOIN tb_ordenes USING(id_orden)
         INNER JOIN tb_clientes USING(id_cliente)
