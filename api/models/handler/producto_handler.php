@@ -116,38 +116,38 @@ class ProductoHandler
         return Database::getRows($sql, $params);
     }
 
-    /*
+       /*
     *   Métodos para generar gráficos.
     */
-    /*public function cantidadProductosCategoria()
+    public function cantidadProductosCategoria()
     {
-        $sql = 'SELECT nombre_categoria, COUNT(id_producto) cantidad
-                FROM producto
-                INNER JOIN categoria USING(id_categoria)
-                GROUP BY nombre_categoria ORDER BY cantidad DESC LIMIT 5';
+        $sql = 'SELECT nombre_categoria, COUNT(id_producto) cantidad_producto
+                FROM tb_productos
+                INNER JOIN tb_categorias USING(id_categoria)
+                GROUP BY nombre_categoria ORDER BY cantidad_producto DESC LIMIT 5';
         return Database::getRows($sql);
     }
 
     public function porcentajeProductosCategoria()
     {
-        $sql = 'SELECT nombre_categoria, ROUND((COUNT(id_producto) * 100.0 / (SELECT COUNT(id_producto) FROM producto)), 2) porcentaje
-                FROM producto
-                INNER JOIN categoria USING(id_categoria)
-                GROUP BY nombre_categoria ORDER BY porcentaje DESC';
+        $sql = 'SELECT nombre_categoria, ROUND((COUNT(id_producto) * 100.0 / (SELECT COUNT(id_producto) FROM tb_productos)), 2) porcentaje
+        FROM tb_productos
+        INNER JOIN tb_categorias USING(id_categoria)
+        GROUP BY nombre_categoria ORDER BY porcentaje DESC';
         return Database::getRows($sql);
     }
 
     /*
     *   Métodos para generar reportes.
     */
-    /*public function productosCategoria()
+    public function productosCategoria()
     {
         $sql = 'SELECT nombre_producto, precio_producto, estado_producto
-                FROM producto
-                INNER JOIN categoria USING(id_categoria)
+                FROM tb_productos
+                INNER JOIN tb_categorias USING(id_categoria)
                 WHERE id_categoria = ?
                 ORDER BY nombre_producto';
         $params = array($this->categoria);
         return Database::getRows($sql, $params);
-    }*/
+    }
 }
