@@ -1,24 +1,3 @@
-.classs{
-    text-align: left;
-}
-
-.textoT{
-    background-color: brown;
-    color: #ffffff;
-    height: 40px;
-}
-
-#txtValora{
-    background-color: brown;
-    color: #ffffff;
-    height: 50px;
-}
-
-#noResults{
-    display: none;
-    font-weight: bold;
-}
-
 .search-icon {
     position: absolute;
     top: 50%;
@@ -69,7 +48,7 @@
 @media (min-width: 200px) and (max-width: 375px) {
     
     html{
-        width: 195%;
+        width: 205%;
     }
 
     #Search{
@@ -78,4 +57,3 @@
     }
 
 }
-

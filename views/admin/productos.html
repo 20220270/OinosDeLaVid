@@ -29,19 +29,20 @@
             </div>
             <div class="col">
                 <div class="container-sm mt-5 col-sm-12 form-container">
-                    <form class="d-flex">
+                    <form class="d-flex" id="searchForm">
+
                         <div class="position-relative">
                             <img class="search-icon" src="../../resources/Imagenes/lupa.png" alt="Lupa">
-                            <input class="form-control" type="search" placeholder="Search" aria-label="Search"
-                                id="Search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                                id="Search" name="search">
                         </div>
+
                     </form>
                 </div>
             </div>
             <div class="col mt-5">
-                <button class="btn fw-semibold" id="btnModalAbrir" name="btnRegistrar" data-bs-toggle="modal"
-                data-bs-target="#miModalP">
-                    <i class="bi bi-x-square-fill"></i>
+                <button class="btn fw-semibold" id="btnRegistrar" name="btnRegistrar" onclick="openCreate()">
+
                     <img src="../../resources/Imagenes/btnAgregarIMG.png" alt="" width="60px" height="60px"
                         class="mb-1">
                 </button>
@@ -50,500 +51,140 @@
         </div>
     </div>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://www.supermercadosantamaria.com/documents/10180/10504/169452942_G.jpg"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Vino Renegado</h5>
 
-                    <div class="container text-center">
-                        <div class="row mt-3">
-                            <div class="col">
-                                <p class="card-text">This is a longer card with supporting text below as a natural
-                                    lead-in to
-                                    additional
-                                    content. This content is a little bit longer.</p>
-                            </div>
-                            <div class="col">
-                                <label for="" class="fw-bold">Precio:</label>
-                                <label for="" class="mb-4">$50.00</label>
+    <div class="col-lg-10 col-sm-10 col-md-12 col-12 mx-auto">
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <td colspan="11" id="rowsFound"></td>
+                </tr>
+                <tr>
+                    <th class="bg-danger text-white fw-bold">ID</th>
+                    <th class="bg-danger text-white fw-bold">Categoría</th>
+                    <th class="bg-danger text-white fw-bold">Marca</th>
+                    <th class="bg-danger text-white fw-bold">Nombre</th>
+                    <th class="bg-danger text-white fw-bold">Descripción</th>
+                    <th class="bg-danger text-white fw-bold">Precio</th>
+                    <th class="bg-danger text-white fw-bold">Imagen</th>
+                    <th class="bg-danger text-white fw-bold">Estado</th>
+                    <th class="bg-danger text-white fw-bold">Existencias</th>
+                    <th class="bg-danger text-white fw-bold">Descuento</th>
+                    <th class="bg-danger text-white fw-bold">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
 
-                                <label for="" class="fw-bold">Existencias:</label>
-                                <label for="" class="mb-4">4</label>
 
-                                <label for="" class="fw-bold">Descuento:</label>
-                                <label for="">20%</label>
-                            </div>
-                            <div class="col">
-                                <label for="" class="fw-bold">Estado:</label>
-                                <label for="" class="mb-4">En venta</label>
+            </tbody>
+        </table>
+    </div>
 
-                                <label for="" class="fw-bold">Registrado desde:</label>
-                                <label for="">00/00/0000</label>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-8">
-                    <button type="submit" class="btn btn-success mt-1 btnEliminar" id="btnEliminar" data-bs-toggle="modal"
-                    data-bs-target="#miModalDe">
-                        <i class="bi bi-search"></i>
-                        <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                            class="mb-1">
-
-                    </button>
-                    <button type="reset" class="btn btn-secondary mt-1 btnActualizar" id="btnActualizar" data-bs-toggle="modal"
-                    data-bs-target="#miModalP2">
-                        <i class="bi bi-x-square-fill"></i>
-                        <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
-                            class="mb-1">
-                    </button>
-                    <button type="submit" class="btn btn-secondary mt-1 btnMostrar" id="btnMostrar">
-                        <i class="bi bi-x-square-fill"></i>
-                        <img src="../../resources/Imagenes/ocultar.png" alt="" width="40px" height="40px" class="mb-1">
-                    </button>
-
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://walmartsv.vtexassets.com/arquivos/ids/294845/Vino-Tinto-Santa-Helena-Caber-Sauv-750Ml-3-6705.jpg?v=638104630093900000"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Vino Rojo</h5>
-                    <div class="container text-center">
-                        <div class="row mt-3">
-                            <div class="col">
-                                <p class="card-text">This is a longer card with supporting text below as a natural
-                                    lead-in to
-                                    additional
-                                    content. This content is a little bit longer.</p>
-                            </div>
-                            <div class="col">
-                                <label for="" class="fw-bold">Precio:</label>
-                                <label for="" class="mb-4">$50.00</label>
-
-                                <label for="" class="fw-bold">Existencias:</label>
-                                <label for="" class="mb-4">4</label>
-
-                                <label for="" class="fw-bold">Descuento:</label>
-                                <label for="">20%</label>
-                            </div>
-                            <div class="col">
-                                <label for="" class="fw-bold">Estado:</label>
-                                <label for="" class="mb-4">En venta</label>
-
-                                <label for="" class="fw-bold">Registrado desde:</label>
-                                <label for="">00/00/0000</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-8">
-                    <button type="submit" class="btn btn-success mt-1 btnEliminar" id="btnEliminar" data-bs-toggle="modal"
-                    data-bs-target="#miModalDe">
-                        <i class="bi bi-search"></i>
-                        <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                            class="mb-1">
-
-                    </button>
-                    <button type="reset" class="btn btn-secondary mt-1 btnActualizar" id="btnActualizar" data-bs-toggle="modal"
-                    data-bs-target="#miModalP2">
-                        <i class="bi bi-x-square-fill"></i>
-                        <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
-                            class="mb-1">
-                    </button>
-                    <button type="submit" class="btn btn-secondary mt-1 btnMostrar" id="btnMostrar">
-                        <i class="bi bi-x-square-fill"></i>
-                        <img src="../../resources/Imagenes/ocultar.png" alt="" width="40px" height="40px" class="mb-1">
-                    </button>
-
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8cAzKkuxrQO3IT9obvZ5NDd4B9eFg5HG8L-xaj4pqoZb2W7C7bUo1nZqlVI-zl8QQhdo&usqp=CAU"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Vino tinto</h5>
-                    <div class="container text-center">
-                        <div class="row">
-                            <div class="col">
-                                <p class="card-text">This is a longer card with supporting text below as a natural
-                                    lead-in to
-                                    additional
-                                    content. This content is a little bit longer.</p>
-                            </div>
-                            <div class="col">
-                                <label for="" class="fw-bold">Precio:</label>
-                                <label for="" class="mb-4">$50.00</label>
-
-                                <label for="" class="fw-bold">Existencias:</label>
-                                <label for="" class="mb-4">4</label>
-
-                                <label for="" class="fw-bold">Descuento:</label>
-                                <label for="">20%</label>
-                            </div>
-                            <div class="col">
-                                <label for="" class="fw-bold">Estado:</label>
-                                <label for="" class="mb-4">En venta</label>
-
-                                <label for="" class="fw-bold">Registrado desde:</label>
-                                <label for="">00/00/0000</label>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-8">
-                    <button type="submit" class="btn btn-success mt-1 btnEliminar" id="btnEliminar" data-bs-toggle="modal"
-                    data-bs-target="#miModalDe">
-                        <i class="bi bi-search"></i>
-                        <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                            class="mb-1">
-
-                    </button>
-                    <button type="reset" class="btn btn-secondary mt-1 btnActualizar" id="btnActualizar" data-bs-toggle="modal"
-                    data-bs-target="#miModalP2">
-                        <i class="bi bi-x-square-fill"></i>
-                        <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
-                            class="mb-1">
-                    </button>
-                    <button type="submit" class="btn btn-secondary mt-1 btnMostrar" id="btnMostrar">
-                        <i class="bi bi-x-square-fill"></i>
-                        <img src="../../resources/Imagenes/ocultar.png" alt="" width="40px" height="40px" class="mb-1">
-                    </button>
-
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://www.supermercadosantamaria.com/documents/10180/10504/169452942_G.jpg"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Vino Rosa</h5>
-                    <div class="container text-center">
-                        <div class="row">
-                            <div class="col">
-                                <p class="card-text">This is a longer card with supporting text below as a natural
-                                    lead-in to
-                                    additional
-                                    content. This content is a little bit longer.</p>
-                            </div>
-                            <div class="col">
-                                <label for="" class="fw-bold">Precio:</label>
-                                <label for="" class="mb-4">$50.00</label>
-
-                                <label for="" class="fw-bold">Existencias:</label>
-                                <label for="" class="mb-4">4</label>
-
-                                <label for="" class="fw-bold">Descuento:</label>
-                                <label for="">20%</label>
-                            </div>
-                            <div class="col">
-                                <label for="" class="fw-bold">Estado:</label>
-                                <label for="" class="mb-4">En venta</label>
-
-                                <label for="" class="fw-bold">Registrado desde:</label>
-                                <label for="">00/00/0000</label>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-8">
-                    <button type="submit" class="btn btn-success mt-1 btnEliminar" id="btnEliminar" data-bs-toggle="modal"
-                    data-bs-target="#miModalDe">
-                        <i class="bi bi-search"></i>
-                        <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                            class="mb-1">
-
-                    </button>
-                    <button type="reset" class="btn btn-secondary mt-1 btnActualizar" id="btnActualizar" data-bs-toggle="modal"
-                    data-bs-target="#miModalP2">
-                        <i class="bi bi-x-square-fill"></i>
-                        <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
-                            class="mb-1">
-                    </button>
-                    <button type="submit" class="btn btn-secondary mt-1 btnMostrar" id="btnMostrar">
-                        <i class="bi bi-x-square-fill"></i>
-                        <img src="../../resources/Imagenes/ocultar.png" alt="" width="40px" height="40px" class="mb-1">
-                    </button>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-10 col-sm-10 col-md-12 col-12 mx-auto">
-            <table class="table text-center">
-                <thead>
-                    <tr>
-                        <td colspan="8" id="rowsFound"></td>
-                    </tr>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Descripción</th>
-                        <th>Precio</th>
-                        <th>Estado</th>
-                        <th>Categoría</th>
-                        <th>Marca</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody">
-                  
-                  
-                </tbody>
-              </table>
-        </div>
-
-        <div id="noResults">
-            <img src="/OinosDeLaVid/resources/Imagenes/error.png" alt="...">
-            No se ha encontrado ninguna coincidencia.
-        </div>
+    <div id="noResults">
+        <img src="/OinosDeLaVid/resources/Imagenes/error.png" alt="...">
+        No se ha encontrado ninguna coincidencia.
+    </div>
     </div>
 
 
     <!-- Ventana modal para agregar-->
-    <div class="modal" id="miModalP" data-bs-backdrop="static">
+    <div class="modal fade" id="saveModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="modalTitle" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <!-- Encabezado de la ventana modal -->
                 <div class="modal-header">
-                    <h5 class="modal-title text-align-center"></h5>
+                    <h5 class="modal-title text-align-center" id="modalTitle"></h5>
                 </div>
                 <!-- Contenido de la ventana modal -->
-                <div class="modal-body">
-                    <form id="saveForm">
-                        <div class="modal-body row g-3">
-                            <!-- Campo oculto para asignar el id del registro al momento de modificar -->
-                            <input type="hidden" id="idProducto" name="idProducto">
-                            <div class="col-sm-12 col-md-6">
-                                <label for="nombreCategoria" class="col-sm-7 col-form-label">Nombre del
-                                    producto:</label>
-                                <input id="nombreProducto" type="text" name="nombreProducto" class="form-control"
-                                    placeholder="Ingrese el nombre del producto" required>
-                            </div>
-                            <div class="col-sm-12 col-md-6">
-                                <label for="Categoria" class="col-sm-7 col-form-label">Categoría:</label>
-                                <select class="form-select" id="selectCategoria" aria-label="Default select example">
-                                    <option selected>Seleccione la categoría a la que pertenece el producto</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
+                <form id="saveForm">
+                    <div class="modal-body row g-3">
+                        <!-- Campo oculto para asignar el id del registro al momento de modificar -->
+                        <input type="hidden" id="idProducto" name="idProducto">
+                        <input type="hidden" id="idAdministrador" name="idAdministrador">
 
-                            <div class="col-sm-12 col-md-6">
-                                <label for="Marca" class="col-sm-7 col-form-label">Marca:</label>
-                                <select class="form-select" id="selectMarca" aria-label="Default select example">
-                                    <option selected>Seleccione la marca a la que pertenece el producto</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
+                        <div class="col-sm-12 col-md-6">
+                            <label for="Categoria" class="col-sm-7 col-form-label">Categoría:</label>
+                            <select class="form-select" id="selectCategoria" name="selectCategoria"
+                                aria-label="Default select example">
 
-                            <div class="col-sm-12 col-md-6">
-                                <label for="imagenProducto" class="col-sm-7 col-form-label">Imagen del
-                                    producto:</label>
-                                <div class="position-relative">
-                                    <div class="input-group mb-3">
-                                        <input type="file" class="form-control" id="inputImgProducto">
-                                    </div>
-                                </div>
-                            </div>
+                            </select>
+                        </div>
 
-                            <div class="col-sm-12 col-md-6">
-                                <label for="descripcionProducto" class="form-label">Descripción del producto:</label>
-                                <input id="descripcionProducto" type="text" name="descripcionProducto"
-                                    class="form-control" placeholder="Ingrese una descripción para el producto"
-                                    required>
+                        <div class="col-sm-12 col-md-6">
+                            <label for="Marca" class="col-sm-7 col-form-label">Marca:</label>
+                            <select class="form-select" id="selectMarca" name="selectMarca"
+                                aria-label="Default select example">
+
+                            </select>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6">
+                            <label for="nombreCategoria" class="col-sm-7 col-form-label">Nombre del
+                                producto:</label>
+                            <input id="nombreProducto" type="text" name="nombreProducto" class="form-control"
+                                placeholder="Ingrese el nombre del producto" required>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6">
+                            <label for="descripcionProducto" class="form-label">Descripción del producto:</label>
+                            <input id="descripcionProducto" type="text" name="descripcionProducto" class="form-control"
+                                placeholder="Ingrese una descripción para el producto" required>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6">
+                            <label for="precio" class="form-label">Precio del producto:</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="logoDolar">$</span>
+                                <input type="number" class="form-control" id="PrecioProducto"
+                                    aria-label="Dollar amount (with dot and two decimal places)" min="1" step="0.01"
+                                    name="PrecioProducto">
                             </div>
-                            <div class="col-sm-12 col-md-6">
-                                <label for="precio" class="form-label">Precio del producto:</label>
+                        </div>
+
+
+                        <div class="col-sm-12 col-md-6">
+                            <label for="imagenProducto" class="col-sm-7 col-form-label">Imagen del
+                                producto:</label>
+                            <div class="position-relative">
                                 <div class="input-group mb-3">
-                                    <span class="input-group-text" id="logoDolar">$</span>
-                                    <input type="number" class="form-control" id="PrecioProducto"
-                                        aria-label="Dollar amount (with dot and two decimal places)" min="1"
-                                        step="0.01">
+                                    <input type="file" class="form-control" id="inputImgProducto"
+                                        name="inputImgProducto">
                                 </div>
                             </div>
-
-                            <div class="col-sm-12 col-md-6">
-                                <label for="estado" class="form-label">Estado del producto:</label>
-                                <select class="form-select" id="selectEstado" aria-label="Default select example">
-                                    <option selected>Seleccione el estado del producto</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                            <div class="col-sm-12 col-md-6">
-                                <label for="descripcionCategoria" class="form-label">Cantidad de producto a
-                                    registrar:</label>
-                                <input id="cantidadProducto" type="number" name="cantidadProducto" class="form-control"
-                                    placeholder="Ingrese la cantidad que se registrará del producto" min="1" step="1"
-                                    required>
-                            </div>
-                            <div class="col-sm-12 col-md-6">
-                                <label for="descripcionCategoria" class="form-label">Descuento:</label>
-                                <input id="descuentoProducto" type="number" name="descuentoProducto"
-                                    class="form-control" placeholder="00.00%" min="1" step="0.01" required>
-                            </div>
-
                         </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-dark" id="btnGuardarD">Guardar</button>
-                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal"
-                                id="btnCerrar">Cerrar</button>
-                        </div>
-                    </form>
-                </div>
 
+                        <div class="col-sm-12 col-md-6">
+                            <label for="Orden" class="col-sm-7 col-form-label">Estado del producto:</label>
+                            <select class="form-select" id="selectEstado" name="selectEstado"
+                                aria-label="Default select example">
+                                <option>En venta</option>
+                                <option>No disponible</option>
+                            </select>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6">
+                            <label for="descripcionCategoria" class="form-label">Cantidad de producto a
+                                registrar:</label>
+                            <input id="cantidadProducto" type="number" name="cantidadProducto" class="form-control"
+                                placeholder="Ingrese la cantidad que se registrará del producto" min="1" step="1"
+                                required>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6">
+                            <label for="descripcionCategoria" class="form-label">Descuento:</label>
+                            <input id="descuentoProducto" type="number" name="descuentoProducto" class="form-control"
+                                placeholder="00.00%" min="1.00" step="0.01" required>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-dark" id="btnGuardarD">Guardar</button>
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal"
+                            id="btnCerrar">Cerrar</button>
+                    </div>
+                </form>
             </div>
-        </div>
-    </div>
 
-    
-    <!--Modal para mostrar la inserción de un registro-->
-    <div class="modal" id="miModalR" data-bs-backdrop="static">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <!-- Contenido de la ventana modal -->
-                <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
-                    <form id="saveForm">
-                        <div class="d-flex justify-content-center align-items-center flex-column">
-                            <!-- Agregamos clases para centrar vertical y horizontalmente -->
-                            <img src="../../resources/Imagenes/exito.png" alt="">
-                            <br>
-                            <h4 class="text-align-center">¡Registro realizado con éxito!</h4>
-                            <br>
-                            <h6 class="text-align-center">Se ha realizado un nuevo registro.</h6>
-                        </div>
-                        <div class="modal-footer d-flex justify-content-center">
-                            <!-- Agregamos clases para centrar horizontalmente -->
-                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal"
-                                id="btnCerrar">Cerrar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--Primera Modal para mostrar la eliminación de un registro-->
-    <div class="modal" id="miModalDe" data-bs-backdrop="static">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <!-- Contenido de la ventana modal -->
-                <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
-                    <form id="saveForm">
-                        <div class="d-flex justify-content-center align-items-center flex-column">
-                            <!-- Agregamos clases para centrar vertical y horizontalmente -->
-                            <img src="../../resources/Imagenes/pregunta.png" alt="">
-                            <br>
-                            <h4 class="text-align-center">¿Desea realmente eliminar este dato?</h4>
-                            <br>
-                            <h6 class="text-align-center">Se eliminará el dato para siempre.</h6>
-                        </div>
-                        <div class="modal-footer d-flex justify-content-center">
-                            <!-- Agregamos clases para centrar horizontalmente -->
-                            <button type="button" class="btn btn-dark" id="btnElimin">Eliminar</button>
-                            <button type="button" class="btn btn-dark btn-block" data-bs-dismiss="modal"
-                                id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--Segunda Modal para mostrar la eliminación de un registro-->
-    <div class="modal" id="miModalDe2" data-bs-backdrop="static">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <!-- Contenido de la ventana modal -->
-                <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
-                    <form id="saveForm">
-                        <div class="d-flex justify-content-center align-items-center flex-column">
-                            <!-- Agregamos clases para centrar vertical y horizontalmente -->
-                            <img src="../../resources/Imagenes/exito.png" alt="">
-                            <br>
-                            <h4 class="text-align-center">¡Registro eliminado con éxito!</h4>
-                            <br>
-                            <h6 class="text-align-center">Se ha eliminado un registro.</h6>
-                        </div>
-                        <div class="modal-footer d-flex justify-content-center">
-                            <!-- Agregamos clases para centrar horizontalmente -->
-                            <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal"
-                                id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!--Primera Modal para mostrar la actualización de un registro-->
-    <div class="modal" id="miModalAC" data-bs-backdrop="static">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <!-- Contenido de la ventana modal -->
-                <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
-                    <form id="saveForm">
-                        <div class="d-flex justify-content-center align-items-center flex-column">
-                            <!-- Agregamos clases para centrar vertical y horizontalmente -->
-                            <img src="../../resources/Imagenes/exito.png" alt="">
-                            <br>
-                            <h4 class="text-align-center">¡Registro actualizado con éxito!</h4>
-                            <br>
-                            <h6 class="text-align-center">Se ha actualizado un registro.</h6>
-                        </div>
-                        <div class="modal-footer d-flex justify-content-center">
-                            <!-- Agregamos clases para centrar horizontalmente -->
-                            <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal"
-                                id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!--Modal para mostrar que un prodcuto ha sido ocultado-->
-    <div class="modal" id="ModalOcultar" data-bs-backdrop="static">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <!-- Contenido de la ventana modal -->
-                <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
-                    <form id="saveForm">
-                        <div class="d-flex justify-content-center align-items-center flex-column">
-                            <!-- Agregamos clases para centrar vertical y horizontalmente -->
-                            <img src="../../resources/Imagenes/exito.png" alt="">
-                            <br>
-                            <h4 class="text-align-center">¡Producto oculto!</h4>
-                            <br>
-                            <h6 class="text-align-center">Se ha ocultado un producto.</h6>
-                        </div>
-                        <div class="modal-footer d-flex justify-content-center">
-                            <!-- Agregamos clases para centrar horizontalmente -->
-                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal"
-                                id="btnCerrar">Cerrar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -554,16 +195,17 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script src="../../controllers/utils/footer.js"></script>
     <script src="../../controllers/utils/Apartados.js"></script>
+    <!-- Llamada a las librerías que utiliza javascript para el funcionamiento de la página web -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../../controllers/utils/sweetalert.min.js"></script>
+    <script src="../../controllers/utils/components.js"></script>
     <script type="text/javascript" src="../../controllers/admin/productos.js"></script>
-    <script src="../../controllers/admin/menu.js"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

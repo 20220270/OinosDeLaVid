@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="../../resources/css/EstiloApartados.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../../resources/css/estiloOrdenes_Valoraciones.css">
+
     <link rel="stylesheet" type="text/css" href="../../resources/css/estiloMenu.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/css/estiloordenes.css">
     <title>Ordenes</title>
 </head>
 
@@ -20,274 +21,89 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col mt-5" id="txtCategoria">
-                <div class="div-text mt-4">
+                <div class="div-text mt-3">
                     <h3>Ordenes</h>
                 </div>
-
             </div>
-            <div class="col">
-                <div class="container-sm  mt-5">
-                    <form class="d-flex">
+            <div class="col mt-5">
+                <div class="container-sm mt-2">
+                    <form class="d-flex" id="searchForm">
+
                         <div class="position-relative">
                             <img class="search-icon" src="../../resources/Imagenes/lupa.png" alt="Lupa">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                                id="Search">
+                                id="Search" name="search">
                         </div>
+                        <button type="button" class="btn" hidden>
+                            <img src="../../resources/Imagenes/btnAgregarIMG.png" alt="" width="60px" height="60px"
+                                class="mb-1">
+                        </button>
 
                     </form>
                 </div>
             </div>
-            <div class="col  mt-5">
-                <button type="submit" class="btn btn-success mt-1" id="mostrarValoracion">
-                    <i class="bi bi-search"></i>
-                    <img src="../../resources/Imagenes/valoracion.png" alt="" width="60px" height="60px" class="mb-1">
-                </button>
-            </div>
+
         </div>
 
     </div>
 
 
-    <div class="col-11 table-wrapper">
-        <table class="table table-hover">
-            <!-- Encabezado de la tabla para mostrar la cantidad de registros y los títulos de las columnas -->
+
+    <div class="col-lg-10 col-sm-10 col-md-12 col-12 mx-auto">
+        <table class="table text-center">
             <thead>
                 <tr>
-                    <td colspan="9" id="Filas"></td>
+                    <td colspan="9" id="rowsFound"></td>
                 </tr>
                 <tr>
-                    <th>ID de la orden</th>
-                    <th>Cliente</th>
-                    <th>Fecha de la orden</th>
-                    <th>Dirección de entrega</th>
-                    <th>Producto entregado</th>
-                    <th>Cantidad entregada</th>
-                    <th>Total pagado</th>
-                    <th>Estado de la orden</th>
-                    <th>Acciones</th>
+                    <th class="bg-danger text-white fw-bold">ID</th>
+                    <th class="bg-danger text-white fw-bold">Cliente</th>
+                    <th class="bg-danger text-white fw-bold">Dirección de entrega</th>
+                    <th class="bg-danger text-white fw-bold">Producto entregado</th>
+                    <th class="bg-danger text-white fw-bold">Cantidad entregada</th>
+                    <th class="bg-danger text-white fw-bold">Total pagado</th>
+                    <th class="bg-danger text-white fw-bold">Estado de la orden</th>
+                    <th class="bg-danger text-white fw-bold">Acciones</th>
                 </tr>
-
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Rodrigo Carma</td>
-                    <td>12/09/2023</td>
-                    <td>San Salvador</td>
-                    <td>Vino Shabak</td>
-                    <td>2</td>
-                    <td>$56.00</td>
-                    <td>Entregado</td>
-                    <td>
-                        <div class="col-8">
-                            <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
-                                <i class="bi bi-search"></i>
-                                <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                                    class="mb-1">
-                            </button>
-
-                            <button type="submit" class="btn btn-success mt-1" id="mostrarValoracion">
-                                <i class="bi bi-search"></i>
-                                <img src="../../resources/Imagenes/valoracion.png" alt="" width="30px" height="30px"
-                                    class="mb-1">
-                            </button>
-
-                            <button type="submit" class="btn btn-success mt-1" id="btnActualizar">
-                                <i class="bi bi-search"></i>
-                                <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px"
-                                    height="30px" class="mb-1">
-                            </button>
-                        </div>
-                    </td>
-
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Ramiro Flores</td>
-                    <td>12/09/2023</td>
-                    <td>San Salvador</td>
-                    <td>Vino Shabak</td>
-                    <td>2</td>
-                    <td>$56.00</td>
-                    <td>Pendiente</td>
-                    <td>
-                        <div class="col-8">
-                            <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
-                                <i class="bi bi-search"></i>
-                                <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                                    class="mb-1">
-                            </button>
-
-                            <button type="submit" class="btn btn-success mt-1" id="mostrarValoracion">
-                                <i class="bi bi-search"></i>
-                                <img src="../../resources/Imagenes/valoracion.png" alt="" width="30px" height="30px"
-                                    class="mb-1">
-                            </button>
-
-                            <button type="submit" class="btn btn-success mt-1" id="btnActualizar">
-                                <i class="bi bi-search"></i>
-                                <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px"
-                                    height="30px" class="mb-1">
-                            </button>
-                        </div>
-                    </td>
-
-                </tr>
-                <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <div class="col-8">
-                            <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
-                                <i class="bi bi-search"></i>
-                                <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                                    class="mb-1">
-                            </button>
-
-                            <button type="submit" class="btn btn-success mt-1" id="mostrarValoracion">
-                                <i class="bi bi-search"></i>
-                                <img src="../../resources/Imagenes/valoracion.png" alt="" width="30px" height="30px"
-                                    class="mb-1">
-                            </button>
-
-                            <button type="submit" class="btn btn-success mt-1" id="btnActualizar">
-                                <i class="bi bi-search"></i>
-                                <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px"
-                                    height="30px" class="mb-1">
-                            </button>
-                        </div>
-                    </td>
-
-                </tr>
-
             </thead>
-            <!-- Cuerpo de la tabla para mostrar un registro por fila -->
-            <tbody id="tableBody"></tbody>
+            <tbody id="tableBody">
 
 
+            </tbody>
         </table>
-        <br>
-        <br>
-
     </div>
 
-    <!--Primera Modal para mostrar la eliminación de un registro-->
-    <div class="modal" id="miModalDe" data-backdrop="static">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <!-- Contenido de la ventana modal -->
-                <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
-                    <form id="saveForm">
-                        <div class="d-flex justify-content-center align-items-center flex-column">
-                            <!-- Agregamos clases para centrar vertical y horizontalmente -->
-                            <img src="../../resources/Imagenes/pregunta.png" alt="">
-                            <br>
-                            <h4 class="text-align-center">¿Desea realmente eliminar este dato?</h4>
-                            <br>
-                            <h6 class="text-align-center">Se eliminará el dato para siempre.</h6>
-                        </div>
-                        <div class="modal-footer d-flex justify-content-center">
-                            <!-- Agregamos clases para centrar horizontalmente -->
-                            <button type="button" class="btn btn-dark" id="btnElimin">Eliminar</button>
-                            <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal"
-                                id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!--Segunda Modal para mostrar la eliminación de un registro-->
-    <div class="modal" id="miModalDe2" data-backdrop="static">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal fade" id="saveModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-dialog">
             <div class="modal-content">
-                <!-- Contenido de la ventana modal -->
-                <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
-                    <form id="saveForm">
-                        <div class="d-flex justify-content-center align-items-center flex-column">
-                            <!-- Agregamos clases para centrar vertical y horizontalmente -->
-                            <img src="../../resources/Imagenes/exito.png" alt="">
-                            <br>
-                            <h4 class="text-align-center">¡Registro eliminado con éxito!</h4>
-                            <br>
-                            <h6 class="text-align-center">Se ha eliminado un registro.</h6>
-                        </div>
-                        <div class="modal-footer d-flex justify-content-center">
-                            <!-- Agregamos clases para centrar horizontalmente -->
-                            <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal"
-                                id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--Modal para actualizar el estado de la orden-->
-
-    <div class="modal" id="modalActualizarEstado" data-backdrop="static">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <!-- Encabezado de la ventana modal -->
                 <div class="modal-header">
-                    <h5 class="modal-title text-align-center">Actualizar estado de la órden</h5>
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <!-- Contenido de la ventana modal -->
-                <div class="modal-body ">
+                <div class="modal-body">
                     <form id="saveForm">
-                        <div class="col-sm-12 col-md-12" id="columnas">
-                            <label for="descripcionCategoria" class="form-label">Estado de la órden:</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Seleccione el estado de la órden</option>
-                                <option value="1">Entregada</option>
-                                <option value="2">Anulada</option>
-                                <option value="3">Finalizada</option>
-                                <option value="4">Pendiente</option>
-
+                        <input type="hidden" id="idOrden" name="idOrden">
+                        <div class="col-sm-12 col-md-6">
+                            <label for="Orden" class="col-sm-7 col-form-label">Estado de la orden:</label>
+                            <select class="form-select" id="selectEstadoOrden" name="selectEstadoOrden"
+                                aria-label="Default select example">
+                                <option>Entregada</option>
+                                <option>Pendiente</option>
+                                <option>Finalizada</option>
+                                <option>Anulada</option>
                             </select>
                         </div>
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-dark" id="btnActualizarR">Actualizar</button>
-                            <button type="submit" class="btn btn-dark" data-bs-dismiss="modal"
-                                id="btnCerrar">Cerrar</button>
-
-                        </div>
-                </div>
-
-                </form>
-            </div>
-        </div>
-
-    </div>
-    </div>
-    <!-- Modal para mostrar la actualización del estado de la orden-->
-    <div class="modal" id="miModalACEs" data-backdrop="static">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <!-- Contenido de la ventana modal -->
-                <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
-                    <form id="saveForm">
-                        <div class="d-flex justify-content-center align-items-center flex-column">
-                            <!-- Agregamos clases para centrar vertical y horizontalmente -->
-                            <img src="../../resources/Imagenes/exito.png" alt="">
-                            <br>
-                            <h4 class="text-align-center">Estado de la orden actualizado</h4>
-                            <br>
-                            <h6 class="text-align-center">Se ha actualizado correctamente el estado de la órden.</h6>
-                        </div>
-                        <div class="modal-footer d-flex justify-content-center">
-                            <!-- Agregamos clases para centrar horizontalmente -->
-                            <button type="button" class="btn btn-dark btn-block" data-dismiss="modal"
-                                id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+                            <button type="submit" class="btn btn-dark">Guardar</button>
+                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+        
                         </div>
                     </form>
                 </div>
+                
             </div>
         </div>
     </div>
@@ -296,13 +112,15 @@
 
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <script type="text/javascript" src="../../controllers/utils/Apartados.js"></script>
     <script type="text/javascript" src="../../controllers/utils/footer.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../../controllers/utils/sweetalert.min.js"></script>
+    <script src="../../controllers/utils/components.js"></script>
     <script type="text/javascript" src="../../controllers/admin/ordenes.js"></script>
-    <script src="../../controllers/admin/menu.js"></script>
 
 </body>
 

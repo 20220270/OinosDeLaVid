@@ -1,9 +1,9 @@
-#nombreAdmin,
-#apellidoAdmin,
-#correoAdmin,
-#aliasAdmin,
-#claveAdmin,
-#confirmarClaveAdmin,
+#nombreAdministrador,
+#apellidoAdministrador,
+#correoAdministrador,
+#aliasAdministrador,
+#claveAdministrador,
+#confirmarClave,
 #selectNivelAdmin,
 #nombreAdminA,
 #apellidoAdminA,
@@ -25,30 +25,41 @@
     font-weight: bold;
 }
 
-@media (min-width: 556px) and (max-width: 768px) {
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px; 
+    transform: translateY(-150%);
+    width: 20px;
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@media (min-width: 556px) and (max-width: 769px) {
     
     html{
-        width: 115%;
+        width: 183%;
     }
 }
 
 @media (min-width: 425px) and (max-width: 556px) {
     
     html{
-        width: 210%;
+        width: 330%;
     }
 }
 
 @media (min-width: 375px) and (max-width: 425px) {
     
     html{
-        width: 230%;
+        width: 370%;
     }
 }
 
 @media (min-width: 200px) and (max-width: 375px) {
     
     html{
-        width: 270%;
+        width: 460%;
     }
 }

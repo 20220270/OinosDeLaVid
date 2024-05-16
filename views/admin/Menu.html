@@ -11,7 +11,6 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="../../resources/css/estiloMenu.css">
     <link rel="stylesheet" href="../../resources/css/EstiloApartados.css">
-    <link rel="stylesheet" href="../../resources/css/estiloGrafico.css">
 
     <title>Menú de bienvenida</title>
 </head>
@@ -22,54 +21,23 @@
 
     </nav>
 
-    
-
-
-
-    <div class="row mt-5 titulos">
-        <div class="col-sm"></div>
-        <div class="col-sm">
-            <h2 class="mt-5">BIENVENIDO</h2>
-        </div>
-        <div class="col-sm"></div>
-    </div>
-
-    <div class="row mt-2 titulos">
-        <div class="col-sm"></div>
-        <div class="col-sm">Que deseas hacer hoy?</div>
-        <div class="col-sm"></div>
-
-
-    </div>
-    <!--Gráfico-->
-
-
-    <div class="container">
+    <main>
+        <!-- Título del contenido principal -->
+        <h3 id="mainTitle">BIENVENIDO</h3>
+        <!-- Contenedor de gráficos -->
         <div class="row">
-            <div class="col">
-                <div class="container">
-                    <div class="chart">
-                        <h3 class="text-white">Marcas más vendidas</h3>
-                        <canvas id="barchart" width="300" height="300"></canvas>
-                    </div>
-                </div>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <!-- Se muestra un gráfico con la cantidad de productos por categoría -->
+                <canvas id="chart1"></canvas>
             </div>
-            <div class="col">
-                <div class="container">
-                    <div class="chart">
-                        <h3 class="text-white">Clientes frecuentes</h3>
-                        <canvas id="doughnut" width="300" height="300"></canvas>
-                    </div>
-                </div>
-
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <!-- Se muestra un gráfico con el porcentaje de productos por categoría -->
+                <canvas id="chart2"></canvas>
             </div>
         </div>
-
-    </div>
-
-    <div> <!--Aqui va la fecha actual-->
-        <label id="fechaLabel" class="text-end d-flex justify-content-end align-items-end" for=""></label>
-    </div>
+        <!-- Importación de la librería para generar los gráficos. Para más información https://www.chartjs.org/ -->
+        <script type="text/javascript" src="../../resources/js/chart.umd.min.js"></script>
+    </main>
 
     <footer>
 
@@ -80,18 +48,20 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-
-
+        
     <script src="../../controllers/utils/footer.js"></script>
 
-    <script src="../../controllers/utils/graficoP1.js"></script>
+    <script src="../../controllers/utils/Apartados.js"></script>
 
-    <script src="../../controllers/utils/graficoP2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="../../controllers/utils/sweetalert.min.js"></script>
+    
+    <script src="../../controllers/utils/components.js"></script>
+
+
 
     <script src="../../controllers/admin/menu.js"></script>
-
-    <script src="../../controllers/utils/Apartados.js"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

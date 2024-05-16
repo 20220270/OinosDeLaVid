@@ -1,9 +1,12 @@
+const USER_API = 'services/admin/administrador.php';
+
+
 const HEADER = document.querySelector('nav');
 HEADER.innerHTML = `
 
 <nav class="navbar navbar-expand-lg fixed-top navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="categoria.html">Cerrar sesion</a>
+            <a class=" btn navbar-brand" onclick="logOut()">Cerrar sesion</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -29,7 +32,13 @@ HEADER.innerHTML = `
                         <a class="nav-link" href="administradores.html">Administradores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="administradores.html">Niveles</a>
+                        <a class="nav-link" href="nivelesusuario.html">Niveles</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="ordenes.html">Ordenes</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="valoraciones.html">Valoraciones</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="perfil.html">Mi perfil</a>

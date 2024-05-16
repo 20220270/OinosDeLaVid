@@ -96,18 +96,7 @@
             </a>
         </div>
 
-        <!--registrarse -->
-        <div class="d-flex gap-1 justify-content-center mt-3">
-            <div>
-                ¿No tienes una cuenta?
-            </div>
-            <br>
-            <button type="button" class="btn btn-white p-0" data-bs-toggle="modal" data-bs-target="#modalRegistrasrte">
-                Regístrate
-            </button>
-        </div>
-
-        <div class="p-2">
+        <div class="p-2 mt-5">
             <div class="border-bottom text-center border-secondary OO">
                 <span class="px-3">
                     OinosDeLaVid
@@ -123,7 +112,6 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h1 class="modal-title" id="staticBackdropLabel">Registre sus datos</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <!-- Labels identificadores e inputs para ingresar la información de los administradores, 
@@ -136,8 +124,8 @@
                                             <!--Label e input para agregar el nombre del administrador-->
                                             <label class="form-label">Nombre del administrador:</label>
 
-                                            <input type="text" class="form-control mb-5" id="Nombre" name="Nombre"
-                                                required placeholder="Ingrese el nombre del administrador">
+                                            <input type="text" class="form-control mb-5" id="nombreAdministrador" name="nombreAdministrador"
+                                                required>
                                             <small>Ingresa tu nombre</small>
                                         </div>
 
@@ -146,8 +134,8 @@
                                             <!--Label e input para agregar el apellido del administrador-->
                                             <label class="form-label">Apellido del administrador:</label>
 
-                                            <input type="text" class="form-control mb-5" id="Apellido" required
-                                                placeholder="Ingrese el apellido del administrador">
+                                            <input type="text" class="form-control mb-5" id="apellidoAdministrador" name="apellidoAdministrador" required
+                                                >
                                             <small>Ingresa tu apellido</small>
                                         </div>
 
@@ -155,8 +143,8 @@
                                             <!--Label e input para agregar el correo del administrador-->
                                             <label class="form-label">Correo del administrador:</label>
 
-                                            <input type="email" class="form-control mb-5" id="Correo" required
-                                                placeholder="Ingrese el correo del administrador">
+                                            <input type="email" class="form-control mb-5" id="correoAdministrador" name="correoAdministrador" required
+                                                >
                                             <small>Ingresa tu correo</small>
 
                                         </div>
@@ -169,7 +157,7 @@
                                             <label class="form-label1 mb-2">Alias del administrador:</label>
 
                                             <input type="text" class="form-control mb-5" id="alias" required
-                                                placeholder="Ingrese el alias del administrador" name="alias">
+                                                 name="aliasAdministrador">
                                             <small>Ingresa un alias</small>
                                         </div>
 
@@ -178,7 +166,7 @@
                                             <label class="form-label1 mb-2">Clave del administrador:</label>
 
                                             <input type="password" class="form-control mb-5" id="clave" required
-                                                placeholder="Ingrese la clave del administrador" name="clave">
+                                                 name="claveAdministrador">
                                             <small>Ingresa tu clave</small>
                                         </div>
 
@@ -187,7 +175,7 @@
                                             <!--Label e input para confirmar la clave del administrador-->
                                             <label class="form-label2 mb-2">Confirmar clave:</label>
 
-                                            <input type="password" class="form-control mb-5" id="Confirmar" required>
+                                            <input type="password" class="form-control mb-5" id="Confirmar" name="confirmarClave" required>
                                             <small>Por favor confirma tu contraseña</small>
                                         </div>
                                     </div>
@@ -195,13 +183,27 @@
 
                                     <div class="col-12 col-lg-4 col-md-6 col-sm-12">
                                         <div class="dropdown">
-                                            <label class="form-label1 nivel mb-3" id="Nivel">Nivel de usuario:</label>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Seleccione el nivel de usuario</option>
-                                                <option value="1">Administrador</option>
+                                            <label class="form-label1 mb-2">Estado del usuario:</label>
+                                            <select class="form-select" aria-label="Default select example" name="selectEstado">
+                                               
+                                                <option>Activo</option>
+                                                <option>Inactivo</option>
                                             </select>
                                         </div>
+
+                                        <div class="col-12 col-lg-12 col-md-6 col-sm-12 mt-5">
+                                            <div class="dropdown">
+                                                <label class="form-label1 nivel mb-2">Nivel de usuario:</label>
+                                                <select class="form-select" aria-label="Default select example" name="selectNivelAdmin">
+                                                    <option value="1">Administrador Principal</option>
+                                                </select>
+                                            </div>
+                                        </div>
+    
                                     </div>
+
+                                    
+                                    
                                     <!--Fin de los labels e inputs-->
                                 </div>
 
@@ -224,6 +226,7 @@
         <script src="../../controllers/utils/sweetalert.min.js"></script>
         <script src="../../controllers/utils/components.js"></script>
         <!-- Llamada al fcontrolador del index-->
+        
         <script type="text/javascript" src="../../controllers/admin/index.js"></script>
 </body>
 

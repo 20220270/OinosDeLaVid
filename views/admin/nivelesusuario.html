@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="../../resources/css/estiloMenu.css">
     <link rel="stylesheet" href="../../resources/css/EstiloApartados.css">
     <link rel="stylesheet" href="../../resources/css/estiloMarcas.css">
+    <link rel="stylesheet" href="../../resources/css/estilonivelesusers.css">
     <title>Niveles de usuario</title>
 
 </head>
@@ -68,11 +69,12 @@
         <table class="table text-center">
             <thead>
                 <tr>
-                    <td colspan="2" id="rowsFound"></td>
+                    <td colspan="3" id="rowsFound"></td>
                 </tr>
                 <tr>
-                    <th>ID</th>
-                    <th>Nivel de usuario</th>
+                    <th class="bg-danger text-white fw-bold">ID</th>
+                    <th class="bg-danger text-white fw-bold">Nivel de usuario</th>
+                    <th class="bg-danger text-white fw-bold">Acciones</th>
                 </tr>
             </thead>
             <tbody id="tableBody">
@@ -101,8 +103,8 @@
                         <input type="hidden" id="idNivel" name="idNivel">
                         <div class="col-sm-12 col-md-5 mt-1">
                             <label for="descripcionCategoria" class="form-label">Nombre del nivel de usuario:</label>
-                            <input id="nombreNivel" type="text" name="nombreNivel" class="form-control"
-                                placeholder="Ingrese el nombre de la marca" required>
+                            <input id="nombreNivel" type="text" name="nombreNivel" class="form-control mt-3"
+                                placeholder="Ingrese el nivel de usuario" required>
                         </div>
 
                         <div class="modal-footer">

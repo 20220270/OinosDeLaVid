@@ -1,13 +1,13 @@
 <?php
 // Se incluye la clase del modelo.
-require_once('../../models/data/nivelesusuario_data.php');
+require_once('../../models/data/valoracion_data.php');
 
 // Se comprueba si existe una acción a realizar, de lo contrario se finaliza el script con un mensaje de error.
 if (isset($_GET['action'])) {
     // Se crea una sesión o se reanuda la actual para poder utilizar variables de sesión en el script.
     session_start();
     // Se instancia la clase correspondiente.
-    $nivel = new NivelesAdminsData;
+    $valoracion = new ValoracionData;
     // Se declara e inicializa un arreglo para guardar el resultado que retorna la API.
     $result = array('status' => 0, 'message' => null, 'dataset' => null, 'error' => null, 'exception' => null, 'fileStatus' => null);
     // Se verifica si existe una sesión iniciada como administrador, de lo contrario se finaliza el script con un mensaje de error.
@@ -17,72 +17,46 @@ if (isset($_GET['action'])) {
             case 'searchRows':
                 if (!Validator::validateSearch($_POST['search'])) {
                     $result['error'] = Validator::getSearchError();
-                } elseif ($result['dataset'] = $nivel->searchRows()) {
+                } elseif ($result['dataset'] = $valoracion->searchRows()) {
                     $result['status'] = 1;
                     $result['message'] = 'Existen ' . count($result['dataset']) . ' coincidencias';
                 } else {
                     $result['error'] = 'No hay coincidencias';
                 }
                 break;
-            case 'createRow':
-                $_POST = Validator::validateForm($_POST);
-                if (
-                    !$nivel->setNivel($_POST['nombreNivel'])
-                ) {
-                    $result['error'] = $nivel->getDataError();
-                } elseif ($nivel->createRow()) {
-                    $result['status'] = 1;
-                    $result['message'] = 'Nivel de usuario creado correctamente';
-                    
-                } else {
-                    $result['error'] = 'Ocurrió un problema al crear el nivel de usuario';
-                }
-                break;
+           
             case 'readAll':
-                if ($result['dataset'] = $nivel->readAll()) {
+                if ($result['dataset'] = $valoracion->readAll()) {
                     $result['status'] = 1;
                     $result['message'] = 'Existen ' . count($result['dataset']) . ' registros';
                 } else {
-                    $result['error'] = 'No existen niveles de usuario registrados';
+                    $result['error'] = 'No existen valoraciones registrados';
                 }
                 break;
             case 'readOne':
-                if (!$nivel->setId($_POST['idNivel'])) {
-                    $result['error'] = $nivel->getDataError();
-                } elseif ($result['dataset'] = $nivel->readOne()) {
+                if (!$valoracion->setIdValoracion($_POST['idValoracion'])) {
+                    $result['error'] = $valoracion->getDataError();
+                } elseif ($result['dataset'] = $valoracion->readOne()) {
                     $result['status'] = 1;
                 } else {
-                    $result['error'] = 'Nivel de usuario inexistente';
+                    $result['error'] = 'Valoración inexistente';
                 }
                 break;
             case 'updateRow':
                 $_POST = Validator::validateForm($_POST);
                 if (
-                    !$nivel->setId($_POST['idNivel']) or
-                    !$nivel->setNivel($_POST['nombreNivel'])
+                    !$valoracion->setIdValoracion($_POST['idValoracion']) or
+                    !$valoracion->setEstadoComentario($_POST['selectEstadoC'])
                 ) {
-                    $result['error'] = $nivel->getDataError();
-                } elseif ($nivel->updateRow()) {
+                    $result['error'] = $valoracion->getDataError();
+                } elseif ($valoracion->updateRow()) {
                     $result['status'] = 1;
-                    $result['message'] = 'Nivel de usuario modificado correctamente';
-                    
-                } else {
-                    $result['error'] = 'Ocurrió un problema al modificar el nivel de usuario';
+                    $result['message'] = 'Estado modificado correctamente';
+                    } else {
+                    $result['error'] = 'Ocurrió un problema al modificar la valoracion';
                 }
                 break;
-            case 'deleteRow':
-                if (
-                    !$nivel->setId($_POST['idNivel'])
-                ) {
-                    $result['error'] = $nivel->getDataError();
-                } elseif ($nivel->deleteRow()) {
-                    $result['status'] = 1;
-                    $result['message'] = 'Nivel de usuario eliminado correctamente';
-                    
-                } else {
-                    $result['error'] = 'Ocurrió un problema al eliminar el nivel de usuario';
-                }
-                break;
+            
             default:
                 $result['error'] = 'Acción no disponible dentro de la sesión';
         }

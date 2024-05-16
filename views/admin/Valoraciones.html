@@ -9,7 +9,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
         <link rel="stylesheet" href="../../resources/css/EstiloApartados.css">
-        <link rel="stylesheet" href="../../resources/css/estiloMarcas.css">
         <link rel="stylesheet" href="../../resources/css/estiloOrdenes_Valoraciones.css">
         <link rel="stylesheet" type="text/css" href="../../resources/css/estiloMenu.css">
     <title>Valoraciones</title>
@@ -30,265 +29,103 @@
                 </div>
             </div>
             <div class="col mt-5">
-                <div class="container-sm mt-3">
-                    <form class="d-flex">
+                <form class="d-flex" id="searchForm">
 
-                        <div class="position-relative">
-                            <img class="search-icon" src="../../resources/Imagenes/lupa.png" alt="Lupa">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                                id="Search">
-                        </div>
+                    <div class="position-relative">
+                        <img class="search-icon" src="../../resources/Imagenes/lupa.png" alt="Lupa">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                            id="Search" name="search">
+                    </div>
 
-                    </form>
-                </div>
+
+
+                </form>
             </div>
 
         </div>
     </div>
 
 
-    <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
-        <div class="col">
-            <div class="card h-70">
-                <div class="card-body">
-                    <div class="textoT  mb-3">
-                        <h5 class="card-title">Órden numero: 1</h5>
-                    </div>
+    <div class="col-lg-10 col-sm-10 col-md-12 col-12 mx-auto mt-4">
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <td colspan="7" id="rowsFound"></td>
+                </tr>
+                <tr>
+                    <th class="bg-danger text-white fw-bold">ID</th>
+                    <th class="bg-danger text-white fw-bold">Detalle de orden</th>
+                    <th class="bg-danger text-white fw-bold">Producto calificado</th>
+                    <th class="bg-danger text-white fw-bold">Calificación</th>
+                    <th class="bg-danger text-white fw-bold">Comentario</th>
+                    <th class="bg-danger text-white fw-bold">Estado del comentario</th>
+                    <th class="bg-danger text-white fw-bold">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
 
-                    <p class="classs fw-bold">
-                        Calificación del producto: 4
-                    </p>
-                    <p class="classs fw-bold">
-                        Comentario del producto: Producto muy bueno, recomendado
-                    </p>
-                    <p class="classs fw-bold">
-                        Fecha de registro: 25/03/2023
-                    </p>
-                    <p class="classs fw-bold">
-                        Estado del comentario: Habilitado
-                    </p>
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
-                            <i class="bi bi-search"></i>
-                            <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                                class="mb-1" data-bs-toggle="modal"
-                                data-bs-target="#miModalDe" >
-                        </button>
-                        <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
-                            <i class="bi bi-search"></i>
-                            <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
-                                class="mb-1"
-                                data-bs-toggle="modal"
-                                data-bs-target="#miModalAC" >
-                        </button>
 
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-70">
-                <div class="card-body">
-                    <div class="textoT mb-3">
-                        <h5 class="card-title">Órden numero: 2</h5>
-                    </div>
-
-                    <p class="classs fw-bold">
-                        Calificación del producto: 1
-                    </p>
-                    <p class="classs fw-bold">
-                        Comentario del producto: Producto malísimo, no llevar por favor, por su bien
-                    </p>
-                    <p class="classs fw-bold">
-                        Fecha de registro: 25/04/2023
-                    </p>
-                    <p class="classs fw-bold">
-                        Estado del comentario: Deshabilitado
-                    </p>
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
-                            <i class="bi bi-search"></i>
-                            <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                                class="mb-1" data-bs-toggle="modal"
-                                data-bs-target="#miModalDe" >
-                        </button>
-                        <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
-                            <i class="bi bi-search"></i>
-                            <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
-                                class="mb-1" data-bs-toggle="modal"
-                                data-bs-target="#miModalAC">
-                        </button>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-70">
-                <div class="card-body">
-                    <div class="textoT mb-3">
-                        <h5 class="card-title">Órden numero: 3</h5>
-                    </div>
-
-                    <p class="classs fw-bold">
-                        Calificación del producto: 4
-                    </p>
-                    <p class="classs fw-bold">
-                        Comentario del producto: Producto bueno, recomendado
-                    </p>
-                    <p class="classs fw-bold">
-                        Fecha de registro: 25/03/2023
-                    </p>
-                    <p class="classs fw-bold">
-                        Estado del comentario: Habilitado
-                    </p>
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
-                            <i class="bi bi-search"></i>
-                            <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                                class="mb-1" data-bs-toggle="modal"
-                                data-bs-target="#miModalDe" >
-                        </button>
-                        <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
-                            <i class="bi bi-search"></i>
-                            <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
-                                class="mb-1" data-bs-toggle="modal"
-                                data-bs-target="#miModalAC">
-                        </button>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-70">
-                <div class="card-body">
-                    <div class="textoT mb-3">
-                        <h5 class="card-title">Órden numero: 4</h5>
-                    </div>
-
-                    <p class="classs fw-bold">
-                        Calificación del producto: 1
-                    </p>
-                    <p class="classs fw-bold">
-                        Comentario del producto: Solo de verlo no lo quiero, jamas lo volvere a llevar
-                    </p>
-                    <p class="classs fw-bold">
-                        Fecha de registro: 15/03/2023
-                    </p>
-                    <p class="classs fw-bold">
-                        Estado del comentario: Deshabilitado
-                    </p>
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
-                            <i class="bi bi-search"></i>
-                            <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                                class="mb-1">
-                        </button>
-                        <button type="submit" class="btn btn-success mt-1" id="btnEliminar">
-                            <i class="bi bi-search"></i>
-                            <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
-                                class="mb-1">
-                        </button>
-
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-        <!--Mensaje a mostrar cuando no se encuentre ningun resultado en la busqueda-->
-        <div id="noResults">
-            <img src="/OinosDeLaVid/resources/Imagenes/error.png" alt="...">
-            No se ha encontrado ninguna coincidencia.
-        </div>
-
+            </tbody>
+        </table>
     </div>
 
-    <!--Aquí comienzan las modals-->
+    <div class="modal fade" id="saveModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="saveForm">
+                    <div class="modal-body row g-3">
+                        <!-- Campo oculto para asignar el id del registro al momento de modificar -->
+                        <input type="hidden" id="idValoracion" name="idValoracion">
+                        <input type="hidden" id="idDetalle" name="idDetalle">
 
-    <!--Primera Modal para mostrar la eliminación de un registro-->
-    <div class="modal" id="miModalDe" data-bs-backdrop="static">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <!-- Contenido de la ventana modal -->
-                <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
-                    <form id="saveForm">
-                        <div class="d-flex justify-content-center align-items-center flex-column">
-                            <!-- Agregamos clases para centrar vertical y horizontalmente -->
-                            <img src="../../resources/Imagenes/pregunta.png" alt="">
-                            <br>
-                            <h4 class="text-align-center">¿Desea realmente eliminar este dato?</h4>
-                            <br>
-                            <h6 class="text-align-center">Se eliminará el dato para siempre.</h6>
+                        <div class="col-sm-12 col-md-6">
+                            <label for="nombreCategoria" class="col-sm-7 col-form-label">Producto calificado:</label>
+                            <select class="form-select" id="selectProducto" name="selectProducto"
+                                aria-label="Default select example">
+                               
+                            </select>
                         </div>
-                        <div class="modal-footer d-flex justify-content-center">
-                            <!-- Agregamos clases para centrar horizontalmente -->
-                            <button type="button" class="btn btn-dark" id="btnElimin">Eliminar</button>
-                            <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal"
-                                id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
+
+                        <div class="col-sm-12 col-md-6">
+                            <label for="nombreCategoria" class="col-sm-7 col-form-label">Calificación:</label>
+                            <input id="calificacionOrden" type="number" name="calificacionOrden" class="form-control" min="1" max="5"
+                        >
                         </div>
-                    </form>
-                </div>
+
+                        <div class="col-sm-12 col-md-6">
+                            <label for="Marca" class="col-sm-7 col-form-label">Estado:</label>
+                            <select class="form-select" id="selectEstadoC" name="selectEstadoC"
+                                aria-label="Default select example" required>
+                                <option>Habilitado</option>
+                                <option>Deshabilitado</option>
+                            </select>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6">
+                            <label for="nombreCategoria" class="col-sm-7 col-form-label">Comentario:</label>
+                            <input id="comentarioOrden" type="text" name="comentarioOrden" class="form-control"
+                        >
+                        </div>
+
+                       
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-dark" id="btnGuardar">Guardar</button>
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal"
+                            id="btnCerrar">Cerrar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-    <!--Segunda Modal para mostrar la eliminación de un registro-->
-    <div class="modal" id="miModalDe2" data-bs-backdrop="static">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <!-- Contenido de la ventana modal -->
-                <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
-                    <form id="saveForm">
-                        <div class="d-flex justify-content-center align-items-center flex-column">
-                            <!-- Agregamos clases para centrar vertical y horizontalmente -->
-                            <img src="../../resources/Imagenes/exito.png" alt="">
-                            <br>
-                            <h4 class="text-align-center">¡Registro eliminado con éxito!</h4>
-                            <br>
-                            <h6 class="text-align-center">Se ha eliminado un registro.</h6>
-                        </div>
-                        <div class="modal-footer d-flex justify-content-center">
-                            <!-- Agregamos clases para centrar horizontalmente -->
-                            <button type="button" class="btn btn-dark btn-block" data-bs-dismiss="modal"
-                                id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Primera Modal para mostrar la actualización de un registro-->
-    <div class="modal" id="miModalAC" data-bs-backdrop="static">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <!-- Contenido de la ventana modal -->
-                <div class="modal-body text-center"> <!-- Agregamos la clase text-center para centrar el contenido -->
-                    <form id="saveForm">
-                        <div class="d-flex justify-content-center align-items-center flex-column">
-                            <!-- Agregamos clases para centrar vertical y horizontalmente -->
-                            <img src="../../resources/Imagenes/exito.png" alt="">
-                            <br>
-                            <h4 class="text-align-center">¡Registro actualizado con éxito!</h4>
-                            <br>
-                            <h6 class="text-align-center">Se ha actualizado un registro.</h6>
-                        </div>
-                        <div class="modal-footer d-flex justify-content-center">
-                            <!-- Agregamos clases para centrar horizontalmente -->
-                            <button type="button" class="btn btn-dark btn-block" data-bs-dismiss="modal"
-                                id="btnCerrar">Cerrar</button> <!-- Agregamos clase btn-block para ajustar el ancho -->
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
 
 
     <footer class="mt-5">
@@ -306,8 +143,8 @@
     <script src="../../controllers/utils/footer.js"></script>
     <script src="../../controllers/utils/Apartados.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../../controllers/utils/sweetalert.min.js"></script>
+    <script src="../../controllers/utils/components.js"></script>
     <script type="text/javascript" src="../../controllers/admin/valoraciones.js"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
