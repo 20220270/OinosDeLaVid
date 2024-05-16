@@ -155,17 +155,19 @@ if (isset($_GET['action'])) {
                     $result['status'] = 1;
                     $result['message'] = 'Debe autenticarse para ingresar';
                 } else {
-                    $result['error'] = 'Debe crear un administrador para comenzar';
+                    $resul7t['error'] = 'Debe crear un administrador para comenzar';
                 }
                 break;
             case 'signUp':
                 $_POST = Validator::validateForm($_POST);
                 if (
-                    !$administrador->setNombre($_POST['nombreAdministrador']) or
-                    !$administrador->setApellido($_POST['apellidoAdministrador']) or
-                    !$administrador->setCorreo($_POST['correoAdministrador']) or
-                    !$administrador->setAlias($_POST['aliasAdministrador']) or
-                    !$administrador->setClave($_POST['claveAdministrador'])
+                    !$administrador->setNombre($_POST['Nombre']) or
+                    !$administrador->setApellido($_POST['Apellido']) or
+                    !$administrador->setCorreo($_POST['Correo']) or
+                    !$administrador->setAlias($_POST['alias']) or
+                    !$administrador->setClave($_POST['clave']) or
+                    !$administrador->setConfirm($_POST['Confirmar']) or
+                    !$administrador->setNivel($_POST['Nivel'])
                 ) {
                     $result['error'] = $administrador->getDataError();
                 } elseif ($_POST['claveAdministrador'] != $_POST['confirmarClave']) {
