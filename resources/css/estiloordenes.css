@@ -8,3 +8,52 @@
     z-index: 1;
     pointer-events: none;
 }
+
+@media (min-width: 556px) and (max-width: 769px) {
+    
+    html{
+        width: 153%;
+    }
+
+    #Search{
+        width: 470px;
+        margin-left: 6px;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 556px) {
+    
+    html{
+        width: 250%;
+    }
+
+    #Search{
+        width: 530px;
+        margin-left: 5px;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 425px) {
+    
+    html{
+        width: 230%;
+    }
+
+    #Search{
+        width: 530px;
+        margin-left: 5px;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 375px) {
+    
+    html{
+        width: 205%;
+    }
+
+    #Search{
+        width: 530px;
+        margin-left: 5px;
+    }
+
+}
