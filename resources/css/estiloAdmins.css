@@ -36,6 +36,10 @@
     pointer-events: none;
 }
 
+#tableBody{
+    font-size: 14px;
+}
+
 @media (min-width: 556px) and (max-width: 769px) {
     
     html{
