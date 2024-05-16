@@ -1,8 +1,8 @@
 const LOGIN = document.getElementById('sessionForm');
 const SIGNUP = document.getElementById('FormValidacion');
 const MODAL = new bootstrap.Modal('#modalRegistrasrte');
-const SELECTNIVEL = document.getElementById('selectNivelAdmin');
 const USER_API = 'services/admin/administrador.php';
+const NIVELESUSUARIO_API = 'services/admin/nivelesusuario.php';
 
 // Método del evento para cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', async () => {
@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     
     const DATA = await fetchData(USER_API, 'readUsers');
+    
+    //fillSelect(NIVELESUSUARIO_API, 'readAll', 'selectNivelAdmin');
 
     // Se comprueba si existe una sesión, de lo contrario se sigue con el flujo normal.
     if (DATA.session) {
@@ -41,12 +43,16 @@ SIGNUP.addEventListener('submit', async (event) => {
     // Constante tipo objeto con los datos del formulario.
     const FORM = new FormData(SIGNUP);
 
-    
+
 
     // Petición para registrar el primer usuario del sitio privado.
     const DATA = await fetchData(USER_API, 'signUp', FORM);
+
+
+    
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
+            
         sweetAlert(1, DATA.message, true, 'index.html');
         
     } else {

@@ -34,7 +34,7 @@ class MarcaHandler
     {
         $sql = 'INSERT INTO tb_marcas(nombre_marca, logo_marca)
                 VALUES(?, ?)';
-        $params = array($this->nombre, $this->imagen);
+        $params = array($this->nombre, $this->logo);
         return Database::executeRow($sql, $params);
     }
 
@@ -69,7 +69,7 @@ class MarcaHandler
         $sql = 'UPDATE tb_marcas
                 SET logo_marca = ?, nombre_marca = ?
                 WHERE id_marca = ?';
-        $params = array($this->imagen, $this->nombre, $this->id);
+        $params = array($this->logo, $this->nombre, $this->id);
         return Database::executeRow($sql, $params);
     }
 

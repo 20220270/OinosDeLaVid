@@ -44,6 +44,10 @@ h3{
     z-index: 1;
     pointer-events: none;
 }
+
+#tableBody{
+    font-size: 12px;
+}
 @media (min-width: 556px) and (max-width: 769px) {
     
     html{

@@ -60,9 +60,9 @@ class OrdenesHandler
 
     public function updateRow()
     {
-        $sql = 'UPDATE tb_detallesordenes
+        $sql = 'UPDATE tb_ordenes
                 SET estado_orden = ?
-                WHERE id_detalle = ?';
+                WHERE id_orden = ?';
         $params = array($this->estadoorden, $this->iddetalle);
         return Database::executeRow($sql, $params);
     }
@@ -72,9 +72,8 @@ class OrdenesHandler
     public function getOrder()
     {
         $this->estadoorden = 'Pendiente';
-        $sql = 'SELECT id_detalle, id_orden
-                FROM tb_detallesOrdenes
-                INNER JOIN tb_ordenes USING(id_orden)
+        $sql = 'SELECT id_orden
+                FROM tb_ordenes
                 WHERE estado_pedido = ? AND id_cliente = ?';
         $params = array($this->estadoorden, $_SESSION['idCliente']);
         if ($data = Database::getRow($sql, $params)) {
