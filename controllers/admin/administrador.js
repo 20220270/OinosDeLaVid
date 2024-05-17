@@ -8,11 +8,12 @@ const NIVELESUSUARIO_API = 'services/admin/nivelesusuario.php';
 // Constante para establecer el formulario de buscar.
 const SEARCH_FORM = document.getElementById('searchForm');
 // Constantes para establecer los elementos de la tabla.
-const TABLE_BODY = document.getElementById('tableBody'),
-    ROWS_FOUND = document.getElementById('rowsFound');
+//const TABLE_BODY = document.getElementById('tableBody'),
+//ROWS_FOUND = document.getElementById('rowsFound');
 // Constantes para establecer los elementos del componente Modal.
 const SAVE_MODAL = new bootstrap.Modal('#saveModal'),
     MODAL_TITLE = document.getElementById('modalTitle');
+    CARD_ADMINS = document.getElementById('cardsAdmins');
 // Constantes para establecer los elementos del formulario de guardar.
 const SAVE_FORM = document.getElementById('saveForm'),
     ID_ADMINISTRADOR = document.getElementById('idAdministrador'),
@@ -69,8 +70,9 @@ SAVE_FORM.addEventListener('submit', async (event) => {
 
 const fillTable = async (form = null) => {
   // Se inicializa el contenido de la tabla.
-  ROWS_FOUND.textContent = '';
-  TABLE_BODY.innerHTML = '';
+  //ROWS_FOUND.textContent = '';
+  //TABLE_BODY.innerHTML = '';
+  CARD_ADMINS.innerHTML = '';
   // Se verifica la acción a realizar.
   (form) ? action = 'searchRows' : action = 'readAll';
   // Petición para obtener los registros disponibles.
@@ -80,45 +82,84 @@ const fillTable = async (form = null) => {
       console.log(DATA)
       // Se recorre el conjunto de registros fila por fila.
       DATA.dataset.forEach(row => {
+
+        // Se crean y concatenan las filas de la tabla con los datos de cada registro.
+        const truncatedPassword = row.clave_administrador.length > 20 
+        ? row.clave_administrador.substring(0, 27) + '...' 
+        : row.clave_administrador;
+
           // Se crean y concatenan las filas de la tabla con los datos de cada registro.
-          TABLE_BODY.innerHTML += `
-              <tr>
-                  <td>${row.id_administrador}</td>
-                  <td>${row.nombre_admistrador}</td>
-                  <td>${row.apellido_administrador}</td>
-                  <td>${row.correo_administrador}</td>
-                  <td>${row.alias_administrador}</td>
-                  <td>${row.clave_administrador}</td>
-                  <td>${row.nivel}</td>
-                  <td>${row.fecha_registro}</td>
-                  <td>${row.estado_adminstrador}</td>
-                  <td>
-                      
-
-                    
-                    <button type="submit" class="btn btn-success mt-1" id="btnEliminar" name="btnEliminar" onclick="openDelete(${row.id_administrador})">
-                        <i class="bi bi-search"></i>
-                        <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                            class="mb-1">
-
-                    </button>
-                    <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar" name="btnActualizar" onclick="openUpdate(${row.id_administrador})">
-                        <i class="bi bi-x-square-fill"></i>
-                        <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
-                            class="mb-1">
-                    </button>
-
-
-                  </td>
-              </tr>
+          CARD_ADMINS.innerHTML += `
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mt-5 text-center">
+              <div class="card h-100" id="cards">
+                  <div class="card-body text-start">
+                      <div class="d-flex justify-content-between">
+                          <label>ID:</label>
+                          <label>${row.id_administrador}</label>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                          <label>Nombre:</label>
+                          <label>${row.nombre_admistrador}</label>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                          <label>Apellido:</label>
+                          <label>${row.apellido_administrador}</label>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                          <label>Correo:</label>
+                          <label>${row.correo_administrador}</label>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                          <label>Alias:</label>
+                          <label>${row.alias_administrador}</label>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                          <label>Clave:</label>
+                          <label id="password-${row.id_administrador}">${truncatedPassword}</label>
+                          <button class="btn btn-link p-0" onclick="togglePassword(${row.id_administrador}, '${row.clave_administrador}')">Mostrar</button>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                          <label>Nivel de usuario:</label>
+                          <label>${row.nivel}</label>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                          <label>Fecha de registro:</label>
+                          <label>${row.fecha_registro}</label>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                          <label>Estado:</label>
+                          <label>${row.estado_adminstrador}</label>
+                      </div>
+                  </div>
+              </div>
+              <button type="submit" class="btn btn-success mt-1" id="btnEliminar" name="btnEliminar" onclick="openDelete(${row.id_administrador})">
+                  <i class="bi bi-search"></i>
+                  <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px" class="mb-1">
+              </button>
+              <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar" name="btnActualizar" onclick="openUpdate(${row.id_administrador})">
+                  <i class="bi bi-x-square-fill"></i>
+                  <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px" class="mb-1">
+              </button>
+          </div>
           `;
       });
-      // Se muestra un mensaje de acuerdo con el resultado.
-      ROWS_FOUND.textContent = DATA.message;
   } else {
       sweetAlert(4, DATA.error, true);
   }
 }
+
+const togglePassword = (id, fullPassword) => {
+  const passwordLabel = document.getElementById(`password-${id}`);
+  const toggleButton = document.getElementById(`toggle-password-${id}`);
+  if (passwordLabel.textContent === fullPassword) {
+      passwordLabel.textContent = fullPassword.substring(0, 27) + '...';
+      toggleButton.textContent = 'Mostrar';
+  } else {
+      passwordLabel.textContent = fullPassword;
+      toggleButton.textContent = 'Ocultar';
+  }
+}
+  
 
 const openCreate = () => {
   // Se muestra la caja de diálogo con su título.

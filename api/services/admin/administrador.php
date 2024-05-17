@@ -67,7 +67,8 @@ if (isset($_GET['action'])) {
                 $_POST = Validator::validateForm($_POST);
                 if (
                     !$administrador->setId($_POST['idAdministrador']) or
-                    !$administrador->setEstado($_POST['selectEstadoUsuario'])
+                    !$administrador->setEstado($_POST['selectEstadoUsuario']) or
+                    !$administrador->setNivel($_POST['selectNivelAdmin'])
                 ) {
                     $result['error'] = $administrador->getDataError();
                 } elseif ($administrador->updateRow()) {

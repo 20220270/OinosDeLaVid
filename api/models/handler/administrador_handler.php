@@ -89,9 +89,9 @@ class AdministradorHandler
         $sql = 'SELECT id_administrador, nombre_admistrador, apellido_administrador, correo_administrador, alias_administrador, clave_administrador, nivel, estado_adminstrador, fecha_registro
                 FROM tb_administradores
                 INNER JOIN tb_niveles_administradores USING(id_nivel)
-                WHERE correo_administrador LIKE ? OR alias_administrador LIKE ?
+                WHERE correo_administrador LIKE ? OR alias_administrador LIKE ? OR nivel LIKE ? OR estado_adminstrador LIKE ?
                 ORDER BY id_administrador';
-        $params = array($value, $value);
+        $params = array($value, $value, $value, $value);
         return Database::getRows($sql, $params);
     }
 
@@ -125,9 +125,9 @@ class AdministradorHandler
     public function updateRow()
     {
         $sql = 'UPDATE tb_administradores
-                SET estado_adminstrador = ?
+                SET estado_adminstrador = ?, id_nivel = ?
                 WHERE id_administrador = ?';
-        $params = array($this->estado, $this -> id);
+        $params = array($this->estado, $this->nivel, $this -> id);
         return Database::executeRow($sql, $params);
     }
 
