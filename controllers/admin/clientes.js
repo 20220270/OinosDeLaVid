@@ -81,6 +81,7 @@ const fillTable = async (form = null) => {
                   <td>${row.correo_cliente}</td>
                   <td>${row.telefono_cliente}</td>
                   <td>${row.direccion_cliente}</td>
+                  <td>${row.fecha_registro}</td>
                   <td>${row.estado_cliente}</td>
                   <td>
                      

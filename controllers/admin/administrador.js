@@ -90,6 +90,7 @@ const fillTable = async (form = null) => {
                   <td>${row.alias_administrador}</td>
                   <td>${row.clave_administrador}</td>
                   <td>${row.nivel}</td>
+                  <td>${row.fecha_registro}</td>
                   <td>${row.estado_adminstrador}</td>
                   <td>
                       

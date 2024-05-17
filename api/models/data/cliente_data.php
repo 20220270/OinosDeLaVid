@@ -120,6 +120,17 @@ class ClienteData extends ClienteHandler
         }
     }
 
+    public function setFecha($value)
+    {
+        if (Validator::validateString($value)) {
+            $this->estado = $value;
+            return true;
+        } else {
+            $this->data_error = 'Fecha incorrecta';
+            return false;
+        }
+    }
+
     public function setEstado($value)
     {
         if (Validator::validateString($value)) {

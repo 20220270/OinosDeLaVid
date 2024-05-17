@@ -83,10 +83,17 @@ const fillTable = async (form = null) => {
                   <td>${row.id_valoracion}</td>
                   <td>${row.id_detalle}</td>
                   <td>${row.nombre_producto}</td>
-                  <td>${row.calificacion_producto}</td>
+                  <td>${convertRatingToStars(row.calificacion_producto)} ${row.calificacion_producto}</td>
                   <td>${row.comentario_producto}</td>
+                  <td>${row.fecha_valoracion}</td>
                   <td>${row.estado_comentario}</td>
                   <td>
+                  <button type="submit" class="btn btn-success mt-1" id="btnEliminar" name="btnEliminar" onclick="openDelete(${row.id_detalle})">
+                        <i class="bi bi-search"></i>
+                        <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
+                            class="mb-1">
+
+                    </button>
                     <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar" name="btnActualizar" onclick="openUpdate(${row.id_valoracion})">
                         <i class="bi bi-x-square-fill"></i>
                         <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
@@ -105,13 +112,19 @@ const fillTable = async (form = null) => {
   }
 }
 
-/*const openCreate = () => {
-  // Se muestra la caja de diálogo con su título.
-  SAVE_MODAL.show();
-  MODAL_TITLE.textContent = 'Crear cliente';
-  // Se prepara el formulario.
-  SAVE_FORM.reset();
-}
+//Funcion para convertir la calificacion a estrellas
+const convertRatingToStars = (rating) => {
+    let stars = '';
+    for (let i = 0; i < 5; i++) {
+        if (i < rating) {
+            stars += '<i class="fas fa-star text-warning text-danger"></i>'; // estrella llena
+        } else {
+            stars += '<i class="far fa-star text-warning text-danger"></i>'; // estrella vacía
+        }
+    }
+    return stars;
+};
+
 
 /*
 *   Función asíncrona para preparar el formulario al momento de actualizar un registro.

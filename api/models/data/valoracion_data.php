@@ -85,7 +85,19 @@ class ValoracionData extends ValoracionHandler
             $this->data_error = 'Estado incorrecto';
             return false;
         }
+    } 
+
+    public function setFecha($value)
+    {
+        if (Validator::validateString($value)) {
+            $this->estado = $value;
+            return true;
+        } else {
+            $this->data_error = 'Estado incorrecto';
+            return false;
+        }
     } /*Esto se debe cambiar ya que el estado es un enum */
+
 
     // Método para obtener el error de los datos.
     public function getDataError()

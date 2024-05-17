@@ -30,7 +30,7 @@ class ProductoHandler
     {
         $value = '%' . Validator::getSearchValue() . '%';
         $sql = 'SELECT id_producto, nombre_categoria, nombre_marca, nombre_producto, descripcion_producto, precio_producto, imagen_producto, estado_producto,
-                existencias_producto, descuento_producto FROM tb_productos
+                existencias_producto, descuento_producto, fecha_registro FROM tb_productos
                 INNER JOIN tb_categorias USING(id_categoria)
                 INNER JOIN tb_marcas USING(id_marca)
                 WHERE nombre_producto LIKE ? OR descripcion_producto LIKE ? OR precio_producto LIKE ? or estado_producto LIKE ?
@@ -50,7 +50,7 @@ class ProductoHandler
     public function readAll()
     {
         $sql = 'SELECT id_producto, nombre_categoria, nombre_marca, nombre_producto, descripcion_producto, precio_producto, imagen_producto, estado_producto,
-        existencias_producto, descuento_producto FROM tb_productos
+        existencias_producto, descuento_producto, fecha_registro FROM tb_productos
         INNER JOIN tb_categorias USING(id_categoria)
         INNER JOIN tb_marcas USING(id_marca)
                 ORDER BY id_producto';
@@ -60,7 +60,7 @@ class ProductoHandler
     public function readOne()
     {
         $sql = 'SELECT id_producto, nombre_categoria, nombre_marca, nombre_producto, descripcion_producto, precio_producto, imagen_producto, estado_producto,
-        existencias_producto, descuento_producto FROM tb_productos
+        existencias_producto, descuento_producto, fecha_registro FROM tb_productos
         INNER JOIN tb_categorias USING(id_categoria)
         INNER JOIN tb_marcas USING(id_marca)
                 WHERE id_producto = ?';

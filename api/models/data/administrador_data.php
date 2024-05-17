@@ -95,7 +95,7 @@ class AdministradorData extends AdministradorHandler
     public function setEstado($value, $min = 2, $max = 50)
     {
         if (!Validator::validateAlphabetic($value)) {
-            $this->data_error = 'El nombre debe ser un valor alfabético';
+            $this->data_error = 'El estado debe ser un valor alfabético';
             return false;
         } elseif (Validator::validateLength($value, $min, $max)) {
             $this->estado = $value;

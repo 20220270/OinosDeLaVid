@@ -36,10 +36,17 @@
     pointer-events: none;
 }
 
+#tableBody{
+    font-size: 12px;
+}
+
 @media (min-width: 556px) and (max-width: 769px) {
     
     html{
         width: 183%;
+    }
+    .modal{
+        width: 140%;
     }
 }
 
@@ -48,6 +55,9 @@
     html{
         width: 330%;
     }
+    .modal{
+        width: 300%;
+    }
 }
 
 @media (min-width: 375px) and (max-width: 425px) {
@@ -55,11 +65,18 @@
     html{
         width: 370%;
     }
+
+    .modal{
+        width: 150%;
+    }
 }
 
 @media (min-width: 200px) and (max-width: 375px) {
     
     html{
         width: 460%;
+    }
+    .modal{
+        width: 153%;
     }
 }

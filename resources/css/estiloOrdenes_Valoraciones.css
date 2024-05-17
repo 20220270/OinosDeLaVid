@@ -30,6 +30,11 @@
     pointer-events: none;
 }
 
+.fa-star {
+    font-size: 1.2em;
+}
+
+
 @media (min-width: 556px) and (max-width: 769px) {
     
     html{
@@ -39,6 +44,10 @@
     #Search{
         width: 470px;
         margin-left: 6px;
+    }
+
+    .modal{
+        width: 133%;
     }
 }
 
@@ -52,6 +61,10 @@
         width: 530px;
         margin-left: 5px;
     }
+
+    .modal{
+        width: 157%;
+    }
 }
 
 @media (min-width: 375px) and (max-width: 425px) {
@@ -64,17 +77,25 @@
         width: 530px;
         margin-left: 5px;
     }
+
+    .modal{
+        width: 153%;
+    }
 }
 
 @media (min-width: 200px) and (max-width: 375px) {
     
     html{
-        width: 195%;
+        width: 219%;
     }
 
     #Search{
         width: 530px;
         margin-left: 5px;
+    }
+
+    .modal{
+        width: 153%;
     }
 
 }

@@ -70,13 +70,13 @@ h3{
         width: 470px;
         margin-left: 6px;
     }
+    .modal{
+        width: 125%;
+    }
 }
 
 @media (min-width: 425px) and (max-width: 556px) {
-    
-    html{
-        width: 250%;
-    }
+
 
     #Search {
         width: 350px;
@@ -91,6 +91,9 @@ h3{
         z-index: 1;
         pointer-events: none;
     }
+    .modal{
+        width: 100%;
+    }
 }
 
 @media (min-width: 375px) and (max-width: 425px) {
@@ -103,17 +106,25 @@ h3{
         width: 530px;
         margin-left: 5px;
     }
+
+    .modal{
+        width: 157%;
+    }
 }
 
 @media (min-width: 200px) and (max-width: 375px) {
     
     html{
-        width: 195%;
+        width: 185%;
     }
 
     #Search{
         width: 530px;
         margin-left: 5px;
+    }
+
+    .modal{
+        width: 149%;
     }
 
 }

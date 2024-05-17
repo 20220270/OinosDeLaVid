@@ -1,7 +1,7 @@
 const FOOTER = document.querySelector('footer');
 FOOTER.innerHTML = `
-            <div class="container-fluid bg-dark text-light">
-                <div class="mt-3">
+            <div class="container-fluid bg-dark text-light mt-5">
+                <div class="mt-5">
                     <br>
                     <h3 class="text center mt">Oinos de la Vid</h3>
                     <p>Recuerde hacer sus registro con precaución. Asegúrese de tener un buen

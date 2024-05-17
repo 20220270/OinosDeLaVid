@@ -95,10 +95,11 @@ const fillTable = async (form = null) => {
                     <td>${row.nombre_producto}</td>
                     <td>${row.descripcion_producto}</td>
                     <td>${row.precio_producto}</td>
-                    <td>${row.imagen_producto}</td>
+                    <td><img src="${SERVER_URL}images/productos/${row.imagen_producto}" height="50px"></td>
                     <td>${row.estado_producto}</td>
                     <td>${row.existencias_producto}</td>
                     <td>${row.descuento_producto}</td>
+                   <td>${row.fecha_registro}</td>
                     <td>
                         <button type="button" class="btn" onclick="openUpdate(${row.id_producto})">
                             

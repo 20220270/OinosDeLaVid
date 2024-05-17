@@ -155,7 +155,7 @@ if (isset($_GET['action'])) {
                     $result['status'] = 1;
                     $result['message'] = 'Debe autenticarse para ingresar';
                 } else {
-                    $result['error'] = 'Debe crear un administrador para comenzar';
+                    $resul7t['error'] = 'Debe crear un administrador para comenzar';
                 }
                 break;
             case 'signUp':
@@ -165,9 +165,9 @@ if (isset($_GET['action'])) {
                     !$administrador->setApellido($_POST['apellidoAdministrador']) or
                     !$administrador->setCorreo($_POST['correoAdministrador']) or
                     !$administrador->setAlias($_POST['aliasAdministrador']) or
-                    !$administrador->setClave($_POST['claveAdministrador'])  or
-                    !$administrador->setNivel($_POST['selectNivelAdmin'])or
-                    !$administrador->setEstado($_POST['selectEstado'])
+                    !$administrador->setClave($_POST['claveAdministrador']) or
+                    !$administrador->setEstado($_POST['selectEstado']) or
+                    !$administrador->setNivel($_POST['selectNivelAdmin'])
                 ) {
                     $result['error'] = $administrador->getDataError();
                 } elseif ($_POST['claveAdministrador'] != $_POST['confirmarClave']) {
