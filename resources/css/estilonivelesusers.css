@@ -44,5 +44,8 @@
         width: 530px;
         margin-left: 5px;
     }
+    .modal{
+        width: 145%;
+    }
 
 }

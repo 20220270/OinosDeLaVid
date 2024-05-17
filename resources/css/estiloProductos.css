@@ -58,6 +58,13 @@ h3{
         width: 470px;
         margin-left: 6px;
     }
+    #tableBody{
+        font-size: 18px;
+    }
+
+    .modal{
+        width: 133%;
+    }
 }
 
 @media (min-width: 425px) and (max-width: 556px) {
@@ -79,6 +86,13 @@ h3{
         z-index: 1;
         pointer-events: none;
     }
+    #tableBody{
+        font-size: 18px;
+    }
+
+    .modal{
+        width: 160%;
+    }
 }
 
 @media (min-width: 375px) and (max-width: 425px) {
@@ -90,6 +104,13 @@ h3{
     #Search{
         width: 530px;
         margin-left: 5px;
+    }
+    #tableBody{
+        font-size: 18px;
+    }
+
+    .modal{
+        width: 165%;
     }
 }
 
@@ -103,5 +124,11 @@ h3{
         width: 530px;
         margin-left: 5px;
     }
+    #tableBody{
+        font-size: 18px;
+    }
 
+    .modal{
+        width: 168%;
+    }
 }

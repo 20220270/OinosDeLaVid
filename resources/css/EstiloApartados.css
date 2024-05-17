@@ -112,7 +112,7 @@ th, td {
   }
 
     /*Adaptar la barra de búsqueda*/
-@media (max-width: 450px) {
+@media (min-width: 200px) and (max-width: 450px) {
         #Search {
             width: 350px;
         }
@@ -125,6 +125,12 @@ th, td {
             height: auto;
             z-index: 1;
             pointer-events: none;
+        }
+
+        #txtCategoria{
+            background: brown;
+            color: azure;
+            width: 50%;
         }
     }
 

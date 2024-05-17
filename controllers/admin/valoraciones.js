@@ -119,13 +119,6 @@ const convertRatingToStars = (rating) => {
     return stars;
 };
 
-/*const openCreate = () => {
-  // Se muestra la caja de diálogo con su título.
-  SAVE_MODAL.show();
-  MODAL_TITLE.textContent = 'Crear cliente';
-  // Se prepara el formulario.
-  SAVE_FORM.reset();
-}
 
 /*
 *   Función asíncrona para preparar el formulario al momento de actualizar un registro.
