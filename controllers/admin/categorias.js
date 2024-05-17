@@ -3,8 +3,10 @@ const CATEGORIA_API = 'services/admin/categoria.php';
 // Constante para establecer el formulario de buscar.
 const SEARCH_FORM = document.getElementById('searchForm');
 // Constantes para establecer los elementos de la tabla.
-const TABLE_BODY = document.getElementById('tableBody'),
-    ROWS_FOUND = document.getElementById('rowsFound');
+//const TABLE_BODY = document.getElementById('tableBody'),
+    //ROWS_FOUND = document.getElementById('rowsFound');
+
+    CARD_CATEGORIAS = document.getElementById('cardCategorias');
 // Constantes para establecer los elementos del componente Modal.
 const SAVE_MODAL = new bootstrap.Modal('#saveModal'),
     MODAL_TITLE = document.getElementById('modalTitle');
@@ -60,8 +62,9 @@ SAVE_FORM.addEventListener('submit', async (event) => {
 
 const fillTable = async (form = null) => {
   // Se inicializa el contenido de la tabla.
-  ROWS_FOUND.textContent = '';
-  TABLE_BODY.innerHTML = '';
+  //ROWS_FOUND.textContent = '';
+  //TABLE_BODY.innerHTML = '';
+  CARD_CATEGORIAS.innerHTML = '';
   // Se verifica la acción a realizar.
   (form) ? action = 'searchRows' : action = 'readAll';
   // Petición para obtener los registros disponibles.
@@ -72,31 +75,30 @@ const fillTable = async (form = null) => {
       // Se recorre el conjunto de registros fila por fila.
       DATA.dataset.forEach(row => {
           // Se crean y concatenan las filas de la tabla con los datos de cada registro.
-          TABLE_BODY.innerHTML += `
-              <tr>
-                  <td>${row.id_categoria}</td>
-                  <td>${row.nombre_categoria}</td>
-                  <td>${row.descripcion_categoria}</td>
-                  <td><img src="${SERVER_URL}images/categorias/${row.imagen_categoria}" height="50"></td>
-                  <td>
-                      
+          
 
-                    
-                    <button type="submit" class="btn btn-success mt-1" id="btnEliminar" name="btnEliminar" onclick="openDelete(${row.id_categoria})">
+          CARD_CATEGORIAS.innerHTML += `
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4 mt-5 text-center" >
+                <div class="card h-100" id="cards">
+                    <img src="${SERVER_URL}images/categorias/${row.imagen_categoria}" class="card-img-top" height="250px" width="250px">
+                    <div class="card-body">
+                        <h5 class="card-title">${row.nombre_categoria}</h5>
+                        <p>${row.descripcion_categoria}</p>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-success mt-1 " id="btnEliminar" name="btnEliminar" onclick="openDelete(${row.id_categoria})">
                         <i class="bi bi-search"></i>
-                        <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                            class="mb-1">
+                        <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="40px" height="40px"
+                            class="mb-4">
 
                     </button>
                     <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar" name="btnActualizar" onclick="openUpdate(${row.id_categoria})">
                         <i class="bi bi-x-square-fill"></i>
-                        <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
-                            class="mb-1">
+                        <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="40px" height="40px"
+                            class="mb-4">
                     </button>
-
-
-                  </td>
-              </tr>
+            </div>
           `;
       });
       // Se muestra un mensaje de acuerdo con el resultado.

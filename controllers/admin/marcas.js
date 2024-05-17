@@ -73,9 +73,9 @@ const fillTable = async (form = null) => {
         DATA.dataset.forEach(row => {
             // Se crean y concatenan las filas de la tabla con los datos de cada registro.
             CARD_MARCAS.innerHTML += `
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4 mt-5 text-center">
-                <div class="card h-100">
-                    <img src="${SERVER_URL}images/marcas/${row.logo_marca}" class="card-img-top" height="200px" width="200px">
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4 mt-5 text-center" >
+                <div class="card h-100" id="cards">
+                    <img src="${SERVER_URL}images/marcas/${row.logo_marca}" class="card-img-top" height="230px" width="230px">
                     <div class="card-body">
                         <h5 class="card-title">${row.nombre_marca}</h5>
                     </div>
@@ -83,13 +83,13 @@ const fillTable = async (form = null) => {
 
                 <button type="submit" class="btn btn-success mt-1 " id="btnEliminar" name="btnEliminar" onclick="openDelete(${row.id_marca})">
                         <i class="bi bi-search"></i>
-                        <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
+                        <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="40px" height="40px"
                             class="mb-4">
 
                     </button>
                     <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar" name="btnActualizar" onclick="openUpdate(${row.id_marca})">
                         <i class="bi bi-x-square-fill"></i>
-                        <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
+                        <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="40px" height="40px"
                             class="mb-4">
                     </button>
             </div>
