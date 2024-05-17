@@ -95,7 +95,7 @@ const fillTable = async (form = null) => {
                     <td>${row.nombre_producto}</td>
                     <td>${row.descripcion_producto}</td>
                     <td>${row.precio_producto}</td>
-                    <td><img src="${SERVER_URL}images/productos/${row.imagen_producto}" height="50px"></td>
+                    <td><img src="${SERVER_URL}images/productos/${row.imagen_producto}" height="70px"></td>
                     <td>${row.estado_producto}</td>
                     <td>${row.existencias_producto}</td>
                     <td>${row.descuento_producto}</td>

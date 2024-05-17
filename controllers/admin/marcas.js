@@ -77,7 +77,8 @@ const fillTable = async (form = null) => {
                 <div class="card h-100" id="cards">
                     <img src="${SERVER_URL}images/marcas/${row.logo_marca}" class="card-img-top" height="230px" width="230px">
                     <div class="card-body">
-                        <h5 class="card-title">${row.nombre_marca}</h5>
+                    
+                    <h5 class="card-title">${row.nombre_marca}</h5>
                     </div>
                 </div>
 

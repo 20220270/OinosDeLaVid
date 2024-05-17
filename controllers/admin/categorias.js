@@ -83,6 +83,7 @@ const fillTable = async (form = null) => {
                     <img src="${SERVER_URL}images/categorias/${row.imagen_categoria}" class="card-img-top" height="250px" width="250px">
                     <div class="card-body">
                         <h5 class="card-title">${row.nombre_categoria}</h5>
+                        <label class="fw-bold mt-4">Descripción:</label>
                         <p>${row.descripcion_categoria}</p>
                     </div>
                 </div>

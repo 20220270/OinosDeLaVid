@@ -51,9 +51,7 @@ h3{
 
 @media (min-width: 556px) and (max-width: 769px) {
     
-    html{
-        width: 153%;
-    }
+   
 
     #Search{
         width: 470px;
@@ -67,7 +65,7 @@ h3{
 @media (min-width: 425px) and (max-width: 556px) {
     
     html{
-        width: 250%;
+        width: 200%;
     }
 
     #Search{
@@ -82,7 +80,7 @@ h3{
 @media (min-width: 375px) and (max-width: 425px) {
     
     html{
-        width: 230%;
+        width: 200%;
     }
 
     #Search{
@@ -97,11 +95,11 @@ h3{
 @media (min-width: 200px) and (max-width: 375px) {
     
     html{
-        width: 195%;
+        width: 166%;
     }
 
     #Search{
-        width: 530px;
+        width: 400px;
         margin-left: 5px;
     }
 

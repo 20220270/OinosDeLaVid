@@ -36,12 +36,15 @@ NAVBAR.innerHTML = `
                             <a class="nav-link" href="miscompras.html">Ver mis compras</a>
                         </li>
                         <li class="nav-item" id="ses">
+                            <a class="nav-link" href="registrarse.html">Crear cuenta</a>
+                        </li>
+                        <li class="nav-item" id="ses">
                             <a class="nav-link" href="login.html">Cerrar sesión</a>
                         </li>
                     </ul>
                 </div>
 
-                <button class="btn" type="submit" id="btnVerPerfil"> <a href="perfil.html" class="textoVerPerfil">IvanSalgue</a></button>
+                <button class="btn" type="submit" id="btnVerPerfil"> <a href="perfil.html" class="textoVerPerfil">Mi perfil</a></button>
 
                 <div class="botonCar">
                     <img src="../../resources/Imagenes/carrito.png" alt="" width="25 px" height="25 px"
