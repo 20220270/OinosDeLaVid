@@ -71,15 +71,12 @@ h3{
         margin-left: 6px;
     }
     .modal{
-        width: 135%;
+        width: 125%;
     }
 }
 
 @media (min-width: 425px) and (max-width: 556px) {
-    
-    html{
-        width: 250%;
-    }
+
 
     #Search {
         width: 350px;
@@ -95,7 +92,7 @@ h3{
         pointer-events: none;
     }
     .modal{
-        width: 160%;
+        width: 100%;
     }
 }
 
@@ -118,7 +115,7 @@ h3{
 @media (min-width: 200px) and (max-width: 375px) {
     
     html{
-        width: 195%;
+        width: 185%;
     }
 
     #Search{
