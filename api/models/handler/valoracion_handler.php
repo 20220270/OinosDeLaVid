@@ -29,20 +29,23 @@ class ValoracionHandler
         INNER JOIN tb_ordenes USING(id_orden)
         INNER JOIN tb_clientes USING(id_cliente)
         INNER JOIN tb_productos USING(id_producto)
-                WHERE nombre_producto LIKE ? OR estado_comentario LIKE ?
-                ORDER BY id_categoria';
+        WHERE nombre_producto LIKE ? OR estado_comentario LIKE ?
+        GROUP BY id_valoracion
+		ORDER BY calificacion_producto DESC;';
         $params = array($value, $value);
         return Database::getRows($sql, $params);
     }
 
     public function readAll()
     {
-        $sql = 'SELECT id_valoracion, id_detalle, nombre_producto, calificacion_producto, comentario_producto, estado_comentario, p.fecha_valoracion FROM tb_valoraciones p
+        $sql = 'SELECT id_valoracion, id_detalle, nombre_producto, calificacion_producto, comentario_producto, estado_comentario, p.fecha_valoracion
+        FROM tb_valoraciones p
         INNER JOIN tb_detallesordenes USING(id_detalle)
         INNER JOIN tb_ordenes USING(id_orden)
         INNER JOIN tb_clientes USING(id_cliente)
         INNER JOIN tb_productos USING(id_producto)
-                ORDER BY id_valoracion';
+        ORDER BY id_valoracion, calificacion_producto DESC;
+        ';
         return Database::getRows($sql);
     }
 
@@ -53,7 +56,10 @@ class ValoracionHandler
         INNER JOIN tb_ordenes USING(id_orden)
         INNER JOIN tb_clientes USING(id_cliente)
         INNER JOIN tb_productos USING(id_producto)
-                WHERE id_valoracion = ?';
+        WHERE id_valoracion = ?
+        GROUP BY id_valoracion
+		ORDER BY calificacion_producto DESC;'
+                ;
         $params = array($this->idvaloracion);
         return Database::getRow($sql, $params);
     }

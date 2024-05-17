@@ -4,7 +4,8 @@ const MARCA_API = 'services/admin/marca.php';
 const SEARCH_FORM = document.getElementById('searchForm');
 // Constantes para establecer los elementos de la tabla.
 const TABLE_BODY = document.getElementById('tableBody'),
-    ROWS_FOUND = document.getElementById('rowsFound');
+    ROWS_FOUND = document.getElementById('rowsFound')
+    //CARD_MARCAS = document.getElementById('cardMarcas');
 // Constantes para establecer los elementos del componente Modal.
 const SAVE_MODAL = new bootstrap.Modal('#saveModal'),
     MODAL_TITLE = document.getElementById('modalTitle');
@@ -62,6 +63,7 @@ const fillTable = async (form = null) => {
   // Se inicializa el contenido de la tabla.
   ROWS_FOUND.textContent = '';
   TABLE_BODY.innerHTML = '';
+  //CARD_MARCAS.innerHTML = '';
   // Se verifica la acción a realizar.
   (form) ? action = 'searchRows' : action = 'readAll';
   // Petición para obtener los registros disponibles.
@@ -98,6 +100,7 @@ const fillTable = async (form = null) => {
                   </td>
               </tr>
           `;
+          
       });
       // Se muestra un mensaje de acuerdo con el resultado.
       ROWS_FOUND.textContent = DATA.message;
