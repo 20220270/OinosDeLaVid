@@ -64,6 +64,7 @@ SAVE_FORM.addEventListener('submit', async (event) => {
   }
 });
 
+
 const fillTable = async (form = null) => {
   // Se inicializa el contenido de la tabla.
   ROWS_FOUND.textContent = '';
