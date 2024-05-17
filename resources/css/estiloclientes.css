@@ -19,6 +19,9 @@
         width: 470px;
         margin-left: 6px;
     }
+    .modal{
+        width: 135%;
+    }
 }
 
 @media (min-width: 425px) and (max-width: 556px) {
@@ -30,6 +33,9 @@
     #Search{
         width: 530px;
         margin-left: 5px;
+    }
+    .modal{
+        width: 180%;
     }
 }
 
@@ -43,17 +49,25 @@
         width: 530px;
         margin-left: 5px;
     }
+
+    .modal{
+        width: 155%;
+    }
 }
 
 @media (min-width: 200px) and (max-width: 375px) {
     
     html{
-        width: 195%;
+        width: 223%;
     }
 
     #Search{
         width: 530px;
         margin-left: 5px;
+    }
+
+    .modal{
+        width: 150%;
     }
 
 }

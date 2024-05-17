@@ -45,6 +45,9 @@
     html{
         width: 183%;
     }
+    .modal{
+        width: 140%;
+    }
 }
 
 @media (min-width: 425px) and (max-width: 556px) {
@@ -52,12 +55,19 @@
     html{
         width: 330%;
     }
+    .modal{
+        width: 300%;
+    }
 }
 
 @media (min-width: 375px) and (max-width: 425px) {
     
     html{
         width: 370%;
+    }
+
+    .modal{
+        width: 150%;
     }
 }
 

@@ -88,6 +88,12 @@ const fillTable = async (form = null) => {
                   <td>${row.fecha_valoracion}</td>
                   <td>${row.estado_comentario}</td>
                   <td>
+                  <button type="submit" class="btn btn-success mt-1" id="btnEliminar" name="btnEliminar" onclick="openDelete(${row.id_detalle})">
+                        <i class="bi bi-search"></i>
+                        <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
+                            class="mb-1">
+
+                    </button>
                     <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar" name="btnActualizar" onclick="openUpdate(${row.id_valoracion})">
                         <i class="bi bi-x-square-fill"></i>
                         <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
