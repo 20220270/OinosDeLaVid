@@ -27,34 +27,28 @@ class OrdenesHandler
     public function searchRows()
     {
         $value = '%' . Validator::getSearchValue() . '%';
-        $sql = 'SELECT id_detalle, nombre_cliente, estado_orden, direccion_orden, nombre_producto, cantidad_producto, total_a_pagar, p.fecha_registro FROM tb_detallesordenes
-        INNER JOIN tb_ordenes p USING(id_orden)
-        INNER JOIN tb_clientes USING(id_cliente)
-        INNER JOIN tb_productos USING(id_producto)
-                WHERE nombre_cliente LIKE ? OR estado_orden LIKE ? OR direccion_orden LIKE ? OR nombre_producto LIKE ? OR p.fecha_registro LIKE ?
-                ORDER BY id_detalle';
-        $params = array($value, $value, $value, $value, $value);
+        $sql = 'SELECT id_orden, nombre_cliente, estado_orden, direccion_orden, p.fecha_registro FROM tb_ordenes p
+                INNER JOIN tb_clientes USING(id_cliente)
+                WHERE nombre_cliente LIKE ? OR estado_orden LIKE ? OR direccion_orden LIKE ? OR p.fecha_registro LIKE ?
+                ORDER BY id_orden';
+        $params = array($value, $value, $value, $value);
         return Database::getRows($sql, $params);
     }
 
     public function readAll()
     {
-        $sql = 'SELECT id_detalle, nombre_cliente, estado_orden, direccion_orden, nombre_producto, cantidad_producto, total_a_pagar, p.fecha_registro FROM tb_detallesordenes
-        INNER JOIN tb_ordenes p USING(id_orden)
+        $sql = 'SELECT id_orden, nombre_cliente, estado_orden, direccion_orden, p.fecha_registro FROM tb_ordenes p
         INNER JOIN tb_clientes USING(id_cliente)
-        INNER JOIN tb_productos USING(id_producto)
-                ORDER BY id_detalle';
+                ORDER BY id_orden';
         return Database::getRows($sql);
     }
 
     public function readOne()
     {
-        $sql = 'SELECT id_detalle, nombre_cliente, estado_orden, direccion_orden, nombre_producto, cantidad_producto, total_a_pagar, p.fecha_registro FROM tb_detallesordenes
-        INNER JOIN tb_ordenes p USING(id_orden)
+        $sql = 'SELECT id_orden, nombre_cliente, estado_orden, direccion_orden, p.fecha_registro FROM tb_ordenes p
         INNER JOIN tb_clientes USING(id_cliente)
-        INNER JOIN tb_productos USING(id_producto)
-                WHERE id_detalle = ?';
-        $params = array($this->iddetalle);
+                WHERE id_orden = ?';
+        $params = array($this->idpedido);
         return Database::getRow($sql, $params);
     }
 
@@ -77,7 +71,7 @@ class OrdenesHandler
                 WHERE estado_pedido = ? AND id_cliente = ?';
         $params = array($this->estadoorden, $_SESSION['idCliente']);
         if ($data = Database::getRow($sql, $params)) {
-            $_SESSION['idPedido'] = $data['id_orden'];
+            $_SESSION['idOrden'] = $data['id_orden'];
             return true;
         } else {
             return false;
@@ -94,7 +88,7 @@ class OrdenesHandler
                     VALUES((SELECT direccion_cliente FROM tb_clientes WHERE id_cliente = ?), ?)';
             $params = array($_SESSION['idCliente'], $_SESSION['idCliente']);
             // Se obtiene el ultimo valor insertado de la llave primaria en la tabla pedido.
-            if ($_SESSION['idPedido'] = Database::getLastRow($sql, $params)) {
+            if ($_SESSION['idOrden'] = Database::getLastRow($sql, $params)) {
                 return true;
             } else {
                 return false;
@@ -108,19 +102,19 @@ class OrdenesHandler
         // Se realiza una subconsulta para obtener el precio del producto.
         $sql = 'INSERT INTO tb_detallesOrdenes(id_producto, precio_producto, cantidad_producto, id_orden)
                 VALUES(?, (SELECT precio_producto FROM tb_productos WHERE id_producto = ?), ?, ?)';
-        $params = array($this->producto, $this->producto, $this->cantidad, $_SESSION['idPedido']);
+        $params = array($this->producto, $this->producto, $this->cantidad, $_SESSION['idOrden']);
         return Database::executeRow($sql, $params);
     }
 
     // Método para obtener los productos que se encuentran en el carrito de compras.
     public function readDetail()
     {
-        $sql = 'SELECT id_detalle, nombre_producto,precio_producto, cantidad_producto
+        $sql = 'SELECT id_detalle, nombre_producto, precio_producto, cantidad_producto
         FROM tb_detallesOrdenes
         INNER JOIN tb_ordenes USING(id_orden)
         INNER JOIN tb_productos USING(id_producto)
                 WHERE id_orden = ?';
-        $params = array($_SESSION['idPedido']);
+        $params = array($_SESSION['idOrden']);
         return Database::getRows($sql, $params);
     }
 
@@ -131,7 +125,7 @@ class OrdenesHandler
         $sql = 'UPDATE tb_detallesOrdenes
                 SET estado_pedido = ?
                 WHERE id_orden = ?';
-        $params = array($this->estadoorden, $_SESSION['idPedido']);
+        $params = array($this->estadoorden, $_SESSION['idOrden']);
         return Database::executeRow($sql, $params);
     }
 
@@ -141,7 +135,7 @@ class OrdenesHandler
         $sql = 'UPDATE tb_detallesOrdenes
                 SET cantidad_producto = ?
                 WHERE id_detalle = ? AND id_orden = ?';
-        $params = array($this->cantidad, $this->iddetalle, $_SESSION['idPedido']);
+        $params = array($this->cantidad, $this->iddetalle, $_SESSION['idOrden']);
         return Database::executeRow($sql, $params);
     }
 
@@ -150,7 +144,7 @@ class OrdenesHandler
     {
         $sql = 'DELETE FROM tb_detallesOrdenes
                 WHERE id_detalle = ? AND id_orden = ?';
-        $params = array($this->iddetalle, $_SESSION['idPedido']);
+        $params = array($this->iddetalle, $_SESSION['idOrden']);
         return Database::executeRow($sql, $params);
     }
 }

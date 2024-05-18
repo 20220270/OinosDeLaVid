@@ -34,7 +34,7 @@ if (isset($_GET['action'])) {
                 }
                 break;
             case 'readOne':
-                if (!$ordenes->setId($_POST['idOrden'])) {
+                if (!$ordenes->setIdPedido($_POST['idOrden'])) {
                     $result['error'] = $ordenes->getDataError();
                 } elseif ($result['dataset'] = $ordenes->readOne()) {
                     $result['status'] = 1;

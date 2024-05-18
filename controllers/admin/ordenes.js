@@ -74,30 +74,32 @@ const fillTable = async (form = null) => {
           // Se crean y concatenan las filas de la tabla con los datos de cada registro.
           TABLE_BODY.innerHTML += `
               <tr>
-                  <td>${row.id_detalle}</td>
+                  <td>${row.id_orden}</td>
                   <td>${row.nombre_cliente}</td>
                   <td>${row.direccion_orden}</td>
-                  <td>${row.nombre_producto}</td>
-                  <td>${row.cantidad_producto}</td>
-                  <td> $${row.total_a_pagar}</td>
                   <td>${row.fecha_registro}</td>
                   <td>${row.estado_orden}</td>
                   <td>
                       
 
                     
-                    <button type="submit" class="btn btn-success mt-1" id="btnEliminar" name="btnEliminar" onclick="openDelete(${row.id_detalle})">
+                    <button type="submit" class="btn btn-success mt-1" id="btnEliminar" name="btnEliminar" onclick="openDelete(${row.id_orden})">
                         <i class="bi bi-search"></i>
                         <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
                             class="mb-1">
 
                     </button>
-                    <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar" name="btnActualizar" onclick="openUpdate(${row.id_detalle})">
+                    <button type="submit" class="btn btn-secondary mt-1" id="btnActualizar" name="btnActualizar" onclick="openUpdate(${row.id_orden})">
                         <i class="bi bi-x-square-fill"></i>
                         <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
                             class="mb-1">
                     </button>
 
+                    <button type="submit" class="btn mt-1" id="btnDetalles" name="btnDetalles">
+                    <i class="bi bi-x-square-fill"></i>
+                    <img src="../../resources/Imagenes/btnDetalles.png" alt="" width="30px" height="30px"
+                        class="mb-1">
+                </button>
 
                   </td>
               </tr>
@@ -131,7 +133,7 @@ const openUpdate = async (id) => {
       SAVE_FORM.reset();
       // Se inicializan los campos con los datos.
       const ROW = DATA.dataset;
-      ID_ORDEN.value = ROW.id_detalle;
+      ID_ORDEN.value = ROW.id_orden;
       ESTADO_ORDEN.value = ROW.estado_orden;
       
   } else {
