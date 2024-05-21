@@ -67,7 +67,7 @@ class OrdenesHandler
         FROM tb_detallesOrdenes
         INNER JOIN tb_ordenes USING(id_orden)
         INNER JOIN tb_productos USING(id_producto)
-        WHERE id_orden = 1';
+        WHERE id_orden = ?';
         return Database::getRows($sql);
     }
 
