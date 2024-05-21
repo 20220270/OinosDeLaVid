@@ -42,6 +42,16 @@ if (isset($_GET['action'])) {
                     $result['error'] = 'Orden inexistente';
                 }
                 break;
+
+                case 'readDetails':
+                    if ($result['dataset'] = $ordenes->readDetails()) {
+                        $result['status'] = 1;
+                        $result['message'] = 'Existen ' . count($result['dataset']) . ' registros';
+                    } else {
+                        $result['error'] = 'No existen detalles registrados';
+                    }
+                    break;
+
             case 'updateRow':
                 $_POST = Validator::validateForm($_POST);
                 if (

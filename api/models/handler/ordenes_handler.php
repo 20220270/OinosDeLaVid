@@ -61,6 +61,26 @@ class OrdenesHandler
         return Database::executeRow($sql, $params);
     }
 
+    public function readDetails()
+    {
+        $sql = 'SELECT id_detalle, nombre_producto, imagen_producto, precio_producto, cantidad_producto, total_a_pagar
+        FROM tb_detallesOrdenes
+        INNER JOIN tb_ordenes USING(id_orden)
+        INNER JOIN tb_productos USING(id_producto)
+        WHERE id_orden = 1';
+        return Database::getRows($sql);
+    }
+
+    public function readFilename()
+    {
+        $sql = 'SELECT imagen_producto
+                 FROM tb_detallesOrdenes
+                INNER JOIN tb_productos USING(id_producto)
+                WHERE id_producto = ?';
+        $params = array($this->iddetalle);
+        return Database::getRow($sql, $params);
+    }
+
 
     /** */
     public function getOrder()
@@ -109,7 +129,7 @@ class OrdenesHandler
     // Método para obtener los productos que se encuentran en el carrito de compras.
     public function readDetail()
     {
-        $sql = 'SELECT id_detalle, nombre_producto, precio_producto, cantidad_producto
+        $sql = 'SELECT id_detalle, nombre_producto, precio_producto, cantidad_producto, total_a_pagar
         FROM tb_detallesOrdenes
         INNER JOIN tb_ordenes USING(id_orden)
         INNER JOIN tb_productos USING(id_producto)
