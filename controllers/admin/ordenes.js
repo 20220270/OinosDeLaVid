@@ -19,6 +19,7 @@ const SAVE_FORM = document.getElementById('saveForm'),
 const DETALLE_FORM = new bootstrap.Modal('#detailModal'),
     DETAIL_FORM = document.getElementById('detailForm')
     ID_DETALLE = document.getElementById('idDetalle'),
+    MODAL_TITLED = document.getElementById('modalTitleD');
     IMAGEN_PRODUCTO = document.getElementById('imagenProductoDetalle');
     NOMBRE_PRODUCTO = document.getElementById('nombreProductoDetalle'),
     PRECIO_PRODUCTO = document.getElementById('precioProductoDetalle'),
@@ -122,6 +123,8 @@ const fillTable = async (form = null) => {
     }
 }
 
+
+//Funcion para llenar la modal del detalle de cada orden
 const fillModal = async (form = null) => {
     // Se inicializa el contenido de la tabla.
     DETAIL_FORM.innerHTML = '';
@@ -136,37 +139,8 @@ const fillModal = async (form = null) => {
         DATA.dataset.forEach(row => {
             // Se crean y concatenan las filas de la tabla con los datos de cada registro.
             DETAIL_FORM.innerHTML += `
-            <input type="hidden" id="idOrden" name="idOrden">
-                        <input type="hidden" id="idDetalle" name="idDetalle">
-                        <div class="col-sm-12 col-md-6 mx-auto">
-                        <label for="nombreProducto" class="mt-4">${row.id_detalle} </label>
-                            <img src="${SERVER_URL}images/productos/${row.imagen_producto}" alt="..." width="200px" height="200px" name="imagenProductoDetalle" id="imagenProductoDetalle">
-                        </div>
 
-                        <div>
-                            <div class="d-flex justify-content-between col-lg-12">
-                                <label for="nombreProducto" class="mt-4">Nombre del producto: </label>
-                                <label for="ProductoDetalle" name="nombreProductoDetalle" id="nombreProductoDetalle" class="mt-4">${row.nombre_producto}</label>
-                            </div>
-                            <div class="d-flex justify-content-between col-lg-12">
-                                <label for="nombreProducto" class="mt-4">Precio del producto: </label>
-                                <label for="ProductoDetalle" name="precioProductoDetalle" id="precioProductoDetalle" class="mt-4">${row.precio_producto}</label>
-                            </div>
-                            <div class="d-flex justify-content-between col-lg-12">
-                                <label for="nombreProducto" class="mt-4">Cantidad adquirida: </label>
-                                <label for="ProductoDetalle" name="cantidadProductoDetalle" id="cantidadProductoDetalle" class="mt-4">${row.cantidad_producto}</label>
-                            </div>
-                            <div class="d-flex justify-content-between col-lg-12">
-                                <label for="nombreProducto" class="mt-4">Total pagado: </label>
-                                <label for="ProductoDetalle" name="TotalPagadoProductoDetalle" id="TotalPagadoProductoDetalle" class="mt-4">${row.total_a_pagar}</label>    
-                            </div>
-                            
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
-
-                        </div>
+                        
           `;
         });
         // Se muestra un mensaje de acuerdo con el resultado.
@@ -205,6 +179,7 @@ const openUpdate = async (id) => {
     }
 }
 
+//Metodo para visualizar el detalle de cada orden
 const openDetail = async (id) => {
     // Se define una constante tipo objeto con los datos del registro seleccionado.
     const FORM = new FormData();
@@ -215,7 +190,7 @@ const openDetail = async (id) => {
     if (DATA.status) {
         // Se muestra la caja de diálogo con su título.
         DETALLE_FORM.show();
-        MODAL_TITLE.textContent = 'Detalles del pedido';
+        MODAL_TITLED.textContent = 'Detalles del pedido';
         // Se prepara el formulario.
         DETAIL_FORM.reset();
         // Se inicializan los campos con los datos.

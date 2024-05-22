@@ -14,24 +14,26 @@ class OrdenesData extends OrdenesHandler
     /*
     *   Métodos para validar y establecer los datos.
     */
-    public function setId($value) //detalle del pedido
+
+    
+    public function setIdOrden($value) //id del pedido
+    {
+        if (Validator::validateNaturalNumber($value)) {
+            $this->idorden = $value;
+            return true;
+        } else {
+            $this->data_error = 'El identificador del pedido es incorrecto';
+            return false;
+        }
+    }
+
+    public function setIdDetalle($value) //detalle del pedido
     {
         if (Validator::validateNaturalNumber($value)) {
             $this->iddetalle = $value;
             return true;
         } else {
-            $this->data_error = 'El identificador de la orden es incorrecto';
-            return false;
-        }
-    }
-
-    public function setIdPedido($value) //id del pedido
-    {
-        if (Validator::validateNaturalNumber($value)) {
-            $this->idpedido = $value;
-            return true;
-        } else {
-            $this->data_error = 'El identificador del pedido es incorrecto';
+            $this->data_error = 'El identificador del detalle es incorrecto';
             return false;
         }
     }
@@ -117,6 +119,24 @@ class OrdenesData extends OrdenesHandler
         } else {
             $this->data_error = 'La fecha es incorrecta';
             return false;
+        }
+    }
+
+    //Para mostrar la imagen del producto del detalle
+    public function setImagen($file, $filename = null)
+    {
+        if (Validator::validateImageFile($file, 800, 800)) {
+            $this->imagenproducto = Validator::getFilename();
+            return true;
+        } elseif (Validator::getFileError()) {
+            $this->data_error = Validator::getFileError();
+            return false;
+        } elseif ($filename) {
+            $this->imagenproducto = $filename;
+            return true;
+        } else {
+            $this->imagenproducto = 'default.png';
+            return true;
         }
     }
 

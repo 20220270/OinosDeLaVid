@@ -9,9 +9,10 @@ class OrdenesHandler
     /*
      *  Declaración de atributos para el manejo de datos.
      */
-    protected $idpedido = null;
+    protected $idorden = null;
     protected $iddetalle = null;
     protected $nombrecliente = null;
+    protected $imagenproducto = null;
     protected $estadoorden = null;
     protected $direccion = null;
     protected $producto = null;
@@ -19,7 +20,8 @@ class OrdenesHandler
     protected $fecha = null;
     protected $total = null;
 
-
+    // Constante para establecer la ruta de las imágenes a mostrar.
+    const RUTA_IMAGEN = '../../images/productos/';
 
     /*
      *  Métodos para realizar las operaciones SCRUD (search, create, read, update, and delete).
@@ -48,7 +50,7 @@ class OrdenesHandler
         $sql = 'SELECT id_orden, nombre_cliente, estado_orden, direccion_orden, p.fecha_registro FROM tb_ordenes p
         INNER JOIN tb_clientes USING(id_cliente)
                 WHERE id_orden = ?';
-        $params = array($this->idpedido);
+        $params = array($this->idorden);
         return Database::getRow($sql, $params);
     }
 
@@ -61,22 +63,25 @@ class OrdenesHandler
         return Database::executeRow($sql, $params);
     }
 
+
+    //Funcion para el sitio privado: Leer los detalles de cada compra
     public function readDetails()
     {
         $sql = 'SELECT id_detalle, nombre_producto, imagen_producto, precio_producto, cantidad_producto, total_a_pagar
         FROM tb_detallesOrdenes
         INNER JOIN tb_ordenes USING(id_orden)
-        INNER JOIN tb_productos USING(id_producto)
-        WHERE id_orden = ?';
-        return Database::getRows($sql);
+        INNER JOIN tb_productos USING(id_producto) WHERE id_orden = ?';
+        $params = array($this->idorden);
+        return Database::getRows($sql, $params);
     }
+
 
     public function readFilename()
     {
         $sql = 'SELECT imagen_producto
                  FROM tb_detallesOrdenes
                 INNER JOIN tb_productos USING(id_producto)
-                WHERE id_producto = ?';
+                WHERE id_detalle = ?';
         $params = array($this->iddetalle);
         return Database::getRow($sql, $params);
     }

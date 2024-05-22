@@ -24,7 +24,7 @@ if (isset($_GET['action'])) {
                     $result['error'] = 'No hay coincidencias';
                 }
                 break;
-           
+
             case 'readAll':
                 if ($result['dataset'] = $ordenes->readAll()) {
                     $result['status'] = 1;
@@ -33,8 +33,9 @@ if (isset($_GET['action'])) {
                     $result['error'] = 'No existen ordenes registradas';
                 }
                 break;
+                
             case 'readOne':
-                if (!$ordenes->setIdPedido($_POST['idOrden'])) {
+                if (!$ordenes->setIdOrden($_POST['idOrden'])) {
                     $result['error'] = $ordenes->getDataError();
                 } elseif ($result['dataset'] = $ordenes->readOne()) {
                     $result['status'] = 1;
@@ -44,29 +45,31 @@ if (isset($_GET['action'])) {
                 break;
 
                 case 'readDetails':
-                    if ($result['dataset'] = $ordenes->readDetails()) {
+                    if (!$ordenes->setIdOrden($_POST['idOrden'])) {
+                        $result['error'] = $ordenes->getDataError();
+                    } elseif ($result['dataset'] = $ordenes->readDetails()) {
                         $result['status'] = 1;
-                        $result['message'] = 'Existen ' . count($result['dataset']) . ' registros';
                     } else {
-                        $result['error'] = 'No existen detalles registrados';
+                        $result['error'] = 'Detalle de orden inexistente';
                     }
                     break;
+
 
             case 'updateRow':
                 $_POST = Validator::validateForm($_POST);
                 if (
-                    !$ordenes->setId($_POST['idOrden']) or
+                    !$ordenes->setIdOrden($_POST['idOrden']) or
                     !$ordenes->setEstado($_POST['selectEstadoOrden'])
                 ) {
                     $result['error'] = $ordenes->getDataError();
                 } elseif ($ordenes->updateRow()) {
                     $result['status'] = 1;
                     $result['message'] = 'Estado de la orden modificado correctamente';
-                    } else {
+                } else {
                     $result['error'] = 'Ocurrió un problema al modificar la orden';
                 }
                 break;
-            
+
             default:
                 $result['error'] = 'Acción no disponible dentro de la sesión';
         }

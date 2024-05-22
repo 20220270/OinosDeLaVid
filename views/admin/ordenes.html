@@ -117,12 +117,46 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <h5 class="modal-title" id="modalTitleD"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form id="detailForm">
-                        
+                        <input type="hidden" id="idOrden" name="idOrden">
+                        <input type="hidden" id="idDetalle" name="idDetalle">
+
+                        <div class="col-sm-12 col-md-6 mx-auto">
+                            <label for="nombreProducto" class="mt-4">Detalle: </label>
+                            <div>
+                                <img src="" alt="..." width="200px" height="200px" name="imagenProductoDetalle" id="imagenProductoDetalle">
+                            </div>
+                                
+                            </div>
+    
+                            <div>
+                                <div class="d-flex justify-content-between col-lg-12">
+                                    <label for="nombreProducto" class="mt-4">Nombre del producto: </label>
+                                    <label for="ProductoDetalle" name="nombreProductoDetalle" id="nombreProductoDetalle" class="mt-4"></label>
+                                </div>
+                                <div class="d-flex justify-content-between col-lg-12">
+                                    <label for="nombreProducto" class="mt-4">Precio del producto: </label>
+                                    <label for="ProductoDetalle" name="precioProductoDetalle" id="precioProductoDetalle" class="mt-4"></label>
+                                </div>
+                                <div class="d-flex justify-content-between col-lg-12">
+                                    <label for="nombreProducto" class="mt-4">Cantidad adquirida: </label>
+                                    <label for="ProductoDetalle" name="cantidadProductoDetalle" id="cantidadProductoDetalle" class="mt-4"></label>
+                                </div>
+                                <div class="d-flex justify-content-between col-lg-12">
+                                    <label for="nombreProducto" class="mt-4">Total pagado: </label>
+                                    <label for="ProductoDetalle" name="TotalPagadoProductoDetalle" id="TotalPagadoProductoDetalle" class="mt-4"></label>    
+                                </div>
+                                
+                            </div>
+    
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+    
+                            </div>
                     </form>
                 </div>
 
