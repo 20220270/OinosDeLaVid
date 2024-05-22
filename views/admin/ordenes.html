@@ -32,8 +32,8 @@
 
                         <div class="position-relative">
                             <img class="search-icon" src="../../resources/Imagenes/lupa.png" alt="Lupa">
-                            <input class="form-control me-2" type="search" aria-label="Search"
-                                id="Search" name="search" placeholder="Busque por cliente, dirección, fecha de registro o estado de la orden">
+                            <input class="form-control me-2" type="search" aria-label="Search" id="Search" name="search"
+                                placeholder="Busque por cliente, dirección, fecha de registro o estado de la orden">
                         </div>
                         <button type="button" class="btn" hidden>
                             <img src="../../resources/Imagenes/btnAgregarIMG.png" alt="" width="60px" height="60px"
@@ -120,49 +120,43 @@
                     <h5 class="modal-title" id="modalTitleD"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <form id="detailForm">
+
+                <form id="detailForm">
+                    <div class="modal-body overflow-auto">
                         <input type="hidden" id="idOrden" name="idOrden">
                         <input type="hidden" id="idDetalle" name="idDetalle">
+                        <div class="col-lg-10 col-sm-10 col-md-12 col-12 mx-auto">
+                            <table class="table text-center">
+                                <thead>
+                                    <tr>
+                                        <td colspan="6" id="rowsFound2"></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="bg-danger text-white fw-bold">ID</th>
+                                        <th class="bg-danger text-white fw-bold">Imagen</th>
+                                        <th class="bg-danger text-white fw-bold">nombre</th>
+                                        <th class="bg-danger text-white fw-bold">Precio</th>
+                                        <th class="bg-danger text-white fw-bold">Cantidad</th>
+                                        <th class="bg-danger text-white fw-bold">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableBody2">
 
-                        <div class="col-sm-12 col-md-6 mx-auto">
-                            <label for="nombreProducto" class="mt-4">Detalle: </label>
-                            <div>
-                                <img src="" alt="..." width="200px" height="200px" name="imagenProductoDetalle" id="imagenProductoDetalle">
-                            </div>
-                                
-                            </div>
-    
-                            <div>
-                                <div class="d-flex justify-content-between col-lg-12">
-                                    <label for="nombreProducto" class="mt-4">Nombre del producto: </label>
-                                    <label for="ProductoDetalle" name="nombreProductoDetalle" id="nombreProductoDetalle" class="mt-4"></label>
-                                </div>
-                                <div class="d-flex justify-content-between col-lg-12">
-                                    <label for="nombreProducto" class="mt-4">Precio del producto: </label>
-                                    <label for="ProductoDetalle" name="precioProductoDetalle" id="precioProductoDetalle" class="mt-4"></label>
-                                </div>
-                                <div class="d-flex justify-content-between col-lg-12">
-                                    <label for="nombreProducto" class="mt-4">Cantidad adquirida: </label>
-                                    <label for="ProductoDetalle" name="cantidadProductoDetalle" id="cantidadProductoDetalle" class="mt-4"></label>
-                                </div>
-                                <div class="d-flex justify-content-between col-lg-12">
-                                    <label for="nombreProducto" class="mt-4">Total pagado: </label>
-                                    <label for="ProductoDetalle" name="TotalPagadoProductoDetalle" id="TotalPagadoProductoDetalle" class="mt-4"></label>    
-                                </div>
-                                
-                            </div>
-    
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
-    
-                            </div>
-                    </form>
-                </div>
 
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+
+                </form>
             </div>
         </div>
     </div>
+
 
     <footer>
 

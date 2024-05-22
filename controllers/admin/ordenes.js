@@ -18,6 +18,8 @@ const SAVE_FORM = document.getElementById('saveForm'),
 // Constantes para establecer los elementos del formulario del detalle.
 const DETALLE_FORM = new bootstrap.Modal('#detailModal'),
     DETAIL_FORM = document.getElementById('detailForm')
+    const TABLE_BODY2 = document.getElementById('tableBody2'),
+    ROWS_FOUND2 = document.getElementById('rowsFound2');
     ID_DETALLE = document.getElementById('idDetalle'),
     MODAL_TITLED = document.getElementById('modalTitleD');
     IMAGEN_PRODUCTO = document.getElementById('imagenProductoDetalle');
@@ -79,7 +81,6 @@ const fillTable = async (form = null) => {
     const DATA = await fetchData(ORDENES_API, action, form);
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
-        console.log(DATA)
         // Se recorre el conjunto de registros fila por fila.
         DATA.dataset.forEach(row => {
             // Se crean y concatenan las filas de la tabla con los datos de cada registro.
@@ -125,7 +126,7 @@ const fillTable = async (form = null) => {
 
 
 //Funcion para llenar la modal del detalle de cada orden
-const fillModal = async (form = null) => {
+/*const fillModal = async (form = null) => {
     // Se inicializa el contenido de la tabla.
     DETAIL_FORM.innerHTML = '';
     // Se verifica la acción a realizar.
@@ -134,21 +135,54 @@ const fillModal = async (form = null) => {
     const DATA = await fetchData(ORDENES_API, action, form);
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
-        console.log(DATA)
         // Se recorre el conjunto de registros fila por fila.
         DATA.dataset.forEach(row => {
             // Se crean y concatenan las filas de la tabla con los datos de cada registro.
             DETAIL_FORM.innerHTML += `
 
-                        
+            <div class="modal-body overflow-auto">
+            <input type="hidden" id="idOrden" name="idOrden">
+            <input type="hidden" id="idDetalle" name="idDetalle">
+
+            <div class="col-sm-12 col-md-6 mt-3 mx-auto">
+                <label for="nombreProducto" class="mt-4">Detalle: ${row.id_detalle} </label>
+                <img src="${SERVER_URL}images/productos/${row.imagen_producto}" alt="..." width="200px" height="200px" name="imagenProductoDetalle"
+                    id="imagenProductoDetalle">
+            </div>
+
+            <div>
+                <div class="d-flex justify-content-between col-lg-12">
+                    <label for="nombreProducto" class="mt-4">Nombre del producto: </label>
+                    <label for="ProductoDetalle" name="nombreProductoDetalle" id="nombreProductoDetalle"
+                        class="mt-4">${row.nombre_producto}</label>
+                </div>
+                <div class="d-flex justify-content-between col-lg-12">
+                    <label for="nombreProducto" class="mt-4">Precio del producto: </label>
+                    <label for="ProductoDetalle" name="precioProductoDetalle" id="precioProductoDetalle"
+                        class="mt-4">${row.precio_producto}</label>
+                </div>
+                <div class="d-flex justify-content-between col-lg-12">
+                    <label for="nombreProducto" class="mt-4">Cantidad adquirida: </label>
+                    <label for="ProductoDetalle" name="cantidadProductoDetalle" id="cantidadProductoDetalle"
+                        class="mt-4">${row.cantidad_producto}</label>
+                </div>
+                <div class="d-flex justify-content-between col-lg-12">
+                    <label for="nombreProducto" class="mt-4">Total pagado: </label>
+                    <label for="ProductoDetalle" name="TotalPagadoProductoDetalle"
+                        id="TotalPagadoProductoDetalle" class="mt-4">${row.total_a_pagar}</label>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+        </div>
           `;
         });
-        // Se muestra un mensaje de acuerdo con el resultado.
-        ROWS_FOUND.textContent = DATA.message;
     } else {
         sweetAlert(4, DATA.error, true);
     }
-}
+}*/
 
 
 /*
@@ -181,27 +215,54 @@ const openUpdate = async (id) => {
 
 //Metodo para visualizar el detalle de cada orden
 const openDetail = async (id) => {
+    ROWS_FOUND2.textContent = '';
+    TABLE_BODY2.innerHTML = '';
     // Se define una constante tipo objeto con los datos del registro seleccionado.
     const FORM = new FormData();
     FORM.append('idOrden', id);
     // Petición para obtener los datos del registro solicitado.
     const DATA = await fetchData(ORDENES_API, 'readDetails', FORM);
+    
+    console.log(DATA)
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
+        if (DATA.status) {
+            // Se recorre el conjunto de registros fila por fila.
+            DATA.dataset.forEach(row => {
+                // Se crean y concatenan las filas de la tabla con los datos de cada registro.
+                TABLE_BODY2.innerHTML += `
+                  <tr>
+                      <td>${row.id_detalle}</td>
+                      <td><img src="${SERVER_URL}images/productos/${row.imagen_producto}" alt="..." width="200px" height="200px" name="imagenProductoDetalle"
+                      id="imagenProductoDetalle"></td>
+                      <td>${row.nombre_producto}</td>
+                      <td>${row.precio_producto}</td>
+                      <td>${row.cantidad_producto}</td>
+                      <td>${row.total_a_pagar}</td>
+                      
+                  </tr>
+              `;
+            });
+            // Se muestra un mensaje de acuerdo con el resultado.
+            ROWS_FOUND.textContent = DATA.message;
+        } else {
+            sweetAlert(4, DATA.error, true);
+        }
+        
         // Se muestra la caja de diálogo con su título.
         DETALLE_FORM.show();
         MODAL_TITLED.textContent = 'Detalles del pedido';
+
+        
         // Se prepara el formulario.
         DETAIL_FORM.reset();
         // Se inicializan los campos con los datos.
         const ROW = DATA.dataset;
-        ID_DETALLE.value = ROW.id_detalle;
-        IMAGEN_PRODUCTO.value = ROW.imagen_producto;
-        NOMBRE_PRODUCTO.value = ROW.nombre_producto;
-        PRECIO_PRODUCTO.value = ROW.precio_producto;
-        CANTIDAD_PRODUCTO.value = ROW.cantidad_producto;
-        TOTAL_PAGADO.value = ROW.total_a_pagar;
 
+
+        ID_DETALLE.value = ROW.id_detalle;
+
+        
     } else {
         sweetAlert(2, DATA.error, false);
     }

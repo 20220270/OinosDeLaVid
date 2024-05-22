@@ -33,7 +33,7 @@ if (isset($_GET['action'])) {
                     $result['error'] = 'No existen ordenes registradas';
                 }
                 break;
-                
+
             case 'readOne':
                 if (!$ordenes->setIdOrden($_POST['idOrden'])) {
                     $result['error'] = $ordenes->getDataError();
@@ -44,15 +44,15 @@ if (isset($_GET['action'])) {
                 }
                 break;
 
-                case 'readDetails':
-                    if (!$ordenes->setIdOrden($_POST['idOrden'])) {
-                        $result['error'] = $ordenes->getDataError();
-                    } elseif ($result['dataset'] = $ordenes->readDetails()) {
-                        $result['status'] = 1;
-                    } else {
-                        $result['error'] = 'Detalle de orden inexistente';
-                    }
-                    break;
+            case 'readDetails':
+                if (!$ordenes->setIdOrden($_POST['idOrden'])) {
+                    $result['error'] = $ordenes->getDataError();
+                } elseif ($result['dataset'] = $ordenes->readDetails()) {
+                    $result['status'] = 1;
+                } else {
+                    $result['error'] = 'Detalle de orden inexistente';
+                }
+                break;
 
 
             case 'updateRow':

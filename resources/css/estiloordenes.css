@@ -9,6 +9,14 @@
     pointer-events: none;
 }
 
+.overflow-auto{
+    max-height: 400px;
+}
+
+.modal-content{
+    width: 800px;
+}
+
 @media (min-width: 556px) and (max-width: 769px) {
     
     html{

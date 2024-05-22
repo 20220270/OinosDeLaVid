@@ -59,7 +59,7 @@ class OrdenesHandler
         $sql = 'UPDATE tb_ordenes
                 SET estado_orden = ?
                 WHERE id_orden = ?';
-        $params = array($this->estadoorden, $this->iddetalle);
+        $params = array($this->estadoorden, $this->idorden);
         return Database::executeRow($sql, $params);
     }
 
