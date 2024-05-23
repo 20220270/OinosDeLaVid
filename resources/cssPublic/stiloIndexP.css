@@ -2,6 +2,15 @@ body {
     background-color: #F5F5F5;
 }
 
+#cards{
+    border: 2px solid #840606;
+}
+
+#btnVerProductos{
+    background-color: #6D0E0E;
+    color: #fff;
+}
+
 /*Modificamos la card para que la viñeta se pueda agregar*/
 #card1,
 #card2 {
