@@ -34,7 +34,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                         <div class="card-body text-center">
                             <h5 class="card-title">${row.nombre_categoria}</h5>
                             <p class="card-text">${row.descripcion_categoria}</p>
-                            <a href="${url}" class="btn btn-primary">Ver productos</a>
+                            <a href="${url}" class="btn"  id="btnVerProductos"><img src="../../resources/Imagenes/verProductoss.png" class="me-2" alt="..."
+                            width="25px" height="25px">Ver productos</a>
                         </div>
                     </div>
                 </div>
