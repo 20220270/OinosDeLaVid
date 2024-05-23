@@ -1,6 +1,7 @@
 // Constante para establecer el formulario de iniciar sesión.
 const SESSION_FORM = document.getElementById('sessionForm');
 const MAIN_TITLE = document.getElementById('mainTitle');
+const USER_API = 'services/public/cliente.php';
 
 // Método del evento para cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', async () => {

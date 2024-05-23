@@ -123,6 +123,14 @@ class ClienteHandler
         return Database::getRow($sql, $params);
     }
 
+    public function createRow()
+    {
+        $sql = 'INSERT INTO tb_clientes(nombre_cliente, apellido_cliente, correo_cliente, dui_cliente, telefono_cliente, direccion_cliente, clave_cliente)
+                VALUES(?, ?, ?, ?, ?, ?, ?)';
+        $params = array($this->nombre, $this->apellido, $this->correo, $this->dui, $this->telefono, $this->direccion, $this->clave);
+        return Database::executeRow($sql, $params);
+    }
+
     public function updateRow()
     {
         $sql = 'UPDATE tb_clientes
