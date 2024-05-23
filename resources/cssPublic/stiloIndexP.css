@@ -54,7 +54,7 @@ footer {
 
 #Search {
     box-shadow: none;
-
+    width: 560px;
 }
 
 .form-control:read-only{
