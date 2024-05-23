@@ -236,9 +236,9 @@ const openDetail = async (id) => {
                       <td><img src="${SERVER_URL}images/productos/${row.imagen_producto}" alt="..." width="200px" height="200px" name="imagenProductoDetalle"
                       id="imagenProductoDetalle"></td>
                       <td>${row.nombre_producto}</td>
-                      <td>${row.precio_producto}</td>
+                      <td>$${row.precio_producto}</td>
                       <td>${row.cantidad_producto}</td>
-                      <td>${row.total_a_pagar}</td>
+                      <td>$${row.total_a_pagar}</td>
                       
                   </tr>
               `;
