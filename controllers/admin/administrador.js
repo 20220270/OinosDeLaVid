@@ -114,11 +114,6 @@ const fillTable = async (form = null) => {
                           <label>${row.alias_administrador}</label>
                       </div>
                       <div class="d-flex justify-content-between">
-                          <label>Clave:</label>
-                          <label id="password-${row.id_administrador}">${truncatedPassword}</label>
-                          <button class="btn btn-link p-0" onclick="togglePassword(${row.id_administrador}, '${row.clave_administrador}')">Mostrar</button>
-                      </div>
-                      <div class="d-flex justify-content-between">
                           <label>Nivel de usuario:</label>
                           <label>${row.nivel}</label>
                       </div>
@@ -148,17 +143,6 @@ const fillTable = async (form = null) => {
   }
 }
 
-const togglePassword = (id, fullPassword) => {
-  const passwordLabel = document.getElementById(`password-${id}`);
-  const toggleButton = document.getElementById(`toggle-password-${id}`);
-  if (passwordLabel.textContent === fullPassword) {
-      passwordLabel.textContent = fullPassword.substring(0, 27) + '...';
-      toggleButton.textContent = 'Mostrar';
-  } else {
-      passwordLabel.textContent = fullPassword;
-      toggleButton.textContent = 'Ocultar';
-  }
-}
   
 
 const openCreate = () => {
