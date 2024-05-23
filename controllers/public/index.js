@@ -16,26 +16,51 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (DATA.status) {
         // Se inicializa el contenedor de categorías.
         CATEGORIAS.innerHTML = '';
+        // Variable para controlar si es el primer elemento del carrusel.
+        let isActive = 'active';
+        // Se agrupan las categorías en grupos de 4 para cada item del carrusel.
+        let rowContent = '';
+        let counter = 0;
+
         // Se recorre el conjunto de registros fila por fila a través del objeto row.
-        DATA.dataset.forEach(row => {
+        DATA.dataset.forEach((row, index) => {
             // Se establece la página web de destino con los parámetros.
             let url = `productos.html?id=${row.id_categoria}&nombre=${row.nombre_categoria}`;
-            // Se crean y concatenan las tarjetas con los datos de cada categoría.
-            CATEGORIAS.innerHTML += `
+            // Se crean las tarjetas con los datos de cada categoría.
+            let card = `
                 <div class="col-sm-12 col-md-6 col-lg-3">
-                    <div class="card mb-3"  id="cards">
+                    <div class="card mb-3">
                         <img src="${SERVER_URL}images/categorias/${row.imagen_categoria}" class="card-img-top" alt="${row.nombre_categoria}">
                         <div class="card-body text-center">
                             <h5 class="card-title">${row.nombre_categoria}</h5>
                             <p class="card-text">${row.descripcion_categoria}</p>
-                            <a href="${url}" class="btn" id="btnVerProductos">Ver productos</a>
+                            <a href="${url}" class="btn btn-primary">Ver productos</a>
                         </div>
                     </div>
                 </div>
             `;
+
+            // Agrega la tarjeta al contenido de la fila actual.
+            rowContent += card;
+            counter++;
+
+            // Cada 4 tarjetas, se crea un nuevo item del carrusel.
+            if (counter === 4 || index === DATA.dataset.length - 1) {
+                CATEGORIAS.innerHTML += `
+                    <div class="carousel-item ${isActive}">
+                        <div class="row">
+                            ${rowContent}
+                        </div>
+                    </div>
+                `;
+                // Reinicia las variables para la próxima fila.
+                rowContent = '';
+                counter = 0;
+                isActive = ''; // Solo el primer item debe tener la clase "active".
+            }
         });
     } else {
         // Se asigna al título del contenido de la excepción cuando no existen datos para mostrar.
-        document.getElementById('mainTitle').textContent = DATA.error;
+        MAIN_TITLE.textContent = DATA.error;
     }
 });

@@ -42,7 +42,7 @@
             </div>
         </div>
 
-            <!-- boton para adelantar o regresar imagen de carrousel -->
+        <!-- boton para adelantar o regresar imagen de carrousel -->
 
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
             data-bs-slide="prev">
@@ -57,10 +57,7 @@
     </div>
 
 
-    <div class="container">
-    </div>
-
-        <!-- contenedor con barra de busqueda cards con info y descuentos -->
+    <!-- contenedor con barra de busqueda cards con info y descuentos -->
 
 
     <div class="container mt-5" id="catalogo">
@@ -79,8 +76,7 @@
                         <form class="row justify-content-end mb-3">
                             <div class="position-relative col-lg-12">
                                 <img class="search-icon" src="../../resources/Imagenes/lupa.png" alt="Lupa">
-                                <input class="form-control me-2" type="search"
-                                    placeholder="Busca categorías"
+                                <input class="form-control me-2" type="search" placeholder="Busca categorías"
                                     aria-label="Search" id="Search">
                             </div>
 
@@ -93,14 +89,32 @@
 
         <!--Cards con botones para aumentar o disminuir la cantidad-->
         <div class="row text-center">
-            
+
 
             <h4 id="mainTitle"></h4>
-        <!-- Contenedor para mostrar las categorías disponibles -->
-        <div class="row" id="categorias"></div>
+            <!-- Contenedor para mostrar las categorías disponibles -->
 
 
-            
+            <!-- Contenedor para las categorías en forma de carrusel -->
+            <div id="carouselCategorias" class="carousel slide mt-5" data-bs-ride="carousel">
+                <div class="carousel-inner" id="categorias">
+                    <!-- Las categorías se insertarán aquí dinámicamente -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselCategorias"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselCategorias"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+
+
+
             <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
                 <div class="card mb-3" id="card1">
 
@@ -297,165 +311,166 @@
 
 
     <!--Modal para los comentarios-->
-    <div class="modal fade" id="modalComentarios" data-bs-backdrop="static" data-bs-keyboard="false"
-    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header d-flex justify-content-center align-items-center">
-                
-                <img src="/OinosDeLaVid/resources/Imagenes/logo.png" alt="..." width="100px" height="100px"
-                    class="mx-auto mb-3" data-bs-dismiss="modal" id="botonCerrarCo2">
-            </div>
-            <div class="modal-body">
-                <h5 class="text-center mb-4">Sección de comentarios</h5>
-                <div class="container text-center">
-                    <div class="row">
+    <div class="modal fade" id="modalComentarios" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-center align-items-center">
 
-                        <div class="col col-lg-12">
-                            <input type="hidden" id="idProducto" name="idProducto">
-                            <img src="https://hips.hearstapps.com/hmg-prod/images/pago-de-otazu-2019-vino-elle-1647167160.jpg" alt="..."
-                                class="imaegnProducto rounded-3" width="300px" height="300px">
+                    <img src="/OinosDeLaVid/resources/Imagenes/logo.png" alt="..." width="100px" height="100px"
+                        class="mx-auto mb-3" data-bs-dismiss="modal" id="botonCerrarCo2">
+                </div>
+                <div class="modal-body">
+                    <h5 class="text-center mb-4">Sección de comentarios</h5>
+                    <div class="container text-center">
+                        <div class="row">
 
-                            <div id="inputLaberls" class="col-lg-12 justify-content-center">
-                                <label for="nombreProducto" name="nombreProducto" id="nombreProducto"
-                                    class="fw-bold">
-                                    country sliders
-                                </label>
-                                <br>
-                                <label for="descripcionProducto" class="mt-5 col-lg-12" name="descripcionProducto"
-                                    id="descripcionProducto">
-                                    a elixir do brillante para la vida de los humanoides.
-                                </label>
-                            </div>
-                        </div>
+                            <div class="col col-lg-12">
+                                <input type="hidden" id="idProducto" name="idProducto">
+                                <img src="https://hips.hearstapps.com/hmg-prod/images/pago-de-otazu-2019-vino-elle-1647167160.jpg"
+                                    alt="..." class="imaegnProducto rounded-3" width="300px" height="300px">
 
-                        <!--Comntarios-->
-                        <div class="scroll">
-                            <div class="mt-2 text-start contenedorComentario">
-                                <div class="container text-start mt-2">
-                                    <div class="row align-items-center">
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <img src="/OinosDeLaVid/resources/Imagenes/userIcon.png" alt="..." width="40px"
-                                                height="40px" class="imagenCliente mt-2">
-                                            <div class="text1 col-lg-4">
-                                                <span>AMLO</span>
-                                            </div>
-
-                                            <label for="fechacomentario" class="fechacomentario"
-                                                name="fechacomentario" id="fechacomentario">
-                                                09/09/2023
-                                            </label>
-                                        </div>
-                                        <div class="col-lg-3 col-md-6 col-sm-12 text-end" id="stars2">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="comentarios">
-                                    <label for="comentario" name="comentario"
-                                        class="comentario mt-3 mx-3 mb-1 col-lg-12" id="comentario">Producto
-                                        muy
-                                        bueno</label>
+                                <div id="inputLaberls" class="col-lg-12 justify-content-center">
+                                    <label for="nombreProducto" name="nombreProducto" id="nombreProducto"
+                                        class="fw-bold">
+                                        country sliders
+                                    </label>
+                                    <br>
+                                    <label for="descripcionProducto" class="mt-5 col-lg-12" name="descripcionProducto"
+                                        id="descripcionProducto">
+                                        a elixir do brillante para la vida de los humanoides.
+                                    </label>
                                 </div>
                             </div>
 
-                            <div class="mt-2 text-start contenedorComentario">
-                                <div class="container text-start mt-2">
-                                    <div class="row align-items-center">
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <img src="/OinosDeLaVid/resources/Imagenes/userIcon.png" alt="..." width="40px"
-                                                height="40px" class="imagenCliente mt-2">
-                                            <div class="text1 col-lg-4">
-                                                <span>AMLO</span>
-                                            </div>
+                            <!--Comntarios-->
+                            <div class="scroll">
+                                <div class="mt-2 text-start contenedorComentario">
+                                    <div class="container text-start mt-2">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <img src="/OinosDeLaVid/resources/Imagenes/userIcon.png" alt="..."
+                                                    width="40px" height="40px" class="imagenCliente mt-2">
+                                                <div class="text1 col-lg-4">
+                                                    <span>AMLO</span>
+                                                </div>
 
-                                            <label for="fechacomentario" class="fechacomentario"
-                                                name="fechacomentario" id="fechacomentario">
-                                                09/09/2023
-                                            </label>
-                                        </div>
-                                        <div class="col-lg-3 col-md-6 col-sm-12 text-end" id="stars2">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
+                                                <label for="fechacomentario" class="fechacomentario"
+                                                    name="fechacomentario" id="fechacomentario">
+                                                    09/09/2023
+                                                </label>
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 col-sm-12 text-end" id="stars2">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="comentarios">
-                                    <label for="comentario" name="comentario"
-                                        class="comentario mt-3 mx-3 mb-1 col-lg-12" id="comentario">Producto
-                                        muy
-                                        bueno</label>
-                                </div>
-                            </div>
-
-                            <div class="mt-2 text-start contenedorComentario">
-                                <div class="container text-start mt-2">
-                                    <div class="row align-items-center">
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <img src="/OinosDeLaVid/resources/Imagenes/userIcon.png" alt="..." width="40px"
-                                                height="40px" class="imagenCliente mt-2">
-                                            <div class="text1 col-lg-4">
-                                                <span>AMLO</span>
-                                            </div>
-
-                                            <label for="fechacomentario" class="fechacomentario"
-                                                name="fechacomentario" id="fechacomentario">
-                                                09/09/2023
-                                            </label>
-                                        </div>
-                                        <div class="col-lg-3 col-md-6 col-sm-12 text-end" id="stars2">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
+                                    <div class="comentarios">
+                                        <label for="comentario" name="comentario"
+                                            class="comentario mt-3 mx-3 mb-1 col-lg-12" id="comentario">Producto
+                                            muy
+                                            bueno</label>
                                     </div>
                                 </div>
-                                <div class="comentarios">
-                                    <label for="comentario" name="comentario"
-                                        class="comentario mt-3 mx-3 mb-1 col-lg-12" id="comentario">Producto
-                                        muy
-                                        bueno</label>
-                                </div>
-                            </div>
 
-                            <div class="mt-2 text-start contenedorComentario">
-                                <div class="container text-start mt-2">
-                                    <div class="row align-items-center">
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <img src="/OinosDeLaVid/resources/Imagenes/userIcon.png" alt="..." width="40px"
-                                                height="40px" class="imagenCliente mt-2">
-                                            <div class="text1 col-lg-4">
-                                                <span>AMLO</span>
+                                <div class="mt-2 text-start contenedorComentario">
+                                    <div class="container text-start mt-2">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <img src="/OinosDeLaVid/resources/Imagenes/userIcon.png" alt="..."
+                                                    width="40px" height="40px" class="imagenCliente mt-2">
+                                                <div class="text1 col-lg-4">
+                                                    <span>AMLO</span>
+                                                </div>
+
+                                                <label for="fechacomentario" class="fechacomentario"
+                                                    name="fechacomentario" id="fechacomentario">
+                                                    09/09/2023
+                                                </label>
                                             </div>
-
-                                            <label for="fechacomentario" class="fechacomentario"
-                                                name="fechacomentario" id="fechacomentario">
-                                                09/09/2023
-                                            </label>
-                                        </div>
-                                        <div class="col-lg-3 col-md-6 col-sm-12 text-end" id="stars2">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
+                                            <div class="col-lg-3 col-md-6 col-sm-12 text-end" id="stars2">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="comentarios">
+                                        <label for="comentario" name="comentario"
+                                            class="comentario mt-3 mx-3 mb-1 col-lg-12" id="comentario">Producto
+                                            muy
+                                            bueno</label>
+                                    </div>
                                 </div>
-                                <div class="comentarios">
-                                    <label for="comentario" name="comentario"
-                                        class="comentario mt-3 mx-3 mb-1 col-lg-12" id="comentario">Producto
-                                        muy
-                                        bueno</label>
+
+                                <div class="mt-2 text-start contenedorComentario">
+                                    <div class="container text-start mt-2">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <img src="/OinosDeLaVid/resources/Imagenes/userIcon.png" alt="..."
+                                                    width="40px" height="40px" class="imagenCliente mt-2">
+                                                <div class="text1 col-lg-4">
+                                                    <span>AMLO</span>
+                                                </div>
+
+                                                <label for="fechacomentario" class="fechacomentario"
+                                                    name="fechacomentario" id="fechacomentario">
+                                                    09/09/2023
+                                                </label>
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 col-sm-12 text-end" id="stars2">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comentarios">
+                                        <label for="comentario" name="comentario"
+                                            class="comentario mt-3 mx-3 mb-1 col-lg-12" id="comentario">Producto
+                                            muy
+                                            bueno</label>
+                                    </div>
+                                </div>
+
+                                <div class="mt-2 text-start contenedorComentario">
+                                    <div class="container text-start mt-2">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <img src="/OinosDeLaVid/resources/Imagenes/userIcon.png" alt="..."
+                                                    width="40px" height="40px" class="imagenCliente mt-2">
+                                                <div class="text1 col-lg-4">
+                                                    <span>AMLO</span>
+                                                </div>
+
+                                                <label for="fechacomentario" class="fechacomentario"
+                                                    name="fechacomentario" id="fechacomentario">
+                                                    09/09/2023
+                                                </label>
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 col-sm-12 text-end" id="stars2">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comentarios">
+                                        <label for="comentario" name="comentario"
+                                            class="comentario mt-3 mx-3 mb-1 col-lg-12" id="comentario">Producto
+                                            muy
+                                            bueno</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -464,7 +479,6 @@
             </div>
         </div>
     </div>
-</div>
 
 
 
