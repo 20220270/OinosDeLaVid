@@ -1,8 +1,9 @@
 // Constante para completar la ruta de la API.
-const PRODUCTO_API = 'services/public/producto.php';
+const PRODUCTO_API = 'services/public/productos.php';
 // Constante tipo objeto para obtener los parámetros disponibles en la URL.
 const PARAMS = new URLSearchParams(location.search);
 const PRODUCTOS = document.getElementById('productos');
+const MAIN_TITLE = document.getElementById('mainTitle');
 
 // Método manejador de eventos para cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', async () => {
