@@ -61,22 +61,13 @@ const loadTemplate = async () => {
                             <a class="nav-link" href="miscompras.html">Ver mis compras</a>
                         </li>
                         <li class="nav-item" id="ses">
-                            <a class="nav-link" href="login.html">Cerrar sesión</a>
+                            <a class="nav-link" onclick="logOut()">Cerrar sesión</a>
                         </li>
                     </ul>
                 </div>
 
                 <button class="btn" type="submit" id="btnVerPerfil"> <a href="perfil.html" class="textoVerPerfil">Mi perfil</a></button>
 
-                <div class="botonCar">
-                    <img src="../../resources/Imagenes/carrito.png" alt="" width="25 px" height="25 px"
-                        id="imagenCarrito">
-                    <button class="btn" type="submit" id="botonCarrito">
-
-                        <h6 class="mt-1" id="textoCar">Ver carrito</h6>
-
-                    </button>
-                </div>
 
             </div>
         </nav>
@@ -120,15 +111,6 @@ const loadTemplate = async () => {
 
                 <button class="btn" type="submit" id="btnVerPerfil"> <a href="perfil.html" class="textoVerPerfil">Mi perfil</a></button>
 
-                <div class="botonCar">
-                    <img src="../../resources/Imagenes/carrito.png" alt="" width="25 px" height="25 px"
-                        id="imagenCarrito">
-                    <button class="btn" type="submit" id="botonCarrito">
-
-                        <h6 class="mt-1" id="textoCar">Ver carrito</h6>
-
-                    </button>
-                </div>
 
             </div>
         </nav>
