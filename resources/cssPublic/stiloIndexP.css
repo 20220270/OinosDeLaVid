@@ -218,6 +218,7 @@ footer {
     }
 
 
+
 }
 
 @media screen and (max-width: 1300px) {
@@ -265,7 +266,7 @@ footer {
     .search-icon {
         position: absolute;
         top: 50%;
-        transform: translate(-630%, -48%);
+        transform: translate(-800%, -48%);
         width: 20px;
         height: auto;
         z-index: 1;
@@ -274,6 +275,12 @@ footer {
 
     .text {
         font-size: 11px;
+    }
+
+    
+    #Search {
+        box-shadow: none;
+        width: 330px;
     }
 
 }

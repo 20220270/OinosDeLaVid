@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             PRODUCTOS.innerHTML += `
                 <div class="col-sm-12 col-md-6 col-lg-3">
                     <div class="card mb-3">
-                        <img src="${SERVER_URL}images/productos/${row.imagen_producto}" class="card-img-top" alt="${row.nombre_producto}">
+                        <img src="${SERVER_URL}images/productos/${row.imagen_producto}" class="card-img-top" height="220px" alt="${row.nombre_producto}">
                         <div class="card-body">
                             <h5 class="card-title text-center">${row.nombre_producto}</h5>
                         </div>
