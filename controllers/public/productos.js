@@ -8,7 +8,7 @@ const MAIN_TITLE = document.getElementById('mainTitle');
 // Método manejador de eventos para cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', async () => {
     // Llamada a la función para mostrar el encabezado y pie del documento.
-    loadTemplate();
+    //loadTemplate();
     // Se define un objeto con los datos de la categoría seleccionada.
     const FORM = new FormData();
     FORM.append('idCategoria', PARAMS.get('id'));

@@ -16,6 +16,7 @@ class OrdenesHandler
     protected $estadoorden = null;
     protected $direccion = null;
     protected $producto = null;
+    protected $precioproducto = null;
     protected $cantidad = null;
     protected $fecha = null;
     protected $total = null;
@@ -93,7 +94,7 @@ class OrdenesHandler
         $this->estadoorden = 'Pendiente';
         $sql = 'SELECT id_orden
                 FROM tb_ordenes
-                WHERE estado_pedido = ? AND id_cliente = ?';
+                WHERE estado_orden = ? AND id_cliente = ?';
         $params = array($this->estadoorden, $_SESSION['idCliente']);
         if ($data = Database::getRow($sql, $params)) {
             $_SESSION['idOrden'] = $data['id_orden'];
@@ -109,8 +110,8 @@ class OrdenesHandler
         if ($this->getOrder()) {
             return true;
         } else {
-            $sql = 'INSERT INTO tb_ordenes(direccion_pedido, id_cliente)
-                    VALUES((SELECT direccion_cliente FROM tb_clientes WHERE id_cliente = ?), ?)';
+            $sql = 'INSERT INTO tb_ordenes(direccion_orden, id_cliente)
+                    VALUES(?, ?)';
             $params = array($_SESSION['idCliente'], $_SESSION['idCliente']);
             // Se obtiene el ultimo valor insertado de la llave primaria en la tabla pedido.
             if ($_SESSION['idOrden'] = Database::getLastRow($sql, $params)) {
@@ -148,7 +149,7 @@ class OrdenesHandler
     {
         $this->estadoorden = 'Finalizado';
         $sql = 'UPDATE tb_detallesOrdenes
-                SET estado_pedido = ?
+                SET estado_orden = ?
                 WHERE id_orden = ?';
         $params = array($this->estadoorden, $_SESSION['idOrden']);
         return Database::executeRow($sql, $params);

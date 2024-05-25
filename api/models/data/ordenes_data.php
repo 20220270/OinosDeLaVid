@@ -38,6 +38,17 @@ class OrdenesData extends OrdenesHandler
         }
     }
 
+    public function setPrecioProducto($value)
+    {
+        if (Validator::validateString($value)) {
+            $this->precioproducto = $value;
+            return true;
+        } else {
+            $this->data_error = 'el precio del producto es incorrecto';
+            return false;
+        }
+    }
+
     public function setNombreCliente($value, $min = 2, $max = 50)
     {
         if (!Validator::validateAlphabetic($value)) {

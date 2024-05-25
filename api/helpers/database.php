@@ -99,9 +99,6 @@ class Database
             case '42S02':
                 self::$error = 'Tabla no encontrada';
                 break;
-            case '42S22':
-                self::$error = 'Columna no encontrada';
-                break;
         }
     }
 

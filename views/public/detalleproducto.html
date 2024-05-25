@@ -16,25 +16,30 @@
     <main>
         <!-- Título del contenido principal -->
         <h4 id="mainTitle"></h4>
+        
         <!-- Componente Horizontal Card para mostrar el detalle de un producto -->
-        <div class="card mb-3" id="detalle">
+        <div class="card mb-3 mt-5  col-lg-10 mx-auto" id="detalle">
             <div class="row">
                 <div class="col-md-4">
                     <!-- Se muestra la imagen del producto -->
-                    <img id="imagenProducto" class="img-fluid rounded-start">
+                    <img id="imagenProducto" class="img-fluid rounded-start h-100">
                 </div>
                 <div class="col-md-8">
-                    <div class="card-body">
+                    <div class="card-body ">
+                        
                         <h5 class="card-title" id="nombreProducto"></h5>
                         <p class="card-text" id="descripcionProducto"></p>
-                        <p class="card-text">Precio unitario (US$) <b id="precioProducto"></b></p>
+                        <p class="card-text" >Precio unitario (US$) <p id="precioProducto" name="precioProducto" class="fw-bold"></p</p>
                         <p class="card-text">Existencias <b id="existenciasProducto"></b></p>
                         <!-- Formulario para agregar el producto al carrito de compras -->
                         <form class="row" id="shoppingForm">
                             <!-- Campo oculto para asignar el id del producto -->
                             <input type="hidden" id="idProducto" name="idProducto">
+                            
                             <div class="col-6">
-                                <input type="number" id="cantidadProducto" name="cantidadProducto" min="1" class="form-control" placeholder="Ingrese cantidad"
+                                <input type="number" id="cantidadProducto" name="cantidadProducto" min="1" class="form-control" placeholder="Ingrese la cantidad a comprar"
+                                    required>
+                                    <input type="text" id="direccionOrden" name="direccionOrden" class="form-control mt-4" placeholder="Ingrese la dirección para entrega"
                                     required>
                             </div>
                             <div class="col-6 align-self-end">
