@@ -68,7 +68,7 @@ class OrdenesHandler
     //Funcion para el sitio privado: Leer los detalles de cada compra
     public function readDetails()
     {
-        $sql = 'SELECT id_detalle, nombre_producto, imagen_producto, precio_producto, cantidad_producto, total_a_pagar
+        $sql = 'SELECT id_detalle, nombre_producto, imagen_producto, tb_productos.precio_producto, cantidad_producto, total_a_pagar
         FROM tb_detallesOrdenes
         INNER JOIN tb_ordenes USING(id_orden)
         INNER JOIN tb_productos USING(id_producto) WHERE id_orden = ?';
@@ -111,7 +111,7 @@ class OrdenesHandler
             return true;
         } else {
             $sql = 'INSERT INTO tb_ordenes(direccion_orden, id_cliente)
-                    VALUES(?, ?)';
+                    VALUES((SELECT direccion_cliente FROM tb_clientes WHERE id_cliente = ?), ?)'; //Se manda la direccion dependiendo el ID del cliente
             $params = array($_SESSION['idCliente'], $_SESSION['idCliente']);
             // Se obtiene el ultimo valor insertado de la llave primaria en la tabla pedido.
             if ($_SESSION['idOrden'] = Database::getLastRow($sql, $params)) {
@@ -135,7 +135,7 @@ class OrdenesHandler
     // Método para obtener los productos que se encuentran en el carrito de compras.
     public function readDetail()
     {
-        $sql = 'SELECT id_detalle, nombre_producto, precio_producto, cantidad_producto, total_a_pagar
+        $sql = 'SELECT id_detalle, nombre_producto, tb_detallesOrdenes.precio_producto, cantidad_producto, tb_detallesOrdenes.total_a_pagar
         FROM tb_detallesOrdenes
         INNER JOIN tb_ordenes USING(id_orden)
         INNER JOIN tb_productos USING(id_producto)
@@ -148,7 +148,7 @@ class OrdenesHandler
     public function finishOrder()
     {
         $this->estadoorden = 'Finalizado';
-        $sql = 'UPDATE tb_detallesOrdenes
+        $sql = 'UPDATE tb_ordenes
                 SET estado_orden = ?
                 WHERE id_orden = ?';
         $params = array($this->estadoorden, $_SESSION['idOrden']);
