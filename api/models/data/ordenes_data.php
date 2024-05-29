@@ -103,7 +103,7 @@ class OrdenesData extends OrdenesHandler
     public function setCantidad($value)
     {
         if (Validator::validateNaturalNumber($value)) {
-            $this->iddetalle = $value;
+            $this->cantidad = $value;
             return true;
         } else {
             $this->data_error = 'La cantidad de la orden es incorrecto';

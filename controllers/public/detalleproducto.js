@@ -5,6 +5,7 @@ const ORDEN_API = 'services/public/ordenes.php';
 const PARAMS = new URLSearchParams(location.search);
 // Constante para establecer el formulario de agregar un producto al carrito de compras.
 const SHOPPING_FORM = document.getElementById('shoppingForm');
+const CANTIDAD = document.getElementById('cantidadProducto');
 
 // Método del eventos para cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', async () => {
