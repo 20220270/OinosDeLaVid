@@ -91,7 +91,7 @@ class OrdenesHandler
     /** */
     public function getOrder()
     {
-        $this->estadoorden = 'Pendiente';
+        $this->estadoorden = 'Entregada';
         $sql = 'SELECT id_orden
                 FROM tb_ordenes
                 WHERE estado_orden = ? AND id_cliente = ?';

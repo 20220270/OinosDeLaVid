@@ -32,6 +32,7 @@ if (isset($_GET['action'])) {
                 }
                 break;
             default:
+            print($result);
                 $result['error'] = 'Acción no disponible dentro de la sesión';
         }
     } else {
