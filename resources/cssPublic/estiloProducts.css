@@ -3,13 +3,32 @@
     color: #fff;
 }
 
-#btnVerDetalle{
+#btnVerDetalle {
     background-color: #8a1515;
     color: #fff;
 }
+
 .descuento {
     background-color: #A00000;
     color: white;
     padding: 2px 5px;
     border-radius: 3px;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+}
+
+.search-input {
+    padding-left: 40px;
 }

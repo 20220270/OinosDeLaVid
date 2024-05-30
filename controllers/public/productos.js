@@ -4,6 +4,7 @@ const PRODUCTO_API = 'services/public/productos.php';
 const PARAMS = new URLSearchParams(location.search);
 const PRODUCTOS = document.getElementById('productos');
 const MAIN_TITLE = document.getElementById('mainTitle');
+const SEARCH_FORM = document.getElementById('searchForm');
 
 // Método manejador de eventos para cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', async () => {
@@ -56,3 +57,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         MAIN_TITLE.textContent = DATA.error;
     }
 });
+
+
+

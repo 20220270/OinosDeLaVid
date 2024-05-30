@@ -75,8 +75,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 document.addEventListener('DOMContentLoaded', async () => {
-    // Llamada a la función para mostrar el encabezado y pie del documento.
-    //loadTemplate();
+
     // Se establece el título del contenido principal.
     MAIN_TITLE2.textContent = 'Marcas asociadas';
     // Petición para obtener las marcas disponibles.
@@ -131,4 +130,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         MAIN_TITLE2.textContent = DATA.error;
     }
 });
+
+
 
