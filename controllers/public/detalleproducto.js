@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     FORM.append('idProducto', PARAMS.get('id'));
     // Petición para solicitar los datos del producto seleccionado.
     const DATA = await fetchData(PRODUCTO_API, 'readOne', FORM);
+    const DATA2 = await fetchData(PRODUCTO_API, 'commentsProduct', FORM);
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
         // Se colocan los datos en la página web de acuerdo con el producto seleccionado previamente.
@@ -27,13 +28,23 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('precioProducto').textContent = DATA.dataset.precio_producto;
         document.getElementById('existenciasProducto').textContent = DATA.dataset.existencias_producto;
         document.getElementById('idProducto').value = DATA.dataset.id_producto;
-    } else {
+
+    }
+
+    else if(DATA2.status){
+        document.getElementById('comentarioproducto').textContent = DATA.dataset.comentario_producto;
+        document.getElementById('valoracionproducto').textContent = DATA.dataset.calificacion_producto;
+        document.getElementById('idProducto').value = DATA.dataset.id_producto;
+    }
+    
+    else {
         // Se presenta un mensaje de error cuando no existen datos para mostrar.
         document.getElementById('mainTitle').textContent = DATA.error;
         // Se limpia el contenido cuando no hay datos para mostrar.
         document.getElementById('detalle').innerHTML = '';
     }
 });
+
 
 // Método del evento para cuando se envía el formulario de agregar un producto al carrito.
 SHOPPING_FORM.addEventListener('submit', async (event) => {

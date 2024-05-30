@@ -28,6 +28,17 @@ if (isset($_GET['action'])) {
                 $result['error'] = 'Producto inexistente';
             }
             break;
+
+        case 'commentsProduct':
+            if ($result['dataset'] = $producto->commentsProduct()) {
+                $result['status'] = 1;
+                $result['message'] = 'Existen ' . count($result['dataset']) . ' registros';
+            } else {
+                $result['error'] = 'Este producto aun no recibe un comentario';
+                
+            }
+            
+            break;
         default:
             $result['error'] = 'Acción no disponible';
     }

@@ -52,6 +52,8 @@ if (isset($_GET['action'])) {
                 }
                 break;
 
+               
+
                 // Acción para actualizar la cantidad de un producto en el carrito de compras.
             case 'updateDetail':
                 $_POST = Validator::validateForm($_POST);
