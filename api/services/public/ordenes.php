@@ -15,7 +15,7 @@ if (isset($_GET['action'])) {
         $result['session'] = 1;
         // Se compara la acción a realizar cuando un cliente ha iniciado sesión.
         switch ($_GET['action']) {
-            // Acción para agregar un producto al carrito de compras.
+                // Acción para agregar un producto al carrito de compras.
             case 'createDetail':
                 $_POST = Validator::validateForm($_POST);
                 if (!$pedido->startOrder()) {
@@ -32,18 +32,27 @@ if (isset($_GET['action'])) {
                     $result['error'] = 'Ocurrió un problema al agregar el producto';
                 }
                 break;
-            // Acción para obtener los productos agregados en el carrito de compras.
+                // Acción para obtener los productos agregados en el carrito de compras.
             case 'readDetail':
                 if (!$pedido->getOrder()) {
                     $result['error'] = 'No ha agregado productos al carrito';
-
                 } elseif ($result['dataset'] = $pedido->readDetail()) {
                     $result['status'] = 1;
                 } else {
                     $result['error'] = 'No existen productos en el carrito';
                 }
                 break;
-            // Acción para actualizar la cantidad de un producto en el carrito de compras.
+
+            case 'myOrders':
+                if ($result['dataset'] = $pedido->myOrders()) {
+                    $result['status'] = 1;
+                    $result['message'] = 'Existen ' . count($result['dataset']) . ' registros';
+                } else {
+                    $result['error'] = 'No existen ordenes registradas';
+                }
+                break;
+
+                // Acción para actualizar la cantidad de un producto en el carrito de compras.
             case 'updateDetail':
                 $_POST = Validator::validateForm($_POST);
                 if (
@@ -58,7 +67,7 @@ if (isset($_GET['action'])) {
                     $result['error'] = 'Ocurrió un problema al modificar la cantidad';
                 }
                 break;
-            // Acción para remover un producto del carrito de compras.
+                // Acción para remover un producto del carrito de compras.
             case 'deleteDetail':
                 if (!$pedido->setIdDetalle($_POST['idDetalle'])) {
                     $result['error'] = $pedido->getDataError();
@@ -69,7 +78,7 @@ if (isset($_GET['action'])) {
                     $result['error'] = 'Ocurrió un problema al remover el producto';
                 }
                 break;
-            // Acción para finalizar el carrito de compras.
+                // Acción para finalizar el carrito de compras.
             case 'finishOrder':
                 if ($pedido->finishOrder()) {
                     $result['status'] = 1;

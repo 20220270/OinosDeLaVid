@@ -76,6 +76,17 @@ class OrdenesHandler
         return Database::getRows($sql, $params);
     }
 
+    //Funcion para el sitio publico: Leer los detalles de cada compra
+    public function myOrders()
+    {
+        $sql = 'SELECT id_detalle, nombre_producto, imagen_producto, tb_productos.precio_producto, cantidad_producto, total_a_pagar, tb_ordenes.fecha_registro, estado_orden
+        FROM tb_detallesOrdenes
+        INNER JOIN tb_ordenes USING(id_orden)
+        INNER JOIN tb_productos USING(id_producto) WHERE id_cliente = ?';
+        $params = array($_SESSION['idCliente']);
+        return Database::getRows($sql, $params);
+    }
+
 
     public function readFilename()
     {

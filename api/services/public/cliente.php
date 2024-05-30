@@ -65,6 +65,7 @@ if (isset($_GET['action'])) {
                 } else {
                     $result['error'] = 'Ocurrió un problema al modificar el perfil';
                 }
+                
                 break;
             case 'changePassword':
                 $_POST = Validator::validateForm($_POST);
