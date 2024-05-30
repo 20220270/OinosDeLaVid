@@ -20,32 +20,25 @@
 
         <h4 id="mainTitle"></h4>
         <!-- Tabla para mostrar el detalle de los productos agregados al carrito de compras -->
-        <table class="table table-striped">
-            <!-- Cabeza de la tabla para mostrar los títulos de las columnas -->
-            <thead>
-                <tr>
-                    <th>PRODUCTO</th>
-                    <th>PRECIO (US$)</th>
-                    <th>CANTIDAD</th>
-                    <th>SUBTOTAL (US$)</th>
-                    <th>ACCIONES</th>
-                </tr>
-            </thead>
-            <!-- Cuerpo de la tabla para mostrar un registro por fila -->
-            <tbody id="tableBody"></tbody>
-        </table>
+        
+
+        <div class="container">
+            <div class="row" id="cardProductosCarrito">
+    
+            </div>
+        </div>
 
         <p class="text-end">TOTAL A PAGAR (US$) <b id="pago"></b></p>
         <!-- Párrafo para mostrar un botón que finaliza el pedido -->
         <p class="text-end">
-            <button type="button" class="btn btn-primary" onclick="finishOrder()">
-                <i class="bi bi-credit-card-fill"></i> Finalizar pedido
+            <button type="button" class="btn btn-dark" onclick="finishOrder()">
+                <img src="../../resources/Imagenes/finich.png" alt="..." width="30px" height="30px"> Finalizar pedido
             </button>
         </p>
         <!-- Párrafo para mostrar un enlace a la página web principal -->
         <p class="text-end">
-            <a href="index.html" class="btn btn-success">
-                <i class="bi bi-cart-fill"></i> Seguir comprando
+            <a href="index.html" class="btn btn-dark">
+                <img src="../../resources/Imagenes/carrito.png" alt="..." width="30px" height="30px"> Seguir comprando
             </a>
         </p>
         <!-- Componente Modal para mostrar una caja de diálogo -->
@@ -69,7 +62,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="submit" class="btn btn-dark"> <img src="../../resources/Imagenes/LapizBlancoEditar.png" alt="..." width="30px" height="30px"> Guardar</button>
                         </div>
                     </form>
                 </div>

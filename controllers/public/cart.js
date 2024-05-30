@@ -6,6 +6,7 @@ const TABLE_BODY = document.getElementById('tableBody');
 const ITEM_MODAL = new bootstrap.Modal('#itemModal');
 // Constante para establecer el formulario de cambiar producto.
 const ITEM_FORM = document.getElementById('itemForm');
+const CARD_CARRITO = document.getElementById('cardProductosCarrito');
 
 // Método del evento para cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', () => {
@@ -49,7 +50,7 @@ async function readDetail() {
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
         // Se inicializa el cuerpo de la tabla.
-        TABLE_BODY.innerHTML = '';
+        CARD_CARRITO.innerHTML = '';
         // Se declara e inicializa una variable para calcular el importe por cada producto.
         let subtotal = 0;
         // Se declara e inicializa una variable para sumar cada subtotal y obtener el monto final a pagar.
@@ -59,21 +60,35 @@ async function readDetail() {
             subtotal = row.precio_producto * row.cantidad_producto;
             total += subtotal;
             // Se crean y concatenan las filas de la tabla con los datos de cada registro.
-            TABLE_BODY.innerHTML += `
-                <tr>
-                    <td>${row.nombre_producto}</td>
-                    <td>${row.precio_producto}</td>
-                    <td>${row.cantidad_producto}</td>
-                    <td>${subtotal.toFixed(2)}</td>
-                    <td>
-                        <button type="button" onclick="openUpdate(${row.id_detalle}, ${row.cantidad_producto})" class="btn btn-info">
-                            <i class="bi bi-plus-slash-minus"></i>
-                        </button>
-                        <button type="button" onclick="openDelete(${row.id_detalle})" class="btn btn-danger">
-                            <i class="bi bi-cart-dash"></i>
-                        </button>
-                    </td>
-                </tr>
+            CARD_CARRITO.innerHTML += `
+                
+
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-4 mt-5 text-center" >
+                <div class="card h-100" id="cards">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">${row.nombre_producto}</h5>
+                        <label class="fw-bold mt-4">Precio:</label>
+                        <p>${row.precio_producto}</p>
+                        <label class="fw-bold mt-4">Cantidad:</label>
+                        <p>${row.cantidad_producto}</p>
+                        <label class="fw-bold mt-4">Cantidad:</label>
+                        <p>${subtotal.toFixed(2)}</p>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn mt-1 " id="btnEliminar" name="btnEliminar" onclick="openDelete(${row.id_detalle})">
+                        <i class="bi bi-search"></i>
+                        <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="40px" height="40px"
+                            class="mb-4">
+
+                    </button>
+                    <button type="reset" class="btn mt-1" id="btnActualizar" name="btnActualizar" onclick="openUpdate(${row.id_detalle}, ${row.cantidad_producto})">
+                        <i class="bi bi-x-square-fill"></i>
+                        <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="40px" height="40px"
+                            class="mb-4">
+                    </button>
+            </div>
             `;
         });
         // Se muestra el total a pagar con dos decimales.

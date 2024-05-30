@@ -49,9 +49,6 @@ const loadTemplate = async () => {
                             <a class="nav-link" href="index.html#sobreus" onclick="scrollToElement('sobreNos')">Sobre nosotros</a>
                         </li>
                         <li class="nav-item" id="Contac">
-                            <a class="nav-link" href="index.html#footer" onclick="scrollToElement('footer')">Contactos</a>
-                        </li>
-                        <li class="nav-item" id="Contac">
                             <a class="nav-link" href="miscompras.html">Ver mis compras</a>
                         </li>
                         <li class="nav-item" id="ses">
@@ -60,7 +57,7 @@ const loadTemplate = async () => {
                     </ul>
                 </div>
 
-                <button class="btn" type="submit" id="btnVerPerfil"> <a href="perfil.html" class="textoVerPerfil">Mi perfil</a></button>
+                <button class="btn" type="submit" id="btnVerPerfil"> <a href="perfil.html" class="textoVerPerfil">${DATA.username}</a></button>
 
 
             </div>
@@ -93,9 +90,6 @@ const loadTemplate = async () => {
                         </li>
                         <li class="nav-item" id="nos">
                             <a class="nav-link" href="index.html#sobreus" onclick="scrollToElement('sobreNos')">Sobre nosotros</a>
-                        </li>
-                        <li class="nav-item" id="Contac">
-                            <a class="nav-link" href="index.html#footer" onclick="scrollToElement('footer')">Contactos</a>
                         </li>
                         <li class="nav-item" id="ses">
                             <a class="nav-link" href="login.html">Iniciar sesión</a>
