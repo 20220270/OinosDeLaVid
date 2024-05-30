@@ -1,137 +1,89 @@
-document.addEventListener('DOMContentLoaded', function () {
 
-    var modal = document.getElementById('ModalActualizarDatosPublico');
-    modal.addEventListener('show.bs.modal', function (event) {
-        // Obtiene el texto del campo correo y lo establece en el input correoAdminA de la modal
-        var correoTexto = document.getElementById('textoDUI').textContent.trim();
-        document.getElementById('DUIClienteA').value = correoTexto;
 
-        var aliasAdmin = document.getElementById('textoTelefono').textContent.trim();
-        document.getElementById('telefonoClienteA').value = aliasAdmin;
+// Constantes para establecer los elementos del formulario de editar perfil.
+const PROFILE_FORM = document.getElementById('profileForm'),
+    NOMBRE_CLIENTE = document.getElementById('nombreCliente'),
+    APELLIDO_CLIENTE = document.getElementById('apellidoCliente'),
+    CORREO_CLIENTE = document.getElementById('correoCliente'),
+    TELEFONO_CLIENTE = document.getElementById('telefonoCliente'),
+    DUI_CLIENTE = document.getElementById('duiCliente'),
+    DIRECCION_CLIENTE = document.getElementById('direccionCliente')
+// Constante para establecer la modal de cambiar contraseña.
+const PASSWORD_MODAL = new bootstrap.Modal('#passwordModal');
+// Constante para establecer el formulario de cambiar contraseña.
+const PASSWORD_FORM = document.getElementById('passwordForm');
 
-        // Obtiene el texto del campo telefono y lo establece en el input telefonoAdminA de la modal
-        var telefonoTexto = document.getElementById('textoUsuario').textContent.trim();
-        document.getElementById('CorreoClienteA').value = telefonoTexto;
 
-        var aliasAdmin = document.getElementById('textoDireccion').textContent.trim();
-        document.getElementById('direccionClienteA').value = aliasAdmin;
-
-        var nombreCompleto = document.getElementById('textoNombre').textContent.trim().split(' ');
-        var nombre = nombreCompleto[0]; // Primer elemento es el nombre
-        var apellido = nombreCompleto.slice(1).join(' '); // El resto son apellidos
-
-        // Establece el nombre en el input nombreAdminA de la modal
-        document.getElementById('NombreClienteA').value = nombre;
-
-        // Establece el apellido en el input apellidoAdminA de la modal
-        document.getElementById('ApellidoClienteA').value = apellido;
-
-        // Agrega event listeners para validar los campos de nombre y apellido
-        var inputNombre = document.getElementById('NombreClienteA');
-        var inputApellido = document.getElementById('ApellidoClienteA');
-
-        inputNombre.addEventListener('input', function (event) {
-            validarCampo(inputNombre);
-        });
-
-        inputApellido.addEventListener('input', function (event) {
-            validarCampo(inputApellido);
-        });
-
-        // Agrega event listeners para prevenir la entrada de números en los campos de nombre y apellido
-        inputNombre.addEventListener('keydown', function (event) {
-            prevenirNumeros(event);
-        });
-
-        inputApellido.addEventListener('keydown', function (event) {
-            prevenirNumeros(event);
-        });
-    });
-
-    // Función para validar el contenido de un campo
-    function validarCampo(input) {
-        var valor = input.value;
-        // Expresión regular que permite solo letras y un guion opcional al principio o al final del texto
-        var regex = /^[a-zA-Z]+-?[a-zA-Z]+$/;
-
-        // Verifica si el valor cumple con la expresión regular
-        if (!regex.test(valor)) {
-            // Si el valor no cumple, muestra un mensaje de error o realiza alguna acción deseada
-            // Por ejemplo, puedes desactivar el botón de guardar
-            document.getElementById('btnGuardarAc').disabled = true;
-            // Puedes mostrar un mensaje de error
-            input.setCustomValidity('El campo debe contener solo letras y un guion opcional al principio o al final.');
-        } else {
-            // Si el valor cumple con la expresión regular, activa el botón de guardar (si estaba desactivado)
-            document.getElementById('btnGuardarAc').disabled = false;
-            // Elimina el mensaje de error si lo había
-            input.setCustomValidity('');
-        }
+// Método del evento para cuando el documento ha cargado.
+document.addEventListener('DOMContentLoaded', async () => {
+    // Llamada a la función para mostrar el encabezado y pie del documento.
+    loadTemplate();
+    // Se establece el título del contenido principal.
+    //MAIN_TITLE.textContent = 'Editar perfil';
+    // Petición para obtener los datos del usuario que ha iniciado sesión.
+    const DATA = await fetchData(USER_API, 'readProfile');
+    // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
+    if (DATA.status) {
+        // Se inicializan los campos del formulario con los datos del usuario que ha iniciado sesión.
+        const ROW = DATA.dataset;
+        NOMBRE_CLIENTE.value = ROW.nombre_cliente;
+        APELLIDO_CLIENTE.value = ROW.apellido_cliente;
+        CORREO_CLIENTE.value = ROW.correo_cliente;
+        DUI_CLIENTE.value = ROW.dui_cliente;
+        TELEFONO_CLIENTE.value = ROW.telefono_cliente;
+        DIRECCION_CLIENTE.value = ROW.direccion_cliente;
+    } else {
+        sweetAlert(2, DATA.error, null);
     }
-
-    // Función para prevenir la entrada de números
-    function prevenirNumeros(event) {
-        // Obtiene el código de la tecla presionada
-        var codigoTecla = event.keyCode || event.which;
-        // Permite las teclas de control como Enter, Tab, etc.
-        if (codigoTecla == 8 || codigoTecla == 9 || codigoTecla == 13 || codigoTecla == 16 || codigoTecla == 17 || codigoTecla == 20 || codigoTecla == 27 || codigoTecla == 46) {
-            return;
-        }
-        // Verifica si el código de la tecla no corresponde a una letra
-        if ((codigoTecla < 65 || codigoTecla > 90) && (codigoTecla < 97 || codigoTecla > 122)) {
-            // Cancela el evento de entrada (no se permite la tecla)
-            event.preventDefault();
-        }
-    }
-
-    //Validación para el DUI
-    vanillaTextMask.maskInput({
-        inputElement: document.getElementById('DUIClienteA'),
-        mask: [/\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/]
-    });
-
-    //Validación para el teléfono
-    vanillaTextMask.maskInput({
-        inputElement: document.getElementById('telefonoClienteA'),
-        mask: [/\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
-    });
-
 });
 
-document.getElementById("cerrarS").addEventListener("click", function () {
-    location.href = "login.html";
-  });
-
-  document.getElementById("VP").addEventListener("click", function () {
-    location.href = "index.html";
-  });
 
 
-//Función investigada para la ejecución de una modal mientras se cierra la anterior.
-
-document.addEventListener("DOMContentLoaded", function() {
-    // Aquí obtenemos la referencia a la modal ModalActualizarContraseña, la cual se va a mostrar
-    var modalActualizarContraseña = new bootstrap.Modal(document.getElementById('ModalActualizarContraseña'));
-
-    // Aquí obtenemos la referencia a la modal ModalActualizarDatosPublico, la cual es la que se va a ocultar
-    var modalActualizarDatosPublico = new bootstrap.Modal(document.getElementById('ModalActualizarDatosPublico'));
-
-    
-    // Añadimos un event listener para el clic en el botón btnContraseniaNueva, el cual abrirá la modal
-    //para cambiar la contraseña y cerrará la anterior
-    var btnContraseniaNueva = document.getElementById('btnContraseniaNueva');
-    btnContraseniaNueva.addEventListener('click', function() {
-        // Abre la modal ModalActualizarContraseña
-        modalActualizarContraseña.show();
-    });
-
-    // Añade un event listener para el evento "shown.bs.modal" en la modal ModalActualizarContraseña
-    //haciendo referencia a que al detectar una modal disparada, la modal anterior se oculte
-    modalActualizarContraseña._element.addEventListener('shown.bs.modal', function() {
-        // Cierra la modal ModalActualizarDatosPublico
-        modalActualizarDatosPublico.hide();
-    });
-
+// Método del evento para cuando se envía el formulario de editar perfil.
+PROFILE_FORM.addEventListener('submit', async (event) => {
+    // Se evita recargar la página web después de enviar el formulario.
+    event.preventDefault();
+    // Constante tipo objeto con los datos del formulario.
+    const FORM = new FormData(PROFILE_FORM);
+    // Petición para actualizar los datos personales del usuario.
+    const DATA = await fetchData(USER_API, 'editProfile', FORM);
+    // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
+    if (DATA.status) {
+        sweetAlert(1, DATA.message, true);
+    } else {
+        sweetAlert(2, DATA.error, false);
+    }
 });
+
+// Mètodo del evento para cuando se envía el formulario de cambiar contraseña.
+PASSWORD_FORM.addEventListener('submit', async (event) => {
+    // Se evita recargar la página web después de enviar el formulario.
+    event.preventDefault();
+    // Constante tipo objeto con los datos del formulario.
+    const FORM = new FormData(PASSWORD_FORM);
+    // Petición para actualizar la constraseña.
+    const DATA = await fetchData(USER_API, 'changePassword', FORM);
+    // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
+    if (DATA.status) {
+        // Se cierra la caja de diálogo.
+        PASSWORD_MODAL.hide();
+        // Se muestra un mensaje de éxito.
+        sweetAlert(1, DATA.message, true);
+    } else {
+        sweetAlert(2, DATA.error, false);
+    }
+});
+
+/*
+*   Función para preparar el formulario al momento de cambiar la constraseña.
+*   Parámetros: ninguno.
+*   Retorno: ninguno.
+*/
+const openPassword = () => {
+    // Se abre la caja de diálogo que contiene el formulario.
+    PASSWORD_MODAL.show();
+    // Se restauran los elementos del formulario.
+    PASSWORD_FORM.reset();
+}
 
 

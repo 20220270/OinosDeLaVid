@@ -17,194 +17,88 @@
 
 <body>
 
-    <nav>
-
-    </nav>
-
-    <div class="col1">h</div>
-
-    <div class="container">
+    <main>
+    <div class="container mt-5">
         <div class="row">
-            <div class="col-sm-3">
-
-                <img src="../../resources/Imagenes/logo.png" id="mi-imagen" height="100px" width="100px">
-
-            </div>
             <div class="col">
                 <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-12 mt-4">
-                        <h1>Perfil de usuario</h1>
+                    <div class="col-sm-12 col-md-12 col-lg-12 mt-5">
+                        <h1 class="bg-danger text-white">Perfil del cliente</h1>
                     </div>
 
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Imagen para el perfil de usuario -->
 
     <div class="container mt-4" id="conte">
-        <div class="row">
-            <div class="col mt-4">
+        <div class="row ">
+            <div class="col mt-5">
                 <div class="container text-center">
-                    <div class="row ">
-                        <div class="col-sm-12 col-md-6 col-lg-12 text-center">
-                            <img src="../../resources/Imagenes/perfil.png"
-                                class="rounded mx-5 d-block col-md-7 col-lg-7" alt="..." height="110" width="90px">
-                        </div>
-                        <div class="col">
-                            <h6 class="mt-3 col-md-12 col-lg-11" id="textoUsuario">
-                                daniel.salgueroe@gmail.com
-                            </h6>
+                    <div class="row">
+                        <div class="col d-flex justify-content-center align-items-center">
+                            <img src="../../resources/Imagenes/perfil.png" class="col-md-12 col-lg-9 " alt="..."
+                                height="300px" width="300px">
                         </div>
                     </div>
                 </div>
-
-                <div class="textoo px-5">
-                    <h6 class="text mt-4 text-start px-5 col-lg-12 col-md-12 col-sm-12">Registrado desde: 00/00/000</h6>
-                </div>
-
-
-                <div class="d-grid gap-2 col-8 mx-auto mt-4">
-                    <div class="col-lg-12">
-                        <button class="btn btn-dark mt-4 text-center w-100 py-2" type="button" id="actuInfo"
-                            data-bs-toggle="modal" data-bs-target="#ModalActualizarDatosPublico">
-                            <img src="../../resources/Imagenes/LapizBlancoEditar.png" alt="Editar" width="20px"
-                                height="20px">
-                            Actualizar datos
-                        </button>
-
-
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="ModalActualizarDatosPublico" tabindex="-1"
-                            aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Actualiza tus datos</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <form>
-                                        <div class="modal-body">
-                                            <input type="hidden" id="idCategoria" name="idCategoria">
-                                            <div class="col-sm-12 col-md-6 col-lg-12">
-                                                <label for="nombreCategoria"
-                                                    class="col-sm-7 col-form-label text-start w-100">Nombre:</label>
-                                                <input id="NombreClienteA" type="text" name="NombreAdminA"
-                                                    class="form-control" placeholder="" required>
-                                            </div>
-                                            <div class="col-sm-12 col-md-6 col-lg-12 mt-2">
-                                                <label for="nombreCategoria"
-                                                    class="col-sm-7 col-form-label text-start w-100">Apellido:</label>
-                                                <input id="ApellidoClienteA" type="text" name="ApellidoAdminA"
-                                                    class="form-control" placeholder="" required>
-                                            </div>
-                                            <div class="col-sm-12 col-md-6 col-lg-12 mt-2">
-                                                <label for="nombreCategoria"
-                                                    class="col-sm-7 col-form-label text-start w-100">DUI:</label>
-                                                <input id="DUIClienteA" type="text" name="telefonoAdminA"
-                                                    class="form-control" placeholder="" required>
-                                            </div>
-                                            <div class="col-sm-12 col-md-6 col-lg-12 mt-2">
-                                                <label for="nombreCategoria"
-                                                    class="col-sm-7 col-form-label text-start w-100">Correo:</label>
-                                                <input id="CorreoClienteA" type="email" name="CorreoAdminA"
-                                                    class="form-control" placeholder="" required>
-                                            </div>
-                                            <div class="mb-3 col-sm-12 col-md-12 col-lg-12 mt-3">
-                                                <label for="formGroupExampleInput2"
-                                                    class="form-label text-start w-100">Teléfono:</label>
-                                                <div class="input-group mb-3">
-                                                    <span class="input-group-text" id="basic-addon1">+503</span>
-                                                    <input type="text" id="telefonoClienteA" class="form-control"
-                                                        placeholder="0000-0000" name="telefonoClienteA">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12 col-md-6 col-lg-12 mt-2">
-                                                <label for="nombreCategoria"
-                                                    class="col-sm-7 col-form-label text-start w-100">Dirección:</label>
-                                                <input id="direccionClienteA" type="text" name="AliasAdminA"
-                                                    class="form-control" placeholder="" required>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn btn-dark"
-                                                id="btnGuardarAc">Actualizar</button>
-                                            <button type="button" class="btn btn-dark" id="btnContraseniaNueva"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#ModalActualizarContraseña">Actualizar clave</button>
-
-
-                                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal"
-                                                id="btnCerrar">Cerrar</button>
-                                        </div>
-
-
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div>
-                        <button class="btn btn-dark mt-4 text-center w-100 py-2" type="button" id="cerrarS">
-                            <img src="../../resources/Imagenes/cerrarS.png" alt="cerrarS" width="20px" height="20px"
-                                id="imagenS">
-                            Cerrar sesión
-                        </button>
-                    </div>
-                    <div>
-                        <button class="btn btn-dark mt-4 mb-4 w-100" type="button" id="VP">Volver a la página</button>
-                    </div>
-                </div>
-
-
-
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 mt-5 text-center" id="columnaPerfil">
-
-                <h5>Nombre completo:</h5>
-                <h6 class="textoi mt-2 mb-4" id="textoNombre">Ivan Salguero</h6>
-
-                <h5>DUI:</h5>
-                <h6 class="textoi mt-2 mb-4" id="textoDUI">
-                    09090908-1
-                </h6>
-
-                <h5>Teléfono</h5>
-                <h6 class="textoi mt-2 mb-4" id="textoTelefono">
-                    7815-5374
-                </h6>
-
-                <h5>Dirección</h5>
-                <h6 class="textoi mt-2 mb-4" id="textoDireccion">
-                    Parque Residencial Altamira
-                </h6>
 
 
             </div>
 
-            <div class="col mt-4 text-center" id="columna2Perfil">
+            <!-- campos para completar los datos sel usuario -->
 
-                <h1 class="mb-5">Datos relevantes</h1>
+            <div class="col mt-5 text-center" id="columnaPerfil">
 
+                <form class="row g-3 text-start" id="profileForm">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <label for="nombreCliente" class="form-label">Nombre:</label>
+                        <input id="nombreCliente" type="text" name="nombreCliente" class="form-control"
+                            required>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <label for="apellidoCliente" class="form-label">Apellido:</label>
+                        <input id="apellidoCliente" type="text" name="apellidoCliente" class="form-control"
+                            required>
+                    </div>
+                    
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <label for="aliasCliente" class="form-label">DUI:</label>
+                        <input id="duiCliente" type="text" name="duiCliente" class="form-control"
+                            required>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <label for="correoCliente" class="form-label">Correo:</label>
+                        <input id="correoCliente" type="email" name="correoCliente" class="form-control"
+                            required>
+                    </div>
+                    
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <label for="aliasCliente" class="form-label">Teléfono:</label>
+                        <input id="telefonoCliente" type="text" name="telefonoCliente" class="form-control"
+                            required>
+                    </div>
+                    
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <label for="aliasCliente" class="form-label">Dirección:</label>
+                        <input id="direccionCliente" type="text" name="direccionCliente" class="form-control"
+                            required>
+                    </div>
 
-                <h5>Compras realizadas:</h5>
-                <h6 class="textoi mt-1  mb-4" id="textoCorreo">
-                    5
-                </h6>
+                    <!-- botones para guardar los datos y  para poder actualizar la contraseña -->
 
-
-                <h5>Total invertido:</h5>
-                <h6 class="textoi mt-1 mb-4" id="textoTelefono">
-                    $500.91
-                </h6>
-
-                <h5>Última fecha de compra:</h5>
-                <h6 class="textoi mt-1 mb-4" id="textoTelefono">
-                    08/09/2023
-                </h6>
+                    <div class="text-center mb-4 mt-3">
+                        <button type="submit" class="btn btn-dark mt-3"><img
+                                src="../../resources/Imagenes/LapizBlancoEditar.png" alt="Editar" width="20px"
+                                height="20px"> Guardar</button>
+                        <button type="button" class="btn btn-dark rounded-2 mt-3" id="btnContraseniaNueva"
+                            onclick="openPassword()"> <img src="../../resources/Imagenes/LapizBlancoEditar.png"
+                                alt="Editar" width="20px" height="20px">Actualizar
+                            contraseña</button>
+                    </div>
+                </form>
 
             </div>
 
@@ -212,132 +106,47 @@
 
     </div>
 
+</main>
 
-    <!-- Modal para actualizar contraseña -->
-    <div class="modal fade" id="ModalActualizarContraseña" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true" data-bs-backdrop="static">
-        <div class="modal-dialog">
+    <div class="modal fade" id="passwordModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <!-- Contenido del componente Modal -->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Actualiza tu clave</h1>
+                    <h1 class="modal-title fs-5" id="modalTitle">Cambiar contraseña</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form>
-                    <div class="modal-body">
-                        <input type="hidden" id="idUser" name="idUser">
-
-                        <div class="container text-center">
-                            <div class="row">
-                                <div class="col-sm-12 col-md-6">
-                                    <label for="nombreCategoria" class="col-sm-7  col-lg-12 text-start mb-1 mt-1">Nueva
-                                        clave:</label>
-                                    <input id="claveAdmin" type="password" name="nombreProducto"
-                                        class="form-control mt-2" placeholder="Ingrese la clave del administrador"
-                                        required>
-                                </div>
-                                <div class="col-sm-12 col-md-6">
-                                    <label for="nombreCategoria"
-                                        class="col-sm-7 col-lg-12 col-form-label text-start">Confirmar
-                                        clave:</label>
-                                    <input id="confirmarClaveAdmin" type="password" name="nombreProducto"
-                                        class="form-control" required>
-                                </div>
-                            </div>
+                <!-- Formulario para actualizar contraseña -->
+                <form id="passwordForm">
+                    <div class="modal-body row g-3">
+                        <div class="col-sm-12 col-md-6 offset-md-3">
+                            <label for="claveActual" class="form-label">Clave actual</label>
+                            <input id="claveActual" type="password" name="claveActual" class="form-control" required>
                         </div>
+                        <div class="col-12 text-center">
+                            <span>CLAVE NUEVA</span>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <label for="claveNueva" class="form-label">Nueva clave</label>
+                            <input id="claveNueva" type="password" name="claveNueva" class="form-control" required>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <label for="confirmarClave" class="form-label">Confirmar clave</label>
+                            <input id="confirmarClave" type="password" name="confirmarClave" class="form-control"
+                                required>
+                        </div>
+                        
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-dark" id="btnGuardarAcCo">Actualizar</button>
-                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal"
-                            id="btnCerrar">Cerrar</button>
+
+                        <button type="submit" class="btn btn-dark">Guardar</button>
+                        <button type="reset" class="btn btn-dark">Cancelar</button>
                     </div>
                 </form>
             </div>
-            <!--Modal para mostrar la actualización de la contraseña-->
-            <div class="modal" id="modalDatosActua" data-bs-backdrop="static">
-                <div class="modal-dialog modal-lg modal-dialog-centered">
-                    <div class="modal-content">
-                        <!-- Contenido de la ventana modal -->
-                        <div class="modal-body text-center">
-                            <!-- Agregamos la clase text-center para centrar el contenido -->
-                            <form id="saveForm">
-                                <div class="d-flex justify-content-center align-items-center flex-column">
-                                    <!-- Agregamos clases para centrar vertical y horizontalmente -->
-                                    <img src="../../resources/Imagenes/exito.png" alt="">
-                                    <br>
-                                    <h4 class="text-align-center">¡Clave actualizada con éxito!</h4>
-                                    <br>
-                                    <h6 class="text-align-center">Se ha actualizado la clave.</h6>
-                                </div>
-                                <div class="modal-footer d-flex justify-content-center">
-                                    <!-- Agregamos clases para centrar horizontalmente el botón-->
-                                    <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal"
-                                        id="btnCerrar">Cerrar</button>
-                                    <!-- Agregamos clase btn-block para ajustar el ancho -->
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--Modal para mostrar la actualización de la contraseña-->
-            <div class="modal" id="modalDatoErro" data-backdrop="static">
-                <div class="modal-dialog modal-lg modal-dialog-centered">
-                    <div class="modal-content">
-                        <!-- Contenido de la ventana modal -->
-                        <div class="modal-body text-center">
-                            <!-- Agregamos la clase text-center para centrar el contenido -->
-                            <form id="saveForm">
-                                <div class="d-flex justify-content-center align-items-center flex-column">
-                                    <!-- Agregamos clases para centrar vertical y horizontalmente -->
-                                    <img src="../../resources/Imagenes/error.png" alt="">
-                                    <br>
-                                    <h4 class="text-align-center">Error al actualizar datos</h4>
-                                    <br>
-                                    <h6 class="text-align-center">No se han podido actualizar sus datos. Reintente
-                                        ingresar los nuevos
-                                        datos..</h6>
-                                </div>
-                                <div class="modal-footer d-flex justify-content-center">
-                                    <!-- Agregamos clases para centrar horizontalmente el botón-->
-                                    <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal"
-                                        id="btnCerrar">Cerrar</button>
-                                    <!-- Agregamos clase btn-block para ajustar el ancho -->
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-
-        <!--Modal para mostrar la actualización de la contraseña-->
-        <div class="modal" id="modalContraCtualizada" data-backdrop="static">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <!-- Contenido de la ventana modal -->
-                    <div class="modal-body text-center">
-                        <!-- Agregamos la clase text-center para centrar el contenido -->
-                        <form id="saveForm">
-                            <div class="d-flex justify-content-center align-items-center flex-column">
-                                <!-- Agregamos clases para centrar vertical y horizontalmente -->
-                                <img src="../../resources/Imagenes/exito.png" alt="">
-                                <br>
-                                <h4 class="text-align-center">¡Clave actualizada con éxito!</h4>
-                                <br>
-                                <h6 class="text-align-center">Se ha actualizado la clave.</h6>
-                            </div>
-                            <div class="modal-footer d-flex justify-content-center">
-                                <!-- Agregamos clases para centrar horizontalmente el botón-->
-                                <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal"
-                                    id="btnCerrar">Cerrar</button>
-                                <!-- Agregamos clase btn-block para ajustar el ancho -->
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </div>
 
 
         <!-- Optional JavaScript; choose one of the two! -->
@@ -351,6 +160,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="../../controllers/utils/sweetalert.min.js"></script>
         <script src="../../controllers/utils/components.js"></script>
+        <script src="../../controllers/utils/public.js"></script>
         <script src="../../controllers/public/perfilPublico.js"></script>
 
 

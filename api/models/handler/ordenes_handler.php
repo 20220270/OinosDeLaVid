@@ -91,7 +91,7 @@ class OrdenesHandler
     /** */
     public function getOrder()
     {
-        $this->estadoorden = 'Entregada';
+        $this->estadoorden = 'Pendiente';
         $sql = 'SELECT id_orden
                 FROM tb_ordenes
                 WHERE estado_orden = ? AND id_cliente = ?';
@@ -110,9 +110,9 @@ class OrdenesHandler
         if ($this->getOrder()) {
             return true;
         } else {
-            $sql = 'INSERT INTO tb_ordenes(direccion_orden, id_cliente)
-                    VALUES((SELECT direccion_cliente FROM tb_clientes WHERE id_cliente = ?), ?)'; //Se manda la direccion dependiendo el ID del cliente
-            $params = array($_SESSION['idCliente'], $_SESSION['idCliente']);
+            $sql = 'INSERT INTO tb_ordenes(direccion_orden, id_cliente, estado_orden)
+                    VALUES((SELECT direccion_cliente FROM tb_clientes WHERE id_cliente = ?), ?, ?)'; //Se manda la direccion dependiendo el ID del cliente
+            $params = array($_SESSION['idCliente'], $_SESSION['idCliente'], $this->estadoorden);
             // Se obtiene el ultimo valor insertado de la llave primaria en la tabla pedido.
             if ($_SESSION['idOrden'] = Database::getLastRow($sql, $params)) {
                 return true;

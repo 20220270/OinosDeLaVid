@@ -10,9 +10,18 @@ if (isset($_GET['action'])) {
     $cliente = new ClienteData;
     // Se declara e inicializa un arreglo para guardar el resultado que retorna la API.
     $result = array('status' => 0, 'session' => 0, 'recaptcha' => 0, 'message' => null, 'error' => null, 'exception' => null, 'username' => null);
+
+    // Depuración: Log de la acción solicitada
+    error_log('Acción: ' . $_GET['action']);
+
     // Se verifica si existe una sesión iniciada como cliente para realizar las acciones correspondientes.
     if (isset($_SESSION['idCliente'])) {
         $result['session'] = 1;
+
+        // Depuración: Log de la sesión y ID del cliente
+        error_log('Sesión iniciada: ' . isset($_SESSION['idCliente']));
+        error_log('ID Cliente: ' . $_SESSION['idCliente']);
+
         // Se compara la acción a realizar cuando un cliente ha iniciado sesión.
         switch ($_GET['action']) {
             case 'getUser':
@@ -31,8 +40,50 @@ if (isset($_GET['action'])) {
                     $result['error'] = 'Ocurrió un problema al cerrar la sesión';
                 }
                 break;
+            case 'readProfile':
+                if ($result['dataset'] = $cliente->readProfile()) {
+                    $result['status'] = 1;
+                } else {
+                    $result['error'] = 'Ocurrió un problema al leer el perfil';
+                }
+                break;
+            case 'editProfile':
+                $_POST = Validator::validateForm($_POST);
+                if (
+                    !$cliente->setNombre($_POST['nombreCliente']) or
+                    !$cliente->setApellido($_POST['apellidoCliente']) or
+                    !$cliente->setCorreo($_POST['correoCliente']) or
+                    !$cliente->setDireccion($_POST['direccionCliente']) or
+                    !$cliente->setDUI($_POST['duiCliente']) or
+                    !$cliente->setTelefono($_POST['telefonoCliente'])
+                ) {
+                    $result['error'] = $cliente->getDataError();
+                } elseif ($cliente->editProfile()) {
+                    $result['status'] = 1;
+                    $result['message'] = 'Perfil modificado correctamente';
+                    $_SESSION['idCliente'] = $_POST['idCliente'];
+                } else {
+                    $result['error'] = 'Ocurrió un problema al modificar el perfil';
+                }
+                break;
+            case 'changePassword':
+                $_POST = Validator::validateForm($_POST);
+                if (!$cliente->checkPassword($_POST['claveActual'])) {
+                    $result['error'] = 'Contraseña actual incorrecta';
+                } elseif ($_POST['claveNueva'] != $_POST['confirmarClave']) {
+                    $result['error'] = 'Confirmación de contraseña diferente';
+                } elseif (!$cliente->setClave($_POST['claveNueva'])) {
+                    $result['error'] = $cliente->getDataError();
+                } elseif ($cliente->changePassword()) {
+                    $result['status'] = 1;
+                    $result['message'] = 'Contraseña cambiada correctamente';
+                } else {
+                    $result['error'] = 'Ocurrió un problema al cambiar la contraseña';
+                }
+                break;
+
+                
             default:
-            print($result);
                 $result['error'] = 'Acción no disponible dentro de la sesión';
         }
     } else {
@@ -44,7 +95,7 @@ if (isset($_GET['action'])) {
                 $secretKey = '6LdBzLQUAAAAAL6oP4xpgMao-SmEkmRCpoLBLri-';
                 // Se establece la dirección IP del servidor.
                 $ip = $_SERVER['REMOTE_ADDR'];
-                // Se establecen los datos del raCAPTCHA.
+                // Se establecen los datos del reCAPTCHA.
                 $data = array('secret' => $secretKey, 'response' => $_POST['gRecaptchaResponse'], 'remoteip' => $ip);
                 // Se establecen las opciones del reCAPTCHA.
                 $options = array(
@@ -60,7 +111,7 @@ if (isset($_GET['action'])) {
                 if (!$captcha['success']) {
                     $result['recaptcha'] = 1;
                     $result['error'] = 'No eres humano';
-                } elseif(!isset($_POST['condicion'])) {
+                } elseif (!isset($_POST['condicion'])) {
                     $result['error'] = 'Debe marcar la aceptación de términos y condiciones';
                 } elseif (
                     !$cliente->setNombre($_POST['nombreCliente']) or
@@ -81,17 +132,19 @@ if (isset($_GET['action'])) {
                     $result['error'] = 'Ocurrió un problema al registrar la cuenta';
                 }
                 break;
-            case 'logIn':
-                $_POST = Validator::validateForm($_POST);
-                if (!$cliente->checkUser($_POST['correoCliente'], $_POST['claveCliente'])) {
-                    $result['error'] = 'Datos incorrectos';
-                } elseif ($cliente->checkStatus()) {
-                    $result['status'] = 1;
-                    $result['message'] = 'Autenticación correcta';
-                } else {
-                    $result['error'] = 'La cuenta ha sido desactivada';
-                }
-                break;
+
+                case 'logIn':
+                    $_POST = Validator::validateForm($_POST);
+                    if (!$cliente->checkUser($_POST['correoCliente'], $_POST['claveCliente'])) {
+                        $result['error'] = 'Datos incorrectos';
+                    } elseif ($cliente->checkStatus()) {
+                        $result['status'] = 1;
+                        $result['message'] = 'Autenticación correcta';
+                    } else {
+                        $result['error'] = 'La cuenta ha sido desactivada';
+                    }
+                    break;
+            
             default:
                 $result['error'] = 'Acción no disponible fuera de la sesión';
         }

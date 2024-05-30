@@ -56,23 +56,47 @@ class ClienteHandler
         $sql = 'UPDATE tb_clientes
                 SET clave_cliente = ?
                 WHERE id_cliente = ?';
-        $params = array($this->clave, $this->id);
+        $params = array($this->clave, $_SESSION['idCliente']);
         return Database::executeRow($sql, $params);
+    }
+
+    public function readProfile()
+    {
+        $sql = 'SELECT id_cliente, nombre_cliente, apellido_cliente, correo_cliente, telefono_cliente, dui_cliente, direccion_cliente
+            FROM tb_clientes
+            WHERE id_cliente = ?';
+        $params = array($_SESSION['idCliente']);
+        return Database::getRow($sql, $params);
+    }
+
+    public function checkPassword($password)
+    {
+        $sql = 'SELECT clave_cliente
+                FROM tb_clientes
+                WHERE id_cliente = ?';
+        $params = array($_SESSION['idCliente']);
+        $data = Database::getRow($sql, $params);
+        // Se verifica si la contraseña coincide con el hash almacenado en la base de datos.
+        if (password_verify($password, $data['clave_cliente'])) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function editProfile()
     {
         $sql = 'UPDATE tb_clientes
-                SET nombre_cliente = ?, apellido_cliente = ?, correo_cliente = ?, dui_cliente = ?, telefono_cliente = ?,  direccion_cliente = ?
-                WHERE id_cliente = ?';
-        $params = array($this->nombre, $this->apellido, $this->correo, $this->dui, $this->telefono, $this->direccion, $this->id);
+            SET nombre_cliente = ?, apellido_cliente = ?, correo_cliente = ?, dui_cliente = ?, telefono_cliente = ?, direccion_cliente = ?
+            WHERE id_cliente = ?';
+        $params = array($this->nombre, $this->apellido, $this->correo, $this->dui, $this->telefono, $this->direccion, $_SESSION['idCliente']);
         return Database::executeRow($sql, $params);
     }
 
     /* funcion para cambiar el estado del cliente 
     
     
-    1*/ 
+    1*/
     public function changeStatus()
     {
         $sql = 'UPDATE tb_clientes
@@ -100,7 +124,7 @@ class ClienteHandler
         return Database::getRows($sql, $params);
     }
 
-     /*
+    /*
     *  1
     */
     public function readAll()
@@ -111,7 +135,7 @@ class ClienteHandler
         return Database::getRows($sql);
     }
 
-     /*
+    /*
     *  1
     */
     public function readOne()
