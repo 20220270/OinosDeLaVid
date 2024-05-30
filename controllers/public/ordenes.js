@@ -1,5 +1,7 @@
-const ORDENES_API = 'services/admin/ordenes.php';
-const PRODUCTOS_API = 'services/admin/producto.php';
+
+const ORDENES_API = 'services/public/ordenes.php';
+const PRODUCTOS_API = 'services/public/productos.php';
+
 const SEARCH_FORM = document.getElementById('searchForm');
 // Constantes para establecer los elementos de la tabla.
 const TABLE_BODY = document.getElementById('tableBody'),
@@ -9,7 +11,10 @@ const TABLE_BODY = document.getElementById('tableBody'),
 document.addEventListener('DOMContentLoaded', async () => {
     // Llamada a la función para mostrar el encabezado y pie del documento.
     loadTemplate();
-    
+    // Se establece el título del contenido principal.
+    //MAIN_TITLE.textContent = 'Editar perfil';
+    // Petición para obtener los datos del usuario que ha iniciado sesión.
+    fillTable();
 });
 
 const fillTable = async (form = null) => {
@@ -27,32 +32,16 @@ const fillTable = async (form = null) => {
             // Se crean y concatenan las filas de la tabla con los datos de cada registro.
             TABLE_BODY.innerHTML += `
               <tr>
+                  <td>${row.id_detalle}</td>
                   <td>${row.id_orden}</td>
-                  <td>${row.nombre_cliente}</td>
-                  <td>${row.direccion_orden}</td>
+                  <td><img src="${SERVER_URL}images/productos/${row.imagen_producto}" class="" height="150px" width="150px"></td>
+                  <td>${row.nombre_producto}</td>
+                  <td>${row.precio_producto}</td>
+                  <td>${row.cantidad_producto}</td>
+                  <td>${row.total_a_pagar}</td>
                   <td>${row.fecha_registro}</td>
                   <td>${row.estado_orden}</td>
                   <td>
-                      
-
-                    
-                    <button type="submit" class="btn btn-success mt-1" id="btnEliminar" name="btnEliminar" onclick="openDelete(${row.id_orden})">
-                        <i class="bi bi-search"></i>
-                        <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                            class="mb-1">
-
-                    </button>
-                    <button type="submit" class="btn btn-secondary mt-1" id="btnActualizar" name="btnActualizar" onclick="openUpdate(${row.id_orden})">
-                        <i class="bi bi-x-square-fill"></i>
-                        <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
-                            class="mb-1">
-                    </button>
-
-                    <button type="submit" class="btn mt-1" id="btnDetalles" name="btnDetalles" onclick="openDetail(${row.id_orden})">
-                    <i class="bi bi-x-square-fill"></i>
-                    <img src="../../resources/Imagenes/btnDetalles.png" alt="" width="30px" height="30px"
-                        class="mb-1">
-                </button>
 
                   </td>
               </tr>

@@ -84,6 +84,8 @@ class ClienteHandler
         }
     }
 
+   
+
     public function editProfile()
     {
         $sql = 'UPDATE tb_clientes

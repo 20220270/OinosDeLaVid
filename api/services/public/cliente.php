@@ -61,11 +61,9 @@ if (isset($_GET['action'])) {
                 } elseif ($cliente->editProfile()) {
                     $result['status'] = 1;
                     $result['message'] = 'Perfil modificado correctamente';
-                    $_SESSION['idCliente'] = $_POST['idCliente'];
                 } else {
                     $result['error'] = 'Ocurrió un problema al modificar el perfil';
                 }
-                
                 break;
             case 'changePassword':
                 $_POST = Validator::validateForm($_POST);
