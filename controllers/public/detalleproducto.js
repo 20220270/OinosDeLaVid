@@ -41,15 +41,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     if(DATA2.status){
         DATA2.dataset.forEach(row => {
             CARD.innerHTML += `
-            <div class="col-md-8">
-                        <div class="card-body">
-                            
-                           
-                            <span class="card-text" id="comentarioproducto" name="comentarioproducto">${row.comentario_producto}</span>
-                            <span class="card-text" id="valoracionproducto" name="valoracionproducto">${row.calificacion_producto}</span>      
-                           
-                        </div>
-                    </div>
+            <div class="col-md-8 col-lg-12 mt-3 mb-1">
+                <div class="card-body" id="borde">
+                    <span class="card-text d-block"><strong>Comentario:</strong> ${row.comentario_producto}</span>
+                    <span class="card-text d-block"><strong>Calificación:</strong> ${row.calificacion_producto}</span>      
+                </div>
+            </div>
             `;
         })
     } else {
