@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             <div class="col-md-8 col-lg-12 mt-3 mb-1">
                 <div class="card-body" id="borde">
                     <span class="card-text d-block"><strong>Comentario:</strong> ${row.comentario_producto}</span>
-                    <span class="card-text d-block"><strong>Calificación:</strong> ${row.calificacion_producto}</span>      
+                    <span class="card-text d-block"><strong>Calificación:</strong> ${generateStars(row.calificacion_producto)} ${row.calificacion_producto}</span>     
                 </div>
             </div>
             `;
@@ -75,3 +75,17 @@ SHOPPING_FORM.addEventListener('submit', async (event) => {
         sweetAlert(3, DATA.error, true, 'login.html');
     }
 });
+
+// Función para generar estrellas basado en la calificación
+function generateStars(rating) {
+    const maxStars = 5;
+    let stars = '';
+    for (let i = 1; i <= maxStars; i++) {
+        if (i <= rating) {
+            stars += '<span class="star filled">★</span>';
+        } else {
+            stars += '<span class="star">☆</span>';
+        }
+    }
+    return stars;
+}

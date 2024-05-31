@@ -71,3 +71,12 @@
 #cardComentarios::-webkit-scrollbar-thumb:hover {
     background-color: #555;
 }
+
+.star {
+    font-size: 1.9em;
+    color: #ccc; /* Color para estrellas vacías */
+}
+
+.star.filled {
+    color: brown; /* Color para estrellas llenas */
+}
