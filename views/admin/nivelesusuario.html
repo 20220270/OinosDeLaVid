@@ -21,69 +21,69 @@
 
 
     <!--aca esta la navbar -->
-    <nav>
 
-    </nav>
-
+    <main>
 
 
 
-    <!--boton de busqueda, boton de agregar y texto de marcas -->
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col mt-5" id="txtMarcas">
-                <h3>Niveles de usuario</h3>
-            </div>
-            <div class="col">
-                <div class="container-sm mt-5">
-                    <form class="d-flex" id="searchForm">
-
-                        <div class="position-relative">
-                            <img class="search-icon" src="../../resources/Imagenes/lupa.png" alt="Lupa">
-                            <input class="form-control me-2" type="search" placeholder="Busque por el nombre del nivel" aria-label="Search"
-                                id="Search" name="search">
-                        </div>
-
-                    </form>
+        <!--boton de busqueda, boton de agregar y texto de marcas -->
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col mt-5" id="txtMarcas">
+                    <h3>Niveles de usuario</h3>
                 </div>
+                <div class="col">
+                    <div class="container-sm mt-5">
+                        <form class="d-flex" id="searchForm">
+
+                            <div class="position-relative">
+                                <img class="search-icon" src="../../resources/Imagenes/lupa.png" alt="Lupa">
+                                <input class="form-control me-2" type="search"
+                                    placeholder="Busque por el nombre del nivel" aria-label="Search" id="Search"
+                                    name="search">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+                <!--boton para los registros-->
+                <div class="col mt-5">
+                    <button class="btn fw-semibold" id="btnRegistrar" name="btnRegistrar" onclick="openCreate()">
+
+                        <img src="../../resources/Imagenes/btnAgregarIMG.png" alt="" width="60px" height="60px"
+                            class="mb-1">
+                    </button>
+                </div>
+
             </div>
-
-            <!--boton para los registros-->
-            <div class="col mt-5">
-                <button class="btn fw-semibold" id="btnRegistrar" name="btnRegistrar" onclick="openCreate()">
-
-                    <img src="../../resources/Imagenes/btnAgregarIMG.png" alt="" width="60px" height="60px"
-                        class="mb-1">
-                </button>
-            </div>
-
         </div>
-    </div>
 
 
-    <!--cards con su contenido dentro  tanto imagens y sus respectivos botones-->
+        <!--cards con su contenido dentro  tanto imagens y sus respectivos botones-->
 
 
 
-    <div class="col-lg-10 col-sm-10 col-md-12 col-12 mx-auto">
-        <table class="table text-center">
-            <thead>
-                <tr>
-                    <td colspan="3" id="rowsFound"></td>
-                </tr>
-                <tr>
-                    <th class="bg-danger text-white fw-bold">ID</th>
-                    <th class="bg-danger text-white fw-bold">Nivel de usuario</th>
-                    <th class="bg-danger text-white fw-bold">Acciones</th>
-                </tr>
-            </thead>
-            <tbody id="tableBody">
+        <div class="col-lg-10 col-sm-10 col-md-12 col-12 mx-auto">
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <td colspan="3" id="rowsFound"></td>
+                    </tr>
+                    <tr>
+                        <th class="bg-danger text-white fw-bold">ID</th>
+                        <th class="bg-danger text-white fw-bold">Nivel de usuario</th>
+                        <th class="bg-danger text-white fw-bold">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
 
 
-            </tbody>
-        </table>
-    </div>
+                </tbody>
+            </table>
+        </div>
 
+    </main>
     <!--Aquí comienzan las modals-->
 
     <!-- Ventana modal para agregar-->
@@ -121,21 +121,15 @@
 
 
 
-
-    <footer>
-
-    </footer>
-
-
-
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script src="../../controllers/utils/footer.js"></script>
-    <script src="../../controllers/utils/Apartados.js"></script>
+
+        <script src="../../controllers/utils/admin.js"></script>
+
     <!-- Llamada a las librerías que utiliza javascript para el funcionamiento de la página web -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../../controllers/utils/sweetalert.min.js"></script>
