@@ -13,10 +13,9 @@
 </head>
 
 <body>
+    <main>
     <!-- Nav Bar que aparece en la parte de arriba de cada pantalla, enviado desde el archivo Apartados.js-->
-    <nav>
 
-    </nav>
 
     <!-- Barra roja con el apartado -->
     <div class="container mt-4">
@@ -78,6 +77,8 @@
         </table>
     </div>
 
+</main>
+
     <div class="modal fade" id="saveModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="modalTitle" aria-hidden="true">
         <div class="modal-dialog">
@@ -138,15 +139,14 @@
         </div>
     </div>
 
-    <footer>
 
-    </footer>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script src="../../controllers/utils/footer.js"></script>
-    <script src="../../controllers/utils/Apartados.js"></script>
+
+        <script src="../../controllers/utils/admin.js"></script>
+
     <!-- Llamada a las librerías que utiliza javascript para el funcionamiento de la página web -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../../controllers/utils/sweetalert.min.js"></script>
