@@ -149,7 +149,7 @@ class OrdenesHandler
     // Método para finalizar un pedido por parte del cliente.
     public function finishOrder()
     {
-        $this->estadoorden = 'Finalizado';
+        $this->estadoorden = 'Finalizada';
         $sql = 'UPDATE tb_ordenes
                 SET estado_orden = ?
                 WHERE id_orden = ?';
@@ -180,7 +180,7 @@ class OrdenesHandler
      //Funcion para el sitio publico: Leer los detalles de cada compra
      public function myOrders()
      {
-         $sql = 'SELECT id_detalle, id_orden, nombre_producto, imagen_producto, tb_productos.precio_producto, cantidad_producto, total_a_pagar, tb_ordenes.fecha_registro, estado_orden
+         $sql = 'SELECT id_detalle, id_orden, nombre_producto, imagen_producto, tb_productos.precio_producto, cantidad_producto, (tb_productos.precio_producto * cantidad_producto) Subtotal, tb_ordenes.fecha_registro, estado_orden
          FROM tb_detallesOrdenes
          INNER JOIN tb_ordenes USING(id_orden)
          INNER JOIN tb_productos USING(id_producto) WHERE id_cliente = ?';

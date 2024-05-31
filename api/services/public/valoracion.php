@@ -16,11 +16,11 @@ if (isset($_GET['action'])) {
         switch ($_GET['action']) {
                 case 'createRating':
                     $_POST = Validator::validateForm($_POST);
+                   
                     if (
                         !$valoracion->setCalificacion($_POST['calificacion']) or
                         !$valoracion->setComentario($_POST['comentario']) or
-                        !$valoracion->setIdDetalle($$_POST['idDetalle']) or
-                        !$valoracion->setIdProducto($$_POST['idProducto'])
+                        !$valoracion->setIdDetalle($_POST['idDetalle']) 
                     ) {
                         $result['error'] = $valoracion->getDataError();
                     } elseif ($valoracion->createRating()) {

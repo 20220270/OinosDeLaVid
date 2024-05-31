@@ -2,7 +2,7 @@
 const stars = document.querySelectorAll('.star');
 
 //Aquí irá la variable para almacenar la cantidad de estrellas seleccionadas
-const ratingText = document.getElementById('texto');
+const ratingText = document.getElementById('calificacion');
 
 //Función para pintar y despintar las estrellas a las que se les de click
 stars.forEach(function(star, index){

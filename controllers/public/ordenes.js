@@ -90,7 +90,7 @@ const fillTable = async (form = null) => {
                                         <strong>Precio de la compra:</strong>
                                     </div>
                                     <div class="col-6">
-                                        <span class="precioCompra">${row.total_a_pagar}</span>
+                                        <span class="precioCompra">${row.Subtotal}</span>
                                     </div>
                                 </div>
                                 <div class="row mb-2">
@@ -133,22 +133,44 @@ const fillTable = async (form = null) => {
 
 const openRating = async (id) => {
     // Se define una constante tipo objeto con los datos del registro seleccionado.
-    const FORM = new FormData();
-    FORM.append('iddetalle', id);
+    //const FORM = new FormData();
+    //FORM.append('iddetalle', id);
     // Petición para obtener los datos del registro solicitado.
-    const DATA = await fetchData(VALORACION_API, 'createRating', FORM);
+    //const DATA = await fetchData(VALORACION_API, 'createRating', FORM);
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
-    if (DATA.status) {
+    //if (DATA.status) {
         // Se muestra la caja de diálogo con su título.
         SAVE_MODAL.show();
         MODAL_TITLE.textContent = 'Valora esta compra';
         // Se prepara el formulario.
         SAVE_FORM.reset();
         // Se inicializan los campos con los datos.
-        const ROW = DATA.dataset;
+  
 
-        ID_DETALLE.value = ROW.id_detalle;
+        ID_DETALLE.value = id;
+    //} else {
+      //  sweetAlert(2, DATA.error, false);
+    //}
+  }
+
+  SAVE_FORM.addEventListener('submit', async (event) => {
+    // Se evita recargar la página web después de enviar el formulario.
+    event.preventDefault();
+    // Se verifica la acción a realizar.
+    //(ID_ADMINISTRADOR.value) ? action = 'updateRow' : action = 'createRow';
+    // Constante tipo objeto con los datos del formulario.
+    const FORM = new FormData(SAVE_FORM);
+    // Petición para guardar los datos del formulario.
+    const DATA = await fetchData(VALORACION_API, 'createRating', FORM);
+    // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
+    if (DATA.status) {
+        // Se cierra la caja de diálogo.
+        SAVE_MODAL.hide();
+        // Se muestra un mensaje de éxito.
+        sweetAlert(1, DATA.message, true);
+        // Se carga nuevamente la tabla para visualizar los cambios.
+        fillTable();
     } else {
         sweetAlert(2, DATA.error, false);
     }
-  }
+  });

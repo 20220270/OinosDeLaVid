@@ -6,6 +6,7 @@ const PARAMS = new URLSearchParams(location.search);
 // Constante para establecer el formulario de agregar un producto al carrito de compras.
 const SHOPPING_FORM = document.getElementById('shoppingForm');
 const CANTIDAD = document.getElementById('cantidadProducto');
+const CARD = document.getElementById('cardComentarios');
 
 // Método del eventos para cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', async () => {
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Se establece el título del contenido principal.
     //MAIN_TITLE.textContent = 'Detalles del producto';
     // Constante tipo objeto con los datos del producto seleccionado.
+    CARD.innerHTML = '';
     const FORM = new FormData();
     FORM.append('idProducto', PARAMS.get('id'));
     // Petición para solicitar los datos del producto seleccionado.
@@ -29,14 +31,28 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('existenciasProducto').textContent = DATA.dataset.existencias_producto;
         document.getElementById('idProducto').value = DATA.dataset.id_producto;
 
+    }else {
+        // Se presenta un mensaje de error cuando no existen datos para mostrar.
+        document.getElementById('mainTitle').textContent = DATA.error;
+        // Se limpia el contenido cuando no hay datos para mostrar.
+        document.getElementById('detalle').innerHTML = '';
     }
-    else if(DATA2.status){
-        document.getElementById('comentarioproducto').textContent = DATA.dataset.comentario_producto;
-        document.getElementById('valoracionproducto').textContent = DATA.dataset.calificacion_producto;
-        document.getElementById('idProducto').value = DATA.dataset.id_producto;
-    }
-    
-    else {
+
+    if(DATA2.status){
+        DATA2.dataset.forEach(row => {
+            CARD.innerHTML += `
+            <div class="col-md-8">
+                        <div class="card-body">
+                            
+                           
+                            <span class="card-text" id="comentarioproducto" name="comentarioproducto">${row.comentario_producto}</span>
+                            <span class="card-text" id="valoracionproducto" name="valoracionproducto">${row.calificacion_producto}</span>      
+                           
+                        </div>
+                    </div>
+            `;
+        })
+    } else {
         // Se presenta un mensaje de error cuando no existen datos para mostrar.
         document.getElementById('mainTitle').textContent = DATA.error;
         // Se limpia el contenido cuando no hay datos para mostrar.
