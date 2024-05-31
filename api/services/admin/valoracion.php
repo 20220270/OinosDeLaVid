@@ -62,7 +62,8 @@ if (isset($_GET['action'])) {
                     if (
                         !$valoracion->setCalificacion($_POST['calificacion']) or
                         !$valoracion->setComentario($_POST['comentario']) or
-                        !$valoracion->setIdDetalle($$_POST['idDetalle'])
+                        !$valoracion->setIdDetalle($$_POST['idDetalle']) or
+                        !$valoracion->setIdProducto($$_POST['idProducto'])
                     ) {
                         $result['error'] = $valoracion->getDataError();
                     } elseif ($valoracion->createRating()) {
