@@ -1,7 +1,7 @@
 
 const ORDENES_API = 'services/public/ordenes.php';
 const PRODUCTOS_API = 'services/public/productos.php';
-const VALORACION_API = 'services/admin/valoracion.php';
+const VALORACION_API = 'services/public/valoracion.php';
 
 const SEARCH_FORM = document.getElementById('searchForm');
 // Constantes para establecer los elementos de la tabla.

@@ -56,26 +56,7 @@ if (isset($_GET['action'])) {
                     $result['error'] = 'Ocurrió un problema al modificar la valoracion';
                 }
                 break;
-
-                case 'createRating':
-                    $_POST = Validator::validateForm($_POST);
-                    if (
-                        !$valoracion->setCalificacion($_POST['calificacion']) or
-                        !$valoracion->setComentario($_POST['comentario']) or
-                        !$valoracion->setIdDetalle($$_POST['idDetalle']) or
-                        !$valoracion->setIdProducto($$_POST['idProducto'])
-                    ) {
-                        $result['error'] = $valoracion->getDataError();
-                    } elseif ($valoracion->createRating()) {
-                        $result['status'] = 1;
-                        $result['message'] = 'Valoracion enviada correctamente';
-                    } else {
-                        $result['error'] = 'Ocurrió un problema al enviar la valoracion';
-                    }
-                    break;
                     
-                    
-
             default:
                 $result['error'] = 'Acción no disponible dentro de la sesión';
         }
