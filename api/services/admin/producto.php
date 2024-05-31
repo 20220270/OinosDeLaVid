@@ -77,7 +77,7 @@ if (isset($_GET['action'])) {
                     !$producto->setPrecio($_POST['PrecioProducto']) or
                     !$producto->setEstado(isset($_POST['selectEstado'])) or
                     !$producto->setExistencias($_POST['cantidadProducto']) or
-                    !$producto->setDescuento(isset($_POST['descuentoProducto'])) or
+                    !$producto->setDescuento(($_POST['descuentoProducto'])) or
                     !$producto->setImagen($_FILES['inputImgProducto'], $producto->getFilename())
                 ) {
                     $result['error'] = $producto->getDataError();

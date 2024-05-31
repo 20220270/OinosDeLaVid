@@ -178,6 +178,20 @@ class OrdenesHandler
     }
 
 
+    public function searchOrders()
+    {
+        $value = '%' . Validator::getSearchValue() . '%';
+        $sql = 'SELECT id_detalle, id_orden, nombre_producto, imagen_producto, tb_productos.precio_producto, cantidad_producto, (tb_productos.precio_producto * cantidad_producto) Subtotal, tb_ordenes.fecha_registro, estado_orden
+                FROM tb_detallesOrdenes
+                INNER JOIN tb_ordenes USING(id_orden)
+                INNER JOIN tb_clientes USING(id_cliente)
+                INNER JOIN tb_productos USING(id_producto)
+                WHERE id_cliente = ? AND (nombre_producto LIKE ? OR tb_ordenes.fecha_registro LIKE ? OR id_orden LIKE ? or id_detalle LIKE ?)
+                ORDER BY id_producto';
+        $params = array( $_SESSION['idCliente'], $value, $value, $value, $value);
+        return Database::getRows($sql, $params);
+    }
+
      //Funcion para el sitio publico: Leer los detalles de cada compra
      public function myOrders()
      {

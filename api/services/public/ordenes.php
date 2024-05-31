@@ -15,6 +15,17 @@ if (isset($_GET['action'])) {
         $result['session'] = 1;
         // Se compara la acción a realizar cuando un cliente ha iniciado sesión.
         switch ($_GET['action']) {
+            
+            case 'searchOrders':
+                if (!Validator::validateSearch($_POST['search'])) {
+                    $result['error'] = Validator::getSearchError();
+                } elseif ($result['dataset'] = $pedido->searchOrders()) {
+                    $result['status'] = 1;
+                    $result['message'] = 'Existen ' . count($result['dataset']) . ' coincidencias';
+                } else {
+                    $result['error'] = 'No hay coincidencias';
+                }
+                break;
                 // Acción para agregar un producto al carrito de compras.
             case 'createDetail':
                 $_POST = Validator::validateForm($_POST);
@@ -43,6 +54,7 @@ if (isset($_GET['action'])) {
                 }
                 break;
 
+
             case 'myOrders':
                 if ($result['dataset'] = $pedido->myOrders()) {
                     $result['status'] = 1;
@@ -51,9 +63,6 @@ if (isset($_GET['action'])) {
                     $result['error'] = 'No existen ordenes registradas';
                 }
                 break;
-
-               
-
                 // Acción para actualizar la cantidad de un producto en el carrito de compras.
             case 'updateDetail':
                 $_POST = Validator::validateForm($_POST);
