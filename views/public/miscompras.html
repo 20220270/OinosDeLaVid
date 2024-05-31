@@ -19,245 +19,135 @@
 
 <body>
 
-<main>
-    <div class="contennn mt-5">
-
-
-        <div class="container mt-5">
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col">
-                        <h5 class="mt-5 text-center">
-                            Mis ordenes
-                        </h5>
-                    </div>
-                    <div class="col">
-
-
-                        <div class="container mt-5">
-                            <form class="row justify-content-end mb-3">
-                                <div class="position-relative col-lg-12">
-                                    <img class="search-icon" src="../../resources/Imagenes/lupa.png" alt="Lupa">
-                                    <input class="form-control me-2" type="search"
-                                        placeholder="Busca tus ordenes por fecha de registro o por el producto adquirido"
-                                        aria-label="Search" id="Search">
-                                </div>
-
-                            </form>
+    <main>
+        <div class="contennn mt-5">
+            <div class="container mt-5">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col">
+                            <h5 class="mt-5 text-center">
+                                Mis ordenes
+                            </h5>
                         </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-11 col-sm-10 col-md-12 col-12 mx-auto">
-            <table class="table text-center">
-                <thead>
-                    <tr>
-                        <td colspan="9" id="rowsFound"></td>
-                    </tr>
-                    <tr>
-                        <th class="bg-danger text-white fw-bold">ID</th>
-                        <th class="bg-danger text-white fw-bold">Imagen</th>
-                        <th class="bg-danger text-white fw-bold">Producto</th>
-                        <th class="bg-danger text-white fw-bold">Precio</th>
-                        <th class="bg-danger text-white fw-bold">Cantidad</th>
-                        <th class="bg-danger text-white fw-bold">Total pagado</th>
-                        <th class="bg-danger text-white fw-bold">Fecha de la orden</th>
-                        <th class="bg-danger text-white fw-bold">Estado de la orden</th>
-                        <th class="bg-danger text-white fw-bold">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody">
-    
-    
-                </tbody>
-            </table>
-        </div>
-
-        <div class="container text-center">
-            <div class="row">
-
-                <div class="col-lg-4 col-md-6 col-sm-12 mt-2">
-                    <div class="card">
-                        <div class="card-body mx-auto">
-                            <div class="row mb-2 col-lg-12">
-                                <div class=" ">
-                                    <img src="/OinosDeLaVid/resources/Imagenes/vino1.png" alt="...">
-                                </div>
-
-                            </div>
-
-                            <div class="row mb-2">
-                                <div class="col-lg-6 col-md-3">
-                                    <strong>Nombre del producto:</strong>
-                                </div>
-                                <div class="col-lg-6 col-md-9">
-                                    <span class="nombreProducto" name="nombreProducto">Vino Rojo</span>
-                                </div>
-                            </div>
-
-                            <div class="row mb-2">
-                                <div class="col-lg-6 col-md-3">
-                                    <strong>Cantidad adquirida:</strong>
-                                </div>
-                                <div class="col-lg-6 col-md-9">
-                                    <span class="cantidadCompra" name="cantidadCompra">12</span>
-                                </div>
-                            </div>
-
-                            <div class="row mb-2">
-                                <div class="col-lg-6 col-md-3">
-                                    <strong>Precio de la compra:</strong>
-                                </div>
-                                <div class="col-lg-6 col-md-9">
-                                    <span class="precioCompra" name="precioCompra">$790.01</span>
-                                </div>
-                            </div>
-
-                            <div class="row mb-2">
-                                <div class="col-lg-6 col-md-3">
-                                    <strong>Fecha de la compra:</strong>
-                                </div>
-                                <div class="col-lg-6 col-md-9">
-                                    <span class="fechaCompra" name="fechaCompra">23/01/2024</span>
-                                </div>
-                            </div>
-
-                            <div class="row mb-2">
-                                <div class="col-lg-6 col-md-3">
-                                    <strong>Estado de la compra:</strong>
-                                </div>
-                                <div class="col-lg-6 col-md-9">
-                                    <span class="estadoCompra" name="estadoCompra">Entregada</span>
-                                </div>
-                            </div>
+                        <div class="col">
 
 
-                            <strong>Valorar compra:</strong>
-
-
-
-                            <button class="btn mostrarModalValoracion">
-                                <img src="../../resources/Imagenes/estrellas.png" alt="" height="70px" width="70px">
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Modal -->
-                <div class="modal fade" id="modalValoracion" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true" data-bs-backdrop="static">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header calificar">
-                                <h5 class="modal-title" id="exampleModalLabel">Valorar productos</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <form id="formularioValoracion">
-                                <div class="modal-body">
-
-                                    <div class="container text-center">
-                                        <div class="row">
-                                            <div class="col">
-                                                <input type="hidden" id="iddetalleOrden" name="iddetalleOrden">
-                                                <input type="hidden" id="idProducto" name="idProducto">
-                                                <label for="nombreCategoria"
-                                                    class="col-sm-7 col-md-12 col-lg-12 col-form-label text-center">Valora
-                                                    tus
-                                                    productos</label>
-                                                <div class="rating">
-                                                    <i class="bi bi-star-fill star"></i>
-                                                    <i class="bi bi-star-fill star"></i>
-                                                    <i class="bi bi-star-fill star"></i>
-                                                    <i class="bi bi-star-fill star"></i>
-                                                    <i class="bi bi-star-fill star"></i>
-
-                                                </div>
-                                                <input type="text" name="texto" id="texto" readonly>
-                                            </div>
-                                            <div class="col">
-                                                <div class="form-floating">
-                                                    <textarea class="form-control" placeholder="Leave a comment here"
-                                                        id="comentario" name="comentario" style="height: 100px"></textarea>
-                                                    <label for="floatingTextarea2">Agrega tu comentario</label>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn btnENviarValoracion" id="">Enviar mi
-                                                valoración</button>
-
-                                            <button type="reset" class="btn" data-bs-dismiss="modal"
-                                                id="btnCerrarFormularioV">Cerrar</button>
-                                            <!-- Puedes agregar aquí un botón para enviar la calificación, si es necesario -->
-                                        </div>
+                            <div class="container mt-5">
+                                <form class="row justify-content-end mb-3">
+                                    <div class="position-relative col-lg-12">
+                                        <img class="search-icon" src="../../resources/Imagenes/lupa.png" alt="Lupa">
+                                        <input class="form-control me-2" type="search"
+                                            placeholder="Busca tus ordenes por fecha de registro o por el producto adquirido"
+                                            aria-label="Search" id="Search">
                                     </div>
-                            </form>
+
+                                </form>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
 
+            <div class="col-lg-11 col-sm-10 col-md-12 col-12 mx-auto">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <td colspan="9" id="rowsFound"></td>
+                        </tr>
+
+                    </thead>
+                    <tbody id="tableBody">
+
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="carousel-inner" id="ordenes">
+
+            </div>
         </div>
-    </div>
-</main>
+    </main>
 
     <!--Modal para mostrar la realización del pedido-->
-    <div class="modal" id="modalEnviarValoracion" data-bs-backdrop="static">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal fade" id="ratingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        data-bs-backdrop="static">
+        <div class="modal-dialog">
             <div class="modal-content">
-                <!-- Contenido de la ventana modal -->
-                <div class="modal-body text-center">
-                    <!-- Agregamos la clase text-center para centrar el contenido -->
-                    <form id="saveForm">
-                        <div class="d-flex justify-content-center align-items-center flex-column">
-                            <!-- Agregamos clases para centrar vertical y horizontalmente -->
-                            <img src="../../resources/Imagenes/exito.png" alt="">
-                            <br>
-                            <h4 class="text-align-center">¡Muchas gracias!</h4>
-                            <br>
-                            <h6 class="text-align-center">Tu valoración nos ayuda a ser mejores.</h6>
+                <div class="modal-header calificar">
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formularioValoracion">
+                        <div class="container text-center">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="hidden" id="iddetalleOrden" name="iddetalleOrden">
+                                    <input type="hidden" id="idProducto" name="idProducto">
+                                    <label for="nombreCategoria"
+                                        class="col-sm-7 col-md-12 col-lg-12 col-form-label text-center">Calificación del producto:</label>
+                                    <div class="rating">
+                                        <i class="bi bi-star-fill star"></i>
+                                        <i class="bi bi-star-fill star"></i>
+                                        <i class="bi bi-star-fill star"></i>
+                                        <i class="bi bi-star-fill star"></i>
+                                        <i class="bi bi-star-fill star"></i>
+
+                                    </div>
+
+                                    <input type="text" name="calificacion" id="calificacion" min="1" max="5" step="1"
+                                        readonly>
+                                        
+                                </div>
+                                <div class="col">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a comment here"
+                                            id="comentario" name="comentario" style="height: 100px"></textarea>
+                                        <label for="floatingTextarea2">Agrega tu comentario</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btnENviarValoracion" id="">Enviar mi
+                                    valoración</button>
+
+                                <button type="reset" class="btn" data-bs-dismiss="modal"
+                                    id="btnCerrarFormularioV">Cerrar</button>
+                            </div>
                         </div>
-                        <div class="modal-footer d-flex justify-content-center">
-                            <!-- Agregamos clases para centrar horizontalmente el botón-->
-                            <button type="submit" class="btn btn-dark btn-block" data-bs-dismiss="modal"
-                                id="btnCerrar">Cerrar</button>
-                            <!-- Agregamos clase btn-block para ajustar el ancho -->
-                        </div>
+
                     </form>
                 </div>
             </div>
         </div>
-    </div>
 
 
 
-    <!-- Optional JavaScript; choose one of the two! -->
+        <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
 
 
-    <!-- Llamada a las librerías que utiliza javascript para el funcionamiento de la página web -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Llamada a las librerías que utiliza javascript para el funcionamiento de la página web -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script src="../../controllers/utils/sweetalert.min.js"></script>
-    <script src="../../controllers/utils/components.js"></script>
+        <script src="../../controllers/utils/sweetalert.min.js"></script>
+        <script src="../../controllers/utils/components.js"></script>
 
-    <script src="../../controllers/utils/public.js"></script>
+        <script src="../../controllers/utils/public.js"></script>
 
-    <script src="../../controllers/utils/estrellas.js"></script>
+        <script src="../../controllers/utils/estrellas.js"></script>
 
-    <script src="../../controllers/public/Valoracion.js"></script>
-    
-    <script src="../../controllers/public/ordenes.js"></script>
-    
+        <script src="../../controllers/public/Valoracion.js"></script>
+
+        <script src="../../controllers/public/ordenes.js"></script>
+
 </body>
 
 

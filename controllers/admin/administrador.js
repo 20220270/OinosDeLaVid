@@ -83,10 +83,6 @@ const fillTable = async (form = null) => {
       // Se recorre el conjunto de registros fila por fila.
       DATA.dataset.forEach(row => {
 
-        // Se crean y concatenan las filas de la tabla con los datos de cada registro.
-        const truncatedPassword = row.clave_administrador.length > 20 
-        ? row.clave_administrador.substring(0, 27) + '...' 
-        : row.clave_administrador;
 
           // Se crean y concatenan las filas de la tabla con los datos de cada registro.
           CARD_ADMINS.innerHTML += `

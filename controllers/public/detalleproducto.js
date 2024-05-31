@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('idProducto').value = DATA.dataset.id_producto;
 
     }
-
     else if(DATA2.status){
         document.getElementById('comentarioproducto').textContent = DATA.dataset.comentario_producto;
         document.getElementById('valoracionproducto').textContent = DATA.dataset.calificacion_producto;

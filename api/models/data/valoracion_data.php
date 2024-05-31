@@ -53,7 +53,7 @@ class ValoracionData extends ValoracionHandler
     public function setCalificacion($value)
     {
         if (Validator::validateNaturalNumber($value)) {
-            $this->iddetalle = $value;
+            $this->calificacion = $value;
             return true;
         } else {
             $this->data_error = 'La calificación tiene un formato incorrecto';
@@ -67,7 +67,7 @@ class ValoracionData extends ValoracionHandler
             $this->data_error = 'Comentario con formato incorrecto';
             return false;
         } elseif (Validator::validateLength($value, $min, $max)) {
-            $this->nombreproducto = $value;
+            $this->comentario = $value;
             return true;
         } else {
             $this->data_error = 'El comentario debe tener una longitud entre ' . $min . ' y ' . $max;

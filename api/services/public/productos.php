@@ -30,14 +30,13 @@ if (isset($_GET['action'])) {
             break;
 
         case 'commentsProduct':
-            if ($result['dataset'] = $producto->commentsProduct()) {
+            if (!$producto->setId($_POST['idProducto'])) {
+                $result['error'] = $producto->getDataError();
+            } elseif ($result['dataset'] = $producto->commentsProduct()) {
                 $result['status'] = 1;
-                $result['message'] = 'Existen ' . count($result['dataset']) . ' registros';
             } else {
-                $result['error'] = 'Este producto aun no recibe un comentario';
-                
+                $result['error'] = 'No hay comentarios ';
             }
-            
             break;
         default:
             $result['error'] = 'Acción no disponible';

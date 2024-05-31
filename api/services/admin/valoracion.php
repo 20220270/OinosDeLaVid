@@ -24,7 +24,7 @@ if (isset($_GET['action'])) {
                     $result['error'] = 'No hay coincidencias';
                 }
                 break;
-           
+
             case 'readAll':
                 if ($result['dataset'] = $valoracion->readAll()) {
                     $result['status'] = 1;
@@ -52,11 +52,28 @@ if (isset($_GET['action'])) {
                 } elseif ($valoracion->updateRow()) {
                     $result['status'] = 1;
                     $result['message'] = 'Estado modificado correctamente';
-                    } else {
+                } else {
                     $result['error'] = 'Ocurrió un problema al modificar la valoracion';
                 }
                 break;
-            
+
+                case 'createRating':
+                    $_POST = Validator::validateForm($_POST);
+                    if (
+                        !$valoracion->setCalificacion($_POST['calificacion']) or
+                        !$valoracion->setComentario($_POST['comentario']) or
+                        !$valoracion->setIdDetalle($$_POST['iddetalleOrden'])
+                    ) {
+                        $result['error'] = $valoracion->getDataError();
+                    } elseif ($valoracion->createRating()) {
+                        $result['status'] = 1;
+                        $result['message'] = 'Valoracion enviada correctamente';
+                    } else {
+                        $result['error'] = 'Ocurrió un problema al enviar la valoracion';
+                    }
+                    break;
+                    
+
             default:
                 $result['error'] = 'Acción no disponible dentro de la sesión';
         }

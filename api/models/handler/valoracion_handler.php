@@ -73,10 +73,10 @@ class ValoracionHandler
         return Database::executeRow($sql, $params);
     }
 
-    public function createDetail()
+    public function createRating()
     {
         // Se realiza una subconsulta para obtener el precio del producto.
-        $sql = 'INSERT INTO tb_valoraciones(valoracion_producto, comentario_producto, id_detalleq)
+        $sql = 'INSERT INTO tb_valoraciones(valoracion_producto, comentario_producto, id_detalle)
                 VALUES(?, ?, ?)';
         $params = array($this->calificacion, $this->comentario, $this->iddetalle);
         return Database::executeRow($sql, $params);
