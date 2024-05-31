@@ -11,6 +11,7 @@ class ValoracionHandler
      */
     protected $idvaloracion = null;
     protected $iddetalle = null;
+    protected $idproducto = null;
     protected $nombreproducto = null;
     protected $calificacion = null;
     protected $comentario = null;
@@ -76,9 +77,9 @@ class ValoracionHandler
     public function createRating()
     {
        
-        $sql = 'INSERT INTO tb_valoraciones(calificacion_producto, comentario_producto, id_detalle)
-                VALUES(?, ?, ?)';
-        $params = array($this->calificacion, $this->comentario, $this->iddetalle);
+        $sql = 'INSERT INTO tb_valoraciones(calificacion_producto, comentario_producto, id_detalle, id_producto)
+                VALUES(?, ?, ?, ?)';
+        $params = array($this->calificacion, $this->comentario, $this->iddetalle, $this->idproducto);
         return Database::executeRow($sql, $params);
     }
 

@@ -86,7 +86,7 @@ const fillTable = async (form = null) => {
 
           // Se crean y concatenan las filas de la tabla con los datos de cada registro.
           CARD_ADMINS.innerHTML += `
-          <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mt-5 text-center">
+          <div class="col-lg-12 col-md-6 col-sm-12 mb-4 mt-5 text-center">
               <div class="card h-100" id="cards">
                   <div class="card-body text-start">
                       <div class="d-flex justify-content-between">
