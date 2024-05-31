@@ -37,7 +37,7 @@ const fillTable = async (form = null) => {
 
     if (DATA.status) {
         const rows = DATA.dataset.map(row => `
-            <div class="col-lg-10 col-md-12 col-sm-12 mt-2 mx-auto">
+            <div class="col-lg-10 col-md-12 col-sm-12 mt-2 mx-auto" id="orden">
                 <div class="card">
                     <div class="card-body">
                         <div class="row">

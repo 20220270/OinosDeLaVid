@@ -18,25 +18,10 @@ body {
     position: relative;
 }
 
-/*Viñeta para los descuentos*/
-
-#card2::before {
-    content: "20% de descuento";
-    position: absolute;
-    top: 15px;
-    left: -30px;
-    background-color: #A00000;
-    color: white;
-    padding: 5px 5px;
-    transform: rotate(-45deg);
-    border-radius: 0 0 0 5px;
-}
-
-#precio {
-    background-color: #000;
-    border-radius: 50px;
-    color: #fff;
-
+#categoriass,
+#marcaas{
+    border: 4px solid #840606;
+    border-radius: 15px;
 }
 
 
