@@ -136,7 +136,7 @@ class AdministradorHandler
         $sql = 'SELECT id_administrador, nombre_admistrador, apellido_administrador, correo_administrador, alias_administrador, clave_administrador, nivel, estado_adminstrador
         FROM tb_administradores
         INNER JOIN tb_niveles_administradores USING(id_nivel)
-                WHERE id_administrador = ? AND estado_administrador = true
+                WHERE id_administrador = ? AND estado_administrador = "Activo"
                 ORDER BY nombre_admistrador';
         $params = array($this->nivel);
         return Database::getRows($sql, $params);

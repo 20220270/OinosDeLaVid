@@ -62,7 +62,7 @@ if (isset($_GET['action'])) {
                     if (
                         !$valoracion->setCalificacion($_POST['calificacion']) or
                         !$valoracion->setComentario($_POST['comentario']) or
-                        !$valoracion->setIdDetalle($$_POST['iddetalleOrden'])
+                        !$valoracion->setIdDetalle($$_POST['idDetalle'])
                     ) {
                         $result['error'] = $valoracion->getDataError();
                     } elseif ($valoracion->createRating()) {
@@ -72,6 +72,7 @@ if (isset($_GET['action'])) {
                         $result['error'] = 'Ocurrió un problema al enviar la valoracion';
                     }
                     break;
+                    
                     
 
             default:

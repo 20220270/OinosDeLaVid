@@ -11,7 +11,6 @@ class OrdenesHandler
      */
     protected $idorden = null;
     protected $iddetalle = null;
-    
     protected $nombrecliente = null;
     protected $imagenproducto = null;
     protected $estadoorden = null;
@@ -188,6 +187,7 @@ class OrdenesHandler
          $params = array($_SESSION['idCliente']);
          return Database::getRows($sql, $params);
      }
+
 
 
 }

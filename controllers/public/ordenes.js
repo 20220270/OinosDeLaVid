@@ -10,7 +10,7 @@ const TABLE_BODY = document.getElementById('tableBody'),
     const SAVE_MODAL = new bootstrap.Modal('#ratingModal');
     const MODAL_TITLE = document.getElementById('modalTitle');
     const SAVE_FORM = document.getElementById('formularioValoracion'),
-    VALORACION_PRODUCTO = document.getElementById('texto'),
+    VALORACION_PRODUCTO = document.getElementById('calificacion'),
     COMENTARIO_PRODUCTO = document.getElementById('comentario'),
     ID_DETALLE = document.getElementById('idDetalle');
 
@@ -134,7 +134,7 @@ const fillTable = async (form = null) => {
 const openRating = async (id) => {
     // Se define una constante tipo objeto con los datos del registro seleccionado.
     const FORM = new FormData();
-    FORM.append('iddetalleOrden', id);
+    FORM.append('iddetalle', id);
     // Petición para obtener los datos del registro solicitado.
     const DATA = await fetchData(VALORACION_API, 'createRating', FORM);
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.

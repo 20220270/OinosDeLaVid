@@ -143,7 +143,7 @@ class ProductoHandler
         $sql = 'SELECT id_valoracion, nombre_producto, comentario_producto, calificacion_producto from tb_valoraciones
          INNER JOIN tb_detallesordenes USING(id_detalle)
         INNER JOIN tb_productos USING(id_producto) 
-        where id_producto = ?';
+        where id_producto = ? AND estado_comentario = "Habilitado"';
         $params = array($this->id);
         //return Database::getRows($sql);
         return Database::getRows($sql, $params);
