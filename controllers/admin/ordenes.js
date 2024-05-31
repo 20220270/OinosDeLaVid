@@ -125,66 +125,6 @@ const fillTable = async (form = null) => {
 }
 
 
-//Funcion para llenar la modal del detalle de cada orden
-/*const fillModal = async (form = null) => {
-    // Se inicializa el contenido de la tabla.
-    DETAIL_FORM.innerHTML = '';
-    // Se verifica la acción a realizar.
-    (form) ? action = 'searchRows' : action = 'readDetails';
-    // Petición para obtener los registros disponibles.
-    const DATA = await fetchData(ORDENES_API, action, form);
-    // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
-    if (DATA.status) {
-        // Se recorre el conjunto de registros fila por fila.
-        DATA.dataset.forEach(row => {
-            // Se crean y concatenan las filas de la tabla con los datos de cada registro.
-            DETAIL_FORM.innerHTML += `
-
-            <div class="modal-body overflow-auto">
-            <input type="hidden" id="idOrden" name="idOrden">
-            <input type="hidden" id="idDetalle" name="idDetalle">
-
-            <div class="col-sm-12 col-md-6 mt-3 mx-auto">
-                <label for="nombreProducto" class="mt-4">Detalle: ${row.id_detalle} </label>
-                <img src="${SERVER_URL}images/productos/${row.imagen_producto}" alt="..." width="200px" height="200px" name="imagenProductoDetalle"
-                    id="imagenProductoDetalle">
-            </div>
-
-            <div>
-                <div class="d-flex justify-content-between col-lg-12">
-                    <label for="nombreProducto" class="mt-4">Nombre del producto: </label>
-                    <label for="ProductoDetalle" name="nombreProductoDetalle" id="nombreProductoDetalle"
-                        class="mt-4">${row.nombre_producto}</label>
-                </div>
-                <div class="d-flex justify-content-between col-lg-12">
-                    <label for="nombreProducto" class="mt-4">Precio del producto: </label>
-                    <label for="ProductoDetalle" name="precioProductoDetalle" id="precioProductoDetalle"
-                        class="mt-4">${row.precio_producto}</label>
-                </div>
-                <div class="d-flex justify-content-between col-lg-12">
-                    <label for="nombreProducto" class="mt-4">Cantidad adquirida: </label>
-                    <label for="ProductoDetalle" name="cantidadProductoDetalle" id="cantidadProductoDetalle"
-                        class="mt-4">${row.cantidad_producto}</label>
-                </div>
-                <div class="d-flex justify-content-between col-lg-12">
-                    <label for="nombreProducto" class="mt-4">Total pagado: </label>
-                    <label for="ProductoDetalle" name="TotalPagadoProductoDetalle"
-                        id="TotalPagadoProductoDetalle" class="mt-4">${row.total_a_pagar}</label>
-                </div>
-
-            </div>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
-        </div>
-          `;
-        });
-    } else {
-        sweetAlert(4, DATA.error, true);
-    }
-}*/
-
-
 /*
 *   Función asíncrona para preparar el formulario al momento de actualizar un registro.
 *   Parámetros: id (identificador del registro seleccionado).
@@ -238,7 +178,7 @@ const openDetail = async (id) => {
                       <td>${row.nombre_producto}</td>
                       <td>$${row.precio_producto}</td>
                       <td>${row.cantidad_producto}</td>
-                      <td>$${row.total_a_pagar}</td>
+                      <td>$${row.Subtotal}</td>
                       
                   </tr>
               `;

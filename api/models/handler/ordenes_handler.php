@@ -68,7 +68,7 @@ class OrdenesHandler
     //Funcion para el sitio privado: Leer los detalles de cada compra
     public function readDetails()
     {
-        $sql = 'SELECT id_detalle, nombre_producto, imagen_producto, tb_productos.precio_producto, cantidad_producto, total_a_pagar
+        $sql = 'SELECT id_detalle, nombre_producto, imagen_producto, tb_productos.precio_producto, cantidad_producto, (tb_productos.precio_producto * cantidad_producto) Subtotal
         FROM tb_detallesOrdenes
         INNER JOIN tb_ordenes USING(id_orden)
         INNER JOIN tb_productos USING(id_producto) WHERE id_orden = ?';
@@ -128,16 +128,17 @@ class OrdenesHandler
     public function createDetail()
     {
         // Se realiza una subconsulta para obtener el precio del producto.
-        $sql = 'INSERT INTO tb_detallesOrdenes(id_producto, precio_producto, cantidad_producto, id_orden)
-                VALUES(?, (SELECT precio_producto FROM tb_productos WHERE id_producto = ?), ?, ?)';
-        $params = array($this->producto, $this->producto, $this->cantidad, $_SESSION['idOrden']);
+        $sql = 'INSERT INTO tb_detallesOrdenes(id_producto, cantidad_producto, id_orden)
+                VALUES(?, ?, ?)';
+        $params = array($this->producto, $this->cantidad, $_SESSION['idOrden']);
+       
         return Database::executeRow($sql, $params);
     }
 
     // Método para obtener los productos que se encuentran en el carrito de compras.
     public function readDetail()
     {
-        $sql = 'SELECT id_detalle, nombre_producto, tb_detallesOrdenes.precio_producto, cantidad_producto, tb_detallesOrdenes.total_a_pagar
+        $sql = 'SELECT id_detalle, nombre_producto, tb_detallesOrdenes.precio_producto, cantidad_producto, (tb_productos.precio_producto * cantidad_producto) Subtotal
         FROM tb_detallesOrdenes
         INNER JOIN tb_ordenes USING(id_orden)
         INNER JOIN tb_productos USING(id_producto)

@@ -31,20 +31,27 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('existenciasProducto').textContent = DATA.dataset.existencias_producto;
         document.getElementById('idProducto').value = DATA.dataset.id_producto;
 
-    }else {
+    } else {
         // Se presenta un mensaje de error cuando no existen datos para mostrar.
         document.getElementById('mainTitle').textContent = DATA.error;
         // Se limpia el contenido cuando no hay datos para mostrar.
         document.getElementById('detalle').innerHTML = '';
     }
 
-    if(DATA2.status){
+    if (DATA2.status) {
         DATA2.dataset.forEach(row => {
             CARD.innerHTML += `
             <div class="col-md-8 col-lg-12 mt-3 mb-1">
                 <div class="card-body" id="borde">
-                    <span class="card-text d-block"><strong>Comentario:</strong> ${row.comentario_producto}</span>
-                    <span class="card-text d-block"><strong>Calificación:</strong> ${generateStars(row.calificacion_producto)} ${row.calificacion_producto}</span>     
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div class="d-flex align-items-center">
+                            <img src="../../resources/Imagenes/perfil.png" alt="..." height="40px" width="40px" class="mr-2">
+                            <span class="card-text">${row.nombre_cliente} ${row.apellido_cliente}</span>
+                        </div>
+                        <span class="card-text">${row.fecha_valoracion}</span>
+                    </div>
+                    <span class="card-text d-block">${row.comentario_producto}</span>
+                    <span class="card-text d-block">${generateStars(row.calificacion_producto)} ${row.calificacion_producto}</span>     
                 </div>
             </div>
             `;
