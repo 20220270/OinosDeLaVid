@@ -48,7 +48,7 @@
 
 /* Estilos generales para el contenedor de los comentarios */
 #cardComentarios {
-    max-height: 200px;
+    max-height: 490px;
     overflow-y: auto;
 
 }
@@ -79,4 +79,8 @@
 
 .star.filled {
     color: brown; /* Color para estrellas llenas */
+}
+
+#mainTitle{
+    margin-top: 130px;
 }

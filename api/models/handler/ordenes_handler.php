@@ -138,10 +138,20 @@ class OrdenesHandler
     // Método para obtener los productos que se encuentran en el carrito de compras.
     public function readDetail()
     {
-        $sql = 'SELECT id_detalle, nombre_producto, tb_detallesOrdenes.precio_producto, cantidad_producto, (tb_productos.precio_producto * cantidad_producto) Subtotal
-        FROM tb_detallesOrdenes
-        INNER JOIN tb_ordenes USING(id_orden)
-        INNER JOIN tb_productos USING(id_producto)
+        $sql = 'SELECT 
+        id_detalle, 
+        nombre_producto, 
+        tb_detallesOrdenes.precio_producto, 
+        cantidad_producto, 
+        (tb_productos.precio_producto * cantidad_producto) AS Subtotal,
+        tb_productos.descuento_producto,
+        ROUND((tb_productos.precio_producto * cantidad_producto) - (tb_productos.precio_producto * cantidad_producto * tb_productos.descuento_producto / 100), 2) AS subtotal_con_descuento
+    FROM 
+        tb_detallesOrdenes
+    INNER JOIN 
+        tb_ordenes USING(id_orden)
+    INNER JOIN 
+        tb_productos USING(id_producto)
                 WHERE id_orden = ?';
         $params = array($_SESSION['idOrden']);
         return Database::getRows($sql, $params);

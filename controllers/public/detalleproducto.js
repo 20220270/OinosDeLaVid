@@ -11,7 +11,7 @@ const CARD = document.getElementById('cardComentarios');
 // Método del eventos para cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', async () => {
     // Llamada a la función para mostrar el encabezado y pie del documento.
-    //loadTemplate();
+    loadTemplate();
     // Se establece el título del contenido principal.
     //MAIN_TITLE.textContent = 'Detalles del producto';
     // Constante tipo objeto con los datos del producto seleccionado.
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (DATA2.status) {
         DATA2.dataset.forEach(row => {
             CARD.innerHTML += `
-            <div class="col-md-8 col-lg-12 mt-3 mb-1">
+            <div class="col-md-12 col-lg-12 mt-3 mb-1">
                 <div class="card-body" id="borde">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <div class="d-flex align-items-center">

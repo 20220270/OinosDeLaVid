@@ -11,7 +11,7 @@ const CARD_CARRITO = document.getElementById('cardProductosCarrito');
 // Método del evento para cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', () => {
     // Llamada a la función para mostrar el encabezado y pie del documento.
-    //loadTemplate();
+    loadTemplate();
     // Se establece el título del contenido principal.
     //MAIN_TITLE.textContent = 'Carrito de compras';
     // Llamada a la función para mostrar los productos del carrito de compras.
@@ -51,14 +51,18 @@ async function readDetail() {
     if (DATA.status) {
         // Se inicializa el cuerpo de la tabla.
         CARD_CARRITO.innerHTML = '';
+
+        let subtotalcondescuento = 0;
         // Se declara e inicializa una variable para calcular el importe por cada producto.
         let subtotal = 0;
         // Se declara e inicializa una variable para sumar cada subtotal y obtener el monto final a pagar.
         let total = 0;
         // Se recorre el conjunto de registros fila por fila a través del objeto row.
         DATA.dataset.forEach(row => {
-            subtotal = row.precio_producto * row.cantidad_producto;
-            total += subtotal;
+            subtotal = row.precio_producto * row.cantidad_producto; //Calculo del subtotal
+            subtotalcondescuento = subtotal - (subtotal * row.descuento_producto)/100; //Calculo del subtotal aplicando el descuento
+            total += subtotalcondescuento;//Ahora asignamos la nueva variable de subtotal con descuento para que se muestre en el total de la compra
+            
             // Se crean y concatenan las filas de la tabla con los datos de cada registro.
             CARD_CARRITO.innerHTML += `
                 
@@ -72,8 +76,10 @@ async function readDetail() {
                         <p>${row.precio_producto}</p>
                         <label class="fw-bold mt-4">Cantidad:</label>
                         <p>${row.cantidad_producto}</p>
-                        <label class="fw-bold mt-4">Cantidad:</label>
+                        <label class="fw-bold mt-4">Sub total:</label>
                         <p>${subtotal.toFixed(2)}</p>
+                        <label class="fw-bold mt-4">Sub total con descuento:</label>
+                        <p>${subtotal_con_descuento.toFixed(2)}</p>
                     </div>
                 </div>
 
