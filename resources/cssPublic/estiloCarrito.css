@@ -21,6 +21,11 @@ body{
     
 }
 
+#cards{
+    border: 4px solid #840606;
+    border-radius: 15px;
+}
+
 #botonCarrito{
     background-color: #6D0E0E;
     color: #fff;

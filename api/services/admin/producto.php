@@ -75,7 +75,7 @@ if (isset($_GET['action'])) {
                     !$producto->setNombre($_POST['nombreProducto']) or
                     !$producto->setDescripcion($_POST['descripcionProducto']) or
                     !$producto->setPrecio($_POST['PrecioProducto']) or
-                    !$producto->setEstado(isset($_POST['selectEstado'])) or
+                    !$producto->setEstado(($_POST['selectEstado'])) or
                     !$producto->setExistencias($_POST['cantidadProducto']) or
                     !$producto->setDescuento(($_POST['descuentoProducto'])) or
                     !$producto->setImagen($_FILES['inputImgProducto'], $producto->getFilename())

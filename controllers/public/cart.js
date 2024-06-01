@@ -62,7 +62,7 @@ async function readDetail() {
             subtotal = row.precio_producto * row.cantidad_producto; //Calculo del subtotal
             subtotalcondescuento = subtotal - (subtotal * row.descuento_producto)/100; //Calculo del subtotal aplicando el descuento
             total += subtotalcondescuento;//Ahora asignamos la nueva variable de subtotal con descuento para que se muestre en el total de la compra
-            
+
             // Se crean y concatenan las filas de la tabla con los datos de cada registro.
             CARD_CARRITO.innerHTML += `
                 
@@ -79,7 +79,7 @@ async function readDetail() {
                         <label class="fw-bold mt-4">Sub total:</label>
                         <p>${subtotal.toFixed(2)}</p>
                         <label class="fw-bold mt-4">Sub total con descuento:</label>
-                        <p>${subtotal_con_descuento.toFixed(2)}</p>
+                        <p>${subtotalcondescuento.toFixed(2)}</p>
                     </div>
                 </div>
 
