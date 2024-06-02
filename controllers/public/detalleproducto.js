@@ -34,8 +34,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     } else {
         // Se presenta un mensaje de error cuando no existen datos para mostrar.
         document.getElementById('mainTitle').textContent = DATA.error;
-        // Se limpia el contenido cuando no hay datos para mostrar.
-        document.getElementById('detalle').innerHTML = '';
+        document.getElementById('detalle').innerHTML = `
+        <div class="col-md-12 col-lg-12 mt-3 mb-1">
+                <div class="card-body" id="borde">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div class="d-flex align-items-center">
+                            <img src="../../resources/Imagenes/perfil.png" alt="..." height="40px" width="40px" class="mr-2">
+                            <span class="card-text">${row.nombre_cliente} ${row.apellido_cliente}</span>
+                        </div>
+                        <span class="card-text">${row.fecha_valoracion}</span>
+                    </div>
+                    <span class="card-text d-block">${row.comentario_producto}</span>
+                    <span class="card-text d-block">${generateStars(row.calificacion_producto)} ${row.calificacion_producto}</span>     
+                </div>
+            </div>
+        `;
     }
 
     if (DATA2.status) {
@@ -60,7 +73,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Se presenta un mensaje de error cuando no existen datos para mostrar.
         document.getElementById('mainTitle').textContent = DATA.error;
         // Se limpia el contenido cuando no hay datos para mostrar.
-        document.getElementById('detalle').innerHTML = '';
+       
+
+        document.getElementById('cardComentarios').innerHTML = `
+        
+        <div class="d-flex justify-content-between align-items-center mt-5">
+            <img src="../../resources/Imagenes/nocomments.png" alt="..." height="100px" width="110px">
+            <b>No hay comentarios disponibles</b>
+        </div>                
+        `;
     }
 });
 

@@ -17,9 +17,9 @@
     <main>
         <!-- Título del contenido principal -->
         <h4 id="mainTitle"></h4>
-        
+
         <div class="d-flex justify-content-center flex-wrap">
-            
+
             <div class="card mb-3 mt-2 col-lg-5 mx-2" id="detalle">
                 <div class="row">
                     <div class="col-md-4 col-lg-12">
@@ -29,12 +29,14 @@
                         <div class="card-body">
                             <h5 class="card-title" id="nombreProducto"></h5>
                             <p class="card-text" id="descripcionProducto"></p>
-                            <p class="card-text">Precio unitario (US$): <span id="precioProducto" name="precioProducto" class="fw-bold"></span></p>
+                            <p class="card-text">Precio unitario (US$): <span id="precioProducto" name="precioProducto"
+                                    class="fw-bold"></span></p>
                             <p class="card-text">Existencias: <b id="existenciasProducto"></b></p>
                             <form class="row" id="shoppingForm">
                                 <input type="hidden" id="idProducto" name="idProducto">
                                 <div class="col-6 col-lg-6">
-                                    <input type="number" id="cantidadProducto" name="cantidadProducto" min="1" class="form-control" placeholder="Cantidad" required>
+                                    <input type="number" id="cantidadProducto" name="cantidadProducto" min="1"
+                                        class="form-control" placeholder="Cantidad" required>
                                 </div>
                                 <div class="col-6 align-self-end">
                                     <button type="submit" class="btn" id="btnVerDetalle">
@@ -47,11 +49,11 @@
                 </div>
             </div>
 
-           
+
             <div class="card mb-3 mt-2 col-lg-5 mx-2" id="coments">
                 <h5 class="card-title mx-auto mt-2" id="titulo">Comentarios y valoraciones</h5>
                 <div class="row mx-auto" id="cardComentarios">
-                    
+
                 </div>
             </div>
         </div>
@@ -61,11 +63,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-        <script src="../../controllers/utils/public.js"></script>
+    
+    <script src="../../controllers/utils/public.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../../controllers/utils/sweetalert.min.js"></script>
     <script src="../../controllers/utils/components.js"></script>
     <script type="text/javascript" src="../../controllers/public/detalleproducto.js"></script>
+    
 
 </body>
 

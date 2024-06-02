@@ -40,9 +40,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                             <h5 class="card-title text-center">${row.nombre_producto}</h5>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item etqiueta">Precio unitario (US$) ${row.precio_producto}</li>
+                            <li class="list-group-item etqiueta">Precio unitario (US$): ${row.precio_producto}</li>
                             <li class="list-group-item">Descripción: ${row.descripcion_producto}</li>
-                            <li class="list-group-item etqiueta">Existencias ${row.existencias_producto}</li>
+                            <li class="list-group-item etqiueta">Existencias: ${row.existencias_producto}</li>
                             <li class="list-group-item mt-4 mb-4 text-center">${descuento}</li>
                         </ul>
                         <div class="card-body text-center">
