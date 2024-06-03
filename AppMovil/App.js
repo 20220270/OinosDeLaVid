@@ -46,8 +46,8 @@ function MyDrawer() { // Cambia el nombre de esta función a algo distinto de 'A
     >
       <Drawer.Screen name="Menu" component={ProfileScreen} />
       <Drawer.Screen name="Ordenes" component={MessageScreen} />
-      <Drawer.Screen name="Mis compras" component={ListScreen} />
-      <Drawer.Screen name="Perfil" component={ActivityScreen} />
+      <Drawer.Screen name="Mis compras" component={ActivityScreen} />
+      <Drawer.Screen name="Perfil" component={ListScreen} />
     </Drawer.Navigator>
   );
 }
