@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('descripcionProducto').textContent = DATA.dataset.descripcion_producto;
         document.getElementById('precioProducto').textContent = DATA.dataset.precio_producto;
         document.getElementById('existenciasProducto').textContent = DATA.dataset.existencias_producto;
+        document.getElementById('descuentoProducto').textContent = DATA.dataset.descuento_producto;
         document.getElementById('idProducto').value = DATA.dataset.id_producto;
 
     } else {
@@ -73,14 +74,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Se presenta un mensaje de error cuando no existen datos para mostrar.
         document.getElementById('mainTitle').textContent = DATA.error;
         // Se limpia el contenido cuando no hay datos para mostrar.
-       
-
         document.getElementById('cardComentarios').innerHTML = `
-        
-        <div class="d-flex justify-content-between align-items-center mt-5">
-            <img src="../../resources/Imagenes/nocomments.png" alt="..." height="100px" width="110px">
+        <div class="center-content">
+            <img src="../../resources/Imagenes/nocomments.png" alt="No comments available" height="100px" width="110px">
             <b>No hay comentarios disponibles</b>
-        </div>                
+        </div>
         `;
     }
 });

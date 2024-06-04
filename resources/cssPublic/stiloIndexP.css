@@ -60,6 +60,7 @@ footer {
 .nav-link {
     color: #000;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .nav-link:hover {
