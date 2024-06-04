@@ -59,7 +59,7 @@ class ProductoHandler
 
     public function readOne()
     {
-        $sql = 'SELECT id_producto, nombre_categoria, nombre_marca, nombre_producto, descripcion_producto, precio_producto, imagen_producto, estado_producto
+        $sql = 'SELECT id_producto, nombre_categoria, nombre_marca, nombre_producto, descripcion_producto, precio_producto, imagen_producto, estado_producto,
         existencias_producto, descuento_producto, fecha_registro FROM tb_productos
         INNER JOIN tb_categorias USING(id_categoria)
         INNER JOIN tb_marcas USING(id_marca)

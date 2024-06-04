@@ -222,7 +222,8 @@ class OrdenesHandler
      INNER JOIN 
          tb_ordenes USING(id_orden)
      INNER JOIN 
-         tb_productos USING(id_producto)  WHERE id_cliente = ?';
+         tb_productos USING(id_producto)  WHERE id_cliente = ?
+         ORDER BY id_orden';
          $params = array($_SESSION['idCliente']);
          return Database::getRows($sql, $params);
      }
