@@ -100,8 +100,7 @@ const loadTemplate = async () => {
                     </ul>
                 </div>
 
-                <button class="btn" type="submit" id="btnVerPerfil"> <a href="perfil.html" class="textoVerPerfil">Mi perfil</a></button>
-
+                
 
             </div>
         </nav>
