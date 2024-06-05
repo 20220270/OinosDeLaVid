@@ -178,7 +178,7 @@ const openDetail = async (id) => {
                       <td>${row.nombre_producto}</td>
                       <td>$${row.precio_producto}</td>
                       <td>${row.cantidad_producto}</td>
-                      <td>$${row.Subtotal}</td>
+                      <td>$${row.SubtotalConDescuento}</td>
                       
                   </tr>
               `;

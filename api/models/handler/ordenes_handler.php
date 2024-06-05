@@ -68,7 +68,9 @@ class OrdenesHandler
     //Funcion para el sitio privado: Leer los detalles de cada compra
     public function readDetails()
     {
-        $sql = 'SELECT id_detalle, nombre_producto, imagen_producto, tb_productos.precio_producto, cantidad_producto, (tb_productos.precio_producto * cantidad_producto) Subtotal
+        $sql = 'SELECT id_detalle, nombre_producto, imagen_producto, tb_productos.precio_producto, cantidad_producto, 
+        (tb_productos.precio_producto * cantidad_producto) Subtotal,
+        ROUND((tb_productos.precio_producto * cantidad_producto) - (tb_productos.precio_producto * cantidad_producto * tb_productos.descuento_producto / 100), 2) AS SubtotalConDescuento
         FROM tb_detallesOrdenes
         INNER JOIN tb_ordenes USING(id_orden)
         INNER JOIN tb_productos USING(id_producto) WHERE id_orden = ?';
