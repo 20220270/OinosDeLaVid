@@ -79,7 +79,6 @@ const fillTable = async (form = null) => {
   const DATA = await fetchData(ADMINISTRADOR_API, action, form);
   // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
   if (DATA.status) {
-      console.log(DATA)
       // Se recorre el conjunto de registros fila por fila.
       DATA.dataset.forEach(row => {
 
