@@ -40,14 +40,27 @@ class ClienteHandler
         }
     }
 
-    public function checkStatus()
-    {
-        if ($this->estado) {
-            $_SESSION['idCliente'] = $this->id;
-            $_SESSION['correoCliente'] = $this->correo;
-            return true;
+    public function checkStatus() {
+        $sql = 'SELECT estado_cliente FROM tb_clientes WHERE id_cliente = ?';
+        $params = array($this->id);
+        $data = Database::getRow($sql, $params);
+        if ($data) {
+            return $data['estado_cliente'] === 'Activo';
         } else {
             return false;
+        }
+    }
+
+
+    // Método para obtener el ID del cliente usando el correo electrónico
+    public function getIdByEmail($correo) {
+        $sql = 'SELECT id_cliente FROM tb_clientes WHERE correo_cliente = ?';
+        $params = array($correo);
+        $data = Database::getRow($sql, $params);
+        if ($data) {
+            return $data['id_cliente'];
+        } else {
+            return null;
         }
     }
 

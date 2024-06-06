@@ -129,13 +129,23 @@ if (isset($_GET['action'])) {
                     $_POST = Validator::validateForm($_POST);
                     if (!$cliente->checkUser($_POST['correoCliente'], $_POST['claveCliente'])) {
                         $result['error'] = 'Datos incorrectos';
-                    } elseif ($cliente->checkStatus()) {
-                        $result['status'] = 1;
-                        $result['message'] = 'Autenticación correcta';
                     } else {
-                        $result['error'] = 'La cuenta ha sido desactivada';
+                        // Establece el ID del cliente antes de verificar el estado.
+                        $cliente->setId($cliente->getIdByEmail($_POST['correoCliente'])); // Suponiendo que getIdByEmail obtiene el ID del cliente usando el correo.
+                
+                        // Ahora verificamos el estado del cliente.
+                        if ($cliente->checkStatus()) {
+                            // Configura la sesión ya que el estado es activo.
+                            $_SESSION['idCliente'] = $cliente->getIdByEmail($_POST['correoCliente']);
+                            $_SESSION['correoCliente'] = $_POST['correoCliente'];
+                            $result['status'] = 1;
+                            $result['message'] = 'Autenticación correcta';
+                        } else {
+                            $result['error'] = 'La cuenta ha sido desactivada';
+                        }
                     }
                     break;
+                
             
             default:
                 $result['error'] = 'Acción no disponible fuera de la sesión';
