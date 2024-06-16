@@ -23,22 +23,24 @@ class ClienteHandler
     /*
     *   Métodos para gestionar la cuenta del cliente.
     */
-    public function checkUser($mail, $password)
-    {
-        $sql = 'SELECT id_cliente, correo_cliente, clave_cliente, estado_cliente
-                FROM tb_clientes
-                WHERE correo_cliente = ?';
-        $params = array($mail);
-        $data = Database::getRow($sql, $params);
-        if (password_verify($password, $data['clave_cliente'])) {
-            $this->id = $data['id_cliente'];
-            $this->correo = $data['correo_cliente'];
-            $this->estado = $data['estado_cliente'];
-            return true;
-        } else {
-            return false;
-        }
+   public function checkUser($mail, $password)
+{
+    $sql = 'SELECT id_cliente, correo_cliente, clave_cliente, estado_cliente
+            FROM tb_clientes
+            WHERE correo_cliente = ?';
+    $params = array($mail);
+    $data = Database::getRow($sql, $params);
+    
+    if ($data && password_verify($password, $data['clave_cliente'])) {
+        $this->id = $data['id_cliente'];
+        $this->correo = $data['correo_cliente'];
+        $this->estado = $data['estado_cliente'];
+        return true;
+    } else {
+        return false;
     }
+}
+
 
     public function checkStatus() {
         $sql = 'SELECT estado_cliente FROM tb_clientes WHERE id_cliente = ?';
