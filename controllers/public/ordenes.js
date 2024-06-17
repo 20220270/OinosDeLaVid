@@ -83,7 +83,7 @@ const fillTable = async (form = null) => {
                                         <strong>Precio del producto:</strong>
                                     </div>
                                     <div class="col-6">
-                                        <span class="precioProducto">${row.precio_producto}</span>
+                                        <span class="precioProducto">$${row.precio_producto}</span>
                                     </div>
                                 </div>
                                 <div class="row mb-2">
@@ -107,7 +107,7 @@ const fillTable = async (form = null) => {
                                         <strong>Precio de la compra:</strong>
                                     </div>
                                     <div class="col-6">
-                                        <span class="precioCompra">${row.SubtotalConDescuento}</span>
+                                        <span class="precioCompra">$${row.SubtotalConDescuento}</span>
                                     </div>
                                 </div>
                                 <div class="row mb-2">
