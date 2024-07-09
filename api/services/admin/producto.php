@@ -36,7 +36,7 @@ if (isset($_GET['action'])) {
                     !$producto->setEstado(isset($_POST['selectEstado'])) or
                     !$producto->setExistencias($_POST['cantidadProducto']) or
                     !$producto->setDescuento(($_POST['descuentoProducto']))
-                    
+
                 ) {
                     $result['error'] = $producto->getDataError();
                 } elseif ($producto->createRow()) {
@@ -105,20 +105,53 @@ if (isset($_GET['action'])) {
                     $result['error'] = 'Ocurrió un problema al eliminar el producto';
                 }
                 break;
-                case 'cantidadProductosCategoria':
-                    if ($result['dataset'] = $producto->cantidadProductosCategoria()) {
-                        $result['status'] = 1;
-                    } else {
-                        $result['error'] = 'No hay datos disponibles';
-                    }
-                    break;
-                case 'porcentajeProductosCategoria':
-                    if ($result['dataset'] = $producto->porcentajeProductosCategoria()) {
-                        $result['status'] = 1;
-                    } else {
-                        $result['error'] = 'No hay datos disponibles';
-                    }
-                    break;
+            case 'cantidadProductosCategoria':
+                if ($result['dataset'] = $producto->cantidadProductosCategoria()) {
+                    $result['status'] = 1;
+                } else {
+                    $result['error'] = 'No hay datos disponibles';
+                }
+                break;
+            case 'porcentajeProductosCategoria':
+                if ($result['dataset'] = $producto->porcentajeProductosCategoria()) {
+                    $result['status'] = 1;
+                } else {
+                    $result['error'] = 'No hay datos disponibles';
+                }
+                break;
+
+
+            case 'productosConMejorRating':
+                if ($result['dataset'] = $producto->productosConMejorRating()) {
+                    $result['status'] = 1;
+                } else {
+                    $result['error'] = 'No hay datos disponibles';
+                }
+                break;
+
+            case 'productosMasVendids':
+                if ($result['dataset'] = $producto->productosMasVendids()) {
+                    $result['status'] = 1;
+                } else {
+                    $result['error'] = 'No hay datos disponibles';
+                }
+                break;
+
+            case 'clientesConMasCompras':
+                if ($result['dataset'] = $producto->clientesConMasCompras()) {
+                    $result['status'] = 1;
+                } else {
+                    $result['error'] = 'No hay datos disponibles';
+                }
+                break;
+
+            case 'productosConMasExistencias':
+                if ($result['dataset'] = $producto->productosConMasExistencias()) {
+                    $result['status'] = 1;
+                } else {
+                    $result['error'] = 'No hay datos disponibles';
+                }
+                break;
             default:
                 $result['error'] = 'Acción no disponible dentro de la sesión';
         }

@@ -7,6 +7,10 @@ element.style {
     background: brown;
 }
 
+#mainTitle{
+    margin-top: 50px;
+}
+
 #txtCategoria{
     background: #a52a2a;
     color: azure;

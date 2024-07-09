@@ -119,6 +119,8 @@ class ProductoHandler
        /*
     *   Métodos para generar gráficos.
     */
+
+    //Categorías con más productos
     public function cantidadProductosCategoria()
     {
         $sql = 'SELECT nombre_categoria, COUNT(id_producto) cantidad_producto
@@ -127,6 +129,55 @@ class ProductoHandler
                 GROUP BY nombre_categoria ORDER BY cantidad_producto DESC LIMIT 5';
         return Database::getRows($sql);
     }
+
+    //Productos con mejor calificación
+    public function productosConMejorRating()
+    {
+        $sql = "SELECT id_producto, nombre_producto, AVG(calificacion_producto) AS promedio_calificacion
+        FROM tb_valoraciones
+        INNER JOIN tb_detallesordenes USING (id_detalle)
+        INNER JOIN tb_productos USING (id_producto)
+        GROUP BY id_producto, nombre_producto ORDER BY promedio_calificacion DESC LIMIT 4";
+        return Database::getRows($sql);
+    }
+
+    //Productos más vendidos
+
+    public function productosMasVendids()
+    {
+        $sql = "SELECT nombre_producto, SUM(cantidad_producto) AS total_vendido
+                FROM tb_detallesordenes
+                INNER JOIN tb_productos USING(id_producto)
+                GROUP BY id_producto
+                ORDER BY total_vendido DESC
+                LIMIT 4";
+        return Database::getRows($sql);
+    }
+
+    //Clientes con más compras
+
+    public function clientesConMasCompras()
+    {
+        $sql = "SELECT CONCAT(nombre_cliente, ' ', apellido_cliente) as Cliente, COUNT(id_orden) as total_ordenes FROM tb_detallesordenes
+                INNER JOIN tb_ordenes using (id_orden)
+                INNER JOIN tb_clientes USING(id_cliente)
+                GROUP BY id_cliente, nombre_cliente, apellido_cliente
+                ORDER BY total_ordenes DESC LIMIT 4";
+        return Database::getRows($sql);
+    }
+
+
+    //Productos con más existencias
+
+    public function productosConMasExistencias()
+    {
+        $sql = "SELECT id_producto, nombre_producto, existencias_producto 
+                FROM tb_productos 
+                ORDER BY existencias_producto DESC LIMIT 4;";
+                return Database::getRows($sql);
+    }
+
+
 
     public function porcentajeProductosCategoria()
     {
@@ -137,7 +188,7 @@ class ProductoHandler
         return Database::getRows($sql);
     }
 
-    
+    //Comentarios de los productos
     public function commentsProduct()
     {
         $sql = 'SELECT id_valoracion, nombre_producto, comentario_producto, calificacion_producto, nombre_cliente, apellido_cliente, fecha_valoracion from tb_valoraciones
