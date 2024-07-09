@@ -99,6 +99,11 @@ const fillTable = async (form = null) => {
                         <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="40px" height="40px"
                             class="mb-4">
                     </button>
+                    <button type="reset" class="btn btn-secondary mt-1" id="btnReporte" name="btnReporte" onclick="openReport(${row.id_categoria})">
+                        <i class="bi bi-x-square-fill"></i>
+                        <img src="../../resources/Imagenes/report.png" alt="" width="40px" height="40px"
+                            class="mb-4">
+                    </button>
             </div>
           `;
       });
@@ -170,6 +175,15 @@ const openDelete = async (id) => {
           sweetAlert(2, DATA.error, false);
       }
   }
+}
+
+const openReport = (id) => {
+    // Se declara una constante tipo objeto con la ruta específica del reporte en el servidor.
+    const PATH = new URL(`${SERVER_URL}reports/admin/productos_categoria.php`);
+    // Se agrega un parámetro a la ruta con el valor del registro seleccionado.
+    PATH.searchParams.append('idCategoria', id);
+    // Se abre el reporte en una nueva pestaña.
+    window.open(PATH.href);
 }
 
 
