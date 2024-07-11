@@ -14,7 +14,7 @@
 4- Los nombres de las variables se declaran en letra minúscula, precedidos por el signo de dólar ($) 
 5- Las variables se declaran con el tipo de variable "protected". Esto quiere decir que dichas variables se pueden utilizar únicamente en las clases donde se encuentren declaradas o clases que se deriven de las clases donde son declaradas.
 
--- Dependencias que se utilizan para la aplicación móvil:
+# Dependencias que se utilizan para la aplicación móvil:
 
 npm install
 npm install @react-navigation/native @react-navigation/drawer
