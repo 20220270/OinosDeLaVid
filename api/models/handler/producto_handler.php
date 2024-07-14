@@ -215,4 +215,15 @@ class ProductoHandler
         $params = array($this->categoria);
         return Database::getRows($sql, $params);
     }
+
+    public function productosMarcas()
+    {
+        $sql = 'SELECT nombre_producto, precio_producto, estado_producto
+                FROM tb_productos
+                INNER JOIN tb_marcas USING(id_marca)
+                WHERE id_marca = ?
+                ORDER BY nombre_producto';
+        $params = array($this->marca);
+        return Database::getRows($sql, $params);
+    }
 }
