@@ -170,7 +170,7 @@ class OrdenesHandler
         return Database::executeRow($sql, $params);
     }
 
-    // Método para actualizar la cantidad de un producto agregado al carrito de compras.
+    // Método para actualizar la cantidad de un producto agregado al carrito de compras..
     public function updateDetail()
     {
         $sql = 'UPDATE tb_detallesOrdenes
