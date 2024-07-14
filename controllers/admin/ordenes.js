@@ -93,14 +93,6 @@ const fillTable = async (form = null) => {
                   <td>${row.estado_orden}</td>
                   <td>
                       
-
-                    
-                    <button type="submit" class="btn btn-success mt-1" id="btnEliminar" name="btnEliminar" onclick="openDelete(${row.id_orden})">
-                        <i class="bi bi-search"></i>
-                        <img src="../../resources/Imagenes/btnEliminarIMG.png" alt="" width="30px" height="30px"
-                            class="mb-1">
-
-                    </button>
                     <button type="submit" class="btn btn-secondary mt-1" id="btnActualizar" name="btnActualizar" onclick="openUpdate(${row.id_orden})">
                         <i class="bi bi-x-square-fill"></i>
                         <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px"
@@ -208,32 +200,6 @@ const openDetail = async (id) => {
     }
 }
 
-/*
-*   Función asíncrona para eliminar un registro.
-*   Parámetros: id (identificador del registro seleccionado).
-*   Retorno: ninguno.
-*/
-const openDelete = async (id) => {
-    // Llamada a la función para mostrar un mensaje de confirmación, capturando la respuesta en una constante.
-    const RESPONSE = await confirmAction('¿Desea eliminar este nivel de usuario de forma permanente?');
-    // Se verifica la respuesta del mensaje.
-    if (RESPONSE) {
-        // Se define una constante tipo objeto con los datos del registro seleccionado.
-        const FORM = new FormData();
-        FORM.append('idOrden', id);
-        // Petición para eliminar el registro seleccionado.
-        const DATA = await fetchData(ORDENES_API, 'deleteRow', FORM);
-        // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
-        if (DATA.status) {
-            // Se muestra un mensaje de éxito.
-            await sweetAlert(1, DATA.message, true);
-            // Se carga nuevamente la tabla para visualizar los cambios.
-            fillTable();
-        } else {
-            sweetAlert(2, DATA.error, false);
-        }
-    }
-}
 
 
 localStorage.setItem('paginaOrigen', window.location.href);

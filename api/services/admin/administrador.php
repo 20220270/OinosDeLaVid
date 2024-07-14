@@ -159,27 +159,34 @@ if (isset($_GET['action'])) {
                     $resul7t['error'] = 'Debe crear un administrador para comenzar';
                 }
                 break;
-            case 'signUp':
-                $_POST = Validator::validateForm($_POST);
-                if (
-                    !$administrador->setNombre($_POST['nombreAdministrador']) or
-                    !$administrador->setApellido($_POST['apellidoAdministrador']) or
-                    !$administrador->setCorreo($_POST['correoAdministrador']) or
-                    !$administrador->setAlias($_POST['aliasAdministrador']) or
-                    !$administrador->setClave($_POST['claveAdministrador']) or
-                    !$administrador->setEstado($_POST['selectEstado']) or
-                    !$administrador->setNivel($_POST['selectNivelAdmin'])
-                ) {
-                    $result['error'] = $administrador->getDataError();
-                } elseif ($_POST['claveAdministrador'] != $_POST['confirmarClave']) {
-                    $result['error'] = 'Contraseñas diferentes';
-                } elseif ($administrador->createRow()) {
-                    $result['status'] = 1;
-                    $result['message'] = 'Administrador registrado correctamente';
-                } else {
-                    $result['error'] = 'Ocurrió un problema al registrar el administrador';
-                }
-                break;
+                case 'signUp':
+                    $_POST = Validator::validateForm($_POST);
+                
+                    // Verificar si ya existe un usuario registrado
+                    if ($administrador->countUsers() > 0) {
+                        $result['error'] = 'Ya existe un administrador registrado';
+                    } else {
+                        if (
+                            !$administrador->setNombre($_POST['nombreAdministrador']) or
+                            !$administrador->setApellido($_POST['apellidoAdministrador']) or
+                            !$administrador->setCorreo($_POST['correoAdministrador']) or
+                            !$administrador->setAlias($_POST['aliasAdministrador']) or
+                            !$administrador->setClave($_POST['claveAdministrador']) or
+                            !$administrador->setEstado($_POST['selectEstado']) or
+                            !$administrador->setNivel($_POST['selectNivelAdmin'])
+                        ) {
+                            $result['error'] = $administrador->getDataError();
+                        } elseif ($_POST['claveAdministrador'] != $_POST['confirmarClave']) {
+                            $result['error'] = 'Contraseñas diferentes';
+                        } elseif ($administrador->createRow()) {
+                            $result['status'] = 1;
+                            $result['message'] = 'Administrador registrado correctamente';
+                        } else {
+                            $result['error'] = 'Ocurrió un problema al registrar el administrador';
+                        }
+                    }
+                    break;
+                
             case 'logIn':
                 $_POST = Validator::validateForm($_POST);
                 if ($administrador->checkUser($_POST['alias'], $_POST['clave'])) {

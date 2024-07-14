@@ -179,7 +179,7 @@ const openUpdate = async (id) => {
       NIVEL_USUARIO.value = ROW.nivel;
       ESTADO_ADMINISTRADOR.value = ROW.estado_adminstrador;
 
-      fillSelect(NIVELESUSUARIO_API, 'readAll', 'selectNivelAdmin', ROW.nivel);
+      fillSelect(NIVELESUSUARIO_API, 'readAll', 'selectNivelAdmin', ROW.id_nivel);
       
   } else {
       sweetAlert(2, DATA.error, false);

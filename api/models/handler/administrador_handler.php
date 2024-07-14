@@ -112,9 +112,17 @@ class AdministradorHandler
         return Database::getRows($sql);
     }
 
+    public function countUsers()
+{
+    $sql = 'SELECT COUNT(*) as total FROM tb_administradores';
+    $data = Database::getRow($sql);
+    return $data['total'];
+}
+
+
     public function readOne()
     {
-        $sql = 'SELECT id_administrador, nombre_admistrador, apellido_administrador, correo_administrador, alias_administrador, clave_administrador, nivel, estado_adminstrador, fecha_registro
+        $sql = 'SELECT id_administrador, nombre_admistrador, apellido_administrador, correo_administrador, alias_administrador, clave_administrador, id_nivel, estado_adminstrador, fecha_registro
         FROM tb_administradores
         INNER JOIN tb_niveles_administradores USING(id_nivel)
                 WHERE id_administrador = ?';
