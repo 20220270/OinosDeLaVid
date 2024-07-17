@@ -78,7 +78,7 @@ class OrdenesHandler
         return Database::getRows($sql, $params);
     }
 
-    
+
 
 
     public function readFilename()
@@ -133,7 +133,7 @@ class OrdenesHandler
         $sql = 'INSERT INTO tb_detallesOrdenes(id_producto, cantidad_producto, id_orden)
                 VALUES(?, ?, ?)';
         $params = array($this->producto, $this->cantidad, $_SESSION['idOrden']);
-       
+
         return Database::executeRow($sql, $params);
     }
 
@@ -148,6 +148,7 @@ class OrdenesHandler
         (tb_productos.precio_producto * cantidad_producto) AS Subtotal,
         tb_productos.descuento_producto,
         ROUND((tb_productos.precio_producto * cantidad_producto) - (tb_productos.precio_producto * cantidad_producto * tb_productos.descuento_producto / 100), 2) AS subtotal_con_descuento
+        
     FROM 
         tb_detallesOrdenes
     INNER JOIN 
@@ -212,14 +213,14 @@ class OrdenesHandler
          tb_productos USING(id_producto) 
                 WHERE id_cliente = ? AND (nombre_producto LIKE ? OR tb_ordenes.fecha_registro LIKE ? OR id_orden LIKE ? or id_detalle LIKE ?)
                 ORDER BY id_producto';
-        $params = array( $_SESSION['idCliente'], $value, $value, $value, $value);
+        $params = array($_SESSION['idCliente'], $value, $value, $value, $value);
         return Database::getRows($sql, $params);
     }
 
-     //Funcion para el sitio publico: Leer los detalles de cada compra
-     public function myOrders()
-     {
-         $sql = 'SELECT 
+    //Funcion para el sitio publico: Leer los detalles de cada compra
+    public function myOrders()
+    {
+        $sql = 'SELECT 
          id_detalle, 
          id_orden, 
          nombre_producto, 
@@ -238,10 +239,36 @@ class OrdenesHandler
      INNER JOIN 
          tb_productos USING(id_producto)  WHERE id_cliente = ?
          ORDER BY id_orden';
-         $params = array($_SESSION['idCliente']);
-         return Database::getRows($sql, $params);
-     }
+        $params = array($_SESSION['idCliente']);
+        return Database::getRows($sql, $params);
+    }
 
-
-
+    //Funcion para el sitio publico: Generar un documento con los datos del cliente y la compra realizada
+    public function myOrdersReport()
+    {
+        $sql = "SELECT 
+    CONCAT(nombre_cliente, ' ', apellido_cliente) as Cliente,
+    id_detalle, 
+    id_orden,
+    tb_ordenes.fecha_registro, 
+    nombre_producto, 
+    tb_productos.precio_producto, 
+    cantidad_producto, 
+    tb_productos.descuento_producto, 
+    (tb_productos.precio_producto * cantidad_producto) AS Subtotal, 
+    ROUND((tb_productos.precio_producto * cantidad_producto) - (tb_productos.precio_producto * cantidad_producto * tb_productos.descuento_producto / 100), 2) AS SubtotalConDescuento,
+    
+    tb_ordenes.fecha_registro
+    FROM 
+    tb_detallesOrdenes
+    INNER JOIN 
+    tb_ordenes USING(id_orden)
+    INNER JOIN 
+    tb_clientes USING(id_cliente)
+    INNER JOIN 
+    tb_productos USING(id_producto)  WHERE id_cliente = ? AND id_orden = ?
+    ORDER BY id_orden";
+        $params = array($_SESSION['idCliente'], $this->idorden);
+        return Database::getRows($sql, $params);
+    }
 }

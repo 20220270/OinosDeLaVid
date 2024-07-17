@@ -133,6 +133,15 @@ const fillTable = async (form = null) => {
                                     <img src="../../resources/Imagenes/estrellas.png" alt="" width="60px" height="60px" class="mb-1">
                                     </button>
                                 </div>
+
+                                
+                                <div class="text-center mt-3">
+                                    <strong>Generar reporte:</strong>
+                                    <button type="submit" class="btn mt-1 mostrarModalValoracion" id="mostrarReporte" name="mostrarReporte" onclick="openReport(${row.id_orden})">
+                                    
+                                    <img src="../../resources/Imagenes/report.png" alt="" width="60px" height="60px" class="mb-1">
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -191,3 +200,13 @@ const openRating = async (id) => {
         sweetAlert(2, DATA.error, false);
     }
   });
+
+
+  const openReport = (id) => {
+    // Se declara una constante tipo objeto con la ruta específica del reporte en el servidor.
+    const PATH = new URL(`${SERVER_URL}reports/public/ordenes.php`);
+    // Se agrega un parámetro a la ruta con el valor del registro seleccionado.
+    PATH.searchParams.append('idOrden', id);
+    // Se abre el reporte en una nueva pestaña.
+    window.open(PATH.href);
+}
