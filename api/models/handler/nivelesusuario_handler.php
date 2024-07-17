@@ -36,7 +36,7 @@ class NivelesAdminsHandler
 
     public function readAll()
     {
-        $sql = 'SELECT id_nivel, nivel
+        $sql = 'SELECT DISTINCT id_nivel, nivel
                 FROM tb_niveles_administradores
                 ORDER BY id_nivel';
         return Database::getRows($sql);
