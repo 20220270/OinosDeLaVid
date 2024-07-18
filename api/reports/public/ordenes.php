@@ -89,4 +89,4 @@ if (isset($_GET['idOrden'])) {
     $pdf->cell(0, 10, $pdf->encodeString('Debe seleccionar una orden'), 1, 1);
 }
 // Se llama implícitamente al método footer() y se envía el documento al navegador web.
-$pdf->output('I', 'productos.pdf');
+$pdf->output('I', 'ordenes.pdf');

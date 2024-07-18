@@ -213,6 +213,12 @@ const openDelete = async (id) => {
   }
 }
 
+const openReport = () => {
+    // Se declara una constante tipo objeto con la ruta específica del reporte en el servidor.
+    const PATH = new URL(`${SERVER_URL}reports/admin/administradores.php`);
+    // Se abre el reporte en una nueva pestaña.
+    window.open(PATH.href);
+}
 
 
 

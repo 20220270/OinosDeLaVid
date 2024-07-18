@@ -32,9 +32,11 @@
                         <form class="d-flex" id="searchForm">
 
                             <div class="position-relative">
-                                <img class="search-icon" src="../../resources/Imagenes/lupa.png" alt="Lupa"> <!-- Icono de búsqueda -->
+                                <img class="search-icon" src="../../resources/Imagenes/lupa.png" alt="Lupa">
+                                <!-- Icono de búsqueda -->
                                 <input class="form-control me-2" type="search" aria-label="Search" id="Search"
-                                    name="search" placeholder="Busque por correo, alias, nivel de usuario o estado"> <!-- Campo de búsqueda -->
+                                    name="search" placeholder="Busque por correo, alias, nivel de usuario o estado">
+                                <!-- Campo de búsqueda -->
                             </div>
 
                             <!-- Botón para agregar administradores -->
@@ -42,6 +44,14 @@
                             <button type="button" class="btn" onclick="openCreate()">
                                 <img src="../../resources/Imagenes/btnAgregarIMG.png" alt="" width="90px" height="90px"
                                     class="mb-1"> <!-- Icono del botón para agregar -->
+                            </button>
+
+                            <!--Botón para generar un reporte de todos los productos-->
+                            <button class="btn fw-semibold" id="btnRegistrar" name="btnRegistrar"
+                                onclick="openReport()">
+
+                                <img src="../../resources/Imagenes/report.png" alt="" width="60px" height="60px"
+                                    class="mb-1">
                             </button>
 
                         </form>
@@ -79,34 +89,39 @@
                                 <label for="nombreCategoria" class="col-sm-7 col-form-label">Nombre del
                                     administrador:</label>
                                 <input id="nombreAdministrador" type="text" name="nombreAdministrador"
-                                    class="form-control" placeholder="Ingrese el nombre del administrador" required> <!-- Campo para el nombre -->
+                                    class="form-control" placeholder="Ingrese el nombre del administrador" required>
+                                <!-- Campo para el nombre -->
                             </div>
                             <div class="col-sm-12 col-md-6">
                                 <label for="nombreCategoria" class="col-sm-7 col-form-label">Apellido del
                                     administrador:</label>
                                 <input id="apellidoAdministrador" type="text" name="apellidoAdministrador"
-                                    class="form-control" placeholder="Ingrese el apellido del administrador" required> <!-- Campo para el apellido -->
+                                    class="form-control" placeholder="Ingrese el apellido del administrador" required>
+                                <!-- Campo para el apellido -->
                             </div>
 
                             <div class="col-sm-12 col-md-6">
                                 <label for="nombreCategoria" class="col-sm-7 col-form-label">Correo del
                                     administrador:</label>
                                 <input id="correoAdministrador" type="email" name="correoAdministrador"
-                                    class="form-control" placeholder="micorreo@gmail.com" required> <!-- Campo para el correo -->
+                                    class="form-control" placeholder="micorreo@gmail.com" required>
+                                <!-- Campo para el correo -->
                             </div>
 
                             <div class="col-sm-12 col-md-6">
                                 <label for="nombreCategoria" class="col-sm-7 col-form-label">Alias del
                                     administrador:</label>
                                 <input id="aliasAdministrador" type="text" name="aliasAdministrador"
-                                    class="form-control" placeholder="Ingrese el alias del administrador" required> <!-- Campo para el alias -->
+                                    class="form-control" placeholder="Ingrese el alias del administrador" required>
+                                <!-- Campo para el alias -->
                             </div>
 
                             <div class="col-sm-12 col-md-6">
                                 <label for="nombreCategoria" class="col-sm-7 col-form-label">Clave del
                                     administrador:</label>
                                 <input id="claveAdministrador" type="password" name="claveAdministrador"
-                                    class="form-control" placeholder="Ingrese la clave del administrador" required> <!-- Campo para la clave -->
+                                    class="form-control" placeholder="Ingrese la clave del administrador" required>
+                                <!-- Campo para la clave -->
                             </div>
 
                             <div class="col-sm-12 col-md-6">
@@ -135,7 +150,8 @@
 
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-dark" id="btnGuardar">Guardar</button> <!-- Botón para guardar -->
+                            <button type="submit" class="btn btn-dark" id="btnGuardar">Guardar</button>
+                            <!-- Botón para guardar -->
                             <button type="button" class="btn btn-dark" data-bs-dismiss="modal"
                                 id="btnCerrar">Cerrar</button> <!-- Botón para cerrar. -->
                         </div>
