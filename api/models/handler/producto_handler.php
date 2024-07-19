@@ -49,11 +49,12 @@ class ProductoHandler
 
     public function readAll()
     {
-        $sql = 'SELECT id_producto, nombre_categoria, nombre_marca, nombre_producto, descripcion_producto, precio_producto, imagen_producto, estado_producto,
-        existencias_producto, descuento_producto, fecha_registro FROM tb_productos
+        $sql = "SELECT id_producto, nombre_categoria, nombre_marca, nombre_producto, descripcion_producto, precio_producto, imagen_producto, estado_producto,
+        existencias_producto, descuento_producto, tb_productos.fecha_registro, CONCAT(nombre_admistrador, ' ', apellido_administrador) as Nombre FROM tb_productos
         INNER JOIN tb_categorias USING(id_categoria)
         INNER JOIN tb_marcas USING(id_marca)
-                ORDER BY id_producto';
+        INNER JOIN tb_administradores USING(id_administrador)
+                ORDER BY id_producto";
         return Database::getRows($sql);
     }
 
@@ -207,7 +208,7 @@ class ProductoHandler
     */
     public function productosCategoria()
     {
-        $sql = 'SELECT nombre_producto, precio_producto, estado_producto
+        $sql = 'SELECT nombre_producto, precio_producto, estado_producto, existencias_producto
                 FROM tb_productos
                 INNER JOIN tb_categorias USING(id_categoria)
                 WHERE id_categoria = ?
@@ -218,7 +219,7 @@ class ProductoHandler
 
     public function productosMarcas()
     {
-        $sql = 'SELECT nombre_producto, precio_producto, estado_producto
+        $sql = 'SELECT nombre_producto, precio_producto, estado_producto, existencias_producto
                 FROM tb_productos
                 INNER JOIN tb_marcas USING(id_marca)
                 WHERE id_marca = ?

@@ -21,22 +21,25 @@ if (isset($_GET['idMarca'])) {
             // Se verifica si existen registros para mostrar, de lo contrario se imprime un mensaje.
             if ($dataProductos = $producto->productosMarcas()) {
                 // Se establece un color de relleno para los encabezados.
-                $pdf->setFillColor(225);
+                $pdf->setFillColor(132, 6, 6);
                 // Se establece la fuente para los encabezados.
                 $pdf->setFont('Arial', 'B', 11);
+                $pdf->setTextColor(255, 255, 255);
                 // Se imprimen las celdas con los encabezados.
-                $pdf->cell(126, 10, 'Nombre', 1, 0, 'C', 1);
-                $pdf->cell(30, 10, 'Precio (US$)', 1, 0, 'C', 1);
+                $pdf->cell(90, 10, 'Nombre del producto', 1, 0, 'C', 1);
+                $pdf->cell(35, 10, 'Existencias', 1, 0, 'C', 1);
+                $pdf->cell(30, 10, 'Precio', 1, 0, 'C', 1);
                 $pdf->cell(30, 10, 'Estado', 1, 1, 'C', 1);
                 // Se establece la fuente para los datos de los productos.
                 $pdf->setFont('Arial', '', 11);
+                $pdf->setTextColor(0, 0, 0);
                 // Se recorren los registros fila por fila.
                 foreach ($dataProductos as $rowProducto) {
-                    ($rowProducto['estado_producto']) ? $estado = 'Activo' : $estado = 'Inactivo';
                     // Se imprimen las celdas con los datos de los productos.
-                    $pdf->cell(126, 10, $pdf->encodeString($rowProducto['nombre_producto']), 1, 0);
-                    $pdf->cell(30, 10, $rowProducto['precio_producto'], 1, 0);
-                    $pdf->cell(30, 10, $estado, 1, 1);
+                    $pdf->cell(90, 10, $pdf->encodeString($rowProducto['nombre_producto']), 1, 0, 'C');
+                    $pdf->cell(35, 10, $rowProducto['existencias_producto'], 1, 0, 'C');
+                    $pdf->cell(30, 10, '$' . $rowProducto['precio_producto'], 1, 0, 'C');
+                    $pdf->cell(30, 10, $rowProducto['estado_producto'], 1, 1, 'C');
                 }
             } else {
                 $pdf->cell(0, 10, $pdf->encodeString('No hay productos para la marca'), 1, 1);
