@@ -5,3 +5,6 @@ document.getElementById("btnVerificar").addEventListener("click", function () {
   document.getElementById("btnVo").addEventListener("click", function () {
     location.href = "login.html";
   });
+
+
+  //espacios
