@@ -204,6 +204,19 @@ class ProductoHandler
         return Database::getRows($sql, $params);
     }
 
+    //Categorías con más productos
+    public function MarcasMasVendidas()
+    {
+        $sql = 'SELECT nombre_marca, SUM(cantidad_producto) AS total_vendido
+                FROM tb_detallesordenes
+                INNER JOIN tb_productos USING(id_producto)
+                 INNER JOIN tb_marcas USING(id_marca)
+                GROUP BY id_marca
+                ORDER BY total_vendido DESC
+                LIMIT 5';
+        return Database::getRows($sql);
+    }
+
     /*
     *   Métodos para generar reportes.
     */

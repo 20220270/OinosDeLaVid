@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     graficoPastelProductoss();
     graficoBarrasClientes();
     graficoBarrasExistencias();
+    graficoBarrasMarcasMasVendidas();
 });
 
 /*
@@ -37,51 +38,6 @@ const graficoBarrasCategorias = async () => {
         barGraph('chart1', categorias, cantidades, 'Cantidad de productos', 'Cantidad de productos por categoría');
     } else {
         document.getElementById('chart1').remove();
-        console.log(DATA.error);
-    }
-}
-
-
-const graficoBarrasClientes = async () => {
-    // Petición para obtener los datos del gráfico.
-    const DATA = await fetchData(PRODUCTO_API, 'clientesConMasCompras');
-    // Se comprueba si la respuesta es satisfactoria, de lo contrario se remueve la etiqueta canvas.
-    if (DATA.status) {
-        // Se declaran los arreglos para guardar los datos a graficar.
-        let clientes = [];
-        let compras = [];
-        // Se recorre el conjunto de registros fila por fila a través del objeto row.
-        DATA.dataset.forEach(row => {
-            // Se agregan los datos a los arreglos.
-            clientes.push(row.Cliente);
-            compras.push(row.total_ordenes);
-        });
-        // Llamada a la función para generar y mostrar un gráfico de barras. Se encuentra en el archivo components.js
-        barGraph('chart4', clientes, compras, 'Total de compras', 'Clientes con más compras realizadas');
-    } else {
-        document.getElementById('chart4').remove();
-        console.log(DATA.error);
-    }
-}
-
-const graficoBarrasExistencias = async () => {
-    // Petición para obtener los datos del gráfico.
-    const DATA = await fetchData(PRODUCTO_API, 'productosConMasExistencias');
-    // Se comprueba si la respuesta es satisfactoria, de lo contrario se remueve la etiqueta canvas.
-    if (DATA.status) {
-        // Se declaran los arreglos para guardar los datos a graficar.
-        let producto = [];
-        let existencias = [];
-        // Se recorre el conjunto de registros fila por fila a través del objeto row.
-        DATA.dataset.forEach(row => {
-            // Se agregan los datos a los arreglos.
-            producto.push(row.nombre_producto);
-            existencias.push(row.existencias_producto);
-        });
-        // Llamada a la función para generar y mostrar un gráfico de barras. Se encuentra en el archivo components.js
-        barGraph('chart5', producto, existencias, 'Existencias', 'Productos con más existencias');
-    } else {
-        document.getElementById('chart5').remove();
         console.log(DATA.error);
     }
 }
@@ -130,12 +86,81 @@ const graficoPastelProductoss = async () => {
             ventas.push(row.total_vendido);
         });
         // Llamada a la función para generar y mostrar un gráfico de pastel. Se encuentra en el archivo components.js
-        pieGraph('chart3', productos, ventas, 'Productos más vendidos');
+        doughnutGraph('chart3', productos, ventas, 'Productos más vendidos');
     } else {
         document.getElementById('chart3').remove();
         console.log(DATA.error);
     }
 }
+
+
+const graficoBarrasClientes = async () => {
+    // Petición para obtener los datos del gráfico.
+    const DATA = await fetchData(PRODUCTO_API, 'clientesConMasCompras');
+    // Se comprueba si la respuesta es satisfactoria, de lo contrario se remueve la etiqueta canvas.
+    if (DATA.status) {
+        // Se declaran los arreglos para guardar los datos a graficar.
+        let clientes = [];
+        let compras = [];
+        // Se recorre el conjunto de registros fila por fila a través del objeto row.
+        DATA.dataset.forEach(row => {
+            // Se agregan los datos a los arreglos.
+            clientes.push(row.Cliente);
+            compras.push(row.total_ordenes);
+        });
+        // Llamada a la función para generar y mostrar un gráfico de barras. Se encuentra en el archivo components.js
+        horizontalBarGraph('chart4', clientes, compras, 'Total de compras', 'Clientes con más compras realizadas');
+    } else {
+        document.getElementById('chart4').remove();
+        console.log(DATA.error);
+    }
+}
+
+const graficoBarrasMarcasMasVendidas = async () => {
+    // Petición para obtener los datos del gráfico.
+    const DATA = await fetchData(PRODUCTO_API, 'MarcasMasVendidas');
+    // Se comprueba si la respuesta es satisfactoria, de lo contrario se remueve la etiqueta canvas.
+    if (DATA.status) {
+        // Se declaran los arreglos para guardar los datos a graficar.
+        let marcas = [];
+        let ventastotales = [];
+        // Se recorre el conjunto de registros fila por fila a través del objeto row.
+        DATA.dataset.forEach(row => {
+            // Se agregan los datos a los arreglos.
+            marcas.push(row.nombre_marca);
+            ventastotales.push(row.total_vendido);
+        });
+        // Llamada a la función para generar y mostrar un gráfico de barras. Se encuentra en el archivo components.js
+        pieGraph('chart5', marcas, ventastotales, 'Total de ventas', 'Marcas más vendidas');
+    } else {
+        document.getElementById('chart5').remove();
+        console.log(DATA.error);
+    }
+}
+
+const graficoBarrasExistencias = async () => {
+    // Petición para obtener los datos del gráfico.
+    const DATA = await fetchData(PRODUCTO_API, 'productosConMasExistencias');
+    // Se comprueba si la respuesta es satisfactoria, de lo contrario se remueve la etiqueta canvas.
+    if (DATA.status) {
+        // Se declaran los arreglos para guardar los datos a graficar.
+        let producto = [];
+        let existencias = [];
+        // Se recorre el conjunto de registros fila por fila a través del objeto row.
+        DATA.dataset.forEach(row => {
+            // Se agregan los datos a los arreglos.
+            producto.push(row.nombre_producto);
+            existencias.push(row.existencias_producto);
+        });
+        // Llamada a la función para generar y mostrar un gráfico de barras. Se encuentra en el archivo components.js
+        doughnutGraph('chart6', producto, existencias, 'Productos con más existencias');
+    } else {
+        document.getElementById('chart6').remove();
+        console.log(DATA.error);
+    }
+}
+
+
 
 
 
