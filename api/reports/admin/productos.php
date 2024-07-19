@@ -20,9 +20,10 @@ if ($dataProductos = $producto->readAll()) {
     // Se imprimen las celdas con los encabezados.
     $pdf->cell(68, 10, 'Nombre', 1, 0, 'C', 1);
     $pdf->cell(31, 10, 'Precio', 1, 0, 'C', 1);
-    $pdf->cell(31, 10, 'Estado', 1, 0, 'C', 1);
-    $pdf->cell(40, 10, 'Fecha de registro', 1, 0, 'C', 1);
-    $pdf->cell(81, 10, 'Registrado por', 1, 1, 'C', 1);
+    $pdf->cell(35, 10, 'Descuento', 1, 0, 'C', 1);
+    $pdf->cell(40, 10, 'Existencias', 1, 0, 'C', 1);
+    $pdf->cell(33, 10, 'Estado', 1, 0, 'C', 1);
+    $pdf->cell(40, 10, 'Fecha de registro', 1, 1, 'C', 1);
 
     // Se establece un color de relleno para mostrar el nombre de la categoría.
     $pdf->setFillColor(240);
@@ -34,9 +35,11 @@ if ($dataProductos = $producto->readAll()) {
         // Se imprimen las celdas con los datos de los productos.
         $pdf->cell(68, 10, $pdf->encodeString($rowProducto['nombre_producto']), 1, 0, 'C');
         $pdf->cell(31, 10, '$' . $rowProducto['precio_producto'], 1, 0, 'C');
-        $pdf->cell(31, 10, $rowProducto['estado_producto'], 1, 0, 'C');
-        $pdf->cell(40, 10, $rowProducto['fecha_registro'], 1, 0, 'C');
-        $pdf->cell(81, 10, $rowProducto['Nombre'], 1, 1, 'C');
+        $pdf->cell(35, 10, $rowProducto['descuento_producto'] . '%', 1, 0, 'C');
+        $pdf->cell(40, 10, $rowProducto['existencias_producto'], 1, 0, 'C');
+        $pdf->cell(33, 10, $rowProducto['estado_producto'], 1, 0, 'C');
+        $pdf->cell(40, 10, $rowProducto['fecha_registro'], 1, 1, 'C');
+        
     }
 } else {
     $pdf->cell(0, 10, $pdf->encodeString('No hay productos para mostrar'), 1, 1);

@@ -130,6 +130,10 @@ const fillTable = async (form = null) => {
                   <i class="bi bi-x-square-fill"></i>
                   <img src="../../resources/Imagenes/btnActualizarIMG.png" alt="" width="30px" height="30px" class="mb-1">
               </button>
+              <button type="reset" class="btn btn-secondary mt-1" id="btnActualizar" name="btnActualizar" onclick="openReport2(${row.id_administrador})">
+                  <i class="bi bi-x-square-fill"></i>
+                  <img src="../../resources/Imagenes/report.png" alt="" width="30px" height="30px" class="mb-1">
+              </button>
           </div>
           `;
       });
@@ -220,6 +224,14 @@ const openReport = () => {
     window.open(PATH.href);
 }
 
+const openReport2 = (id) => {
+    // Se declara una constante tipo objeto con la ruta específica del reporte en el servidor.
+    const PATH = new URL(`${SERVER_URL}reports/admin/administrador_productos.php`);
+
+    PATH.searchParams.append('idAdministrador', id)
+    // Se abre el reporte en una nueva pestaña.
+    window.open(PATH.href);
+}
 
 
 
