@@ -271,4 +271,31 @@ class OrdenesHandler
         $params = array($_SESSION['idCliente'], $this->idorden);
         return Database::getRows($sql, $params);
     }
+
+    //Reporte de ordenes
+    public function Ordenes()
+    {
+        $sql = "SELECT 
+    tb_ordenes.id_orden,
+    nombre_producto,
+    cantidad_producto,
+    tb_ordenes.fecha_registro, 
+    estado_orden, 
+    correo_cliente 
+FROM 
+    tb_detallesordenes
+INNER JOIN 
+    tb_ordenes USING(id_orden)
+INNER JOIN 
+    tb_productos USING(id_producto)
+INNER JOIN 
+    tb_clientes USING(id_cliente)
+GROUP BY 
+    tb_ordenes.id_orden, tb_ordenes.fecha_registro, estado_orden, direccion_orden, correo_cliente
+ORDER BY 
+    tb_ordenes.id_orden ASC;
+
+";
+    return Database::getRows($sql);
+    }
 }
