@@ -5,3 +5,8 @@ document.getElementById("btnVo").addEventListener("click", function () {
   document.getElementById("btnEnviarCod").addEventListener("click", function () {
     location.href = "RecuperacionContraseñaCodigo.html";
   });
+
+
+  // reglas de buen progam en recu1
+
+  
