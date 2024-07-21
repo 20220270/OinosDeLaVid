@@ -193,12 +193,12 @@ class ProductoHandler
     //Comentarios de los productos
     public function commentsProduct()
     {
-        $sql = 'SELECT id_valoracion, nombre_producto, comentario_producto, calificacion_producto, nombre_cliente, apellido_cliente, fecha_valoracion from tb_valoraciones
+        $sql = "SELECT id_valoracion, nombre_producto, comentario_producto, calificacion_producto,CONCAT(nombre_cliente, ' ', apellido_cliente) as Nombre, fecha_valoracion from tb_valoraciones
         INNER JOIN tb_detallesordenes USING(id_detalle)
         INNER JOIN tb_ordenes USING(id_orden)
        INNER JOIN tb_productos USING(id_producto) 
        INNER JOIN tb_clientes USING(id_cliente)
-        where id_producto = ? AND estado_comentario = "Habilitado"';
+        where id_producto = ? AND estado_comentario = 'Habilitado'";
         $params = array($this->id);
         //return Database::getRows($sql);
         return Database::getRows($sql, $params);

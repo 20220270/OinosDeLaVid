@@ -273,15 +273,15 @@ class OrdenesHandler
     }
 
     //Reporte de ordenes
-    public function Ordenes()
+    public function Ordenes($mes, $anio)
     {
         $sql = "SELECT 
     tb_ordenes.id_orden,
-    nombre_producto,
-    cantidad_producto,
+    GROUP_CONCAT(CONCAT(nombre_producto, ' (', cantidad_producto, ')') ORDER BY nombre_producto SEPARATOR '\n') AS productos,
     tb_ordenes.fecha_registro, 
     estado_orden, 
-    correo_cliente 
+    direccion_orden, 
+    correo_cliente
 FROM 
     tb_detallesordenes
 INNER JOIN 
@@ -290,12 +290,15 @@ INNER JOIN
     tb_productos USING(id_producto)
 INNER JOIN 
     tb_clientes USING(id_cliente)
+     WHERE 
+            MONTH(tb_ordenes.fecha_registro) = ? AND YEAR(tb_ordenes.fecha_registro) = ?
 GROUP BY 
     tb_ordenes.id_orden, tb_ordenes.fecha_registro, estado_orden, direccion_orden, correo_cliente
 ORDER BY 
-    tb_ordenes.id_orden ASC;
+    id_orden, correo_cliente, tb_ordenes.fecha_registro;
 
 ";
-    return Database::getRows($sql);
+        $params = array($mes, $anio);
+        return Database::getRows($sql, $params);
     }
 }

@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <div class="d-flex align-items-center">
                             <img src="../../resources/Imagenes/perfil.png" alt="..." height="40px" width="40px" class="mr-2">
-                            <span class="card-text">${row.nombre_cliente} ${row.apellido_cliente}</span>
+                            <span class="card-text">${row.Nombre}</span>
                         </div>
                         <span class="card-text">${row.fecha_valoracion}</span>
                     </div>
