@@ -146,9 +146,9 @@ class ClienteHandler
     */
     public function readAll()
     {
-        $sql = 'SELECT id_cliente, dui_cliente, correo_cliente, telefono_cliente, direccion_cliente, estado_cliente, fecha_registro
+        $sql = "SELECT id_cliente, CONCAT(nombre_cliente, ' ', apellido_cliente) as nombre_cliente, dui_cliente, correo_cliente, telefono_cliente, direccion_cliente, estado_cliente, fecha_registro
                 FROM tb_clientes
-                ORDER BY id_cliente';
+                ORDER BY id_cliente";
         return Database::getRows($sql);
     }
 

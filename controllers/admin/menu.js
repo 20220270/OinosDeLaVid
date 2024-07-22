@@ -1,9 +1,10 @@
 // Constante para completar la ruta de la API.
 const PRODUCTO_API = 'services/admin/producto.php';
+const ORDENES_API = 'services/admin/ordenes.php';
 
 // Método del evento para cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // Llamada a la función para mostrar el encabezado y pie del documento.
     loadTemplate();
     // Llamada a la funciones que generan los gráficos en la página web.
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     graficoBarrasClientes();
     graficoBarrasExistencias();
     graficoBarrasMarcasMasVendidas();
+    graficoPredictivo();
 });
 
 /*
@@ -159,6 +161,74 @@ const graficoBarrasExistencias = async () => {
         console.log(DATA.error);
     }
 }
+
+const graficoPredictivo = async () => {
+    try {
+        // Peticiones para obtener los datos de ganancias y pérdidas.
+        const [dataGanancias, dataPerdidas] = await Promise.all([
+            fetchData(ORDENES_API, 'predictGraph'),
+            fetchData(ORDENES_API, 'perdidasPredictGraph')
+        ]);
+
+        if (dataGanancias.status && dataPerdidas.status) {
+            // Arreglos para guardar los datos a graficar.
+            let mesventas = [];
+            let ganancias = [];
+            let pérdidas = [];
+
+            // Arreglo de nombres de meses.
+            const meses = [
+                'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+                'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+            ];
+
+            // Procesar datos de ganancias
+            dataGanancias.dataset.forEach(row => {
+                mesventas.push(meses[row.mes - 1]);
+                ganancias.push(row.ganancias_mensuales);
+            });
+
+            // Procesar datos de pérdidas
+            dataPerdidas.dataset.forEach(row => {
+                // Suponiendo que el índice de mes coincide, sino deberás ajustar el código
+                const mes = meses[row.anio - 1];
+                if (mesventas.includes(mes)) {
+                    const index = mesventas.indexOf(mes);
+                    pérdidas[index] = row.perdidas_anuales; // Actualizar pérdidas para el mes
+                } else {
+                    mesventas.push(mes);
+                    pérdidas.push(row.perdidas_anuales);
+                }
+            });
+
+            // Asegurarse de que 'pérdidas' tenga el mismo tamaño que 'ganancias'
+            while (pérdidas.length < ganancias.length) {
+                pérdidas.push(0); // Rellenar con 0 si no hay datos de pérdidas para algunos meses
+            }
+
+            // Calcular las ganancias totales del año.
+            const totalGanancias = ganancias.reduce((acc, val) => acc + Number(val), 0);
+            const totalPerdidas = pérdidas.reduce((acc, val) => acc + Number(val), 0);
+
+            // Llamada a la función para generar y mostrar un gráfico de líneas.
+            lineGraph('chartPrediction', mesventas, ganancias, pérdidas, 'Ganancias por mes', 'Pérdidas por mes');
+
+            // Mostrar el total de ganancias y pérdidas del año en el label.
+            document.getElementById('totalGanancias').textContent =
+                `Ganancias totales estimadas para el año: $${totalGanancias.toFixed(2)}`;
+            document.getElementById('totalPerdidas').textContent =
+                `Pérdidas totales estimadas para el año: $${totalPerdidas.toFixed(2)}`;
+
+        } else {
+            document.getElementById('chartPrediction').remove();
+            console.log(dataGanancias.error || dataPerdidas.error);
+        }
+    } catch (error) {
+        console.error('Error en la petición de datos:', error);
+    }
+}
+
+
 
 
 

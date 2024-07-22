@@ -77,6 +77,7 @@ const fillTable = async (form = null) => {
           TABLE_BODY.innerHTML += `
               <tr>
                   <td>${row.id_cliente}</td>
+                  <td>${row.nombre_cliente}</td>
                   <td>${row.dui_cliente}</td>
                   <td>${row.correo_cliente}</td>
                   <td>${row.telefono_cliente}</td>

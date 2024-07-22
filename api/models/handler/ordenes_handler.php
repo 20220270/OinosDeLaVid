@@ -40,9 +40,9 @@ class OrdenesHandler
 
     public function readAll()
     {
-        $sql = 'SELECT id_orden, nombre_cliente, estado_orden, direccion_orden, p.fecha_registro FROM tb_ordenes p
+        $sql = "SELECT id_orden, CONCAT(nombre_cliente, ' ', apellido_cliente) as nombre_cliente, estado_orden, direccion_orden, p.fecha_registro FROM tb_ordenes p
         INNER JOIN tb_clientes USING(id_cliente)
-                ORDER BY id_orden';
+                ORDER BY id_orden";
         return Database::getRows($sql);
     }
 
@@ -300,5 +300,43 @@ ORDER BY
 ";
         $params = array($mes, $anio);
         return Database::getRows($sql, $params);
+    }
+
+    //Gráfico de predicción
+
+    public function predictGraph()
+    {
+        $sql = "SELECT 
+    MONTH(o.fecha_registro) AS mes,
+    SUM(d.cantidad_producto * d.precio_producto) AS ganancias_mensuales
+    FROM 
+    tb_detallesordenes d
+    JOIN 
+    tb_ordenes o ON d.id_orden = o.id_orden
+    WHERE 
+    YEAR(o.fecha_registro) = YEAR(CURDATE())
+    GROUP BY 
+    MONTH(o.fecha_registro)
+    ORDER BY mes;";
+
+        return Database::getRows($sql);
+    }
+
+    public function perdidasPredictGraph()
+    {
+        $sql = "SELECT 
+        MONTH(o.fecha_registro) AS anio,
+        SUM(d.cantidad_producto * d.precio_producto) AS perdidas_anuales
+        FROM 
+        tb_detallesordenes d
+        JOIN 
+        tb_ordenes o ON d.id_orden = o.id_orden
+        WHERE 
+        YEAR(o.fecha_registro) = YEAR(CURDATE()) 
+        AND o.estado_orden = 'Anulada'
+        GROUP BY 
+        MONTH(o.fecha_registro);";
+
+        return Database::getRows($sql);
     }
 }
