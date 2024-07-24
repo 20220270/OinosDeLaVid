@@ -248,6 +248,8 @@ class OrdenesHandler
     {
         $sql = "SELECT 
     CONCAT(nombre_cliente, ' ', apellido_cliente) as Cliente,
+    correo_cliente,
+    telefono_cliente,
     id_detalle, 
     id_orden,
     tb_ordenes.fecha_registro, 

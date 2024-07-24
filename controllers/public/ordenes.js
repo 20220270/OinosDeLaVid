@@ -136,7 +136,7 @@ const fillTable = async (form = null) => {
 
                                 
                                 <div class="text-center mt-3">
-                                    <strong>Generar reporte:</strong>
+                                    <strong>Generar factura:</strong>
                                     <button type="submit" class="btn mt-1 mostrarModalValoracion" id="mostrarReporte" name="mostrarReporte" onclick="openReport(${row.id_orden})">
                                     
                                     <img src="../../resources/Imagenes/report.png" alt="" width="60px" height="60px" class="mb-1">

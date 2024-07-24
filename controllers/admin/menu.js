@@ -190,7 +190,6 @@ const graficoPredictivo = async () => {
 
             // Procesar datos de pérdidas
             dataPerdidas.dataset.forEach(row => {
-                // Suponiendo que el índice de mes coincide, sino deberás ajustar el código
                 const mes = meses[row.anio - 1];
                 if (mesventas.includes(mes)) {
                     const index = mesventas.indexOf(mes);

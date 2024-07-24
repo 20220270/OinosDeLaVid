@@ -26,8 +26,9 @@ class Report extends FPDF
         // Se crea una sesión o se reanuda la actual para poder utilizar variables de sesión en los reportes.
         session_start();
         // Se verifica si un administrador ha iniciado sesión para generar el documento, de lo contrario se direcciona a la página web principal.
-        if (isset($_SESSION['idAdministrador'])) {
-            $nombreAdministrador = $_SESSION['idAdministrador'] ?? 'Administrador';
+        if (isset($_SESSION['aliasAdministrador'])) {
+
+            $nombreAdministrador = $_SESSION['aliasAdministrador'] ?? 'Usuario';
             // Se asigna el título del documento a la propiedad de la clase.
             $this->title = $title;
             // Se establece el título del documento (true = utf-8).
@@ -51,6 +52,7 @@ class Report extends FPDF
         // Se verifica si un administrador ha iniciado sesión para generar el documento, de lo contrario se direcciona a la página web principal.
         if (isset($_SESSION['idCliente'])) {
             // Se asigna el título del documento a la propiedad de la clase.
+            $nombreCliente = $_SESSION['aliasAdministrador'] ?? 'Usuario';
             $this->title = $title;
             // Se establece el título del documento (true = utf-8).
             $this->setTitle('OinosDeLaVid - Reporte', true);
@@ -71,9 +73,9 @@ class Report extends FPDF
         // Se crea una sesión o se reanuda la actual para poder utilizar variables de sesión en los reportes.
         session_start();
         // Se verifica si un administrador ha iniciado sesión para generar el documento, de lo contrario se direcciona a la página web principal.
-        if (isset($_SESSION['idAdministrador'])) {
+        if (isset($_SESSION['aliasAdministrador'])) {
 
-            $nombreAdministrador = $_SESSION['idAdministrador'] ?? 'Administrador';
+            $nombreAdministrador = $_SESSION['aliasAdministrador'] ?? 'Administrador'; //Traemos el alias del usuario que ha generado el reporte. Lo traemos de las variables de sesión que se crean al iniciar sesión
             // Se asigna el título del documento a la propiedad de la clase.
             $this->title = $title;
             // Se establece el título del documento (true = utf-8).
@@ -82,7 +84,7 @@ class Report extends FPDF
             $this->setMargins(15, 15, 15);
             // Se añade una nueva página al documento con orientación horizontal y formato carta, llamando implícitamente al método header()
             $this->addPage('l', 'letter');
-            $this->Cell(0, 10, 'Reporte generado por: ' . $nombreAdministrador, 0, 1, 'R');
+            $this->Cell(0, 10, 'Reporte generado por: ' . $nombreAdministrador, 0, 1, 'R'); //Mostramos el usuario que ha generado el reporte
             // Se define un alias para el número total de páginas que se muestra en el pie del documento.
             $this->aliasNbPages();
         } else {
