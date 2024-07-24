@@ -86,7 +86,7 @@ class AdministradorHandler
     public function searchRows()
     {
         $value = '%' . Validator::getSearchValue() . '%';
-        $sql = 'SELECT id_administrador, nombre_admistrador, apellido_administrador, correo_administrador, alias_administrador, clave_administrador, nivel, estado_adminstrador, fecha_registro
+        $sql = 'SELECT  DISTINCT id_administrador, nombre_admistrador, apellido_administrador, correo_administrador, alias_administrador, clave_administrador, nivel, estado_adminstrador, fecha_registro
                 FROM tb_administradores
                 INNER JOIN tb_niveles_administradores USING(id_nivel)
                 WHERE correo_administrador LIKE ? OR alias_administrador LIKE ? OR nivel LIKE ? OR estado_adminstrador LIKE ?

@@ -39,7 +39,6 @@ if ($dataProductos = $producto->readAll()) {
         $pdf->cell(40, 10, $rowProducto['existencias_producto'], 1, 0, 'C');
         $pdf->cell(33, 10, $rowProducto['estado_producto'], 1, 0, 'C');
         $pdf->cell(40, 10, $rowProducto['fecha_registro'], 1, 1, 'C');
-        
     }
 } else {
     $pdf->cell(0, 10, $pdf->encodeString('No hay productos para mostrar'), 1, 1);

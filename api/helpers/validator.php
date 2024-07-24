@@ -140,7 +140,7 @@ class Validator
     public static function validateString($value)
     {
         // Se verifica el contenido y la longitud de acuerdo con la base de datos.
-        if (preg_match('/^[a-zA-Z0-9ñÑáÁéÉíÍóÓúÚ\s\,\;\.]+$/', $value)) {
+        if (preg_match('/^[a-zA-Z0-9ñÑáÁéÉíÍóÓúÚâÂêÊîÎôÔûÛ\s\,\;\.\@\-]+$/', $value)) {
             return true;
         } else {
             return false;
@@ -155,7 +155,7 @@ class Validator
     public static function validateAlphabetic($value)
     {
         // Se verifica el contenido y la longitud de acuerdo con la base de datos.
-        if (preg_match('/^[a-zA-ZñÑáÁéÉíÍóÓúÚ\s]+$/', $value)) {
+        if (preg_match('/^[a-zA-ZñÑáÁéÉíÍóÓúÚâÂêÊîÎôÔûÛ\s]+$/', $value)) {
             return true;
         } else {
             return false;
@@ -170,7 +170,7 @@ class Validator
     public static function validateAlphanumeric($value)
     {
         // Se verifica el contenido y la longitud de acuerdo con la base de datos.
-        if (preg_match('/^[a-zA-Z0-9ñÑáÁéÉíÍóÓúÚ\s]+$/', $value)) {
+        if (preg_match('/^[a-zA-Z0-9ñÑáÁéÉíÍóÓúÚâÂêÊîÎôÔûÛ\s\']+$/', $value)) {
             return true;
         } else {
             return false;
