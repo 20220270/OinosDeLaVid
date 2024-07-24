@@ -37,7 +37,7 @@ const graficoBarrasCategorias = async () => {
             cantidades.push(row.cantidad_producto);
         });
         // Llamada a la función para generar y mostrar un gráfico de barras. Se encuentra en el archivo components.js
-        barGraph('chart1', categorias, cantidades, 'Cantidad de productos', 'Cantidad de productos por categoría');
+        barGraph('chart1', categorias, cantidades, 'Cantidad de productos', 'Categoría con más productos registrados');
     } else {
         document.getElementById('chart1').remove();
         console.log(DATA.error);
@@ -65,7 +65,7 @@ const graficoPastelProductos = async () => {
             promedios.push(row.promedio_calificacion);
         });
         // Llamada a la función para generar y mostrar un gráfico de pastel. Se encuentra en el archivo components.js
-        pieGraph('chart2', productos, promedios, 'Productos con mejor calificación');
+        pieGraph('chart2', productos, promedios, 'Productos con mejor calificación (Escala 1 - 5)');
     } else {
         document.getElementById('chart2').remove();
         console.log(DATA.error);
@@ -133,7 +133,7 @@ const graficoBarrasMarcasMasVendidas = async () => {
             ventastotales.push(row.total_vendido);
         });
         // Llamada a la función para generar y mostrar un gráfico de barras. Se encuentra en el archivo components.js
-        pieGraph('chart5', marcas, ventastotales, 'Total de ventas', 'Marcas más vendidas');
+        pieGraph('chart5', marcas, ventastotales, 'Marcas más vendidas (Total de ventas)');
     } else {
         document.getElementById('chart5').remove();
         console.log(DATA.error);
