@@ -3,7 +3,7 @@ const SIGNUP_FORM = document.getElementById('signupForm');
 const MAIN_TITLE = document.getElementById('mainTitle');
 const USER_API = 'services/public/cliente.php';
 // Llamada a la función para establecer la mascara del campo teléfono.
-/*vanillaTextMask.maskInput({
+vanillaTextMask.maskInput({
     inputElement: document.getElementById('telefonoCliente'),
     mask: [/\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
 });
@@ -11,7 +11,7 @@ const USER_API = 'services/public/cliente.php';
 vanillaTextMask.maskInput({
     inputElement: document.getElementById('duiCliente'),
     mask: [/\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/]
-});*/
+});
 
 // Método del evento para cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', () => {
