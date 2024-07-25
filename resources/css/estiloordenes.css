@@ -2,7 +2,7 @@
     position: absolute;
     top: 50%;
     left: 10px; 
-    transform: translateY(-160%);
+    transform: translateY(-60%);
     width: 20px;
     height: auto;
     z-index: 1;

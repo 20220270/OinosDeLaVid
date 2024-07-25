@@ -26,12 +26,10 @@ $pdf->startReportHorizontal("Órdenes registradas en el mes de $nombreMes $anio"
 
 // Se verifica si existen registros para mostrar, de lo contrario se imprime un mensaje.
 if ($dataOrdenes = $ordenes->Ordenes($mes, $anio)) {
-    // Se establece un color de relleno para los encabezados.
+    // Configuración de colores y fuentes para los encabezados.
     $pdf->setFillColor(132, 6, 6);
-    // Se establece la fuente para los encabezados.
     $pdf->setFont('Arial', 'B', 11);
     $pdf->setTextColor(255, 255, 255);
-    // Se imprimen las celdas con los encabezados.
     $pdf->cell(17, 10, 'Orden', 1, 0, 'C', 1);
     $pdf->cell(62, 10, 'Producto y cantidad', 1, 0, 'C', 1);
     $pdf->cell(35, 10, 'Fecha de la orden', 1, 0, 'C', 1);
@@ -39,23 +37,22 @@ if ($dataOrdenes = $ordenes->Ordenes($mes, $anio)) {
     $pdf->cell(44, 10, 'Direccion', 1, 0, 'C', 1);
     $pdf->cell(63, 10, 'Cliente', 1, 1, 'C', 1);
 
-    // Se establece un color de relleno para mostrar el nombre de la categoría.
+    // Configuración de colores y fuentes para los datos.
     $pdf->setFillColor(240);
-    // Se establece la fuente para los datos de los productos.
     $pdf->setFont('Arial', '', 11);
     $pdf->setTextColor(0, 0, 0);
 
     foreach ($dataOrdenes as $rowOrdenes) {
         // Guarda la posición inicial de Y
         $yStart = $pdf->GetY();
-
+        
         // Imprime la celda de la orden
         $pdf->cell(17, 10, $pdf->encodeString($rowOrdenes['id_orden']), 1, 0, 'C');
-
+        
         // Imprime la MultiCell para los productos
         $pdf->SetX(32); // Ajusta la posición X para la celda de productos
         $pdf->MultiCell(62, 10, $pdf->encodeString($rowOrdenes['productos']), 1, 'C');
-
+        
         // Obtiene la altura total ocupada por la MultiCell
         $height = $pdf->GetY() - $yStart;
 
@@ -64,8 +61,7 @@ if ($dataOrdenes = $ordenes->Ordenes($mes, $anio)) {
         $pdf->cell(35, $height, $rowOrdenes['fecha_registro'], 1, 0, 'C');
         $pdf->cell(23, $height, $rowOrdenes['estado_orden'], 1, 0, 'C');
         $pdf->MultiCell(44, $height, $rowOrdenes['direccion_orden'], 1, 'C');
-
-
+        
         // Ajusta la posición para la celda del cliente
         $pdf->SetXY(196, $yStart);
         $pdf->cell(63, $height, $rowOrdenes['correo_cliente'], 1, 1, 'C');
@@ -73,5 +69,7 @@ if ($dataOrdenes = $ordenes->Ordenes($mes, $anio)) {
 } else {
     $pdf->cell(0, 10, $pdf->encodeString('No hay ordenes para mostrar'), 1, 1);
 }
+
 // Se llama implícitamente al método footer() y se envía el documento al navegador web.
 $pdf->output('I', 'ordenes.pdf');
+?>

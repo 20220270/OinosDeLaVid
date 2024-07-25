@@ -139,7 +139,7 @@ class ProductoHandler
         FROM tb_valoraciones
         INNER JOIN tb_detallesordenes USING (id_detalle)
         INNER JOIN tb_productos USING (id_producto)
-        GROUP BY id_producto, nombre_producto ORDER BY promedio_calificacion DESC LIMIT 4";
+        GROUP BY id_producto, nombre_producto ORDER BY promedio_calificacion DESC LIMIT 5";
         return Database::getRows($sql);
     }
 
@@ -152,7 +152,7 @@ class ProductoHandler
                 INNER JOIN tb_productos USING(id_producto)
                 GROUP BY id_producto
                 ORDER BY total_vendido DESC
-                LIMIT 4";
+                LIMIT 5";
         return Database::getRows($sql);
     }
 
@@ -164,7 +164,7 @@ class ProductoHandler
                 INNER JOIN tb_ordenes using (id_orden)
                 INNER JOIN tb_clientes USING(id_cliente)
                 GROUP BY id_cliente, nombre_cliente, apellido_cliente
-                ORDER BY total_ordenes DESC LIMIT 4";
+                ORDER BY total_ordenes DESC LIMIT 5";
         return Database::getRows($sql);
     }
 
@@ -175,7 +175,7 @@ class ProductoHandler
     {
         $sql = "SELECT id_producto, nombre_producto, existencias_producto 
                 FROM tb_productos 
-                ORDER BY existencias_producto DESC LIMIT 4;";
+                ORDER BY existencias_producto DESC LIMIT 5;";
                 return Database::getRows($sql);
     }
 

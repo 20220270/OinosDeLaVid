@@ -133,10 +133,10 @@ class ClienteHandler
     public function searchRows()
     {
         $value = '%' . Validator::getSearchValue() . '%';
-        $sql = 'SELECT id_cliente, dui_cliente, correo_cliente, telefono_cliente, direccion_cliente, estado_cliente, fecha_registro
+        $sql = "SELECT id_cliente, CONCAT(nombre_cliente, ' ', apellido_cliente) as nombre_cliente, dui_cliente, correo_cliente, telefono_cliente, direccion_cliente, estado_cliente, fecha_registro
                 FROM tb_clientes
                 WHERE dui_cliente LIKE ? OR correo_cliente LIKE ? OR estado_cliente LIKE ?
-                ORDER BY id_cliente';
+                ORDER BY id_cliente";
         $params = array($value, $value, $value);
         return Database::getRows($sql, $params);
     }

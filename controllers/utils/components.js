@@ -192,7 +192,7 @@ const horizontalBarGraph = (canvas, xAxis, yAxis, legend, title) => {
 *   Parámetros: canvas (identificador de la etiqueta canvas), legends (valores para las etiquetas), values (valores de los datos) y title (título del gráfico).
 *   Retorno: ninguno.
 */
-const pieGraph = (canvas, legends, values, title) => {
+const pieGraph = (canvas, legends, values,legend, title) => {
     // Se declara un arreglo para guardar códigos de colores en formato hexadecimal.
     let colors = [];
     // Se generan códigos hexadecimales de 6 cifras de acuerdo con el número de datos a mostrar y se agregan al arreglo.
@@ -205,6 +205,7 @@ const pieGraph = (canvas, legends, values, title) => {
         data: {
             labels: legends,
             datasets: [{
+                label: legend,
                 data: values,
                 backgroundColor: colors
             }]
@@ -225,7 +226,7 @@ const pieGraph = (canvas, legends, values, title) => {
 *   Parámetros: canvas (identificador de la etiqueta canvas), legends (valores para las etiquetas), values (valores de los datos) y title (título del gráfico).
 *   Retorno: ninguno.
 */
-const doughnutGraph = (canvas, legends, values, title) => {
+const doughnutGraph = (canvas, legends, values,legend, title) => {
     // Se declara un arreglo para guardar códigos de colores en formato hexadecimal.
     let colors = [];
     // Se generan códigos hexadecimales de 6 cifras de acuerdo con el número de datos a mostrar y se agregan al arreglo.
@@ -238,6 +239,7 @@ const doughnutGraph = (canvas, legends, values, title) => {
         data: {
             labels: legends,
             datasets: [{
+                label: legend,
                 data: values,
                 backgroundColor: colors
             }]

@@ -65,7 +65,7 @@ const graficoPastelProductos = async () => {
             promedios.push(row.promedio_calificacion);
         });
         // Llamada a la función para generar y mostrar un gráfico de pastel. Se encuentra en el archivo components.js
-        pieGraph('chart2', productos, promedios, 'Productos con mejor calificación (Escala 1 - 5)');
+        pieGraph('chart2', productos, promedios,  'Calificación promedio', 'Productos con mejor calificación (Escala 1 - 5)');
     } else {
         document.getElementById('chart2').remove();
         console.log(DATA.error);
@@ -88,7 +88,7 @@ const graficoPastelProductoss = async () => {
             ventas.push(row.total_vendido);
         });
         // Llamada a la función para generar y mostrar un gráfico de pastel. Se encuentra en el archivo components.js
-        doughnutGraph('chart3', productos, ventas, 'Productos más vendidos');
+        doughnutGraph('chart3', productos, ventas, 'Total de ventas', 'Productos más vendidos');
     } else {
         document.getElementById('chart3').remove();
         console.log(DATA.error);
@@ -133,7 +133,7 @@ const graficoBarrasMarcasMasVendidas = async () => {
             ventastotales.push(row.total_vendido);
         });
         // Llamada a la función para generar y mostrar un gráfico de barras. Se encuentra en el archivo components.js
-        pieGraph('chart5', marcas, ventastotales, 'Marcas más vendidas (Total de ventas)');
+        pieGraph('chart5', marcas, ventastotales,  'Total de ventas', 'Marcas más vendidas');
     } else {
         document.getElementById('chart5').remove();
         console.log(DATA.error);
@@ -155,7 +155,7 @@ const graficoBarrasExistencias = async () => {
             existencias.push(row.existencias_producto);
         });
         // Llamada a la función para generar y mostrar un gráfico de barras. Se encuentra en el archivo components.js
-        doughnutGraph('chart6', producto, existencias, 'Productos con más existencias');
+        doughnutGraph('chart6', producto, existencias, 'Total de existencias', 'Productos con más existencias');
     } else {
         document.getElementById('chart6').remove();
         console.log(DATA.error);

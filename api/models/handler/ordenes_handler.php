@@ -30,10 +30,10 @@ class OrdenesHandler
     public function searchRows()
     {
         $value = '%' . Validator::getSearchValue() . '%';
-        $sql = 'SELECT id_orden, nombre_cliente, estado_orden, direccion_orden, p.fecha_registro FROM tb_ordenes p
+        $sql = "SELECT id_orden, CONCAT(nombre_cliente, ' ', apellido_cliente) as nombre_cliente, estado_orden, direccion_orden, p.fecha_registro FROM tb_ordenes p
                 INNER JOIN tb_clientes USING(id_cliente)
-                WHERE nombre_cliente LIKE ? OR estado_orden LIKE ? OR direccion_orden LIKE ? OR p.fecha_registro LIKE ?
-                ORDER BY id_orden';
+                WHERE CONCAT(nombre_cliente, ' ', apellido_cliente) LIKE ? OR estado_orden LIKE ? OR direccion_orden LIKE ? OR p.fecha_registro LIKE ?
+                ORDER BY id_orden";
         $params = array($value, $value, $value, $value);
         return Database::getRows($sql, $params);
     }
