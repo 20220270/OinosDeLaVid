@@ -21,7 +21,7 @@ function validarFormulario(event) {
   }
 
   // Si el correo es válido, redirigir al usuario a recuperarcontraseña_codigo.html
-  window.location.href = 'recuperarcontraseña_codigo.html';
+  window.location.href = 'recuperarcontraseñacodigo.html';
 }
 document.getElementById("btnVo").addEventListener("click", function () {
     location.href = "login.html";
