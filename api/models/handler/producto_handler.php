@@ -112,7 +112,7 @@ class ProductoHandler
         $sql = 'SELECT id_producto, id_marca, nombre_producto, descripcion_producto, precio_producto, imagen_producto, estado_producto,
         existencias_producto, descuento_producto FROM tb_productos
         INNER JOIN tb_marcas USING(id_marca)
-                WHERE id_marca = ? AND estado_producto = true
+                WHERE id_marca = ? AND estado_producto = "En venta"
                 ORDER BY nombre_producto';
         $params = array($this->categoria);
         return Database::getRows($sql, $params);

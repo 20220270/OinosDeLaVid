@@ -146,13 +146,9 @@ class OrdenesHandler
         (tb_productos.precio_producto * cantidad_producto) AS Subtotal,
         tb_productos.descuento_producto,
         ROUND((tb_productos.precio_producto * cantidad_producto) - (tb_productos.precio_producto * cantidad_producto * tb_productos.descuento_producto / 100), 2) AS subtotal_con_descuento
-        
-    FROM 
-        tb_detallesOrdenes
-    INNER JOIN 
-        tb_ordenes USING(id_orden)
-    INNER JOIN 
-        tb_productos USING(id_producto)
+        FROM tb_detallesOrdenes
+        INNER JOIN tb_ordenes USING(id_orden)
+        INNER JOIN tb_productos USING(id_producto)
                 WHERE id_orden = ?';
         $params = array($_SESSION['idOrden']);
         return Database::getRows($sql, $params);
@@ -203,14 +199,10 @@ class OrdenesHandler
          ROUND((tb_productos.precio_producto * cantidad_producto) - (tb_productos.precio_producto * cantidad_producto * tb_productos.descuento_producto / 100), 2) AS SubtotalConDescuento,
          tb_ordenes.fecha_registro, 
          estado_orden
-     FROM 
-         tb_detallesOrdenes
-     INNER JOIN 
-         tb_ordenes USING(id_orden)
-     INNER JOIN 
-         tb_productos USING(id_producto) 
-                WHERE id_cliente = ? AND (nombre_producto LIKE ? OR tb_ordenes.fecha_registro LIKE ? OR id_orden LIKE ? or id_detalle LIKE ?)
-                ORDER BY id_producto';
+        FROM tb_detallesOrdenes INNER JOIN tb_ordenes USING(id_orden)
+        INNER JOIN tb_productos USING(id_producto) 
+        WHERE id_cliente = ? AND (nombre_producto LIKE ? OR tb_ordenes.fecha_registro LIKE ? OR id_orden LIKE ? or id_detalle LIKE ?)
+        ORDER BY id_producto';
         $params = array($_SESSION['idCliente'], $value, $value, $value, $value);
         return Database::getRows($sql, $params);
     }
@@ -230,12 +222,8 @@ class OrdenesHandler
          ROUND((tb_productos.precio_producto * cantidad_producto) - (tb_productos.precio_producto * cantidad_producto * tb_productos.descuento_producto / 100), 2) AS SubtotalConDescuento,
          tb_ordenes.fecha_registro, 
          estado_orden
-     FROM 
-         tb_detallesOrdenes
-     INNER JOIN 
-         tb_ordenes USING(id_orden)
-     INNER JOIN 
-         tb_productos USING(id_producto)  WHERE id_cliente = ?
+        FROM tb_detallesOrdenes INNER JOIN tb_ordenes USING(id_orden)
+        INNER JOIN tb_productos USING(id_producto)  WHERE id_cliente = ?
          ORDER BY id_orden';
         $params = array($_SESSION['idCliente']);
         return Database::getRows($sql, $params);
