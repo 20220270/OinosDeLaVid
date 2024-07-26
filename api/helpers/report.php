@@ -40,6 +40,7 @@ class Report extends FPDF
             $this->Cell(0, 10, 'Reporte generado por: ' . $nombreAdministrador, 0, 1, 'R');
             // Se define un alias para el número total de páginas que se muestra en el pie del documento.
             $this->aliasNbPages();
+             
         } else {
             header('location:' . self::CLIENT_URL);
         }
