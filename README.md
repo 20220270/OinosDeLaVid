@@ -2,9 +2,11 @@
 -- Estándares de programación que se utilizan en JavaScript:
 
 1- Se utlizan comentarios para detallas cada parte del programa
-2- Se utilizan Snake Case para declarar los nombres de las variables, las cuales están escritas con letras mayúsculas
+2- Se utilizan Snake Case para declarar los nombres de las variables, las cuales están escritas con letras mayúsculas y también para los campos que vienen de la base de datos. 
 3- Se utiliza Camel Case para declarar el nombre de las funciones utilizadas en los archivos .js
 4- Se utiliza el tipo de variable "const"
+5- lowercase para las variables que se traerán los datos que se mostrarán en los gráficos.
+
 
 -- Estándares de programación que se utilizan en PHP:
 
