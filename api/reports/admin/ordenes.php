@@ -1,75 +1,73 @@
 <?php
 // Se incluye la clase con las plantillas para generar reportes.
 require_once('../../helpers/report.php');
-// Se incluyen las clases para la transferencia y acceso a datos.
-require_once('../../models/data/ordenes_data.php');
 
 // Se instancia la clase para crear el reporte.
 $pdf = new Report;
+// Se verifica si existe un valor para la categoría, de lo contrario se muestra un mensaje.
+if (isset($_GET['idOrden'])) {
+    // Se incluyen las clases para la transferencia y acceso a datos.
+    require_once('../../models/data/ordenes_data.php');
+    // Se instancian las entidades correspondientes.
+    $ordenes = new OrdenesData;
+    // Se establece el valor de la categoría, de lo contrario se muestra un mensaje.
+    if ($ordenes->setIdOrden($_GET['idOrden'])) {
+        // Se verifica si la categoría existe, de lo contrario se muestra un mensaje.
+        if ($rowOrdenes = $ordenes->readOne()) {
+            // Se inicia el reporte con el encabezado del documento.
+            $pdf->startReport('Productos de la ordén ' . $rowOrdenes['id_orden']);
+            // Se verifica si existen registros para mostrar, de lo contrario se imprime un mensaje.
+            if ($dataOrdenes = $ordenes->readDetails()) {
+                // Se establece un color de relleno para los encabezados.
+                $pdf->setFillColor(132, 6, 6);
+                // Se establece la fuente para los encabezados.
+                $pdf->setFont('Arial', 'B', 11);
+                $pdf->setTextColor(255, 255, 255);
 
-$ordenes = new OrdenesData;
+                $totalCompra = 0;
 
-// Obtener el mes y el año actual
-$mes = date('n'); // Mes actual sin ceros a la izquierda
-$anio = date('Y'); // Año actual
+                $pdf->cell(0, 10, $pdf->encodeString('Cliente: ' . $rowOrdenes['nombre_cliente'] . ' ' . $rowOrdenes['apellido_cliente']), 1, 1, 'L', 1);
+                $pdf->cell(0, 10, $pdf->encodeString('Dirección: ' . $rowOrdenes['direccion_orden']), 1, 1, 'L', 1);
+                $pdf->cell(0, 10, $pdf->encodeString('Fecha de la compra: ' . $rowOrdenes['fecha_registro']), 1, 1, 'L', 1);
+                $pdf->cell(0, 10, $pdf->encodeString('Estado de la orden: ' . $rowOrdenes['estado_orden']), 1, 1, 'R', 1);
 
-// Convertir el número del mes a nombre del mes
-$meses = [
-    1 => 'Enero', 2 => 'Febrero', 3 => 'Marzo', 4 => 'Abril',
-    5 => 'Mayo', 6 => 'Junio', 7 => 'Julio', 8 => 'Agosto',
-    9 => 'Septiembre', 10 => 'Octubre', 11 => 'Noviembre', 12 => 'Diciembre'
-];
-$nombreMes = $meses[$mes]; // Nombre del mes correspondiente
+                $pdf->Ln();
 
-// Se inicia el reporte con el encabezado del documento.
-$pdf->startReportHorizontal("Órdenes registradas en el mes de $nombreMes $anio");
+                // Se imprimen las celdas con los encabezados.
+                $pdf->cell(70, 10, 'Productos', 1, 0, 'C', 1);
+                $pdf->cell(25.9, 10, 'Cantidad', 1, 0, 'C', 1);
+                $pdf->cell(30, 10, 'Precio', 1, 0, 'C', 1);
+                $pdf->cell(30, 10, 'Descuento', 1, 0, 'C', 1);
+                $pdf->cell(30, 10, 'SubTotal', 1, 1, 'C', 1);
+                // Se establece la fuente para los datos de los productos.
+                $pdf->setFont('Arial', '', 11);
+                $pdf->setTextColor(0, 0, 0);
+                // Se recorren los registros fila por fila.
+                foreach ($dataOrdenes as $rowProducto) {
+                    // Se imprimen las celdas con los datos de los productos.
+                    $pdf->cell(70, 10, $pdf->encodeString($rowProducto['nombre_producto']), 1, 0, 'C');
+                    $pdf->cell(25.9, 10, $rowProducto['cantidad_producto'], 1, 0, 'C');
+                    $pdf->cell(30, 10, '$' . $rowProducto['precio_producto'], 1, 0, 'C');
+                    $pdf->cell(30, 10, $rowProducto['descuento_producto'] . '%', 1, 0, 'C');
+                    $pdf->cell(30, 10, '$' . $rowProducto['SubtotalConDescuento'], 1, 1, 'C');
 
-// Se verifica si existen registros para mostrar, de lo contrario se imprime un mensaje.
-if ($dataOrdenes = $ordenes->Ordenes($mes, $anio)) {
-    // Configuración de colores y fuentes para los encabezados.
-    $pdf->setFillColor(132, 6, 6);
-    $pdf->setFont('Arial', 'B', 11);
-    $pdf->setTextColor(255, 255, 255);
-    $pdf->cell(17, 10, 'Orden', 1, 0, 'C', 1);
-    $pdf->cell(62, 10, 'Producto y cantidad', 1, 0, 'C', 1);
-    $pdf->cell(35, 10, 'Fecha de la orden', 1, 0, 'C', 1);
-    $pdf->cell(23, 10, 'Estado', 1, 0, 'C', 1);
-    $pdf->cell(44, 10, 'Direccion', 1, 0, 'C', 1);
-    $pdf->cell(63, 10, 'Cliente', 1, 1, 'C', 1);
-
-    // Configuración de colores y fuentes para los datos.
-    $pdf->setFillColor(240);
-    $pdf->setFont('Arial', '', 11);
-    $pdf->setTextColor(0, 0, 0);
-
-    foreach ($dataOrdenes as $rowOrdenes) {
-        // Guarda la posición inicial de Y
-        $yStart = $pdf->GetY();
-        
-        // Imprime la celda de la orden
-        $pdf->cell(17, 10, $pdf->encodeString($rowOrdenes['id_orden']), 1, 0, 'C');
-        
-        // Imprime la MultiCell para los productos
-        $pdf->SetX(32); // Ajusta la posición X para la celda de productos
-        $pdf->MultiCell(62, 10, $pdf->encodeString($rowOrdenes['productos']), 1, 'C');
-        
-        // Obtiene la altura total ocupada por la MultiCell
-        $height = $pdf->GetY() - $yStart;
-
-        // Ajusta la posición para las siguientes celdas
-        $pdf->SetXY(94, $yStart);
-        $pdf->cell(35, $height, $rowOrdenes['fecha_registro'], 1, 0, 'C');
-        $pdf->cell(23, $height, $rowOrdenes['estado_orden'], 1, 0, 'C');
-        $pdf->MultiCell(44, $height, $rowOrdenes['direccion_orden'], 1, 'C');
-        
-        // Ajusta la posición para la celda del cliente
-        $pdf->SetXY(196, $yStart);
-        $pdf->cell(63, $height, $rowOrdenes['correo_cliente'], 1, 1, 'C');
+                    $totalCompra += $rowProducto['SubtotalConDescuento'];
+                }
+                $pdf->setFont('Arial', 'B', 11);
+                $pdf->setTextColor(255, 255, 255);
+                $pdf->cell(156, 10, 'Total de la compra: ', 1, 0, 'L', 1);
+                $pdf->cell(30, 10, '$' . number_format($totalCompra, 2, '.', ''), 1, 1, 'C', 1);
+            } else {
+                $pdf->cell(0, 10, $pdf->encodeString('No hay productos para la categoría'), 1, 0);
+            }
+            // Se llama implícitamente al método footer() y se envía el documento al navegador web.
+            $pdf->output('I', 'ordenes.pdf');
+        } else {
+            print('Orden inexistente');
+        }
+    } else {
+        print('Orden incorrecta');
     }
 } else {
-    $pdf->cell(0, 10, $pdf->encodeString('No hay ordenes para mostrar'), 1, 1);
+    print('Debe seleccionar una orden');
 }
-
-// Se llama implícitamente al método footer() y se envía el documento al navegador web.
-$pdf->output('I', 'ordenes.pdf');
-?>

@@ -210,7 +210,7 @@ const graficoPredictivo = async () => {
             const totalPerdidas = pérdidas.reduce((acc, val) => acc + Number(val), 0);
 
             // Llamada a la función para generar y mostrar un gráfico de líneas.
-            lineGraph('chartPrediction', mesventas, ganancias, pérdidas, 'Ganancias por mes', 'Pérdidas por mes');
+            lineGraph('chartPrediction', mesventas, ganancias, pérdidas, 'Ganancias por mes (USD $)', 'Pérdidas por mes (USD $)');
 
             // Mostrar el total de ganancias y pérdidas del año en el label.
             document.getElementById('totalGanancias').textContent =

@@ -48,7 +48,7 @@ class OrdenesHandler
 
     public function readOne()
     {
-        $sql = 'SELECT id_orden, nombre_cliente, estado_orden, direccion_orden, p.fecha_registro FROM tb_ordenes p
+        $sql = 'SELECT id_orden, nombre_cliente, apellido_cliente, estado_orden, direccion_orden, p.fecha_registro FROM tb_ordenes p
         INNER JOIN tb_clientes USING(id_cliente)
                 WHERE id_orden = ?';
         $params = array($this->idorden);
@@ -68,7 +68,7 @@ class OrdenesHandler
     //Funcion para el sitio privado: Leer los detalles de cada compra
     public function readDetails()
     {
-        $sql = 'SELECT id_detalle, nombre_producto, imagen_producto, tb_productos.precio_producto, cantidad_producto, 
+        $sql = 'SELECT id_detalle, nombre_producto, imagen_producto, tb_productos.precio_producto, cantidad_producto, descuento_producto,
         (tb_productos.precio_producto * cantidad_producto) Subtotal,
         ROUND((tb_productos.precio_producto * cantidad_producto) - (tb_productos.precio_producto * cantidad_producto * tb_productos.descuento_producto / 100), 2) AS SubtotalConDescuento
         FROM tb_detallesOrdenes
@@ -77,8 +77,6 @@ class OrdenesHandler
         $params = array($this->idorden);
         return Database::getRows($sql, $params);
     }
-
-
 
 
     public function readFilename()

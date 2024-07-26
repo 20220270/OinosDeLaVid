@@ -51,8 +51,6 @@ class Report extends FPDF
         session_start();
         // Se verifica si un administrador ha iniciado sesión para generar el documento, de lo contrario se direcciona a la página web principal.
         if (isset($_SESSION['idCliente'])) {
-            // Se asigna el título del documento a la propiedad de la clase.
-            $nombreCliente = $_SESSION['aliasAdministrador'] ?? 'Usuario';
             $this->title = $title;
             // Se establece el título del documento (true = utf-8).
             $this->setTitle('OinosDeLaVid - Reporte', true);

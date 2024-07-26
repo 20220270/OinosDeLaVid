@@ -18,12 +18,12 @@ const SAVE_FORM = document.getElementById('saveForm'),
 // Constantes para establecer los elementos del formulario del detalle.
 const DETALLE_FORM = new bootstrap.Modal('#detailModal'),
     DETAIL_FORM = document.getElementById('detailForm')
-    const TABLE_BODY2 = document.getElementById('tableBody2'),
+const TABLE_BODY2 = document.getElementById('tableBody2'),
     ROWS_FOUND2 = document.getElementById('rowsFound2');
-    ID_DETALLE = document.getElementById('idDetalle'),
+ID_DETALLE = document.getElementById('idDetalle'),
     MODAL_TITLED = document.getElementById('modalTitleD');
-    IMAGEN_PRODUCTO = document.getElementById('imagenProductoDetalle');
-    NOMBRE_PRODUCTO = document.getElementById('nombreProductoDetalle'),
+IMAGEN_PRODUCTO = document.getElementById('imagenProductoDetalle');
+NOMBRE_PRODUCTO = document.getElementById('nombreProductoDetalle'),
     PRECIO_PRODUCTO = document.getElementById('precioProductoDetalle'),
     CANTIDAD_PRODUCTO = document.getElementById('cantidadProductoDetalle'),
     TOTAL_PAGADO = document.getElementById('TotalPagadoProductoDetalle');
@@ -105,6 +105,16 @@ const fillTable = async (form = null) => {
                         class="mb-1">
                 </button>
 
+                
+
+                            <!--Botón para generar un reporte de todos los productos-->
+                            <button class="btn fw-semibold" id="btnRegistrar" name="btnRegistrar"
+                                onclick="openReport(${row.id_orden})">
+
+                                <img src="../../resources/Imagenes/report.png" alt="" width="60px" height="60px"
+                                    class="mb-1">
+                            </button>
+
                   </td>
               </tr>
           `;
@@ -154,56 +164,61 @@ const openDetail = async (id) => {
     FORM.append('idOrden', id);
     // Petición para obtener los datos del registro solicitado.
     const DATA = await fetchData(ORDENES_API, 'readDetails', FORM);
-    
-    console.log(DATA)
+
+    console.log(DATA);
+
+    let totalCompra = 0; // Variable para almacenar el total de la compra
+
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
-        if (DATA.status) {
-            // Se recorre el conjunto de registros fila por fila.
-            DATA.dataset.forEach(row => {
-                // Se crean y concatenan las filas de la tabla con los datos de cada registro.
-                TABLE_BODY2.innerHTML += `
-                  <tr>
-                      <td>${row.id_detalle}</td>
-                      <td><img src="${SERVER_URL}images/productos/${row.imagen_producto}" alt="..." width="200px" height="200px" name="imagenProductoDetalle"
-                      id="imagenProductoDetalle"></td>
-                      <td>${row.nombre_producto}</td>
-                      <td>$${row.precio_producto}</td>
-                      <td>${row.cantidad_producto}</td>
-                      <td>$${row.SubtotalConDescuento}</td>
-                      
-                  </tr>
-              `;
-            });
-            // Se muestra un mensaje de acuerdo con el resultado.
-            ROWS_FOUND.textContent = DATA.message;
-        } else {
-            sweetAlert(4, DATA.error, true);
-        }
-        
-        // Se muestra la caja de diálogo con su título.
-        DETALLE_FORM.show();
-        MODAL_TITLED.textContent = 'Detalles del pedido';
-
-        
-        // Se prepara el formulario.
-        DETAIL_FORM.reset();
-        // Se inicializan los campos con los datos.
-        const ROW = DATA.dataset;
-
-
-        ID_DETALLE.value = ROW.id_detalle;
-
-        
+        // Se recorre el conjunto de registros fila por fila.
+        DATA.dataset.forEach(row => {
+            // Se crean y concatenan las filas de la tabla con los datos de cada registro.
+            TABLE_BODY2.innerHTML += `
+                <tr>
+                    <td>${row.id_detalle}</td>
+                    <td><img src="${SERVER_URL}images/productos/${row.imagen_producto}" alt="..." width="200px" height="200px" name="imagenProductoDetalle"
+                    id="imagenProductoDetalle"></td>
+                    <td>${row.nombre_producto}</td>
+                    <td>$${row.precio_producto}</td>
+                    <td>${row.cantidad_producto}</td>
+                    <td>${row.descuento_producto}%</td>
+                    <td>$${row.SubtotalConDescuento}</td>
+                </tr>
+            `;
+            totalCompra += parseFloat(row.SubtotalConDescuento); // Sumar el subtotal con descuento al total
+        });
+        // Se muestra un mensaje de acuerdo con el resultado.
+        ROWS_FOUND.textContent = DATA.message;
     } else {
-        sweetAlert(2, DATA.error, false);
+        sweetAlert(4, DATA.error, true);
     }
-}
 
-const openReport = () => {
+    // Asignar el total de la compra a la fila correspondiente
+    TABLE_BODY2.innerHTML += `
+        <tr>
+            <td colspan="6" class="bg-danger text-white fw-bold">Total de la compra</td>
+            <td class="bg-danger text-white fw-bold">$${totalCompra.toFixed(2)}</td>
+        </tr>
+    `;
+
+    // Se muestra la caja de diálogo con su título.
+    DETALLE_FORM.show();
+    MODAL_TITLED.textContent = 'Detalles del pedido';
+
+    // Se prepara el formulario.
+    DETAIL_FORM.reset();
+    // Se inicializan los campos con los datos.
+    const ROW = DATA.dataset;
+    ID_DETALLE.value = ROW.id_detalle;
+};
+
+
+const openReport = (id) => {
     // Se declara una constante tipo objeto con la ruta específica del reporte en el servidor.
     const PATH = new URL(`${SERVER_URL}reports/admin/ordenes.php`);
-
+    PATH.searchParams.append('idOrden', id);
+    console.log(id);
     // Se abre el reporte en una nueva pestaña.
     window.open(PATH.href);
 }
