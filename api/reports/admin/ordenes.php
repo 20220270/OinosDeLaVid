@@ -15,7 +15,7 @@ if (isset($_GET['idOrden'])) {
         // Se verifica si la categoría existe, de lo contrario se muestra un mensaje.
         if ($rowOrdenes = $ordenes->readOne()) {
             // Se inicia el reporte con el encabezado del documento.
-            $pdf->startReport('Productos de la ordén ' . $rowOrdenes['id_orden']);
+            $pdf->startReport('Productos de la órden ' . $rowOrdenes['id_orden']);
             // Se verifica si existen registros para mostrar, de lo contrario se imprime un mensaje.
             if ($dataOrdenes = $ordenes->readDetails()) {
                 // Se establece un color de relleno para los encabezados.

@@ -34,9 +34,9 @@ class ProductoHandler
                 existencias_producto, descuento_producto, fecha_registro FROM tb_productos
                 INNER JOIN tb_categorias USING(id_categoria)
                 INNER JOIN tb_marcas USING(id_marca)
-                WHERE nombre_producto LIKE ? OR descripcion_producto LIKE ? OR precio_producto LIKE ? or estado_producto LIKE ?
+                WHERE nombre_producto LIKE ? OR descripcion_producto LIKE ? OR precio_producto LIKE ? or estado_producto LIKE ? or nombre_marca LIKE ? or nombre_categoria LIKE ?
                 ORDER BY id_producto';
-        $params = array($value, $value, $value, $value);
+        $params = array($value, $value, $value, $value, $value, $value);
         return Database::getRows($sql, $params);
     }
 
