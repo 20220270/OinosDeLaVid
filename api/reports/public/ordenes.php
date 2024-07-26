@@ -45,7 +45,8 @@ if (isset($_GET['idOrden'])) {
             $pdf->setFillColor(110, 6, 6);
 
             // Se imprimen las celdas con los encabezados.
-            $pdf->cell(63, 10, 'Productos', 1, 0, 'C', 1);
+                                //bordes y salto de linea 
+            $pdf->cell(63, 10, 'Productos',  1, 0, 'C', 1);
             $pdf->cell(30, 10, 'Precio', 1, 0, 'C', 1);
             $pdf->cell(30, 10, 'Cantidad', 1, 0, 'C', 1);
             $pdf->cell(30, 10, 'Descuento', 1, 0, 'C', 1);
