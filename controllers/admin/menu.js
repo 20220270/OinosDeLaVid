@@ -173,8 +173,8 @@ const graficoPredictivo = async () => {
         if (dataGanancias.status && dataPerdidas.status) {
             // Arreglos para guardar los datos a graficar.
             let mesventas = [];
-            let ganancias = [];
-            let pérdidas = [];
+            let ganancias = Array(12).fill(0); // Inicializar con ceros para todos los meses
+            let perdidas = Array(12).fill(0); // Inicializar con ceros para todos los meses
 
             // Arreglo de nombres de meses.
             const meses = [
@@ -185,32 +185,26 @@ const graficoPredictivo = async () => {
             // Procesar datos de ganancias
             dataGanancias.dataset.forEach(row => {
                 mesventas.push(meses[row.mes - 1]);
-                ganancias.push(row.ganancias_mensuales);
+                ganancias[row.mes - 1] = parseFloat(row.ganancias_mensuales);
             });
 
             // Procesar datos de pérdidas
             dataPerdidas.dataset.forEach(row => {
-                const mes = meses[row.anio - 1];
-                if (mesventas.includes(mes)) {
-                    const index = mesventas.indexOf(mes);
-                    pérdidas[index] = row.perdidas_anuales; // Actualizar pérdidas para el mes
-                } else {
-                    mesventas.push(mes);
-                    pérdidas.push(row.perdidas_anuales);
-                }
+                perdidas[row.mes - 1] = parseFloat(row.perdidas_mensuales);
             });
 
-            // Asegurarse de que 'pérdidas' tenga el mismo tamaño que 'ganancias'
-            while (pérdidas.length < ganancias.length) {
-                pérdidas.push(0); // Rellenar con 0 si no hay datos de pérdidas para algunos meses
-            }
-
             // Calcular las ganancias totales del año.
-            const totalGanancias = ganancias.reduce((acc, val) => acc + Number(val), 0);
-            const totalPerdidas = pérdidas.reduce((acc, val) => acc + Number(val), 0);
+            const totalGanancias = parseFloat(dataGanancias.dataset[0].ganancias_totales_proyectadas);
+            const totalPerdidas = parseFloat(dataPerdidas.dataset[0].perdidas_totales_proyectadas);
+
+            // Añadir registros de depuración
+            console.log('Ganancias Mensuales:', ganancias);
+            console.log('Pérdidas Mensuales:', perdidas);
+            console.log('Ganancias Totales Proyectadas:', totalGanancias);
+            console.log('Pérdidas Totales Proyectadas:', totalPerdidas);
 
             // Llamada a la función para generar y mostrar un gráfico de líneas.
-            lineGraph('chartPrediction', mesventas, ganancias, pérdidas, 'Ganancias por mes (USD $)', 'Pérdidas por mes (USD $)');
+            lineGraph('chartPrediction', meses, ganancias, perdidas, 'Ganancias por mes (USD $)', 'Pérdidas por mes (USD $)');
 
             // Mostrar el total de ganancias y pérdidas del año en el label.
             document.getElementById('totalGanancias').textContent =
@@ -226,6 +220,8 @@ const graficoPredictivo = async () => {
         console.error('Error en la petición de datos:', error);
     }
 }
+
+
 
 
 
