@@ -40,6 +40,13 @@ if (isset($_GET['action'])) {
                     $result['error'] = 'Ocurrió un problema al leer el perfil';
                 }
                 break;
+            case 'checkCorreo':
+                if ($cliente->checkCorreo($_POST['IngreseCorreo'])) {
+                    $result['status'] = 1;
+                } else {
+                    $result['error'] = 'Correo no disponible';
+                }
+                break;
             case 'editProfile':
                 $_POST = Validator::validateForm($_POST);
                 if (
@@ -145,6 +152,15 @@ if (isset($_GET['action'])) {
                     }
                 }
                 break;
+                case 'checkCorreo':
+                    if (!$cliente->setCorreo($_POST['IngreseCorreo'])) {
+                        $result['error'] = $cliente->getDataError();
+                    } elseif ($result['dataset'] = $cliente->checkCorreo()) {
+                        $result['status'] = 1;
+                    } else {
+                        $result['error'] = 'Cliente inexistente';
+                    }
+                    break;
 
             case 'signUpMovil':
                 $_POST = Validator::validateForm($_POST);

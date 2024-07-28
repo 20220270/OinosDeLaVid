@@ -16,6 +16,7 @@
     </header>
 
     <div class="containerTittle text-center">
+        <form id="Correo">
         <div class="row justify-content-md-center">
 
 
@@ -28,13 +29,15 @@
                         placeholder="micorreo@gmail.com" required>
                 </div>
             </div>
+      
         </div>
+    </form>
         <br>
         <br>
 
 
         <div class="text-center">
-            <button class="submit px-2 mt-4 fw-semibold shadow-sm" id="btnVerificar" name="btnVerificar" onclick="window.location.href='recuperacioncontraseña_codigo.html';">
+            <button class="submit px-2 mt-4 fw-semibold shadow-sm" id="btnVerificar" name="btnVerificar">
                 <div class="text-white mt-2 mb-2">
                     Enviar Codigo
                 </div>
@@ -51,7 +54,10 @@
     </div>
 
     <script type="text/javascript" src="../../controllers/utils/recuperarcontra.js"></script>
+    <script src="../../controllers/utils/sweetalert.min.js"></script>
+    <script src="../../controllers/utils/components.js"></script>
         <script src="../../controllers/public/RC1.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 </body>
 

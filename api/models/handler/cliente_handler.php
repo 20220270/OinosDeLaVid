@@ -152,6 +152,15 @@ class ClienteHandler
         return Database::getRows($sql);
     }
 
+    public function checkCorreo()
+    {
+        $sql = 'SELECT correo_cliente, nombre_cliente
+                FROM tb_clientes
+                WHERE correo_cliente = ?;';
+        $params = array($this->correo);
+        return Database::getRow($sql, $params);
+    }
+
     /*
     *  1
     */
