@@ -262,8 +262,8 @@ class OrdenesHandler
 
     //Reporte de ordenes
     public function Ordenes($mes, $anio)
-{
-    $sql = "SELECT 
+    {
+        $sql = "SELECT 
         tb_ordenes.id_orden,
         GROUP_CONCAT(CONCAT(nombre_producto, ' (', cantidad_producto, ')') ORDER BY nombre_producto SEPARATOR '\n') AS productos,
         tb_ordenes.fecha_registro, 
@@ -284,46 +284,74 @@ class OrdenesHandler
         tb_ordenes.id_orden, tb_ordenes.fecha_registro, estado_orden, direccion_orden, correo_cliente
     ORDER BY 
         id_orden, correo_cliente, tb_ordenes.fecha_registro";
-    $params = array($mes, $anio);
-    return Database::getRows($sql, $params);
-}
+        $params = array($mes, $anio);
+        return Database::getRows($sql, $params);
+    }
 
 
     //Gráfico de predicción
 
     public function predictGraph()
     {
-        $sql = "SELECT 
-    MONTH(o.fecha_registro) AS mes,
-    SUM(d.cantidad_producto * d.precio_producto) AS ganancias_mensuales
-    FROM 
-    tb_detallesordenes d
-    JOIN 
-    tb_ordenes o ON d.id_orden = o.id_orden
-    WHERE 
-    YEAR(o.fecha_registro) = YEAR(CURDATE())
-    GROUP BY 
-    MONTH(o.fecha_registro)
-    ORDER BY mes;";
-
+        $sql = "WITH GananciasMensuales AS (
+                SELECT 
+                    MONTH(o.fecha_registro) AS mes,
+                    SUM(d.cantidad_producto * d.precio_producto) AS ganancias_mensuales
+                FROM 
+                    tb_detallesordenes d
+                JOIN 
+                    tb_ordenes o ON d.id_orden = o.id_orden
+                WHERE 
+                    YEAR(o.fecha_registro) = YEAR(CURDATE())
+                GROUP BY 
+                    MONTH(o.fecha_registro)
+            )
+            SELECT 
+                mes,
+                ROUND(ganancias_mensuales, 2) AS ganancias_mensuales,
+                COUNT(*) OVER () AS meses_registrados,
+                ROUND(SUM(ganancias_mensuales) OVER (), 2) AS ganancias_actuales,
+                ROUND(AVG(ganancias_mensuales) OVER (), 2) AS media_mensual,
+                ROUND(SUM(ganancias_mensuales) OVER () + (AVG(ganancias_mensuales) OVER () * (12 - COUNT(*) OVER ())), 2) AS ganancias_totales_proyectadas
+            FROM 
+                GananciasMensuales;
+        ";
+    
         return Database::getRows($sql);
     }
+    
 
-    public function perdidasPredictGraph()
-    {
-        $sql = "SELECT 
-        MONTH(o.fecha_registro) AS anio,
-        SUM(d.cantidad_producto * d.precio_producto) AS perdidas_anuales
+
+
+public function perdidasPredictGraph()
+{
+    $sql = "WITH PerdidasMensuales AS (
+            SELECT 
+                MONTH(o.fecha_registro) AS mes,
+                SUM(d.cantidad_producto * d.precio_producto) AS perdidas_mensuales
+            FROM 
+                tb_detallesordenes d
+            JOIN 
+                tb_ordenes o ON d.id_orden = o.id_orden
+            WHERE 
+                YEAR(o.fecha_registro) = YEAR(CURDATE()) 
+                AND o.estado_orden = 'Anulada'
+            GROUP BY 
+                MONTH(o.fecha_registro)
+        )
+        SELECT 
+            mes,
+            ROUND(perdidas_mensuales, 2) AS perdidas_mensuales,
+            COUNT(*) OVER () AS meses_registrados,
+            ROUND(SUM(perdidas_mensuales) OVER (), 2) AS perdidas_actuales,
+            ROUND(AVG(perdidas_mensuales) OVER (), 2) AS media_mensual,
+            ROUND(SUM(perdidas_mensuales) OVER () + (AVG(perdidas_mensuales) OVER () * (12 - COUNT(*) OVER ())), 2) AS perdidas_totales_proyectadas
         FROM 
-        tb_detallesordenes d
-        JOIN 
-        tb_ordenes o ON d.id_orden = o.id_orden
-        WHERE 
-        YEAR(o.fecha_registro) = YEAR(CURDATE()) 
-        AND o.estado_orden = 'Anulada'
-        GROUP BY 
-        MONTH(o.fecha_registro);";
+            PerdidasMensuales;
+    ";
 
-        return Database::getRows($sql);
-    }
+    return Database::getRows($sql);
+}
+
+
 }
