@@ -13,14 +13,17 @@ document.getElementById("btnVerificar").addEventListener("click", async function
 
   const FORM = new FormData(FORM_CORREO);
   const DATA = await fetchData(API_CLIENTE, 'checkCorreo', FORM);
+  const NOMBRE = DATA.dataset.nombre_cliente;
 
   if (DATA.status) {
     
   // Enviar el correo y obtener la respuesta
-  const RESPONSE_EMAIL = await enviarEmail(CODIGO, document.getElementById("IngreseCorreo").value, DATA.nombre_cliente);
+  const RESPONSE_EMAIL = await enviarEmail(CODIGO, document.getElementById("IngreseCorreo").value, NOMBRE);
     if (RESPONSE_EMAIL) {
       // Guardar el código en localStorage
-      localStorage.setItem("recoveryCode", CODIGO);
+      localStorage.setItem("codigo", CODIGO);
+      localStorage.setItem("email", document.getElementById("IngreseCorreo").value);
+      localStorage.setItem("nombre", NOMBRE);
       sweetAlert(1, DATA.message, true, 'recuperacioncontraseña_codigo.html');
   } else {
     sweetAlert(2, DATA.error, false);
