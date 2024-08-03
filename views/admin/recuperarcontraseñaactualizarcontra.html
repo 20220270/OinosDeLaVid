@@ -26,16 +26,18 @@
     <!-- campos para ingresar la contraseña y confirmarla  -->
 
     <div class="container">
+       <form id="formClave">
         <div class="row">
             <div class="col-sm-12 col-md-6 mb-4">
                 <label for="nuevaContraInput" class="form-label">Nueva contraseña:</label>
-                <input type="password" id="nuevaContraInput" name="nuevaContraInput" class="form-control" required>
+                <input type="password" id="claveAdmin" name="claveAdmin" class="form-control" required>
             </div>
             <div class="col-sm-12 col-md-6">
                 <label for="nuevaContraInput" class="form-label">Confirmar contraseña:</label>
-                <input type="password" id="nuevaContraInput" name="nuevaContraInput" class="form-control" required>
+                <input type="password" id="confirmarClave" name="confirmarClave" class="form-control" required>
             </div>
         </div>
+       </form>
     </div>
 
     <br>
@@ -43,21 +45,22 @@
     <!-- bootnes -->
 
     <div class="text-center">
-        <button class="submit px-5 mt-4 fw-semibold shadow-sm" id="btnEnviarCod" name="btnEnviarCod"
-            onclick="window.location.href='index.html';">
+        <button class="submit px-5 mt-4 fw-semibold shadow-sm" id="btnClave" name="btnClave">
             <div class="text-white mt-2 mb-2">
                 restablecer contraseña
             </div>
         </button>
 
-        <button class="submit px-5 mt-4 fw-semibold shadow-sm" id="btnVo" name="btnVo"
-                onclick="window.location.href='index.html';">
+        <button class="submit px-5 mt-4 fw-semibold shadow-sm" id="btnRegre" name="btnRegre">
                 <div class="text-white mt-2 mb-2">
                     Volver al inicio
                 </div>
             </button>
     </div>
     <script type="text/javascript" src="../../controllers/utils/recuperarContra.js"></script>
+    <script src="../../controllers/public/RC3.js"></script>
+    <script src="../../controllers/utils/sweetalert.min.js"></script>
+    <script src="../../controllers/utils/components.js"></script>
 </body>
 
 </html>

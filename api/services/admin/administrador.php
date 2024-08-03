@@ -159,6 +159,31 @@ if (isset($_GET['action'])) {
                     $resul7t['error'] = 'Debe crear un administrador para comenzar';
                 }
                 break;
+                case 'checkCorreo':
+                    if (!$administrador->setCorreo($_POST['IngreseCorreo'])) {
+                        $result['error'] = $administrador->getDataError();
+                    } elseif ($result['dataset'] = $administrador->checkCorreo()) {
+                        $result['status'] = 1;
+                    } else {
+                        $result['error'] = 'Administrador inexistente';
+                    }
+                    break;
+                case 'updateClave':
+                        $_POST = Validator::validateForm($_POST);
+                        if (
+                            !$administrador->setCorreo($_POST['IngreseCorreo']) or
+                            !$administrador->setClave($_POST['claveAdmin'])
+                            ) {
+                            $result['error'] = $administrador->getDataError();
+                        }elseif ($_POST['claveAdmin'] != $_POST['confirmarClave']) {
+                            $result['error'] = 'Contraseñas diferentes';} 
+                        elseif ($administrador->updateClave()) {
+                            $result['status'] = 1;
+                            $result['message'] = 'Contraseña actualizada correctamente';
+                        } else {
+                            $result['error'] = 'Ocurrió un problema al actualizar la contraseña';
+                        }
+                        break;
                 case 'signUp':
                     $_POST = Validator::validateForm($_POST);
                 

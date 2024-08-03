@@ -1,6 +1,7 @@
 
 const FORM_CORREO = document.getElementById("Correo");
 const API_CLIENTE = 'services/public/cliente.php';
+const API_ADMIN = 'services/admin/administrador.php';
 
 document.addEventListener("DOMContentLoaded", function () {
 document.getElementById("btnVo").addEventListener("click", function () {
@@ -11,28 +12,44 @@ document.getElementById("btnVerificar").addEventListener("click", async function
   // Generar el código aleatorio
   const CODIGO = generateRandomCode(6); // Puedes ajustar la longitud del código aquí
 
-  const FORM = new FormData(FORM_CORREO);
-  const DATA = await fetchData(API_CLIENTE, 'checkCorreo', FORM);
-  const NOMBRE = DATA.dataset.nombre_cliente;
+  const EMAIL = document.getElementById("IngreseCorreo").value;
 
-  if (DATA.status) {
-    
-  // Enviar el correo y obtener la respuesta
-  const RESPONSE_EMAIL = await enviarEmail(CODIGO, document.getElementById("IngreseCorreo").value, NOMBRE);
-    if (RESPONSE_EMAIL) {
-      // Guardar el código en localStorage
-      localStorage.setItem("codigo", CODIGO);
-      localStorage.setItem("email", document.getElementById("IngreseCorreo").value);
-      localStorage.setItem("nombre", NOMBRE);
-      sweetAlert(1, DATA.message, true, 'recuperacioncontraseña_codigo.html');
+  const FORM = new FormData(FORM_CORREO);
+  const DATA_CLIENTE = await fetchData(API_CLIENTE, 'checkCorreo', FORM);
+  const DATA_ADMIN = await fetchData(API_ADMIN, 'checkCorreo', FORM);
+  let DATA, NOMBRE;
+
+  if (DATA_CLIENTE.status) {
+    DATA = DATA_CLIENTE;
+    NOMBRE = DATA_CLIENTE.dataset.nombre_cliente;
+  const RESPONSE_EMAIL = await enviarEmail(CODIGO, EMAIL, NOMBRE);
+  if (RESPONSE_EMAIL) {
+    // Guardar el código en localStorage
+    localStorage.setItem("codigo", CODIGO);
+    localStorage.setItem("email", EMAIL);
+    localStorage.setItem("nombre", NOMBRE);
+    sweetAlert(1, DATA_CLIENTE.message, true, 'recuperacioncontraseña_codigo.html');
+  } else {
+    sweetAlert(2, DATA_CLIENTE.error, false);
+  }
+
+  } else if (DATA_ADMIN.status) {
+    DATA = DATA_ADMIN;
+    NOMBRE = DATA_ADMIN.dataset.nombre_admistrador;
+  const RESPONSE_EMAIL = await enviarEmail(CODIGO, EMAIL, NOMBRE);
+  if (RESPONSE_EMAIL) {
+    // Guardar el código en localStorage
+    localStorage.setItem("codigo", CODIGO);
+    localStorage.setItem("email", EMAIL);
+    localStorage.setItem("nombre", NOMBRE);
+    sweetAlert(1, DATA.message, true, 'recuperarcontraseñacodigo.html');
   } else {
     sweetAlert(2, DATA.error, false);
   }
+  } else {
+    sweetAlert(2, 'El correo ingresado no está registrado en el sistema', false);
+    return;
   }
-  else {
-    sweetAlert(2, DATA.error, false);
-  }
-  // Verificar la respuesta y actuar en consecuencia
   
 });
 

@@ -53,6 +53,25 @@ class AdministradorHandler
         }
     }
 
+    public function checkCorreo()
+    {
+        $sql = 'SELECT correo_administrador, nombre_admistrador
+                FROM tb_administradores
+                WHERE correo_administrador = ?;';
+        $params = array($this->correo);
+        return Database::getRow($sql, $params);
+    }
+
+    public function updateClave()
+    {
+        $sql = 'UPDATE tb_administradores
+                SET clave_administrador = ?
+                WHERE correo_administrador = ?';
+        $params = array($this->clave, $this->correo);
+        return Database::executeRow($sql, $params);
+    }
+
+
     public function changePassword()
     {
         $sql = 'UPDATE tb_administradores

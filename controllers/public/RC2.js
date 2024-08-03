@@ -10,13 +10,27 @@ document.addEventListener("DOMContentLoaded", function () {
     // Obtener el código almacenado en localStorage
     const storedCode = localStorage.getItem("codigo");
     console.log("Código almacenado:", storedCode);
+    const currentPath = window.location.pathname;
 
-    // Verificar si el código introducido coincide con el almacenado
+    if (currentPath.includes('admin')) {
+      if (inputCode === storedCode) {
+        sweetAlert(1, "El codigo es correcto", true, 'recuperarcontraseñaactualizarcontra.html');
+      } else {
+        sweetAlert(2, "error", false);
+      }
+
+  } else if (currentPath.includes('public')) {
     if (inputCode === storedCode) {
-      sweetAlert(1, DATA.message, true, 'recuperacioncontraseña_contra.html');
+      sweetAlert(1, "El codigo es correcto", true, 'recuperacioncontraseña_contra.html');
     } else {
-      sweetAlert(2, DATA.error, false);
+      sweetAlert(2, "error", false);
     }
+  } 
+  else {
+    sweetAlert(2, "No se pudo determinar la API adecuada", false);
+    return;
+  }
+    
 });
 
   document.getElementById("btnReenviar").addEventListener("click", async function () {
