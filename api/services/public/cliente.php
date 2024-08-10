@@ -30,9 +30,8 @@ if (isset($_GET['action'])) {
                     $result['error'] = 'Nombre de usuario indefinido';
                 }
                 break;
-            
-            
-            
+
+
             case 'logOut':
                 if (session_destroy()) {
                     $result['status'] = 1;
@@ -89,6 +88,34 @@ if (isset($_GET['action'])) {
                 }
                 break;
 
+                //Evitamos el error de acción no disponible dentro de la sesión
+                case 'logIn':
+                    $_POST = Validator::validateForm($_POST);
+                    if (!$cliente->checkUser($_POST['correoCliente'], $_POST['claveCliente'])) {
+                        $result['error'] = 'Datos incorrectos';
+                    } else {
+                        // Establece el ID del cliente antes de verificar el estado.
+                        $cliente->setId($cliente->getIdByEmail($_POST['correoCliente']));
+    
+                        // Verificamos el estado del cliente.
+                        if ($cliente->checkStatus()) {
+                            // Configura la sesión ya que el estado es activo.
+                            $_SESSION['idCliente'] = $cliente->getIdByEmail($_POST['correoCliente']);
+                            $_SESSION['correoCliente'] = $_POST['correoCliente'];
+    
+                            // Recupera el nombre y apellido del cliente y lo guarda en la sesión.
+                            $perfil = $cliente->readProfile();
+                            $_SESSION['nombreCliente'] = $perfil['nombre_cliente']; //Asignamos el nombre del cliente
+                            $_SESSION['apellidoCliente'] = $perfil['apellido_cliente']; //Asignamos el apellido del cliente
+    
+                            $result['status'] = 1;
+                            $result['message'] = 'Autenticación correcta';
+                        } else {
+                            $result['error'] = 'La cuenta ha sido desactivada';
+                        }
+                    }
+                    break;
+
 
             default:
                 $result['error'] = 'Acción no disponible dentro de la sesión';
@@ -140,25 +167,26 @@ if (isset($_GET['action'])) {
                 }
                 break;
 
+            
                 case 'logIn':
                     $_POST = Validator::validateForm($_POST);
                     if (!$cliente->checkUser($_POST['correoCliente'], $_POST['claveCliente'])) {
                         $result['error'] = 'Datos incorrectos';
                     } else {
                         // Establece el ID del cliente antes de verificar el estado.
-                        $cliente->setId($cliente->getIdByEmail($_POST['correoCliente'])); 
-                
+                        $cliente->setId($cliente->getIdByEmail($_POST['correoCliente']));
+    
                         // Verificamos el estado del cliente.
                         if ($cliente->checkStatus()) {
                             // Configura la sesión ya que el estado es activo.
                             $_SESSION['idCliente'] = $cliente->getIdByEmail($_POST['correoCliente']);
                             $_SESSION['correoCliente'] = $_POST['correoCliente'];
-                
+    
                             // Recupera el nombre y apellido del cliente y lo guarda en la sesión.
                             $perfil = $cliente->readProfile();
                             $_SESSION['nombreCliente'] = $perfil['nombre_cliente']; //Asignamos el nombre del cliente
                             $_SESSION['apellidoCliente'] = $perfil['apellido_cliente']; //Asignamos el apellido del cliente
-                
+    
                             $result['status'] = 1;
                             $result['message'] = 'Autenticación correcta';
                         } else {
@@ -166,28 +194,27 @@ if (isset($_GET['action'])) {
                         }
                     }
                     break;
-                
-                
-                
-                case 'checkCorreo':
-                    if (!$cliente->setCorreo($_POST['IngreseCorreo'])) {
-                        $result['error'] = $cliente->getDataError();
-                    } elseif ($result['dataset'] = $cliente->checkCorreo()) {
-                        $result['status'] = 1;
-                    } else {
-                        $result['error'] = 'Cliente inexistente';
-                    }
-                    break;
+
+
+            case 'checkCorreo':
+                if (!$cliente->setCorreo($_POST['IngreseCorreo'])) {
+                    $result['error'] = $cliente->getDataError();
+                } elseif ($result['dataset'] = $cliente->checkCorreo()) {
+                    $result['status'] = 1;
+                } else {
+                    $result['error'] = 'Cliente inexistente';
+                }
+                break;
             case 'updateClave':
                 $_POST = Validator::validateForm($_POST);
                 if (
                     !$cliente->setCorreo($_POST['IngreseCorreo']) or
                     !$cliente->setClave($_POST['claveCliente'])
-                    ) {
+                ) {
                     $result['error'] = $cliente->getDataError();
-                }elseif ($_POST['claveCliente'] != $_POST['confirmarClave']) {
-                    $result['error'] = 'Contraseñas diferentes';} 
-                elseif ($cliente->updateClave()) {
+                } elseif ($_POST['claveCliente'] != $_POST['confirmarClave']) {
+                    $result['error'] = 'Contraseñas diferentes';
+                } elseif ($cliente->updateClave()) {
                     $result['status'] = 1;
                     $result['message'] = 'Contraseña actualizada correctamente';
                 } else {
@@ -230,5 +257,5 @@ if (isset($_GET['action'])) {
     // Se imprime el resultado en formato JSON y se retorna al controlador.
     print(json_encode($result));
 } else {
-    print(json_encode('Recurso no disponible'));//
+    print(json_encode('Recurso no disponible')); //
 }
