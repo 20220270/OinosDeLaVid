@@ -89,32 +89,32 @@ if (isset($_GET['action'])) {
                 break;
 
                 //Evitamos el error de acción no disponible dentro de la sesión
-                case 'logIn':
-                    $_POST = Validator::validateForm($_POST);
-                    if (!$cliente->checkUser($_POST['correoCliente'], $_POST['claveCliente'])) {
-                        $result['error'] = 'Datos incorrectos';
+            case 'logIn':
+                $_POST = Validator::validateForm($_POST);
+                if (!$cliente->checkUser($_POST['correoCliente'], $_POST['claveCliente'])) {
+                    $result['error'] = 'Datos incorrectos';
+                } else {
+                    // Establece el ID del cliente antes de verificar el estado.
+                    $cliente->setId($cliente->getIdByEmail($_POST['correoCliente']));
+
+                    // Verificamos el estado del cliente.
+                    if ($cliente->checkStatus()) {
+                        // Configura la sesión ya que el estado es activo.
+                        $_SESSION['idCliente'] = $cliente->getIdByEmail($_POST['correoCliente']);
+                        $_SESSION['correoCliente'] = $_POST['correoCliente'];
+
+                        // Recupera el nombre y apellido del cliente y lo guarda en la sesión.
+                        $perfil = $cliente->readProfile();
+                        $_SESSION['nombreCliente'] = $perfil['nombre_cliente']; //Asignamos el nombre del cliente
+                        $_SESSION['apellidoCliente'] = $perfil['apellido_cliente']; //Asignamos el apellido del cliente
+
+                        $result['status'] = 1;
+                        $result['message'] = 'Autenticación correcta';
                     } else {
-                        // Establece el ID del cliente antes de verificar el estado.
-                        $cliente->setId($cliente->getIdByEmail($_POST['correoCliente']));
-    
-                        // Verificamos el estado del cliente.
-                        if ($cliente->checkStatus()) {
-                            // Configura la sesión ya que el estado es activo.
-                            $_SESSION['idCliente'] = $cliente->getIdByEmail($_POST['correoCliente']);
-                            $_SESSION['correoCliente'] = $_POST['correoCliente'];
-    
-                            // Recupera el nombre y apellido del cliente y lo guarda en la sesión.
-                            $perfil = $cliente->readProfile();
-                            $_SESSION['nombreCliente'] = $perfil['nombre_cliente']; //Asignamos el nombre del cliente
-                            $_SESSION['apellidoCliente'] = $perfil['apellido_cliente']; //Asignamos el apellido del cliente
-    
-                            $result['status'] = 1;
-                            $result['message'] = 'Autenticación correcta';
-                        } else {
-                            $result['error'] = 'La cuenta ha sido desactivada';
-                        }
+                        $result['error'] = 'La cuenta ha sido desactivada';
                     }
-                    break;
+                }
+                break;
 
 
             default:
@@ -128,7 +128,7 @@ if (isset($_GET['action'])) {
                 // Se establece la clave secreta para el reCAPTCHA de acuerdo con la cuenta de Google.
                 $secretKey = '6LdBzLQUAAAAAL6oP4xpgMao-SmEkmRCpoLBLri-';
                 // Se establece la dirección IP del servidor.
-                $ip = $_SERVER['REMOTE_ADDR'];
+                /*$ip = $_SERVER['REMOTE_ADDR'];
                 // Se establecen los datos del reCAPTCHA.
                 $data = array('secret' => $secretKey, 'response' => $_POST['gRecaptchaResponse'], 'remoteip' => $ip);
                 // Se establecen las opciones del reCAPTCHA.
@@ -141,7 +141,20 @@ if (isset($_GET['action'])) {
                 $context = stream_context_create($options);
                 $response = file_get_contents($url, false, $context);
                 $captcha = json_decode($response, true);
+*/
 
+                $token = $_POST['gRecaptchaResponse'];
+                //$action = $_POST['action'];
+
+                // call curl to POST request 
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
+                curl_setopt($ch, CURLOPT_POST, 1);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query(array('secret' => $secretKey, 'response' => $token)));
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                $response = curl_exec($ch);
+                curl_close($ch);
+                $captcha = json_decode($response, true);
                 if (!$captcha['success']) {
                     $result['recaptcha'] = 1;
                     $result['error'] = 'No eres humano';
@@ -167,33 +180,33 @@ if (isset($_GET['action'])) {
                 }
                 break;
 
-            
-                case 'logIn':
-                    $_POST = Validator::validateForm($_POST);
-                    if (!$cliente->checkUser($_POST['correoCliente'], $_POST['claveCliente'])) {
-                        $result['error'] = 'Datos incorrectos';
+
+            case 'logIn':
+                $_POST = Validator::validateForm($_POST);
+                if (!$cliente->checkUser($_POST['correoCliente'], $_POST['claveCliente'])) {
+                    $result['error'] = 'Datos incorrectos';
+                } else {
+                    // Establece el ID del cliente antes de verificar el estado.
+                    $cliente->setId($cliente->getIdByEmail($_POST['correoCliente']));
+
+                    // Verificamos el estado del cliente.
+                    if ($cliente->checkStatus()) {
+                        // Configura la sesión ya que el estado es activo.
+                        $_SESSION['idCliente'] = $cliente->getIdByEmail($_POST['correoCliente']);
+                        $_SESSION['correoCliente'] = $_POST['correoCliente'];
+
+                        // Recupera el nombre y apellido del cliente y lo guarda en la sesión.
+                        $perfil = $cliente->readProfile();
+                        $_SESSION['nombreCliente'] = $perfil['nombre_cliente']; //Asignamos el nombre del cliente
+                        $_SESSION['apellidoCliente'] = $perfil['apellido_cliente']; //Asignamos el apellido del cliente
+
+                        $result['status'] = 1;
+                        $result['message'] = 'Autenticación correcta';
                     } else {
-                        // Establece el ID del cliente antes de verificar el estado.
-                        $cliente->setId($cliente->getIdByEmail($_POST['correoCliente']));
-    
-                        // Verificamos el estado del cliente.
-                        if ($cliente->checkStatus()) {
-                            // Configura la sesión ya que el estado es activo.
-                            $_SESSION['idCliente'] = $cliente->getIdByEmail($_POST['correoCliente']);
-                            $_SESSION['correoCliente'] = $_POST['correoCliente'];
-    
-                            // Recupera el nombre y apellido del cliente y lo guarda en la sesión.
-                            $perfil = $cliente->readProfile();
-                            $_SESSION['nombreCliente'] = $perfil['nombre_cliente']; //Asignamos el nombre del cliente
-                            $_SESSION['apellidoCliente'] = $perfil['apellido_cliente']; //Asignamos el apellido del cliente
-    
-                            $result['status'] = 1;
-                            $result['message'] = 'Autenticación correcta';
-                        } else {
-                            $result['error'] = 'La cuenta ha sido desactivada';
-                        }
+                        $result['error'] = 'La cuenta ha sido desactivada';
                     }
-                    break;
+                }
+                break;
 
 
             case 'checkCorreo':
